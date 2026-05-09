@@ -1,0 +1,14 @@
+name = "multisuggest-scraper"
+main = "scraper.ts"
+compatibility_date = "2024-12-01"
+workers_dev = true
+
+# Cron Trigger: Run daily at 03:00 UTC
+[triggers]
+crons = ["0 3 * * *"]
+
+# D1 Database binding
+[[d1_databases]]
+binding = "DB"
+database_name = "multisuggest-db"
+database_id = "088bfc17-15bc-4274-bb52-40831ae3a142"
