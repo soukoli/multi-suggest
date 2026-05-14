@@ -15,12 +15,23 @@ interface FacilityCardProps {
   className?: string;
 }
 
+/**
+ * Get the best link for a facility (web > facebook > instagram > multisport page)
+ */
+function getFacilityLink(facility: FacilityWithMeta): string | null {
+  if (facility.website_url) return facility.website_url;
+  if (facility.facebook_url) return facility.facebook_url;
+  if (facility.instagram_url) return facility.instagram_url;
+  return null;
+}
+
 export function FacilityCard({ facility, className }: FacilityCardProps) {
   const { isFavorite, toggleFavorite } = useFavoritesStore();
   const fav = isFavorite(facility.id);
   const [imageIndex, setImageIndex] = useState(0);
 
   const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${facility.lat},${facility.lng}`;
+  const facilityLink = getFacilityLink(facility);
 
   // Build image array: main image + gallery
   const allImages: string[] = [];
@@ -40,15 +51,18 @@ export function FacilityCard({ facility, className }: FacilityCardProps) {
   // Card type names
   const cardNames = facility.active_cards?.map(c => CARD_LABELS[c.id] || c.name) || [];
 
+  // Social links available
+  const hasLinks = facility.website_url || facility.facebook_url || facility.instagram_url;
+
   return (
     <div
       className={cn(
-        "relative flex flex-col overflow-hidden rounded-[24px] bg-card border border-border/40 shadow-xl shadow-black/5 dark:shadow-black/30",
+        "relative flex flex-col overflow-hidden rounded-[22px] bg-card shadow-lg shadow-black/8 dark:shadow-black/40 ring-1 ring-black/[0.04] dark:ring-white/[0.06]",
         className
       )}
     >
-      {/* Image section */}
-      <div className="relative aspect-[16/9] w-full overflow-hidden">
+      {/* Image section - taller aspect ratio, more immersive */}
+      <div className="relative aspect-[4/3] w-full overflow-hidden">
         <img
           src={currentImage}
           alt={facility.name}
@@ -59,19 +73,19 @@ export function FacilityCard({ facility, className }: FacilityCardProps) {
           }}
         />
 
-        {/* Dark gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/5 to-black/20" />
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/10" />
 
         {/* Gallery dots */}
         {hasMultipleImages && (
-          <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex gap-1">
+          <div className="absolute bottom-14 left-1/2 -translate-x-1/2 flex gap-1">
             {allImages.slice(0, 5).map((_, i) => (
               <button
                 key={i}
                 onClick={(e) => { e.stopPropagation(); setImageIndex(i); }}
                 className={cn(
                   "h-1 rounded-full transition-all",
-                  i === imageIndex ? "w-3.5 bg-white" : "w-1 bg-white/50"
+                  i === imageIndex ? "w-4 bg-white" : "w-1 bg-white/40"
                 )}
               />
             ))}
@@ -86,23 +100,19 @@ export function FacilityCard({ facility, className }: FacilityCardProps) {
           </>
         )}
 
-        {/* Top: distance + favorite */}
+        {/* Top: distance + category + favorite */}
         <div className="absolute inset-x-0 top-0 flex items-start justify-between p-3">
-          <div className="flex items-center gap-1">
-            <div className="rounded-full bg-black/60 px-2.5 py-1 backdrop-blur-sm">
-              <span className="text-[11px] font-semibold text-white">
-                {formatDistance(facility.distance)}
-              </span>
-            </div>
-            {facility.is_new && (
-              <div className="rounded-full bg-white/90 px-2 py-1 backdrop-blur-sm">
-                <span className="text-[10px] font-bold text-black uppercase">Nové</span>
-              </div>
-            )}
+          <div className="flex items-center gap-1.5">
+            <span className="rounded-full bg-black/60 px-2.5 py-1 text-[11px] font-bold text-white backdrop-blur-sm">
+              {formatDistance(facility.distance)}
+            </span>
+            <span className="rounded-full bg-white/20 px-2 py-1 text-[10px] font-medium text-white backdrop-blur-sm">
+              {CATEGORY_LABELS[facility.category]}
+            </span>
           </div>
           <button
             onClick={(e) => { e.stopPropagation(); toggleFavorite(facility.id); }}
-            className="flex h-9 w-9 items-center justify-center rounded-full bg-black/50 backdrop-blur-sm transition-transform active:scale-90"
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-black/40 backdrop-blur-sm transition-transform active:scale-90"
           >
             <Icon
               icon={fav ? ICONS.heartFilled : ICONS.heart}
@@ -112,92 +122,76 @@ export function FacilityCard({ facility, className }: FacilityCardProps) {
           </button>
         </div>
 
-        {/* Bottom: name + address on image */}
-        <div className="absolute inset-x-0 bottom-0 p-4">
-          <h3 className="text-lg font-bold text-white leading-tight drop-shadow-sm">
+        {/* Bottom overlay: name + address */}
+        <div className="absolute inset-x-0 bottom-0 p-4 pb-3">
+          <h3 className="text-[17px] font-bold text-white leading-snug drop-shadow-sm">
             {facility.name}
           </h3>
           {facility.address && (
-            <p className="mt-0.5 text-[12px] text-white/75 truncate">
+            <p className="mt-0.5 text-[11px] text-white/70 truncate">
               {facility.address}
             </p>
           )}
         </div>
       </div>
 
-      {/* Content section */}
-      <div className="flex flex-1 flex-col gap-2.5 p-4">
-        {/* Info badges row - compact icons with labels */}
-        <div className="flex flex-wrap items-center gap-1.5">
+      {/* Content section - compact, dense info */}
+      <div className="flex flex-1 flex-col gap-2 p-3.5">
+        {/* Status badges row */}
+        <div className="flex flex-wrap items-center gap-1">
           {!facility.additional_payment ? (
-            <span className="flex items-center gap-1 rounded-full bg-emerald-50 dark:bg-emerald-950/30 px-2 py-0.5 text-[10px] font-medium text-emerald-700 dark:text-emerald-400">
-              <Icon icon={ICONS.freeEntry} width={10} height={10} />
+            <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-semibold text-emerald-600 dark:text-emerald-400">
               Zdarma
             </span>
           ) : (
-            <span className="flex items-center gap-1 rounded-full bg-amber-50 dark:bg-amber-950/30 px-2 py-0.5 text-[10px] font-medium text-amber-700 dark:text-amber-400">
-              + {facility.additional_payment_desc || "příplatek"}
+            <span className="rounded-full bg-amber-500/10 px-2 py-0.5 text-[10px] font-semibold text-amber-600 dark:text-amber-400">
+              {facility.additional_payment_desc || "+ příplatek"}
             </span>
           )}
           {facility.kids_activities && (
-            <span className="flex items-center gap-1 rounded-full bg-blue-50 dark:bg-blue-950/30 px-2 py-0.5 text-[10px] font-medium text-blue-700 dark:text-blue-400">
-              <Icon icon={ICONS.kids} width={10} height={10} />
+            <span className="rounded-full bg-blue-500/10 px-2 py-0.5 text-[10px] font-semibold text-blue-600 dark:text-blue-400">
               Děti
             </span>
           )}
           {facility.parking === "Yes" && (
-            <span className="flex items-center gap-1 rounded-full bg-secondary px-2 py-0.5 text-[10px] font-semibold text-secondary-foreground">
+            <span className="rounded-full bg-foreground/8 px-2 py-0.5 text-[10px] font-bold text-foreground">
               P
             </span>
           )}
           {facility.unlimited_oh && (
-            <span className="rounded-full bg-secondary px-2 py-0.5 text-[10px] font-medium text-secondary-foreground">
+            <span className="rounded-full bg-foreground/8 px-2 py-0.5 text-[10px] font-semibold text-foreground">
               24/7
             </span>
           )}
-          {facility.self_service && (
-            <span className="rounded-full bg-secondary px-2 py-0.5 text-[10px] font-medium text-secondary-foreground">
-              Self-service
+          {facility.is_new && (
+            <span className="rounded-full bg-foreground px-2 py-0.5 text-[10px] font-bold text-background uppercase">
+              Nové
             </span>
           )}
-          <span className="rounded-full bg-secondary px-2 py-0.5 text-[10px] font-medium text-secondary-foreground">
-            {CATEGORY_LABELS[facility.category]}
-          </span>
         </div>
 
         {/* Cards accepted */}
         {cardNames.length > 0 && (
-          <div className="flex items-center gap-1">
-            <Icon icon={ICONS.card} width={12} height={12} className="shrink-0 text-muted-foreground" />
-            <div className="flex flex-wrap gap-1">
-              {cardNames.map((name) => (
-                <span key={name} className="text-[10px] font-medium text-muted-foreground">
-                  {name}
-                </span>
-              ))}
-            </div>
+          <div className="flex items-center gap-1.5">
+            <Icon icon={ICONS.card} width={11} height={11} className="shrink-0 text-muted-foreground" />
+            <span className="text-[10px] text-muted-foreground">
+              {cardNames.join(" · ")}
+            </span>
           </div>
         )}
 
-        {/* Activity summary */}
+        {/* Activity summary - compact */}
         {facility.activity_summary ? (
-          <p className="text-[11px] leading-relaxed text-muted-foreground line-clamp-2">
+          <p className="text-[11px] leading-snug text-muted-foreground line-clamp-2">
             {facility.activity_summary}
           </p>
         ) : facility.activities.length > 0 ? (
-          <div className="flex flex-wrap gap-1">
-            {facility.activities.slice(0, 3).map((activity) => (
-              <span key={activity} className="rounded-full bg-secondary px-2 py-0.5 text-[10px] font-medium text-secondary-foreground">
-                {activity}
-              </span>
-            ))}
-            {facility.activities.length > 3 && (
-              <span className="text-[10px] text-muted-foreground">+{facility.activities.length - 3}</span>
-            )}
-          </div>
+          <p className="text-[11px] text-muted-foreground line-clamp-1">
+            {facility.activities.slice(0, 4).join(" · ")}
+          </p>
         ) : null}
 
-        {/* Crowd estimate */}
+        {/* Crowd */}
         <CrowdBadge level={facility.crowdLevel} goodTimes={facility.goodTimes} />
 
         {/* Actions */}
@@ -206,29 +200,45 @@ export function FacilityCard({ facility, className }: FacilityCardProps) {
             href={mapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-1 items-center justify-center gap-2 rounded-full bg-foreground px-4 py-3 text-sm font-semibold text-background transition-all hover:opacity-90 active:scale-[0.97]"
+            className="flex flex-1 items-center justify-center gap-1.5 rounded-full bg-foreground px-4 py-2.5 text-[13px] font-semibold text-background transition-all active:scale-[0.97]"
           >
             <Icon icon={ICONS.navigate} width={14} height={14} />
             Navigovat
           </a>
-          {facility.website_url && (
+          {hasLinks && (
             <a
-              href={facility.website_url}
+              href={facilityLink!}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center rounded-full border border-border px-3.5 py-3 transition-all hover:bg-secondary active:scale-[0.97]"
+              className="flex items-center justify-center rounded-full border border-border px-3.5 py-2.5 transition-all hover:bg-secondary active:scale-[0.97]"
             >
               <Icon icon={ICONS.externalLink} width={14} height={14} />
             </a>
           )}
         </div>
 
-        {/* Updated timestamp */}
-        {facility.updated_at && (
-          <p className="text-center text-[9px] text-muted-foreground/50">
-            Aktualizováno {new Date(facility.updated_at).toLocaleDateString("cs-CZ")}
-          </p>
-        )}
+        {/* Footer: links + updated */}
+        <div className="flex items-center justify-between pt-0.5">
+          {/* Social links */}
+          <div className="flex items-center gap-2">
+            {facility.facebook_url && (
+              <a href={facility.facebook_url} target="_blank" rel="noopener noreferrer" className="text-muted-foreground/60 hover:text-foreground transition-colors">
+                <span className="text-[10px] font-medium">FB</span>
+              </a>
+            )}
+            {facility.instagram_url && (
+              <a href={facility.instagram_url} target="_blank" rel="noopener noreferrer" className="text-muted-foreground/60 hover:text-foreground transition-colors">
+                <span className="text-[10px] font-medium">IG</span>
+              </a>
+            )}
+          </div>
+          {/* Updated timestamp */}
+          {facility.updated_at && (
+            <span className="text-[9px] text-muted-foreground/40">
+              {new Date(facility.updated_at).toLocaleDateString("cs-CZ")}
+            </span>
+          )}
+        </div>
       </div>
     </div>
   );
