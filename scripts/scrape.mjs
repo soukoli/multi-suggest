@@ -85,7 +85,7 @@ function mapCategory(iconName, activities, facilityName = "") {
   if (acts.includes("swim") || acts.includes("plav") || acts.includes("aqua")) return "swimming";
   if (acts.includes("sauna") || acts.includes("wellness") || acts.includes("masáž") || acts.includes("massage") || acts.includes("salt cave")) return "wellness";
   if (acts.includes("yoga") || acts.includes("jóga") || acts.includes("pilates") || acts.includes("health exercise")) return "yoga";
-  if (acts.includes("paddle") || acts.includes("kajak") || acts.includes("canoe")) return "water";
+  if (acts.includes("paddle") || acts.includes("kajak") || acts.includes("canoe")) return "swimming";
   if (acts.includes("tennis") || acts.includes("squash") || acts.includes("badminton") || acts.includes("table tennis") || acts.includes("padel")) return "sports";
   if (acts.includes("climbing") || acts.includes("bouldering") || acts.includes("lezení")) return "climbing";
   if (acts.includes("dance") || acts.includes("zumba") || acts.includes("bodystyling") || acts.includes("aerobic") || acts.includes("spinning")) return "group";
@@ -95,7 +95,7 @@ function mapCategory(iconName, activities, facilityName = "") {
   if (name.includes("yoga") || name.includes("jóga") || name.includes("pilates")) return "yoga";
   if (name.includes("bazén") || name.includes("plaveck") || name.includes("aqua") || name.includes("swim")) return "swimming";
   if (name.includes("sauna") || name.includes("wellness") || name.includes("spa") || name.includes("lázně")) return "wellness";
-  if (name.includes("paddle") || name.includes("sup ") || name.includes("kajak") || name.includes("lodě")) return "water";
+  if (name.includes("paddle") || name.includes("sup ") || name.includes("kajak") || name.includes("lodě")) return "swimming";
   if (name.includes("tenis") || name.includes("squash") || name.includes("padel") || name.includes("badminton")) return "sports";
   if (name.includes("lezeck") || name.includes("boulder") || name.includes("climbing")) return "climbing";
   if (name.includes("dance") || name.includes("tanec") || name.includes("zumba")) return "group";

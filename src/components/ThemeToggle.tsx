@@ -3,19 +3,22 @@
 import { Icon } from "@iconify/react";
 import { useThemeStore } from "@/store/useThemeStore";
 import { ICONS } from "@/lib/icons";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
+
+const subscribe = (cb: () => void) => {
+  const mql = window.matchMedia("(prefers-color-scheme: dark)");
+  mql.addEventListener("change", cb);
+  return () => mql.removeEventListener("change", cb);
+};
+
+const getSystemDark = () =>
+  typeof window !== "undefined" &&
+  window.matchMedia("(prefers-color-scheme: dark)").matches;
 
 export function ThemeToggle() {
   const { theme, toggleTheme } = useThemeStore();
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    if (theme === "system") {
-      setIsDark(window.matchMedia("(prefers-color-scheme: dark)").matches);
-    } else {
-      setIsDark(theme === "dark");
-    }
-  }, [theme]);
+  const systemDark = useSyncExternalStore(subscribe, getSystemDark, () => false);
+  const isDark = theme === "system" ? systemDark : theme === "dark";
 
   return (
     <button

@@ -5,7 +5,6 @@ export type Category =
   | "swimming"
   | "wellness"
   | "yoga"
-  | "water"
   | "group"
   | "sports"
   | "climbing"
@@ -72,27 +71,12 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   swimming: "Plavání",
   wellness: "Wellness",
   yoga: "Jóga",
-  water: "Voda",
   group: "Lekce",
   sports: "Sporty",
   climbing: "Lezení",
-  kids: "Pro děti",
+  kids: "Děti",
   outdoor: "Outdoor",
   other: "Ostatní",
-};
-
-export const CATEGORY_ICONS: Record<Category, string> = {
-  fitness: "Dumbbell",
-  swimming: "Waves",
-  wellness: "Flame",
-  yoga: "Heart",
-  water: "Ship",
-  group: "Users",
-  sports: "Ball",
-  climbing: "Mountain",
-  kids: "Baby",
-  outdoor: "Tree",
-  other: "MapPin",
 };
 
 /** Card type display names */

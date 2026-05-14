@@ -26,11 +26,6 @@ const CATEGORY_PLACEHOLDERS: Record<Category, string[]> = {
     "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=600&fit=crop&q=80",
     "https://images.unsplash.com/photo-1588286840104-8957b019727f?w=800&h=600&fit=crop&q=80",
   ],
-  water: [
-    "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1526290300288-74e93680c09e?w=800&h=600&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1530053969600-caed2596d242?w=800&h=600&fit=crop&q=80",
-  ],
   group: [
     "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&h=600&fit=crop&q=80",
     "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=600&fit=crop&q=80",

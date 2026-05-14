@@ -72,7 +72,6 @@ export const ICONS = {
   swimming: "solar:swimming-linear",
   wellness: "solar:fire-linear",
   yoga: "solar:meditation-linear",
-  water: "solar:waterdrops-linear",
   group: "solar:running-linear",
   sports: "solar:tennis-linear",
   climbing: "solar:hiking-linear",

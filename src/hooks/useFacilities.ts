@@ -59,11 +59,11 @@ async function fetchFromStatic(
 ): Promise<FacilitiesResponse> {
   // Dynamic import to avoid bundling in production when worker is available
   const mod = await import("@/data/facilities.json");
-  const raw = mod.default as any;
+  const raw = mod.default as { facilities?: Facility[]; scraped_at?: string } | Facility[];
 
   // Handle both old format (array) and new format (object with facilities key)
   let facilities: Facility[] = Array.isArray(raw) ? raw : (raw.facilities || []);
-  const scrapedAt = Array.isArray(raw) ? null : raw.scraped_at;
+  const scrapedAt = Array.isArray(raw) ? null : (raw.scraped_at || null);
 
   // Apply filters
   if (category) {
@@ -187,7 +187,7 @@ export function useRandomFacility() {
   const { activeCategory, freeOnly, kidsOnly } = useFilterStore();
 
   return useQuery({
-    queryKey: ["random-facility", lat, lng, activeCategory, freeOnly, kidsOnly, Date.now()],
+    queryKey: ["random-facility", lat, lng, activeCategory, freeOnly, kidsOnly],
     queryFn: async (): Promise<{ facility: FacilityWithMeta | null }> => {
       let response: FacilitiesResponse;
 

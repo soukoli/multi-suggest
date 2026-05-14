@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { Icon } from "@iconify/react";
 import { useFilterStore } from "@/store/useFilterStore";
 import { Category, CATEGORY_LABELS } from "@/lib/types";
@@ -17,7 +16,6 @@ const categories: Category[] = [
   "climbing",
   "outdoor",
   "kids",
-  "water",
 ];
 
 export function CategoryPills() {

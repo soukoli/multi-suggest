@@ -13,6 +13,38 @@ export interface Env {
   DB: D1Database;
 }
 
+interface FacilityRow {
+  id: string;
+  name: string;
+  address: string;
+  city: string;
+  lat: number;
+  lng: number;
+  category: string;
+  activities: string;
+  image_url: string | null;
+  website_url: string | null;
+  phone: string | null;
+  email: string | null;
+  description: string | null;
+  is_new: number;
+  recommended: number;
+  additional_payment: number;
+  additional_payment_desc: string | null;
+  active_cards: string;
+  kids_activities: number;
+  gallery_images: string;
+  parking: string | null;
+  only_virtual_card: number;
+  activity_summary: string | null;
+  self_service: number;
+  self_service_times: string | null;
+  unlimited_oh: number;
+  facebook_url: string | null;
+  instagram_url: string | null;
+  updated_at: string;
+}
+
 interface MultiSportFeature {
   type: "Feature";
   id: string;
@@ -356,7 +388,7 @@ async function handleFacilitiesApi(url: URL, env: Env): Promise<Response> {
   const limit = parseInt(url.searchParams.get("limit") || "50");
 
   // Build query
-  let whereConditions = ["1=1"];
+  const whereConditions = ["1=1"];
   const params: (string | number)[] = [];
 
   if (category) {
@@ -399,7 +431,7 @@ async function handleFacilitiesApi(url: URL, env: Env): Promise<Response> {
   const result = await env.DB.prepare(query).bind(...params).all();
 
   // Enrich with distance and parse JSON fields
-  const facilities = (result.results || []).map((row: any) => {
+  const facilities = (result.results || []).map((row: FacilityRow) => {
     const distance = haversineDistance(lat, lng, row.lat, row.lng);
     return {
       id: row.id,
@@ -436,10 +468,10 @@ async function handleFacilitiesApi(url: URL, env: Env): Promise<Response> {
   });
 
   // Sort by distance
-  facilities.sort((a: any, b: any) => a.distance - b.distance);
+  facilities.sort((a: { distance: number }, b: { distance: number }) => a.distance - b.distance);
 
   // Filter by exact radius (haversine, not bounding box)
-  const filtered = facilities.filter((f: any) => f.distance <= radius).slice(0, limit);
+  const filtered = facilities.filter((f: { distance: number }) => f.distance <= radius).slice(0, limit);
 
   // Get last sync time
   const syncResult = await env.DB.prepare(
@@ -511,8 +543,8 @@ export default {
       try {
         const result = await scrapeFacilities(env);
         return jsonResponse(result);
-      } catch (err: any) {
-        return jsonResponse({ error: err.message }, 500);
+      } catch (err: unknown) {
+        return jsonResponse({ error: err instanceof Error ? err.message : "Unknown error" }, 500);
       }
     }
 

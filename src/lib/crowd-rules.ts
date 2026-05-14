@@ -55,12 +55,6 @@ const CROWD_RULES: Record<Category, CrowdSchedule> = {
     busy: [[8, 10]],
     full: [[17, 20]],
   },
-  water: {
-    empty: [[6, 9]],
-    ok: [[9, 16]],
-    busy: [[16, 19]],
-    full: [],
-  },
   group: {
     empty: [[6, 8], [14, 16]],
     ok: [[8, 10], [12, 14], [20, 22]],

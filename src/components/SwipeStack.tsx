@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback } from "react";
 import { motion, AnimatePresence, PanInfo } from "framer-motion";
 import { Icon } from "@iconify/react";
 import { FacilityWithMeta } from "@/lib/types";
@@ -15,12 +15,14 @@ interface SwipeStackProps {
 export function SwipeStack({ facilities, onEmpty }: SwipeStackProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState<"left" | "right" | null>(null);
+  const [prevFacilities, setPrevFacilities] = useState(facilities);
 
   // Reset index when facilities change (category filter changed)
-  useEffect(() => {
+  if (prevFacilities !== facilities) {
+    setPrevFacilities(facilities);
     setCurrentIndex(0);
     setDirection(null);
-  }, [facilities]);
+  }
 
   const currentFacility = facilities[currentIndex];
   const nextFacility = facilities[currentIndex + 1];
