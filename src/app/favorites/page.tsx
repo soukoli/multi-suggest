@@ -1,13 +1,14 @@
 "use client";
 
 import { useEffect } from "react";
+import { Icon } from "@iconify/react";
 import { useFavoritesStore } from "@/store/useFavoritesStore";
 import { useFacilities } from "@/hooks/useFacilities";
 import { useLocationStore } from "@/store/useLocationStore";
 import { CrowdBadge } from "@/components/CrowdBadge";
 import { getPlaceholderImage } from "@/lib/placeholders";
 import { formatDistance } from "@/lib/geo";
-import { Heart, Navigation, HeartOff } from "lucide-react";
+import { ICONS } from "@/lib/icons";
 import { cn } from "@/lib/utils";
 
 export default function FavoritesPage() {
@@ -36,7 +37,7 @@ export default function FavoritesPage() {
       <div className="flex flex-col gap-3 px-4">
         {favoriteFacilities.length === 0 && (
           <div className="flex flex-col items-center gap-3 py-20">
-            <HeartOff className="h-10 w-10 text-muted-foreground/50" />
+            <Icon icon={ICONS.heartBroken} width={40} height={40} className="text-muted-foreground/50" />
             <p className="text-center text-muted-foreground">
               Zatím nemáš žádná oblíbená místa.
               <br />
@@ -87,7 +88,7 @@ export default function FavoritesPage() {
                       onClick={() => removeFavorite(facility.id)}
                       className="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary transition-colors"
                     >
-                      <Heart className="h-3.5 w-3.5 fill-red-500 text-red-500" />
+                      <Icon icon={ICONS.heartFilled} width={14} height={14} className="text-red-500" />
                     </button>
                     <a
                       href={mapsUrl}
@@ -95,7 +96,7 @@ export default function FavoritesPage() {
                       rel="noopener noreferrer"
                       className="flex h-8 w-8 items-center justify-center rounded-lg bg-foreground text-background transition-opacity hover:opacity-90"
                     >
-                      <Navigation className="h-3.5 w-3.5" />
+                      <Icon icon={ICONS.navigate} width={14} height={14} />
                     </a>
                   </div>
                 </div>

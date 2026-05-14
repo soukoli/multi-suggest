@@ -1,28 +1,33 @@
 "use client";
 
 import { useEffect } from "react";
+import { useThemeStore } from "@/store/useThemeStore";
 
 /**
- * Detects system color scheme preference and applies 'dark' class to <html>
- * Follows system preference automatically.
+ * Applies theme class to <html> based on store preference or system default.
  */
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
+  const theme = useThemeStore((s) => s.theme);
+
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
-    function applyTheme(dark: boolean) {
-      document.documentElement.classList.toggle("dark", dark);
+    function applyTheme() {
+      let isDark: boolean;
+      if (theme === "system") {
+        isDark = mediaQuery.matches;
+      } else {
+        isDark = theme === "dark";
+      }
+      document.documentElement.classList.toggle("dark", isDark);
     }
 
-    // Initial application
-    applyTheme(mediaQuery.matches);
+    applyTheme();
 
-    // Listen for changes
-    const handler = (e: MediaQueryListEvent) => applyTheme(e.matches);
+    const handler = () => applyTheme();
     mediaQuery.addEventListener("change", handler);
-
     return () => mediaQuery.removeEventListener("change", handler);
-  }, []);
+  }, [theme]);
 
   return <>{children}</>;
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import "@/lib/icons";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useState } from "react";
 import { ThemeProvider } from "./ThemeProvider";

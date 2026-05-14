@@ -19,14 +19,14 @@ export function CrowdBadge({ level, goodTimes, className }: CrowdBadgeProps) {
     <div className={cn("flex flex-col gap-0.5", className)}>
       <div className="flex items-center gap-2">
         <span
-          className={cn("h-2 w-2 rounded-full animate-pulse", dotColor)}
+          className={cn("h-1.5 w-1.5 rounded-full", dotColor)}
         />
         <span className={cn("text-sm font-medium", textColor)}>
           {label}
         </span>
       </div>
       {goodTimes && (
-        <span className="text-xs text-muted-foreground pl-4">
+        <span className="text-[11px] text-muted-foreground pl-3.5">
           Dobré časy: {goodTimes}
         </span>
       )}

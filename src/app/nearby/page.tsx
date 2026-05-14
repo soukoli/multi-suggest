@@ -1,14 +1,17 @@
 "use client";
 
 import { useEffect } from "react";
+import { Icon } from "@iconify/react";
 import { useFacilities } from "@/hooks/useFacilities";
 import { useLocationStore } from "@/store/useLocationStore";
 import { useFavoritesStore } from "@/store/useFavoritesStore";
 import { CategoryPills } from "@/components/CategoryPills";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { CrowdBadge } from "@/components/CrowdBadge";
 import { formatDistance } from "@/lib/geo";
 import { getPlaceholderImage } from "@/lib/placeholders";
-import { Heart, Navigation, Loader2 } from "lucide-react";
+import { ICONS } from "@/lib/icons";
+import { CARD_LABELS } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
 export default function NearbyPage() {
@@ -23,27 +26,31 @@ export default function NearbyPage() {
   return (
     <div className="flex flex-col">
       {/* Header */}
-      <header className="px-4 pt-4 pb-1">
-        <h1 className="text-2xl font-bold tracking-tight">Nearby</h1>
-        <p className="text-sm text-muted-foreground">
-          Seřazeno podle vzdálenosti
-        </p>
+      <header className="flex items-center justify-between px-5 pt-5 pb-1">
+        <div>
+          <h1 className="text-2xl font-bold tracking-tight">Nearby</h1>
+          <p className="text-xs text-muted-foreground">
+            Seřazeno podle vzdálenosti
+          </p>
+        </div>
+        <ThemeToggle />
       </header>
 
       {/* Category filter */}
       <CategoryPills />
 
       {/* List */}
-      <div className="flex flex-col gap-3 px-4 pt-2">
+      <div className="flex flex-col gap-3 px-4 pt-2 pb-4">
         {isLoading && (
           <div className="flex items-center justify-center py-20">
-            <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
+            <Icon icon={ICONS.spinner} width={24} height={24} className="animate-spin text-muted-foreground" />
           </div>
         )}
 
         {data?.facilities?.map((facility) => {
           const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${facility.lat},${facility.lng}`;
           const fav = isFavorite(facility.id);
+          const cardNames = facility.active_cards?.map(c => CARD_LABELS[c.id] || c.name) || [];
 
           return (
             <div
@@ -74,6 +81,25 @@ export default function NearbyPage() {
                   <p className="mt-0.5 text-xs text-muted-foreground line-clamp-1">
                     {facility.address}
                   </p>
+                  {/* Card types + badges */}
+                  <div className="mt-1 flex flex-wrap items-center gap-1">
+                    {cardNames.slice(0, 3).map((name) => (
+                      <span
+                        key={name}
+                        className="rounded-full bg-secondary px-2 py-0.5 text-[10px] font-medium text-secondary-foreground"
+                      >
+                        {name}
+                      </span>
+                    ))}
+                    {facility.additional_payment && (
+                      <span className="rounded-full bg-amber-100 dark:bg-amber-900/30 px-2 py-0.5 text-[10px] font-medium text-amber-800 dark:text-amber-300">
+                        + příplatek
+                      </span>
+                    )}
+                    {facility.kids_activities && (
+                      <Icon icon={ICONS.kids} width={12} height={12} className="text-muted-foreground" />
+                    )}
+                  </div>
                 </div>
 
                 <div className="mt-1.5 flex items-center justify-between">
@@ -84,12 +110,12 @@ export default function NearbyPage() {
                       onClick={() => toggleFavorite(facility.id)}
                       className="flex h-8 w-8 items-center justify-center rounded-lg bg-secondary transition-colors"
                     >
-                      <Heart
+                      <Icon
+                        icon={fav ? ICONS.heartFilled : ICONS.heart}
+                        width={14}
+                        height={14}
                         className={cn(
-                          "h-3.5 w-3.5",
-                          fav
-                            ? "fill-red-500 text-red-500"
-                            : "text-muted-foreground"
+                          fav ? "text-red-500" : "text-muted-foreground"
                         )}
                       />
                     </button>
@@ -99,7 +125,7 @@ export default function NearbyPage() {
                       rel="noopener noreferrer"
                       className="flex h-8 w-8 items-center justify-center rounded-lg bg-foreground text-background transition-opacity hover:opacity-90"
                     >
-                      <Navigation className="h-3.5 w-3.5" />
+                      <Icon icon={ICONS.navigate} width={14} height={14} />
                     </a>
                   </div>
                 </div>

@@ -61,6 +61,36 @@ const CROWD_RULES: Record<Category, CrowdSchedule> = {
     busy: [[16, 19]],
     full: [],
   },
+  group: {
+    empty: [[6, 8], [14, 16]],
+    ok: [[8, 10], [12, 14], [20, 22]],
+    busy: [[10, 12]],
+    full: [[17, 20]],
+  },
+  sports: {
+    empty: [[7, 9]],
+    ok: [[9, 16], [21, 23]],
+    busy: [[16, 18]],
+    full: [[18, 21]],
+  },
+  climbing: {
+    empty: [[7, 10]],
+    ok: [[10, 16], [20, 22]],
+    busy: [[16, 18]],
+    full: [[18, 20]],
+  },
+  kids: {
+    empty: [[7, 9]],
+    ok: [[9, 11], [14, 16]],
+    busy: [[11, 14]],
+    full: [[16, 18]],
+  },
+  outdoor: {
+    empty: [[6, 9]],
+    ok: [[9, 17]],
+    busy: [[17, 20]],
+    full: [],
+  },
   other: {
     empty: [[7, 9]],
     ok: [

@@ -1,11 +1,13 @@
 "use client";
 
 import { useEffect } from "react";
+import { Icon } from "@iconify/react";
 import { SwipeStack } from "@/components/SwipeStack";
 import { CategoryPills } from "@/components/CategoryPills";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { useFacilities } from "@/hooks/useFacilities";
 import { useLocationStore } from "@/store/useLocationStore";
-import { Loader2 } from "lucide-react";
+import { ICONS } from "@/lib/icons";
 
 export default function DiscoverPage() {
   const { requestLocation } = useLocationStore();
@@ -18,21 +20,35 @@ export default function DiscoverPage() {
   return (
     <div className="flex flex-col">
       {/* Header */}
-      <header className="px-4 pt-4 pb-1">
-        <h1 className="text-2xl font-bold tracking-tight">Discover</h1>
-        <p className="text-sm text-muted-foreground">
-          Kam dnes s MultiSport kartou?
-        </p>
+      <header className="flex items-center justify-between px-5 pt-5 pb-1">
+        <div>
+          <h1 className="text-2xl font-bold tracking-tight">Discover</h1>
+          {data?.meta?.last_sync && (
+            <p className="text-[10px] text-muted-foreground/60 mt-0.5">
+              Data: {new Date(data.meta.last_sync).toLocaleDateString("cs-CZ")}
+            </p>
+          )}
+        </div>
+        <ThemeToggle />
       </header>
 
-      {/* Category filter */}
+      {/* Category + toggle filters */}
       <CategoryPills />
+
+      {/* Results count */}
+      {data?.meta && (
+        <div className="px-5 pb-1">
+          <span className="text-[11px] text-muted-foreground">
+            {data.meta.total} {data.meta.total === 1 ? "místo" : data.meta.total < 5 ? "místa" : "míst"} v okruhu {data.meta.radius_km} km
+          </span>
+        </div>
+      )}
 
       {/* Card stack */}
       <div className="flex-1 pt-2">
         {isLoading && (
           <div className="flex items-center justify-center py-20">
-            <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
+            <Icon icon={ICONS.spinner} width={24} height={24} className="animate-spin text-muted-foreground" />
           </div>
         )}
 

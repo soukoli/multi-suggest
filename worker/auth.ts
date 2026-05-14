@@ -147,7 +147,7 @@ function generateToken(salt: string, uuid: string, offset: number): string {
   const interval = 1000 * 60 + 1; // 60001
   const adjustedTime = Date.now() + offset;
   const timeValue = new Date((adjustedTime + interval) - (adjustedTime % interval)).getTime();
-  const timeHash = md5(timeValue.toString());
+  const timeHash = md5(timeValue.toString()).toLowerCase();
 
   // 6. Combine
   return `${transformed}:${timeHash}`;

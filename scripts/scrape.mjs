@@ -7,7 +7,7 @@
  * This script:
  * 1. Executes auth.js from MultiSport to get a valid JWT token
  * 2. Fetches all facility data from their API
- * 3. Filters to Prague, free-entry only
+ * 3. Filters to Prague
  * 4. Outputs to src/data/facilities.json (bundled with the frontend)
  * 
  * Run this periodically (weekly/monthly) and redeploy.
@@ -35,22 +35,60 @@ function isInPrague(lat, lng) {
 
 function mapCategory(iconName, activities, facilityName = "") {
   const icon = (iconName || "").toLowerCase();
-  const acts = activities.map(a => a.toLowerCase()).join(" ");
+  const acts = activities.map(a => (a.name || a).toLowerCase()).join(" ");
+  const actIcons = activities.map(a => (a.icon_name || "").toLowerCase()).join(" ");
   const name = facilityName.toLowerCase();
   
-  // Check icon_name first (most reliable)
-  if (icon.includes("fitness") || icon.includes("posilovn")) return "fitness";
-  if (icon.includes("swim") || icon.includes("plav") || icon.includes("bazen")) return "swimming";
-  if (icon.includes("wellness") || icon.includes("sauna")) return "wellness";
-  if (icon.includes("yoga") || icon.includes("joga")) return "yoga";
-  if (icon.includes("water") || icon.includes("paddle") || icon.includes("kajak")) return "water";
-  
-  // Check activities
+  // Direct icon_name mapping (most reliable - from API)
+  if (icon.includes("posilovn") || icon.includes("silove")) return "fitness";
+  if (icon.includes("bazen") || icon.includes("vodni") || icon.includes("plav")) return "swimming";
+  if (icon.includes("wellness") || icon.includes("relax")) return "wellness";
+  if (icon.includes("joga") || icon.includes("zdravotni")) return "yoga";
+  if (icon.includes("skupinove") || icon.includes("tanecni")) return "group";
+  if (icon.includes("raketove") || icon.includes("micove")) return "sports";
+  if (icon.includes("lezeck")) return "climbing";
+  if (icon.includes("rodice") || icon.includes("deti") || icon.includes("detmi")) return "kids";
+  if (icon.includes("sezonni") || icon.includes("ostatni")) return "outdoor";
+
+  // For "mix_aktivit" - analyze activities to determine best category
+  if (icon === "mix_aktivit" || icon === "") {
+    // Count activity icon_name occurrences to pick dominant category
+    const iconCounts = {};
+    for (const a of activities) {
+      const ai = (a.icon_name || "").toLowerCase();
+      if (ai) iconCounts[ai] = (iconCounts[ai] || 0) + 1;
+    }
+    
+    // Map activity icons to categories and pick dominant
+    for (const [ai, count] of Object.entries(iconCounts).sort((a, b) => b[1] - a[1])) {
+      if (ai.includes("posilovn") || ai.includes("silove")) return "fitness";
+      if (ai.includes("bazen") || ai.includes("vodni") || ai.includes("plav")) return "swimming";
+      if (ai.includes("wellness") || ai.includes("relax")) return "wellness";
+      if (ai.includes("joga") || ai.includes("zdravotni")) return "yoga";
+      if (ai.includes("skupinove") || ai.includes("tanecni")) return "group";
+      if (ai.includes("raketove") || ai.includes("micove")) return "sports";
+      if (ai.includes("lezeck")) return "climbing";
+    }
+  }
+
+  // Check activity icon_names (secondary)
+  if (actIcons.includes("posilovn")) return "fitness";
+  if (actIcons.includes("plav") || actIcons.includes("bazen") || actIcons.includes("vodni")) return "swimming";
+  if (actIcons.includes("wellness") || actIcons.includes("relax")) return "wellness";
+  if (actIcons.includes("joga") || actIcons.includes("zdravotni")) return "yoga";
+  if (actIcons.includes("skupinove") || actIcons.includes("tanecni")) return "group";
+  if (actIcons.includes("raketove") || actIcons.includes("micove")) return "sports";
+  if (actIcons.includes("lezeck")) return "climbing";
+
+  // Check activities text
   if (acts.includes("gym") || acts.includes("fitness") || acts.includes("circuit") || acts.includes("crossfit") || acts.includes("functional")) return "fitness";
   if (acts.includes("swim") || acts.includes("plav") || acts.includes("aqua")) return "swimming";
-  if (acts.includes("sauna") || acts.includes("wellness") || acts.includes("masáž") || acts.includes("massage")) return "wellness";
-  if (acts.includes("yoga") || acts.includes("jóga") || acts.includes("pilates")) return "yoga";
+  if (acts.includes("sauna") || acts.includes("wellness") || acts.includes("masáž") || acts.includes("massage") || acts.includes("salt cave")) return "wellness";
+  if (acts.includes("yoga") || acts.includes("jóga") || acts.includes("pilates") || acts.includes("health exercise")) return "yoga";
   if (acts.includes("paddle") || acts.includes("kajak") || acts.includes("canoe")) return "water";
+  if (acts.includes("tennis") || acts.includes("squash") || acts.includes("badminton") || acts.includes("table tennis") || acts.includes("padel")) return "sports";
+  if (acts.includes("climbing") || acts.includes("bouldering") || acts.includes("lezení")) return "climbing";
+  if (acts.includes("dance") || acts.includes("zumba") || acts.includes("bodystyling") || acts.includes("aerobic") || acts.includes("spinning")) return "group";
   
   // Fallback: check facility name
   if (name.includes("fitness") || name.includes("gym") || name.includes("posilovna") || name.includes("crossfit") || name.includes("fitko")) return "fitness";
@@ -58,6 +96,9 @@ function mapCategory(iconName, activities, facilityName = "") {
   if (name.includes("bazén") || name.includes("plaveck") || name.includes("aqua") || name.includes("swim")) return "swimming";
   if (name.includes("sauna") || name.includes("wellness") || name.includes("spa") || name.includes("lázně")) return "wellness";
   if (name.includes("paddle") || name.includes("sup ") || name.includes("kajak") || name.includes("lodě")) return "water";
+  if (name.includes("tenis") || name.includes("squash") || name.includes("padel") || name.includes("badminton")) return "sports";
+  if (name.includes("lezeck") || name.includes("boulder") || name.includes("climbing")) return "climbing";
+  if (name.includes("dance") || name.includes("tanec") || name.includes("zumba")) return "group";
   
   // Check common gym brand names
   if (name.includes("john reed") || name.includes("holmes place") || name.includes("balance club") || name.includes("gold's")) return "fitness";
@@ -169,6 +210,7 @@ async function main() {
 
   // Fetch details SEQUENTIALLY with delay (avoid rate limiting)
   const facilities = [];
+  const scrapeTimestamp = new Date().toISOString();
   
   for (let i = 0; i < pragueFeatures.length; i++) {
     const feature = pragueFeatures[i];
@@ -182,39 +224,69 @@ async function main() {
     // Detail API returns GeoJSON Feature with properties
     const detail = rawDetail?.properties || rawDetail;
     
-    // Skip if explicitly has surcharge
-    if (detail?.additional_payment) continue;
+    if (!detail) continue;
 
-    const activities = detail?.activity?.map(a => a.name) || [];
+    const activities = detail?.activity || [];
+    const activityNames = activities.map(a => a.name);
     const facilityName = detail?.name || feature.properties.name;
     const category = mapCategory(feature.properties.icon_name, activities, facilityName);
 
+    // Extract active cards
+    const activeCards = detail?.active_cards?.visible?.map(card => ({
+      name: card.name,
+      id: card.id,
+      description: card.description,
+    })) || [];
+
+    // Extract gallery images
+    const galleryImages = detail?.galery_images?.map(img => img.thumbnail_800_600).filter(Boolean) || [];
+
     facilities.push({
       id: String(feature.id),
-      name: detail?.name || feature.properties.name,
-      address: detail ? `${detail.street || ""} ${detail.number || ""}, ${detail.city || "Praha"}`.trim() : "",
+      name: facilityName,
+      address: `${detail.street || ""} ${detail.number || ""}, ${detail.city || "Praha"}`.trim(),
       city: detail?.city || "Praha",
       lat, lng,
       category,
-      activities,
+      activities: activityNames,
+      activity_summary: detail?.activity_summary || null,
       image_url: detail?.main_image?.thumbnail_800_600 || null,
+      gallery_images: galleryImages,
       website_url: detail?.website_url || null,
       phone: detail?.phone || null,
+      email: detail?.email || null,
       description: detail?.description || null,
       is_new: detail?.is_new || false,
       recommended: detail?.recommended || false,
+      additional_payment: detail?.additional_payment || false,
+      additional_payment_desc: detail?.additional_payment_desc || null,
+      active_cards: activeCards,
+      kids_activities: detail?.kids_activities || false,
+      only_virtual_card: detail?.only_virtual_card || false,
+      parking: detail?.parking || "Unknown",
+      self_service: detail?.self_service || false,
+      self_service_times: detail?.self_service_times || null,
+      unlimited_oh: detail?.unlimited_oh || false,
+      facebook_url: detail?.facebook_url || null,
+      instagram_url: detail?.instagram_url || null,
     });
 
     if (i % 10 === 0) {
-      process.stdout.write(`\r[Scrape] Progress: ${i}/${pragueFeatures.length} (${facilities.length} free)`);
+      process.stdout.write(`\r[Scrape] Progress: ${i}/${pragueFeatures.length} (${facilities.length} found)`);
     }
   }
 
-  console.log(`\n[Scrape] Final: ${facilities.length} free facilities in Prague`);
+  console.log(`\n[Scrape] Final: ${facilities.length} facilities in Prague`);
 
-  // Write output
+  // Write output with metadata
+  const output = {
+    scraped_at: scrapeTimestamp,
+    total: facilities.length,
+    facilities,
+  };
+  
   const outPath = resolve(__dirname, "../src/data/facilities.json");
-  writeFileSync(outPath, JSON.stringify(facilities, null, 2));
+  writeFileSync(outPath, JSON.stringify(output, null, 2));
   console.log(`[Done] Written to ${outPath}`);
 }
 

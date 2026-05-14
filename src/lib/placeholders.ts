@@ -31,6 +31,31 @@ const CATEGORY_PLACEHOLDERS: Record<Category, string[]> = {
     "https://images.unsplash.com/photo-1526290300288-74e93680c09e?w=800&h=600&fit=crop&q=80",
     "https://images.unsplash.com/photo-1530053969600-caed2596d242?w=800&h=600&fit=crop&q=80",
   ],
+  group: [
+    "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&h=600&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=600&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1524594152303-9fd13543fe6e?w=800&h=600&fit=crop&q=80",
+  ],
+  sports: [
+    "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=800&h=600&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=800&h=600&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1551773188-d4f40569fac4?w=800&h=600&fit=crop&q=80",
+  ],
+  climbing: [
+    "https://images.unsplash.com/photo-1522163182402-834f871fd851?w=800&h=600&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1564769662533-4f00a87b4056?w=800&h=600&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=800&h=600&fit=crop&q=80",
+  ],
+  kids: [
+    "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800&h=600&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1472162072942-cd5147eb3902?w=800&h=600&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=800&h=600&fit=crop&q=80",
+  ],
+  outdoor: [
+    "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=800&h=600&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&h=600&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1502904550040-7534597429ae?w=800&h=600&fit=crop&q=80",
+  ],
   other: [
     "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&h=600&fit=crop&q=80",
     "https://images.unsplash.com/photo-1486218119243-13883505764c?w=800&h=600&fit=crop&q=80",
