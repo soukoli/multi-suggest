@@ -1,21 +1,14 @@
 "use client";
 
-import { useEffect } from "react";
 import { Icon } from "@iconify/react";
 import { SwipeStack } from "@/components/SwipeStack";
 import { CategoryPills } from "@/components/CategoryPills";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { useFacilities } from "@/hooks/useFacilities";
-import { useLocationStore } from "@/store/useLocationStore";
 import { ICONS } from "@/lib/icons";
 
 export default function DiscoverPage() {
-  const { requestLocation } = useLocationStore();
   const { data, isLoading, error } = useFacilities();
-
-  useEffect(() => {
-    requestLocation();
-  }, [requestLocation]);
 
   return (
     <div className="flex flex-col">

@@ -82,8 +82,8 @@ export function SwipeStack({ facilities, onEmpty }: SwipeStackProps) {
         </span>
       </div>
 
-      {/* Card Stack */}
-      <div className="relative h-[580px]">
+      {/* Card Stack - responsive height */}
+      <div className="relative h-[calc(100dvh-280px)] min-h-[400px] max-h-[600px]">
         {/* Background card (next) */}
         {nextFacility && (
           <div className="absolute inset-x-2 inset-y-0 translate-y-2 scale-[0.96] opacity-50 blur-[0.5px]">

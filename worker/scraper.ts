@@ -11,6 +11,7 @@ import { getAccessToken } from "./auth";
 
 export interface Env {
   DB: D1Database;
+  SCRAPE_SECRET?: string;
 }
 
 interface FacilityRow {
@@ -146,7 +147,7 @@ function mapCategory(
   if (icon.includes("swim") || icon.includes("plav") || icon.includes("bazen")) return "swimming";
   if (icon.includes("wellness") || icon.includes("sauna") || icon.includes("relax")) return "wellness";
   if (icon.includes("joga") || icon.includes("yoga") || icon.includes("zdravotni")) return "yoga";
-  if (icon.includes("water") || icon.includes("paddle") || icon.includes("kajak") || icon.includes("vodni")) return "water";
+  if (icon.includes("water") || icon.includes("paddle") || icon.includes("kajak") || icon.includes("vodni")) return "swimming";
 
   // Check activity icon_names
   if (actIcons.includes("posilovn")) return "fitness";
@@ -159,14 +160,14 @@ function mapCategory(
   if (acts.includes("swim") || acts.includes("plav") || acts.includes("aqua")) return "swimming";
   if (acts.includes("sauna") || acts.includes("wellness") || acts.includes("massage") || acts.includes("masáž")) return "wellness";
   if (acts.includes("yoga") || acts.includes("jóga") || acts.includes("pilates")) return "yoga";
-  if (acts.includes("paddle") || acts.includes("kajak") || acts.includes("canoe")) return "water";
+  if (acts.includes("paddle") || acts.includes("kajak") || acts.includes("canoe")) return "swimming";
 
   // Fallback: check facility name
   if (name.includes("fitness") || name.includes("gym") || name.includes("posilovna") || name.includes("crossfit") || name.includes("fitko")) return "fitness";
   if (name.includes("yoga") || name.includes("jóga") || name.includes("pilates")) return "yoga";
   if (name.includes("bazén") || name.includes("plaveck") || name.includes("aqua") || name.includes("swim")) return "swimming";
   if (name.includes("sauna") || name.includes("wellness") || name.includes("spa") || name.includes("lázně")) return "wellness";
-  if (name.includes("paddle") || name.includes("sup ") || name.includes("kajak") || name.includes("lodě")) return "water";
+  if (name.includes("paddle") || name.includes("sup ") || name.includes("kajak") || name.includes("lodě")) return "swimming";
 
   // Common gym brand names
   if (name.includes("john reed") || name.includes("holmes place") || name.includes("balance club") || name.includes("gold's")) return "fitness";
@@ -352,9 +353,9 @@ async function scrapeFacilities(env: Env): Promise<{ total: number; inserted: nu
 // ============================================================
 
 const CORS_HEADERS = {
-  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Origin": "https://multisuggest.pages.dev",
   "Access-Control-Allow-Methods": "GET, OPTIONS",
-  "Access-Control-Allow-Headers": "Content-Type",
+  "Access-Control-Allow-Headers": "Content-Type, Authorization",
 };
 
 function jsonResponse(data: unknown, status = 200): Response {
@@ -381,11 +382,22 @@ function jsonResponse(data: unknown, status = 200): Response {
 async function handleFacilitiesApi(url: URL, env: Env): Promise<Response> {
   const lat = parseFloat(url.searchParams.get("lat") || "50.08");
   const lng = parseFloat(url.searchParams.get("lng") || "14.43");
-  const radius = parseFloat(url.searchParams.get("radius") || "10");
+  const radius = Math.min(parseFloat(url.searchParams.get("radius") || "10"), 50);
   const category = url.searchParams.get("category") || null;
   const freeOnly = url.searchParams.get("free_only") === "1";
   const kidsOnly = url.searchParams.get("kids") === "1";
-  const limit = parseInt(url.searchParams.get("limit") || "50");
+  const limit = Math.min(parseInt(url.searchParams.get("limit") || "50"), 200);
+
+  // Input validation
+  if (isNaN(lat) || isNaN(lng) || isNaN(radius) || isNaN(limit)) {
+    return jsonResponse({ error: "Invalid parameters" }, 400);
+  }
+  if (lat < -90 || lat > 90 || lng < -180 || lng > 180) {
+    return jsonResponse({ error: "Coordinates out of range" }, 400);
+  }
+  if (radius <= 0 || limit <= 0) {
+    return jsonResponse({ error: "Radius and limit must be positive" }, 400);
+  }
 
   // Build query
   const whereConditions = ["1=1"];
@@ -538,8 +550,15 @@ export default {
       return handleFacilitiesApi(url, env);
     }
 
-    // Manual scrape trigger
+    // Manual scrape trigger (requires SCRAPE_SECRET)
     if (url.pathname === "/scrape") {
+      const authHeader = request.headers.get("Authorization") || "";
+      const token = authHeader.replace("Bearer ", "");
+
+      if (!env.SCRAPE_SECRET || token !== env.SCRAPE_SECRET) {
+        return jsonResponse({ error: "Unauthorized" }, 401);
+      }
+
       try {
         const result = await scrapeFacilities(env);
         return jsonResponse(result);

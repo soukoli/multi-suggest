@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 import { FacilityWithMeta, CARD_LABELS, CATEGORY_LABELS } from "@/lib/types";
 import { formatDistance } from "@/lib/geo";
@@ -25,7 +25,7 @@ function getFacilityLink(facility: FacilityWithMeta): string | null {
   return null;
 }
 
-export function FacilityCard({ facility, className }: FacilityCardProps) {
+export const FacilityCard = React.memo(function FacilityCard({ facility, className }: FacilityCardProps) {
   const { isFavorite, toggleFavorite } = useFavoritesStore();
   const fav = isFavorite(facility.id);
   const [imageIndex, setImageIndex] = useState(0);
@@ -242,4 +242,4 @@ export function FacilityCard({ facility, className }: FacilityCardProps) {
       </div>
     </div>
   );
-}
+});

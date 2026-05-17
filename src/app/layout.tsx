@@ -39,12 +39,32 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Inline script to prevent theme FOUC - runs before React hydration
+  const themeScript = `
+    (function() {
+      try {
+        var stored = JSON.parse(localStorage.getItem('multisuggest-theme') || '{}');
+        var theme = stored.state && stored.state.theme;
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else if (theme === 'system' || !theme) {
+          if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+          }
+        }
+      } catch(e) {}
+    })();
+  `;
+
   return (
     <html
       lang="cs"
       className={`${inter.variable} h-full antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className="flex min-h-full flex-col bg-background text-foreground">
         <Providers>
           <main className="flex-1 pb-20 pt-[env(safe-area-inset-top)]">
