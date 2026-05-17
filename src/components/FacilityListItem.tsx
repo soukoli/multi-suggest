@@ -4,6 +4,7 @@ import React from "react";
 import { Icon } from "@iconify/react";
 import { FacilityWithMeta, CARD_LABELS } from "@/lib/types";
 import { formatDistance } from "@/lib/geo";
+import { formatAge } from "@/lib/format";
 import { getPlaceholderImage } from "@/lib/placeholders";
 import { CrowdBadge } from "./CrowdBadge";
 import { ICONS } from "@/lib/icons";
@@ -84,7 +85,14 @@ export const FacilityListItem = React.memo(function FacilityListItem({
         </div>
 
         <div className="mt-1 flex items-center justify-between">
-          <CrowdBadge level={facility.crowdLevel} />
+          <div className="flex items-center gap-2">
+            <CrowdBadge level={facility.crowdLevel} />
+            {facility.updated_at && (
+              <span className="text-[9px] text-muted-foreground/50">
+                {formatAge(facility.updated_at)}
+              </span>
+            )}
+          </div>
           <div className="flex gap-1">
             <button
               onClick={onToggleFavorite}

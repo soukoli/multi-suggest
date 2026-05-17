@@ -56,4 +56,20 @@ for (let batch = 0; batch < totalBatches; batch++) {
   try { execSync(`rm ${tmpFile}`); } catch {}
 }
 
+// Log success to sync_log
+const source = process.env.CI ? "ci" : "manual";
+const logSql = `INSERT INTO sync_log (started_at, finished_at, status, facilities_updated, source) VALUES (datetime('now'), datetime('now'), 'success', ${facilities.length}, '${source}');`;
+const logFile = resolve(__dirname, "../migrations/_seed_log.sql");
+writeFileSync(logFile, logSql);
+try {
+  execSync(`npx wrangler d1 execute multisuggest-db --file=${logFile} --remote`, {
+    cwd: resolve(__dirname, ".."),
+    stdio: "pipe",
+  });
+  console.log(`[Seed] Sync log written (source: ${source})`);
+} catch (err) {
+  console.warn("[Seed] Warning: could not write sync_log:", err.stderr?.toString().slice(0, 100));
+}
+try { execSync(`rm ${logFile}`); } catch {}
+
 console.log(`[Seed] Done! Seeded ${facilities.length} facilities into D1.`);

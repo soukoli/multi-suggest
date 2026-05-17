@@ -4,6 +4,7 @@ import { Icon } from "@iconify/react";
 import { SwipeStack } from "@/components/SwipeStack";
 import { CategoryPills } from "@/components/CategoryPills";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { SyncBadge } from "@/components/SyncBadge";
 import { useFacilities } from "@/hooks/useFacilities";
 import { ICONS } from "@/lib/icons";
 
@@ -14,13 +15,9 @@ export default function DiscoverPage() {
     <div className="flex flex-col">
       {/* Header */}
       <header className="flex items-center justify-between px-5 pt-5 pb-1">
-        <div>
+        <div className="flex items-center gap-2">
           <h1 className="text-2xl font-bold tracking-tight">Discover</h1>
-          {data?.meta?.last_sync && (
-            <p className="text-[10px] text-muted-foreground/60 mt-0.5">
-              Data: {new Date(data.meta.last_sync).toLocaleDateString("cs-CZ")}
-            </p>
-          )}
+          <SyncBadge lastSync={data?.meta?.last_sync} />
         </div>
         <ThemeToggle />
       </header>

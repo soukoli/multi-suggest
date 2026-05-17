@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 import { FacilityWithMeta, CARD_LABELS, CATEGORY_LABELS } from "@/lib/types";
 import { formatDistance } from "@/lib/geo";
+import { formatAge } from "@/lib/format";
 import { CrowdBadge } from "./CrowdBadge";
 import { useFavoritesStore } from "@/store/useFavoritesStore";
 import { ICONS } from "@/lib/icons";
@@ -235,7 +236,7 @@ export const FacilityCard = React.memo(function FacilityCard({ facility, classNa
           {/* Updated timestamp */}
           {facility.updated_at && (
             <span className="text-[9px] text-muted-foreground/40">
-              {new Date(facility.updated_at).toLocaleDateString("cs-CZ")}
+              {formatAge(facility.updated_at)}
             </span>
           )}
         </div>

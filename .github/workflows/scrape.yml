@@ -1,0 +1,45 @@
+name: Scrape & Sync MultiSport Data
+
+on:
+  # Weekly: Sunday at 04:00 UTC
+  schedule:
+    - cron: '0 4 * * 0'
+  # Manual trigger from GitHub UI
+  workflow_dispatch:
+
+jobs:
+  scrape-and-seed:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Scrape MultiSport data
+        run: node scripts/scrape.mjs
+        env:
+          NODE_OPTIONS: '--max-old-space-size=4096'
+
+      - name: Seed D1 database
+        run: node scripts/seed-d1.mjs
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+      - name: Commit updated facilities.json (fallback data)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/facilities.json
+          git diff --staged --quiet || git commit -m "chore: update facilities data [skip ci]"
+          git push

@@ -522,20 +522,6 @@ function haversineDistance(lat1: number, lng1: number, lat2: number, lng2: numbe
 // ============================================================
 
 export default {
-  // Cron trigger handler
-  async scheduled(
-    _event: ScheduledEvent,
-    env: Env,
-    _ctx: ExecutionContext
-  ): Promise<void> {
-    try {
-      const result = await scrapeFacilities(env);
-      console.log(`[Cron] Scrape complete: ${result.inserted}/${result.total}`);
-    } catch (err) {
-      console.error("[Cron] Scrape failed:", err);
-    }
-  },
-
   // HTTP handler
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
@@ -550,6 +536,11 @@ export default {
       return handleFacilitiesApi(url, env);
     }
 
+    // Health & sync status
+    if (url.pathname === "/health") {
+      return handleHealth(env);
+    }
+
     // Manual scrape trigger (requires SCRAPE_SECRET)
     if (url.pathname === "/scrape") {
       const authHeader = request.headers.get("Authorization") || "";
@@ -561,17 +552,57 @@ export default {
 
       try {
         const result = await scrapeFacilities(env);
+        // Log success to sync_log
+        await env.DB.prepare(
+          "INSERT INTO sync_log (started_at, finished_at, status, facilities_updated, source) VALUES (datetime('now'), datetime('now'), 'success', ?, 'manual')"
+        ).bind(result.inserted).run().catch(() => {});
         return jsonResponse(result);
       } catch (err: unknown) {
-        return jsonResponse({ error: err instanceof Error ? err.message : "Unknown error" }, 500);
+        const errorMsg = err instanceof Error ? err.message : "Unknown error";
+        // Log failure to sync_log
+        await env.DB.prepare(
+          "INSERT INTO sync_log (started_at, finished_at, status, error_message, source) VALUES (datetime('now'), datetime('now'), 'failed', ?, 'manual')"
+        ).bind(errorMsg).run().catch(() => {});
+        return jsonResponse({ error: errorMsg }, 500);
       }
     }
 
-    // Health check
-    if (url.pathname === "/health") {
-      return jsonResponse({ status: "ok", time: new Date().toISOString() });
-    }
-
-    return new Response("MultiSuggest API Worker", { status: 200 });
+    return new Response("MultiSuggest API", { status: 200 });
   },
 };
+
+/**
+ * GET /health - sync status & monitoring
+ */
+async function handleHealth(env: Env): Promise<Response> {
+  const totalResult = await env.DB.prepare(
+    "SELECT COUNT(*) as total FROM facilities"
+  ).first<{ total: number }>();
+
+  const lastSyncResult = await env.DB.prepare(
+    "SELECT MAX(updated_at) as last_sync FROM facilities"
+  ).first<{ last_sync: string }>();
+
+  // Try to read from sync_log (may not exist yet)
+  let lastLog = null;
+  try {
+    lastLog = await env.DB.prepare(
+      "SELECT * FROM sync_log ORDER BY id DESC LIMIT 1"
+    ).first();
+  } catch {
+    // sync_log table might not exist yet
+  }
+
+  const lastSync = lastSyncResult?.last_sync || null;
+  const syncAgeMs = lastSync ? Date.now() - new Date(lastSync).getTime() : null;
+  const syncAgeHours = syncAgeMs ? Math.round(syncAgeMs / 3600000) : null;
+
+  return jsonResponse({
+    status: "ok",
+    total_facilities: totalResult?.total || 0,
+    last_sync: lastSync,
+    sync_age_hours: syncAgeHours,
+    stale: syncAgeHours !== null && syncAgeHours > 168, // >7 days
+    last_log: lastLog,
+  });
+}
