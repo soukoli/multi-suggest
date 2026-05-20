@@ -218,8 +218,14 @@ async function main() {
     
     const rawDetail = await fetchDetail(feature.id, token);
     
-    // Wait between requests (1 second)
-    await sleep(2000);
+    // Wait between requests (3 seconds to avoid rate limiting)
+    await sleep(3000);
+
+    // Extra pause every 30 requests (rate-limit safety)
+    if (i > 0 && i % 30 === 0) {
+      console.log(`\n[Scrape] Pausing 30s after ${i} requests...`);
+      await sleep(30000);
+    }
     
     // Detail API returns GeoJSON Feature with properties
     const detail = rawDetail?.properties || rawDetail;
