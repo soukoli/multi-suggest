@@ -219,7 +219,7 @@ async function main() {
     const rawDetail = await fetchDetail(feature.id, token);
     
     // Wait between requests (1 second)
-    await sleep(1000);
+    await sleep(2000);
     
     // Detail API returns GeoJSON Feature with properties
     const detail = rawDetail?.properties || rawDetail;
