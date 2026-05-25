@@ -3,6 +3,7 @@
 import { Icon } from "@iconify/react";
 import { SwipeStack } from "@/components/SwipeStack";
 import { CategoryPills } from "@/components/CategoryPills";
+import { RadiusSlider } from "@/components/RadiusSlider";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { SyncBadge } from "@/components/SyncBadge";
 import { useFacilities } from "@/hooks/useFacilities";
@@ -25,17 +26,11 @@ export default function DiscoverPage() {
       {/* Category + toggle filters */}
       <CategoryPills />
 
-      {/* Results count */}
-      {data?.meta && (
-        <div className="px-5 pb-1">
-          <span className="text-[11px] text-muted-foreground">
-            {data.meta.total} {data.meta.total === 1 ? "místo" : data.meta.total < 5 ? "místa" : "míst"} v okruhu {data.meta.radius_km} km
-          </span>
-        </div>
-      )}
+      {/* Radius slider + results count */}
+      <RadiusSlider totalResults={data?.meta?.total} />
 
       {/* Card stack */}
-      <div className="flex-1 pt-2">
+      <div className="flex-1 pt-1">
         {isLoading && (
           <div className="flex items-center justify-center py-20">
             <Icon icon={ICONS.spinner} width={24} height={24} className="animate-spin text-muted-foreground" />

@@ -17,7 +17,7 @@ export function SwipeStack({ facilities, onEmpty }: SwipeStackProps) {
   const [direction, setDirection] = useState<"left" | "right" | null>(null);
   const [prevFacilities, setPrevFacilities] = useState(facilities);
 
-  // Reset index when facilities change (category filter changed)
+  // Reset index when facilities array changes
   if (prevFacilities !== facilities) {
     setPrevFacilities(facilities);
     setCurrentIndex(0);
@@ -26,24 +26,36 @@ export function SwipeStack({ facilities, onEmpty }: SwipeStackProps) {
 
   const currentFacility = facilities[currentIndex];
   const nextFacility = facilities[currentIndex + 1];
+  const prevFacility = facilities[currentIndex - 1];
 
   const handleNext = useCallback(() => {
     if (currentIndex < facilities.length - 1) {
+      setDirection("left");
       setCurrentIndex((i) => i + 1);
     } else {
       onEmpty?.();
     }
   }, [currentIndex, facilities.length, onEmpty]);
 
+  const handlePrev = useCallback(() => {
+    if (currentIndex > 0) {
+      setDirection("right");
+      setCurrentIndex((i) => i - 1);
+    }
+  }, [currentIndex]);
+
   const handleDragEnd = (
     _: MouseEvent | TouchEvent | PointerEvent,
     info: PanInfo
   ) => {
-    const threshold = 100;
+    const threshold = 80;
 
-    if (Math.abs(info.offset.x) > threshold) {
-      setDirection(info.offset.x > 0 ? "right" : "left");
+    if (info.offset.x < -threshold) {
+      // Swiped LEFT → next card
       handleNext();
+    } else if (info.offset.x > threshold) {
+      // Swiped RIGHT → previous card
+      handlePrev();
     }
   };
 
@@ -69,25 +81,15 @@ export function SwipeStack({ facilities, onEmpty }: SwipeStackProps) {
 
   return (
     <div className="relative mx-auto w-full max-w-sm px-5">
-      {/* Progress indicator */}
-      <div className="mb-4 flex items-center justify-center gap-2">
-        <div className="h-0.5 flex-1 rounded-full bg-border overflow-hidden">
-          <div
-            className="h-full rounded-full bg-foreground/60 transition-all duration-300"
-            style={{ width: `${((currentIndex + 1) / facilities.length) * 100}%` }}
-          />
-        </div>
-        <span className="text-[11px] font-medium tabular-nums text-muted-foreground">
-          {currentIndex + 1}/{facilities.length}
-        </span>
-      </div>
-
       {/* Card Stack - responsive height */}
       <div className="relative h-[calc(100dvh-280px)] min-h-[400px] max-h-[600px]">
-        {/* Background card (next) */}
-        {nextFacility && (
-          <div className="absolute inset-x-2 inset-y-0 translate-y-2 scale-[0.96] opacity-50 blur-[0.5px]">
-            <FacilityCard facility={nextFacility} className="h-full" />
+        {/* Background card (next or prev depending on direction) */}
+        {(direction === "left" ? nextFacility : prevFacility || nextFacility) && (
+          <div className="absolute inset-x-2 inset-y-0 translate-y-2 scale-[0.96] opacity-40">
+            <FacilityCard
+              facility={(direction === "right" && prevFacility) ? prevFacility : (nextFacility || currentFacility)}
+              className="h-full"
+            />
           </div>
         )}
 
@@ -98,22 +100,47 @@ export function SwipeStack({ facilities, onEmpty }: SwipeStackProps) {
             className="absolute inset-0 cursor-grab active:cursor-grabbing"
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
-            dragElastic={0.7}
+            dragElastic={0.6}
             onDragEnd={handleDragEnd}
-            initial={{ scale: 0.95, opacity: 0, y: 10 }}
-            animate={{ scale: 1, opacity: 1, y: 0 }}
+            initial={{
+              x: direction === "left" ? 300 : direction === "right" ? -300 : 0,
+              scale: 0.9,
+              opacity: 0,
+            }}
+            animate={{ x: 0, scale: 1, opacity: 1 }}
             exit={{
-              x: direction === "right" ? 300 : -300,
+              x: direction === "left" ? -300 : 300,
               opacity: 0,
               scale: 0.85,
-              rotate: direction === "right" ? 8 : -8,
-              transition: { duration: 0.35, ease: "easeOut" },
+              rotate: direction === "left" ? -6 : 6,
+              transition: { duration: 0.3, ease: "easeOut" },
             }}
-            transition={{ type: "spring", stiffness: 280, damping: 24 }}
+            transition={{ type: "spring", stiffness: 300, damping: 26 }}
           >
             <FacilityCard facility={currentFacility} className="h-full" />
           </motion.div>
         </AnimatePresence>
+      </div>
+
+      {/* Position indicator + counter */}
+      <div className="mt-3 flex items-center justify-center gap-3">
+        <button
+          onClick={handlePrev}
+          disabled={currentIndex === 0}
+          className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-foreground disabled:opacity-30 transition-opacity"
+        >
+          <span className="text-sm">←</span>
+        </button>
+        <span className="text-[12px] font-medium tabular-nums text-muted-foreground">
+          {currentIndex + 1} / {facilities.length}
+        </span>
+        <button
+          onClick={handleNext}
+          disabled={currentIndex >= facilities.length - 1}
+          className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-foreground disabled:opacity-30 transition-opacity"
+        >
+          <span className="text-sm">→</span>
+        </button>
       </div>
     </div>
   );

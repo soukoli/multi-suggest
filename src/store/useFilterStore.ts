@@ -10,12 +10,14 @@ interface FilterState {
   parkingOnly: boolean;
   searchQuery: string;
   filtersOpen: boolean;
+  radius: number; // km
   setCategory: (category: Category | null) => void;
   setFreeOnly: (value: boolean) => void;
   setKidsOnly: (value: boolean) => void;
   setParkingOnly: (value: boolean) => void;
   setSearchQuery: (query: string) => void;
   setFiltersOpen: (open: boolean) => void;
+  setRadius: (km: number) => void;
   clearFilters: () => void;
   activeFilterCount: () => number;
 }
@@ -27,6 +29,7 @@ export const useFilterStore = create<FilterState>((set, get) => ({
   parkingOnly: false,
   searchQuery: "",
   filtersOpen: false,
+  radius: 10,
 
   setCategory: (category: Category | null) => {
     set({ activeCategory: category });
@@ -50,6 +53,10 @@ export const useFilterStore = create<FilterState>((set, get) => ({
 
   setFiltersOpen: (open: boolean) => {
     set({ filtersOpen: open });
+  },
+
+  setRadius: (km: number) => {
+    set({ radius: km });
   },
 
   clearFilters: () => {

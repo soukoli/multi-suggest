@@ -22,12 +22,13 @@ async function fetchFromWorker(
   lng: number,
   category: string | null,
   freeOnly: boolean,
-  kidsOnly: boolean
+  kidsOnly: boolean,
+  radius: number = 10
 ): Promise<FacilitiesResponse> {
   const params = new URLSearchParams({
     lat: lat.toString(),
     lng: lng.toString(),
-    radius: "10",
+    radius: radius.toString(),
     limit: "100",
   });
 
@@ -55,7 +56,8 @@ async function fetchFromStatic(
   lng: number,
   category: string | null,
   freeOnly: boolean,
-  kidsOnly: boolean
+  kidsOnly: boolean,
+  radius: number = 10
 ): Promise<FacilitiesResponse> {
   // Dynamic import to avoid bundling in production when worker is available
   const mod = await import("@/data/facilities.json");
@@ -110,15 +112,15 @@ async function fetchFromStatic(
   // Sort by distance
   enriched.sort((a, b) => a.distance - b.distance);
 
-  // Filter by radius (10km)
-  const results = enriched.filter((f) => f.distance <= 10);
+  // Filter by radius
+  const results = enriched.filter((f) => f.distance <= radius);
 
   return {
     facilities: results,
     meta: {
       total: results.length,
       last_sync: scrapedAt,
-      radius_km: 10,
+      radius_km: radius,
     },
   };
 }
@@ -129,15 +131,15 @@ async function fetchFromStatic(
  */
 export function useFacilities() {
   const { lat, lng } = useLocationStore();
-  const { activeCategory, freeOnly, kidsOnly, parkingOnly, searchQuery } = useFilterStore();
+  const { activeCategory, freeOnly, kidsOnly, parkingOnly, searchQuery, radius } = useFilterStore();
 
   return useQuery({
-    queryKey: ["facilities", lat, lng, activeCategory, freeOnly, kidsOnly, parkingOnly, searchQuery],
+    queryKey: ["facilities", lat, lng, activeCategory, freeOnly, kidsOnly, parkingOnly, searchQuery, radius],
     queryFn: async (): Promise<FacilitiesResponse> => {
       let response: FacilitiesResponse;
 
       try {
-        response = await fetchFromWorker(lat, lng, activeCategory, freeOnly, kidsOnly);
+        response = await fetchFromWorker(lat, lng, activeCategory, freeOnly, kidsOnly, radius);
 
         // Enrich with crowd data (worker doesn't compute this)
         response.facilities = response.facilities.map((f) => ({
@@ -148,7 +150,7 @@ export function useFacilities() {
         }));
       } catch (err) {
         console.warn("[useFacilities] Worker API unavailable, using static data:", err);
-        response = await fetchFromStatic(lat, lng, activeCategory, freeOnly, kidsOnly);
+        response = await fetchFromStatic(lat, lng, activeCategory, freeOnly, kidsOnly, radius);
       }
 
       // Client-side filters (not sent to Worker API)
