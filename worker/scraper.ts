@@ -602,7 +602,7 @@ async function handleHealth(env: Env): Promise<Response> {
     total_facilities: totalResult?.total || 0,
     last_sync: lastSync,
     sync_age_hours: syncAgeHours,
-    stale: syncAgeHours !== null && syncAgeHours > 168, // >7 days
+    stale: syncAgeHours !== null && syncAgeHours > 48, // >2 days
     last_log: lastLog,
   });
 }
