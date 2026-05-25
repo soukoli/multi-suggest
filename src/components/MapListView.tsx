@@ -9,7 +9,7 @@ import { ICONS } from "@/lib/icons";
 
 const MapView = dynamic(() => import("@/components/MapView").then(m => ({ default: m.MapView })), {
   ssr: false,
-  loading: () => <div className="h-full w-full bg-muted animate-pulse" />,
+  loading: () => <div className="h-full w-full bg-muted/50 animate-pulse" />,
 });
 
 interface MapListViewProps {
@@ -21,14 +21,6 @@ interface MapListViewProps {
   emptyState?: React.ReactNode;
 }
 
-/**
- * Split view: map always visible on top (30%), scrollable list below.
- * 
- * Interactions:
- * - Click 🗺 button on list item → map zooms to that facility
- * - Click marker on map → scrolls list to that item + highlights it
- * - Click name/thumbnail → opens facility portal (external link)
- */
 export function MapListView({
   facilities,
   isLoading,
@@ -39,7 +31,6 @@ export function MapListView({
 }: MapListViewProps) {
   const [focusedId, setFocusedId] = useState<string | null>(null);
 
-  // When marker clicked on map → scroll to item in list
   const handleMarkerClick = useCallback((facilityId: string) => {
     setFocusedId(facilityId);
     setTimeout(() => {
@@ -52,15 +43,14 @@ export function MapListView({
     }, 100);
   }, []);
 
-  // When map icon clicked in list → zoom map to that facility
   const handleShowOnMap = useCallback((facility: FacilityWithMeta) => {
     setFocusedId(facility.id);
   }, []);
 
   return (
-    <div className="flex flex-col h-[calc(100dvh-5rem)] overflow-hidden">
-      {/* Map section - always visible, 30% height */}
-      <div className="h-[30%] min-h-[160px] shrink-0 relative">
+    <div className="flex flex-col h-[calc(100dvh-5rem)] overflow-hidden bg-background">
+      {/* Map - full width, no padding, no rounded */}
+      <div className="h-[30dvh] min-h-[150px] max-h-[250px] shrink-0">
         {!isLoading && facilities.length > 0 ? (
           <MapView
             facilities={facilities}
@@ -69,21 +59,24 @@ export function MapListView({
             className="h-full w-full"
           />
         ) : (
-          <div className="h-full w-full bg-muted flex items-center justify-center">
+          <div className="h-full w-full bg-muted/30 flex items-center justify-center">
             {isLoading ? (
               <Icon icon={ICONS.spinner} width={20} height={20} className="animate-spin text-muted-foreground" />
             ) : (
-              <span className="text-xs text-muted-foreground">Žádná místa k zobrazení</span>
+              <span className="text-xs text-muted-foreground/60">Žádná místa k zobrazení</span>
             )}
           </div>
         )}
       </div>
 
-      {/* List section - scrollable */}
-      <div className="flex-1 overflow-y-auto overscroll-contain border-t border-border/30">
+      {/* Glass separator */}
+      <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+
+      {/* List section - scrollable, glass background */}
+      <div className="flex-1 overflow-y-auto overscroll-contain">
         {headerContent}
 
-        <div className="flex flex-col gap-2.5 px-4 pb-4">
+        <div className="flex flex-col gap-2 px-3 pb-4">
           {isLoading && (
             <div className="flex justify-center py-8">
               <Icon icon={ICONS.spinner} width={20} height={20} className="animate-spin text-muted-foreground" />

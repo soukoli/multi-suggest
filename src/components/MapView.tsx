@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useCallback } from "react";
 import { FacilityWithMeta, Category } from "@/lib/types";
 import { useLocationStore } from "@/store/useLocationStore";
+import { useThemeStore } from "@/store/useThemeStore";
 
 interface MapViewProps {
   facilities: FacilityWithMeta[];
@@ -11,7 +12,6 @@ interface MapViewProps {
   className?: string;
 }
 
-/** Category emoji icons for map markers */
 const CATEGORY_EMOJI: Record<Category, string> = {
   fitness: "💪",
   swimming: "🏊",
@@ -28,18 +28,20 @@ const CATEGORY_EMOJI: Record<Category, string> = {
 const LIGHT_TILES = "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png";
 const DARK_TILES = "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png";
 
-/**
- * Leaflet map with category emoji markers.
- * Supports: dark/light tiles, marker click callbacks, focus on specific facility.
- */
 export function MapView({ facilities, focusedId, onMarkerClick, className }: MapViewProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<L.Map | null>(null);
   const tileLayerRef = useRef<L.TileLayer | null>(null);
   const markersRef = useRef<L.Layer[]>([]);
   const { lat, lng } = useLocationStore();
+  const theme = useThemeStore((s) => s.theme);
 
-  const isDark = typeof document !== "undefined" && document.documentElement.classList.contains("dark");
+  // Derive isDark reactively from store
+  const getIsDark = useCallback(() => {
+    if (theme === "dark") return true;
+    if (theme === "light") return false;
+    return typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  }, [theme]);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -49,7 +51,6 @@ export function MapView({ facilities, focusedId, onMarkerClick, className }: Map
     import("leaflet").then((L) => {
       if (destroyed || !containerRef.current) return;
 
-      // Inject leaflet CSS once
       if (!document.getElementById("leaflet-css")) {
         const link = document.createElement("link");
         link.id = "leaflet-css";
@@ -58,7 +59,8 @@ export function MapView({ facilities, focusedId, onMarkerClick, className }: Map
         document.head.appendChild(link);
       }
 
-      // Create or update map
+      const isDark = getIsDark();
+
       if (!mapRef.current) {
         mapRef.current = L.map(containerRef.current!, {
           zoomControl: false,
@@ -88,7 +90,7 @@ export function MapView({ facilities, focusedId, onMarkerClick, className }: Map
         const isFocused = facility.id === focusedId;
 
         const icon = L.divIcon({
-          html: `<div style="font-size:${isFocused ? "28px" : "20px"};line-height:1;text-align:center;filter:drop-shadow(0 1px 2px rgba(0,0,0,0.4));transition:transform 0.2s;${isFocused ? "transform:scale(1.3);" : ""}">${emoji}</div>`,
+          html: `<div style="font-size:${isFocused ? "26px" : "18px"};line-height:1;text-align:center;filter:drop-shadow(0 1px 3px rgba(0,0,0,0.5));transition:all 0.2s;">${emoji}</div>`,
           className: "leaflet-emoji-marker",
           iconSize: [28, 28],
           iconAnchor: [14, 14],
@@ -96,20 +98,16 @@ export function MapView({ facilities, focusedId, onMarkerClick, className }: Map
 
         const marker = L.marker([facility.lat, facility.lng], { icon }).addTo(map);
 
-        // Popup
         marker.bindPopup(
-          `<div style="font-family:system-ui;font-size:12px;line-height:1.4;min-width:100px;cursor:pointer;" data-facility-id="${facility.id}">
+          `<div style="font-family:system-ui;font-size:12px;line-height:1.4;min-width:100px;">
             <strong>${facility.name}</strong>
             ${!facility.additional_payment ? '<br/><span style="color:#16a34a;font-size:11px;">Zdarma</span>' : ""}
-            <br/><span style="color:#666;font-size:10px;">Klikni pro detail</span>
           </div>`,
           { closeButton: false, offset: [0, -8] }
         );
 
-        // On popup open + click → trigger callback
         marker.on("click", () => {
           if (onMarkerClick) {
-            // Small delay so popup shows first
             setTimeout(() => onMarkerClick(facility.id), 300);
           }
         });
@@ -119,38 +117,35 @@ export function MapView({ facilities, focusedId, onMarkerClick, className }: Map
 
       // User position
       const userMarker = L.circleMarker([lat, lng], {
-        radius: 8,
+        radius: 7,
         fillColor: "#3b82f6",
         color: "#fff",
-        weight: 3,
+        weight: 2.5,
         fillOpacity: 1,
       }).addTo(map);
       markersRef.current.push(userMarker);
 
-      // Handle focus: zoom to focused facility
+      // Focus or fit bounds
       if (focusedId) {
         const focused = facilities.find(f => f.id === focusedId);
         if (focused) {
           map.setView([focused.lat, focused.lng], 15, { animate: true });
         }
       } else if (facilities.length > 0) {
-        // Fit all markers in view
         const bounds = L.latLngBounds(
           facilities.map((f) => [f.lat, f.lng] as [number, number])
         );
         bounds.extend([lat, lng]);
-        map.fitBounds(bounds, { padding: [40, 40], maxZoom: 14 });
+        map.fitBounds(bounds, { padding: [30, 30], maxZoom: 14 });
       }
 
       setTimeout(() => map.invalidateSize(), 150);
     });
 
-    return () => {
-      destroyed = true;
-    };
-  }, [lat, lng, facilities, isDark, focusedId, onMarkerClick]);
+    return () => { destroyed = true; };
+  }, [lat, lng, facilities, focusedId, onMarkerClick, getIsDark]);
 
-  // Full cleanup on unmount
+  // Cleanup on unmount
   useEffect(() => {
     return () => {
       if (mapRef.current) {
