@@ -5,6 +5,7 @@ import { Icon } from "@iconify/react";
 import { useFacilities } from "@/hooks/useFacilities";
 import { useFavoritesStore } from "@/store/useFavoritesStore";
 import { CategoryPills } from "@/components/CategoryPills";
+import { RadiusSlider } from "@/components/RadiusSlider";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { MapSheetLayout } from "@/components/MapSheetLayout";
 import { FacilityListItem } from "@/components/FacilityListItem";
@@ -41,13 +42,7 @@ export default function NearbyPage() {
     <MapSheetLayout mapContent={mapContent}>
       <CategoryPills />
 
-      {data?.meta && (
-        <div className="px-4 pb-2">
-          <span className="text-[11px] text-muted-foreground">
-            {data.meta.total} míst v okruhu {data.meta.radius_km} km
-          </span>
-        </div>
-      )}
+      <RadiusSlider totalResults={data?.meta?.total} />
 
       <div className="flex flex-col gap-2.5 px-4 pb-4">
         {isLoading && (

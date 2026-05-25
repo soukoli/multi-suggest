@@ -23,7 +23,7 @@ export function RadiusSlider({ totalResults }: RadiusSliderProps) {
       <input
         type="range"
         min={1}
-        max={20}
+        max={30}
         step={1}
         value={radius}
         onChange={(e) => setRadius(parseInt(e.target.value))}
