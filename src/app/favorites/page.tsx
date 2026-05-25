@@ -1,22 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import dynamic from "next/dynamic";
 import { Icon } from "@iconify/react";
 import { useFavoritesStore } from "@/store/useFavoritesStore";
 import { useFacilities } from "@/hooks/useFacilities";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { MapSheetLayout } from "@/components/MapSheetLayout";
-import { FacilityListItem } from "@/components/FacilityListItem";
+import { SyncBadge } from "@/components/SyncBadge";
+import { MapListView } from "@/components/MapListView";
 import { ICONS } from "@/lib/icons";
 
-const MapView = dynamic(() => import("@/components/MapView").then(m => ({ default: m.MapView })), {
-  ssr: false,
-  loading: () => <div className="h-full w-full bg-muted animate-pulse" />,
-});
-
 export default function FavoritesPage() {
-  const { favorites, removeFavorite } = useFavoritesStore();
+  const { favorites, removeFavorite, isFavorite } = useFavoritesStore();
   const { data } = useFacilities();
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -33,27 +27,17 @@ export default function FavoritesPage() {
     );
   }
 
-  const mapContent = (
-    <div className="h-full w-full relative">
-      {favoriteFacilities.length > 0 ? (
-        <MapView facilities={favoriteFacilities} className="h-full w-full" />
-      ) : (
-        <div className="h-full w-full bg-muted flex items-center justify-center">
-          <span className="text-xs text-muted-foreground">Přidej oblíbená místa</span>
-        </div>
-      )}
-      <div className="absolute top-0 inset-x-0 flex items-center justify-between px-4 pt-3 pointer-events-none">
-        <div className="pointer-events-auto">
+  const headerContent = (
+    <>
+      {/* Header */}
+      <div className="flex items-center justify-between px-4 pt-3 pb-1">
+        <div className="flex items-center gap-2">
           <h1 className="text-lg font-bold tracking-tight">Favorites</h1>
-          <p className="text-[10px] text-muted-foreground">{favorites.length} uložených</p>
+          <SyncBadge lastSync={data?.meta?.last_sync} />
         </div>
-        <div className="pointer-events-auto"><ThemeToggle /></div>
+        <ThemeToggle />
       </div>
-    </div>
-  );
 
-  return (
-    <MapSheetLayout mapContent={mapContent}>
       {/* Search */}
       {favorites.length > 0 && (
         <div className="px-4 pb-2 pt-1">
@@ -74,37 +58,31 @@ export default function FavoritesPage() {
           </div>
         </div>
       )}
+    </>
+  );
 
-      {/* Empty state */}
-      {favorites.length === 0 && (
-        <div className="flex flex-col items-center gap-3 py-16 px-4">
-          <Icon icon={ICONS.heartBroken} width={36} height={36} className="text-muted-foreground/40" />
-          <p className="text-center text-sm text-muted-foreground">
-            Zatím nemáš žádná oblíbená místa.
-            <br />
-            Ulož si je srdíčkem z Discover nebo Nearby.
+  return (
+    <MapListView
+      facilities={favoriteFacilities}
+      headerContent={headerContent}
+      isFavorite={isFavorite}
+      onToggleFavorite={removeFavorite}
+      emptyState={
+        favorites.length === 0 ? (
+          <div className="flex flex-col items-center gap-3 py-16 px-4">
+            <Icon icon={ICONS.heartBroken} width={36} height={36} className="text-muted-foreground/40" />
+            <p className="text-center text-sm text-muted-foreground">
+              Zatím nemáš žádná oblíbená místa.
+              <br />
+              Ulož si je srdíčkem z Discover nebo Nearby.
+            </p>
+          </div>
+        ) : searchQuery ? (
+          <p className="py-10 text-center text-sm text-muted-foreground">
+            Žádné výsledky pro &quot;{searchQuery}&quot;
           </p>
-        </div>
-      )}
-
-      {/* No results */}
-      {favoriteFacilities.length === 0 && favorites.length > 0 && searchQuery && (
-        <p className="py-10 text-center text-sm text-muted-foreground px-4">
-          Žádné výsledky pro &quot;{searchQuery}&quot;
-        </p>
-      )}
-
-      {/* List */}
-      <div className="flex flex-col gap-2.5 px-4 pb-4">
-        {favoriteFacilities.map((facility) => (
-          <FacilityListItem
-            key={facility.id}
-            facility={facility}
-            isFavorite={true}
-            onToggleFavorite={() => removeFavorite(facility.id)}
-          />
-        ))}
-      </div>
-    </MapSheetLayout>
+        ) : null
+      }
+    />
   );
 }

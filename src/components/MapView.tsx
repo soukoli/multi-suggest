@@ -6,6 +6,8 @@ import { useLocationStore } from "@/store/useLocationStore";
 
 interface MapViewProps {
   facilities: FacilityWithMeta[];
+  focusedId?: string | null;
+  onMarkerClick?: (facilityId: string) => void;
   className?: string;
 }
 
@@ -28,16 +30,15 @@ const DARK_TILES = "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.pn
 
 /**
  * Leaflet map with category emoji markers.
- * Supports dark/light mode tile switching.
+ * Supports: dark/light tiles, marker click callbacks, focus on specific facility.
  */
-export function MapView({ facilities, className }: MapViewProps) {
+export function MapView({ facilities, focusedId, onMarkerClick, className }: MapViewProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<L.Map | null>(null);
   const tileLayerRef = useRef<L.TileLayer | null>(null);
   const markersRef = useRef<L.Layer[]>([]);
   const { lat, lng } = useLocationStore();
 
-  // Detect dark mode
   const isDark = typeof document !== "undefined" && document.documentElement.classList.contains("dark");
 
   useEffect(() => {
@@ -68,8 +69,6 @@ export function MapView({ facilities, className }: MapViewProps) {
           maxZoom: 19,
         }).addTo(mapRef.current);
       } else {
-        mapRef.current.setView([lat, lng], mapRef.current.getZoom());
-        // Update tile layer for theme
         if (tileLayerRef.current) {
           tileLayerRef.current.setUrl(isDark ? DARK_TILES : LIGHT_TILES);
         }
@@ -77,7 +76,7 @@ export function MapView({ facilities, className }: MapViewProps) {
 
       const map = mapRef.current;
 
-      // Clear ALL old markers first
+      // Clear old markers
       for (const m of markersRef.current) {
         map.removeLayer(m);
       }
@@ -86,9 +85,10 @@ export function MapView({ facilities, className }: MapViewProps) {
       // Add facility markers
       for (const facility of facilities) {
         const emoji = CATEGORY_EMOJI[facility.category] || "📍";
+        const isFocused = facility.id === focusedId;
 
         const icon = L.divIcon({
-          html: `<div style="font-size:20px;line-height:1;text-align:center;filter:drop-shadow(0 1px 2px rgba(0,0,0,0.4));">${emoji}</div>`,
+          html: `<div style="font-size:${isFocused ? "28px" : "20px"};line-height:1;text-align:center;filter:drop-shadow(0 1px 2px rgba(0,0,0,0.4));transition:transform 0.2s;${isFocused ? "transform:scale(1.3);" : ""}">${emoji}</div>`,
           className: "leaflet-emoji-marker",
           iconSize: [28, 28],
           iconAnchor: [14, 14],
@@ -96,13 +96,23 @@ export function MapView({ facilities, className }: MapViewProps) {
 
         const marker = L.marker([facility.lat, facility.lng], { icon }).addTo(map);
 
+        // Popup
         marker.bindPopup(
-          `<div style="font-family:system-ui;font-size:12px;line-height:1.4;min-width:100px;">
+          `<div style="font-family:system-ui;font-size:12px;line-height:1.4;min-width:100px;cursor:pointer;" data-facility-id="${facility.id}">
             <strong>${facility.name}</strong>
             ${!facility.additional_payment ? '<br/><span style="color:#16a34a;font-size:11px;">Zdarma</span>' : ""}
+            <br/><span style="color:#666;font-size:10px;">Klikni pro detail</span>
           </div>`,
           { closeButton: false, offset: [0, -8] }
         );
+
+        // On popup open + click → trigger callback
+        marker.on("click", () => {
+          if (onMarkerClick) {
+            // Small delay so popup shows first
+            setTimeout(() => onMarkerClick(facility.id), 300);
+          }
+        });
 
         markersRef.current.push(marker);
       }
@@ -117,13 +127,19 @@ export function MapView({ facilities, className }: MapViewProps) {
       }).addTo(map);
       markersRef.current.push(userMarker);
 
-      // Fit bounds
-      if (facilities.length > 0) {
+      // Handle focus: zoom to focused facility
+      if (focusedId) {
+        const focused = facilities.find(f => f.id === focusedId);
+        if (focused) {
+          map.setView([focused.lat, focused.lng], 15, { animate: true });
+        }
+      } else if (facilities.length > 0) {
+        // Fit all markers in view
         const bounds = L.latLngBounds(
           facilities.map((f) => [f.lat, f.lng] as [number, number])
         );
         bounds.extend([lat, lng]);
-        map.fitBounds(bounds, { padding: [30, 30], maxZoom: 14 });
+        map.fitBounds(bounds, { padding: [40, 40], maxZoom: 14 });
       }
 
       setTimeout(() => map.invalidateSize(), 150);
@@ -132,7 +148,7 @@ export function MapView({ facilities, className }: MapViewProps) {
     return () => {
       destroyed = true;
     };
-  }, [lat, lng, facilities, isDark]);
+  }, [lat, lng, facilities, isDark, focusedId, onMarkerClick]);
 
   // Full cleanup on unmount
   useEffect(() => {
