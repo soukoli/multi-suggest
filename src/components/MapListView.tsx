@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useCallback } from "react";
 import dynamic from "next/dynamic";
 import { Icon } from "@iconify/react";
 import { FacilityWithMeta } from "@/lib/types";
@@ -16,24 +15,19 @@ const MapView = dynamic(() => import("@/components/MapView").then(m => ({ defaul
 interface MapListViewProps {
   facilities: FacilityWithMeta[];
   isLoading?: boolean;
-  /** Header content rendered above the list (filters, search, etc.) */
   headerContent?: React.ReactNode;
-  /** Whether each item shows a "remove" heart (favorites) or toggle heart */
-  isFavoritePage?: boolean;
   isFavorite: (id: string) => boolean;
   onToggleFavorite: (id: string) => void;
   emptyState?: React.ReactNode;
 }
 
 /**
- * Shared map+list view for Nearby and Favorites pages.
- * 
- * Mobile: toggle between full-screen map and full-screen list via floating button.
- * Tablet+: split layout (map top, list bottom).
+ * Split view: map always visible on top (30%), scrollable list below.
  * 
  * Interactions:
- * - Click marker on map → show popup, switch to list & scroll to item
- * - Click facility in list → switch to map, center on facility
+ * - Click 🗺 button on list item → map zooms to that facility
+ * - Click marker on map → scrolls list to that item + highlights it
+ * - Click name/thumbnail → opens facility portal (external link)
  */
 export function MapListView({
   facilities,
@@ -43,150 +37,75 @@ export function MapListView({
   onToggleFavorite,
   emptyState,
 }: MapListViewProps) {
-  const [showMap, setShowMap] = useState(false);
   const [focusedId, setFocusedId] = useState<string | null>(null);
-  const listRef = useRef<HTMLDivElement>(null);
 
-  // When marker clicked on map → switch to list, scroll to item
+  // When marker clicked on map → scroll to item in list
   const handleMarkerClick = useCallback((facilityId: string) => {
     setFocusedId(facilityId);
-    setShowMap(false);
-    // Scroll to the item after switching to list
     setTimeout(() => {
       const el = document.getElementById(`facility-${facilityId}`);
       if (el) {
         el.scrollIntoView({ behavior: "smooth", block: "center" });
-        el.classList.add("ring-2", "ring-foreground/30");
-        setTimeout(() => el.classList.remove("ring-2", "ring-foreground/30"), 2000);
+        el.classList.add("ring-2", "ring-foreground/20");
+        setTimeout(() => el.classList.remove("ring-2", "ring-foreground/20"), 2500);
       }
-    }, 350);
+    }, 100);
   }, []);
 
-  // When list item clicked → switch to map, center on facility
-  const handleItemClick = useCallback((facility: FacilityWithMeta) => {
+  // When map icon clicked in list → zoom map to that facility
+  const handleShowOnMap = useCallback((facility: FacilityWithMeta) => {
     setFocusedId(facility.id);
-    setShowMap(true);
   }, []);
 
   return (
-    <div className="relative flex flex-col h-[calc(100dvh-5rem)] overflow-hidden">
-      {/* === MOBILE: Toggle between map and list === */}
-      <div className="sm:hidden flex-1 relative">
-        <AnimatePresence mode="wait" initial={false}>
-          {showMap ? (
-            <motion.div
-              key="map"
-              className="absolute inset-0"
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "tween", duration: 0.25, ease: "easeInOut" }}
-            >
-              <MapView
-                facilities={facilities}
-                focusedId={focusedId}
-                onMarkerClick={handleMarkerClick}
-                className="h-full w-full"
-              />
-            </motion.div>
-          ) : (
-            <motion.div
-              key="list"
-              className="absolute inset-0 overflow-y-auto overscroll-contain"
-              initial={{ x: "-100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "-100%" }}
-              transition={{ type: "tween", duration: 0.25, ease: "easeInOut" }}
-              ref={listRef}
-            >
-              {headerContent}
-
-              <div className="flex flex-col gap-2.5 px-4 pb-4">
-                {isLoading && (
-                  <div className="flex justify-center py-10">
-                    <Icon icon={ICONS.spinner} width={20} height={20} className="animate-spin text-muted-foreground" />
-                  </div>
-                )}
-
-                {!isLoading && facilities.length === 0 && emptyState}
-
-                {facilities.map((facility) => (
-                  <div
-                    key={facility.id}
-                    id={`facility-${facility.id}`}
-                    onClick={() => handleItemClick(facility)}
-                    className="cursor-pointer transition-all rounded-2xl"
-                  >
-                    <FacilityListItem
-                      facility={facility}
-                      isFavorite={isFavorite(facility.id)}
-                      onToggleFavorite={() => onToggleFavorite(facility.id)}
-                    />
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        {/* Floating toggle button */}
-        <button
-          onClick={() => setShowMap(!showMap)}
-          className="absolute bottom-4 right-4 z-20 flex h-12 w-12 items-center justify-center rounded-full bg-foreground text-background shadow-lg shadow-black/20 transition-transform active:scale-90"
-        >
-          {showMap ? (
-            <span className="text-sm font-bold">☰</span>
-          ) : (
-            <Icon icon={ICONS.nearby} width={20} height={20} />
-          )}
-        </button>
-      </div>
-
-      {/* === TABLET+: Split layout (map top, list bottom) === */}
-      <div className="hidden sm:flex sm:flex-col sm:flex-1">
-        {/* Map section */}
-        <div className="h-[35%] shrink-0 overflow-hidden">
+    <div className="flex flex-col h-[calc(100dvh-5rem)] overflow-hidden">
+      {/* Map section - always visible, 30% height */}
+      <div className="h-[30%] min-h-[160px] shrink-0 relative">
+        {!isLoading && facilities.length > 0 ? (
           <MapView
             facilities={facilities}
             focusedId={focusedId}
             onMarkerClick={handleMarkerClick}
             className="h-full w-full"
           />
-        </div>
-
-        {/* Divider */}
-        <div className="flex items-center justify-center py-1.5 bg-background border-t border-border/50">
-          <div className="h-1 w-8 rounded-full bg-muted-foreground/20" />
-        </div>
-
-        {/* List section */}
-        <div className="flex-1 overflow-y-auto overscroll-contain">
-          {headerContent}
-
-          <div className="flex flex-col gap-2.5 px-4 pb-4">
-            {isLoading && (
-              <div className="flex justify-center py-10">
-                <Icon icon={ICONS.spinner} width={20} height={20} className="animate-spin text-muted-foreground" />
-              </div>
+        ) : (
+          <div className="h-full w-full bg-muted flex items-center justify-center">
+            {isLoading ? (
+              <Icon icon={ICONS.spinner} width={20} height={20} className="animate-spin text-muted-foreground" />
+            ) : (
+              <span className="text-xs text-muted-foreground">Žádná místa k zobrazení</span>
             )}
-
-            {!isLoading && facilities.length === 0 && emptyState}
-
-            {facilities.map((facility) => (
-              <div
-                key={facility.id}
-                id={`facility-${facility.id}`}
-                onClick={() => handleItemClick(facility)}
-                className="cursor-pointer transition-all rounded-2xl"
-              >
-                <FacilityListItem
-                  facility={facility}
-                  isFavorite={isFavorite(facility.id)}
-                  onToggleFavorite={() => onToggleFavorite(facility.id)}
-                />
-              </div>
-            ))}
           </div>
+        )}
+      </div>
+
+      {/* List section - scrollable */}
+      <div className="flex-1 overflow-y-auto overscroll-contain border-t border-border/30">
+        {headerContent}
+
+        <div className="flex flex-col gap-2.5 px-4 pb-4">
+          {isLoading && (
+            <div className="flex justify-center py-8">
+              <Icon icon={ICONS.spinner} width={20} height={20} className="animate-spin text-muted-foreground" />
+            </div>
+          )}
+
+          {!isLoading && facilities.length === 0 && emptyState}
+
+          {facilities.map((facility) => (
+            <div
+              key={facility.id}
+              id={`facility-${facility.id}`}
+              className="transition-all duration-300 rounded-2xl"
+            >
+              <FacilityListItem
+                facility={facility}
+                isFavorite={isFavorite(facility.id)}
+                onToggleFavorite={() => onToggleFavorite(facility.id)}
+                onShowOnMap={() => handleShowOnMap(facility)}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </div>

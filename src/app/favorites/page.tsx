@@ -29,7 +29,6 @@ export default function FavoritesPage() {
 
   const headerContent = (
     <>
-      {/* Header */}
       <div className="flex items-center justify-between px-4 pt-3 pb-1">
         <div className="flex items-center gap-2">
           <h1 className="text-lg font-bold tracking-tight">Favorites</h1>
@@ -38,7 +37,6 @@ export default function FavoritesPage() {
         <ThemeToggle />
       </div>
 
-      {/* Search */}
       {favorites.length > 0 && (
         <div className="px-4 pb-2 pt-1">
           <div className="relative">
@@ -69,8 +67,8 @@ export default function FavoritesPage() {
       onToggleFavorite={removeFavorite}
       emptyState={
         favorites.length === 0 ? (
-          <div className="flex flex-col items-center gap-3 py-16 px-4">
-            <Icon icon={ICONS.heartBroken} width={36} height={36} className="text-muted-foreground/40" />
+          <div className="flex flex-col items-center gap-3 py-12 px-4">
+            <Icon icon={ICONS.heartBroken} width={32} height={32} className="text-muted-foreground/40" />
             <p className="text-center text-sm text-muted-foreground">
               Zatím nemáš žádná oblíbená místa.
               <br />

@@ -6,19 +6,20 @@ import { FacilityWithMeta, CARD_LABELS } from "@/lib/types";
 import { formatDistance } from "@/lib/geo";
 import { formatAge } from "@/lib/format";
 import { getPlaceholderImage } from "@/lib/placeholders";
-import { CrowdBadge } from "./CrowdBadge";
 import { ICONS } from "@/lib/icons";
 
 interface FacilityListItemProps {
   facility: FacilityWithMeta;
   isFavorite: boolean;
   onToggleFavorite: () => void;
+  onShowOnMap?: () => void;
 }
 
 export const FacilityListItem = React.memo(function FacilityListItem({
   facility,
   isFavorite,
   onToggleFavorite,
+  onShowOnMap,
 }: FacilityListItemProps) {
   const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${facility.lat},${facility.lng}`;
   const cardNames = facility.active_cards?.map(c => CARD_LABELS[c.id] || c.name) || [];
@@ -26,12 +27,13 @@ export const FacilityListItem = React.memo(function FacilityListItem({
 
   return (
     <div className="flex gap-3 rounded-2xl bg-card p-3 shadow-sm ring-1 ring-black/[0.04] dark:ring-white/[0.06]">
-      {/* Thumbnail */}
+      {/* Thumbnail - clickable → external portal */}
       <a
         href={facilityLink || mapsUrl}
         target="_blank"
         rel="noopener noreferrer"
         className="h-[72px] w-[72px] shrink-0 overflow-hidden rounded-xl bg-muted"
+        onClick={(e) => e.stopPropagation()}
       >
         <img
           src={facility.image_url || getPlaceholderImage(facility.id, facility.category)}
@@ -43,6 +45,7 @@ export const FacilityListItem = React.memo(function FacilityListItem({
 
       {/* Content */}
       <div className="flex flex-1 flex-col justify-between min-w-0">
+        {/* Top: name + distance */}
         <div>
           <div className="flex items-start justify-between gap-2">
             <a
@@ -50,6 +53,7 @@ export const FacilityListItem = React.memo(function FacilityListItem({
               target="_blank"
               rel="noopener noreferrer"
               className="text-[13px] font-semibold leading-tight hover:underline truncate"
+              onClick={(e) => e.stopPropagation()}
             >
               {facility.name}
             </a>
@@ -57,6 +61,7 @@ export const FacilityListItem = React.memo(function FacilityListItem({
               {formatDistance(facility.distance)}
             </span>
           </div>
+
           {/* Badges */}
           <div className="mt-1 flex flex-wrap items-center gap-1">
             {!facility.additional_payment ? (
@@ -81,38 +86,51 @@ export const FacilityListItem = React.memo(function FacilityListItem({
                 {cardNames.join(" · ")}
               </span>
             )}
-          </div>
-        </div>
-
-        <div className="mt-1 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <CrowdBadge level={facility.crowdLevel} />
             {facility.updated_at && (
-              <span className="text-[9px] text-muted-foreground/50">
+              <span className="text-[8px] text-muted-foreground/40 ml-auto">
                 {formatAge(facility.updated_at)}
               </span>
             )}
           </div>
-          <div className="flex gap-1">
+        </div>
+
+        {/* Bottom: 3 action buttons - larger, spaced */}
+        <div className="mt-2 flex items-center gap-2">
+          {/* Favorite */}
+          <button
+            onClick={(e) => { e.stopPropagation(); onToggleFavorite(); }}
+            className="flex h-9 w-9 items-center justify-center rounded-xl bg-secondary transition-colors active:scale-95"
+            aria-label={isFavorite ? "Odebrat z oblíbených" : "Přidat do oblíbených"}
+          >
+            <Icon
+              icon={isFavorite ? ICONS.heartFilled : ICONS.heart}
+              width={16} height={16}
+              className={isFavorite ? "text-red-500" : "text-muted-foreground"}
+            />
+          </button>
+
+          {/* Show on map */}
+          {onShowOnMap && (
             <button
-              onClick={onToggleFavorite}
-              className="flex h-7 w-7 items-center justify-center rounded-lg bg-secondary transition-colors"
+              onClick={(e) => { e.stopPropagation(); onShowOnMap(); }}
+              className="flex h-9 w-9 items-center justify-center rounded-xl bg-secondary transition-colors active:scale-95"
+              aria-label="Zobrazit na mapě"
             >
-              <Icon
-                icon={isFavorite ? ICONS.heartFilled : ICONS.heart}
-                width={12} height={12}
-                className={isFavorite ? "text-red-500" : "text-muted-foreground"}
-              />
+              <Icon icon={ICONS.nearby} width={16} height={16} className="text-muted-foreground" />
             </button>
-            <a
-              href={mapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex h-7 w-7 items-center justify-center rounded-lg bg-foreground text-background"
-            >
-              <Icon icon={ICONS.navigate} width={12} height={12} />
-            </a>
-          </div>
+          )}
+
+          {/* Navigate */}
+          <a
+            href={mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="flex h-9 w-9 items-center justify-center rounded-xl bg-foreground text-background transition-colors active:scale-95"
+            aria-label="Navigovat"
+          >
+            <Icon icon={ICONS.navigate} width={16} height={16} />
+          </a>
         </div>
       </div>
     </div>
