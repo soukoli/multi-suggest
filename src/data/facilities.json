@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-05-20T12:12:04.513Z",
-  "total": 16,
+  "scraped_at": "2026-05-27T07:54:14.206Z",
+  "total": 17,
   "facilities": [
     {
       "id": "3655",
@@ -317,54 +317,6 @@
       "instagram_url": "https://www.instagram.com/maxfitnessletisteruzyne/?hl=cs"
     },
     {
-      "id": "5001",
-      "name": "Kluziště Uhříněves",
-      "address": "nám. Bratří Jandusů 2/38, Praha",
-      "city": "Praha",
-      "lat": 50.0299494,
-      "lng": 14.6040781,
-      "category": "outdoor",
-      "activities": [
-        "Public skating"
-      ],
-      "activity_summary": "Public skating",
-      "image_url": null,
-      "gallery_images": [],
-      "website_url": "https://www.jdemebruslit.cz/vypiskluzist/kluzi%C5%A1t%C4%9B-uh%C5%99%C3%ADn%C4%9Bves",
-      "phone": "+420 775 708 706",
-      "email": "info@jdemebruslit.cz",
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": false,
-      "additional_payment_desc": null,
-      "active_cards": [
-        {
-          "name": "Stříbrná",
-          "id": 1,
-          "description": "Public skating"
-        },
-        {
-          "name": "Student",
-          "id": 4,
-          "description": "Public skating"
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Public skating"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": null,
-      "instagram_url": null
-    },
-    {
       "id": "1746",
       "name": "FITIMO - Cvičení pro ženy Modřany",
       "address": "Rakovského 3136/1, Praha",
@@ -409,6 +361,54 @@
           "name": "Student",
           "id": 4,
           "description": "Health lessons (Pilates, Pilates Energy, Physio circuit training, Yogalates, Yoga, Healthy back) with an additional payment of 30 CZK"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": null,
+      "instagram_url": null
+    },
+    {
+      "id": "5001",
+      "name": "Kluziště Uhříněves",
+      "address": "nám. Bratří Jandusů 2/38, Praha",
+      "city": "Praha",
+      "lat": 50.0299494,
+      "lng": 14.6040781,
+      "category": "outdoor",
+      "activities": [
+        "Public skating"
+      ],
+      "activity_summary": "Public skating",
+      "image_url": null,
+      "gallery_images": [],
+      "website_url": "https://www.jdemebruslit.cz/vypiskluzist/kluzi%C5%A1t%C4%9B-uh%C5%99%C3%ADn%C4%9Bves",
+      "phone": "+420 775 708 706",
+      "email": "info@jdemebruslit.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Public skating"
+        },
+        {
+          "name": "Student",
+          "id": 4,
+          "description": "Public skating"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Public skating"
         }
       ],
       "kids_activities": false,
@@ -845,6 +845,59 @@
       "unlimited_oh": false,
       "facebook_url": "https://www.facebook.com/share/17iJYNrwgM/",
       "instagram_url": "https://www.instagram.com/egogym_official?igsh=bWY4MmZmb3hvbXU3"
+    },
+    {
+      "id": "4317",
+      "name": "Mothergood",
+      "address": "Sudoměrská 1243/25, Praha",
+      "city": "Praha",
+      "lat": 50.0802056,
+      "lng": 14.4584564,
+      "category": "group",
+      "activities": [
+        "Exercise with children",
+        "fitMami",
+        "Fitness for women/SmartFit",
+        "Pilates",
+        "Core training",
+        "Cardio training",
+        "Exercises for pregnant"
+      ],
+      "activity_summary": "Group lessons  (Mama Strengthen and Flow, Prenatal Flow, Postpartum Core, Mama Mat Pilates, Postpartum Cardio Fit, Mama Pelvic Floor and Core, Mama HIIT, Mama Mindful Flow, Mama Strong, Mama Mobility Flow , Restorative Pilates)",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/e0/1f/e01f94cfc3b7e7720dc982f9f366421a.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/02/65/02655bae8d28fade9fb42dd973da86d5.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/d5/10/d510c47f594b15f5201e992909e3b7ed.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/30/1b/301b3bd1024a09294ff05862de948241.jpg"
+      ],
+      "website_url": "http://mothergood.cz/",
+      "phone": "+420 737 358 251",
+      "email": "mothergood.cz@gmail.com",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Group lessons  (Mama Strengthen and Flow, Prenatal Flow, Postpartum Core, Mama Mat Pilates, Postpartum Cardio Fit, Mama Pelvic Floor and Core, Mama HIIT, Mama Mindful Flow, Mama Strong, Mama Mobility Flow , Restorative Pilates)"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Group lessons  (Mama Strengthen and Flow, Prenatal Flow, Postpartum Core, Mama Mat Pilates, Postpartum Cardio Fit, Mama Pelvic Floor and Core, Mama HIIT, Mama Mindful Flow, Mama Strong, Mama Mobility Flow , Restorative Pilates)"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": null,
+      "instagram_url": null
     }
   ]
 }
