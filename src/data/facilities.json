@@ -1,24 +1,33 @@
 {
-  "scraped_at": "2026-05-27T07:54:14.206Z",
-  "total": 17,
+  "scraped_at": "2026-05-29T07:44:00.209Z",
+  "total": 16,
   "facilities": [
     {
-      "id": "3655",
-      "name": "Fitness Ronnie.cz",
-      "address": "Stará Spojovací 2263/9, Praha",
+      "id": "3912",
+      "name": "George's fitness",
+      "address": "Bínova 531/6, Praha",
       "city": "Praha",
-      "lat": 50.1028406,
-      "lng": 14.4857383,
+      "lat": 50.1300261,
+      "lng": 14.4813942,
       "category": "fitness",
       "activities": [
         "Gym"
       ],
       "activity_summary": "Gym",
-      "image_url": null,
-      "gallery_images": [],
-      "website_url": "http://fitnessronnie.cz",
-      "phone": "+420 608 227 284",
-      "email": "info@fitnessronnie.cz",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/ff/d0/ffd0b7f014e55a7d255ee5afd4ec72ff.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/f0/c9/f0c9ad482d29ad5d6caa5d504a9667a7.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/64/51/6451d6cadcb0c7229ffbf7d3c3b2466e.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/f6/25/f625c5ffb66942abe9020e7be93abefe.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/22/4a/224a0ab17752441bca6db4b59cd51399.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/b7/a1/b7a14dfaada222758df04ea938cb8592.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/d1/ae/d1ae05a640ec0f91cfba0b4db9065e02.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/1e/d1/1ed10a10eec4eebfcf265e693848a70d.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/48/2e/482eeee605e694ebcfe94b8dddc6da10.jpg"
+      ],
+      "website_url": "http://georgesfitness.cz",
+      "phone": "+420 773 000 758",
+      "email": "jivainvest@seznam.cz",
       "description": null,
       "is_new": false,
       "recommended": false,
@@ -36,6 +45,11 @@
           "description": "Gym"
         },
         {
+          "name": "Student",
+          "id": 4,
+          "description": "Gym"
+        },
+        {
           "name": "FKSP",
           "id": 3,
           "description": "Gym"
@@ -47,61 +61,7 @@
       "self_service": false,
       "self_service_times": null,
       "unlimited_oh": false,
-      "facebook_url": "https://www.facebook.com/Fitness-Ronniecz-Libe%C5%88-109423664814981/",
-      "instagram_url": null
-    },
-    {
-      "id": "1293",
-      "name": "Rezidence Blatov",
-      "address": "Starokolínská 306, Praha",
-      "city": "Praha",
-      "lat": 50.079538,
-      "lng": 14.642383,
-      "category": "swimming",
-      "activities": [
-        "Swimming pool",
-        "Gym",
-        "Salt Cave"
-      ],
-      "activity_summary": "Gym, Salt Cave, duration 45 min, every day according to operating hours, Wellness (120 min) - upon arrival the client pays an additional fee of: Mon-Fri arrival before 2 pm – 230 CZK, Mon-Fri arrival after 2 pm - 280 CZK, Weekends + holidays – 280 CZK, Swimming pool (60+10)",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/8f/a5/8fa5860f9d3a9b649e5bd053ddbdd3c0.jpg",
-      "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/2b/c7/2bc72ab20e138972d62c9875ad22d801.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/57/5a/575a9bc451660d2cbaeb5f2ed0befba6.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/7a/ce/7acef73f15476d1c86052ec467c56035.jpg"
-      ],
-      "website_url": "http://kossuth.cz",
-      "phone": "+420 602 705 315",
-      "email": "blatov@kossuth.cz",
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": true,
-      "additional_payment_desc": "The client pays an additional fee in the amount of:\n Mon-Fri arrival before 2 pm – 230 CZK\n Mon-Fri arrival after 2 pm - CZK 280\n Weekends + holidays – 280 CZK",
-      "active_cards": [
-        {
-          "name": "Stříbrná",
-          "id": 1,
-          "description": "Gym, Salt Cave, duration 45 min, every day according to operating hours, Wellness (120 min) - upon arrival the client pays an additional fee of: Mon-Fri arrival before 2 pm – 230 CZK, Mon-Fri arrival after 2 pm - 280 CZK, Weekends + holidays – 280 CZK, Swimming pool (60+10)"
-        },
-        {
-          "name": "Dítě",
-          "id": 2,
-          "description": "Gym, Salt Cave, duration 45 min, every day according to operating hours, Wellness (120 min) - upon arrival the client pays an additional fee of: Mon-Fri arrival before 2 pm – 230 CZK, Mon-Fri arrival after 2 pm - 280 CZK, Weekends + holidays – 280 CZK, Swimming pool (60+10)"
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Gym, Salt Cave, duration 45 min, every day according to operating hours, Swimming pool (60+10)"
-        }
-      ],
-      "kids_activities": true,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": null,
+      "facebook_url": "https://www.facebook.com/gf.georgesfitness/",
       "instagram_url": null
     },
     {
@@ -218,197 +178,57 @@
       "instagram_url": null
     },
     {
-      "id": "4922",
-      "name": "Individual.Fitness Říčany",
-      "address": "Obchodní 2722/10, Říčany",
-      "city": "Říčany",
-      "lat": 50.0062367,
-      "lng": 14.6534011,
+      "id": "354",
+      "name": "Fitness centrum DB fit",
+      "address": "Pražská 295, Dolní Břežany",
+      "city": "Dolní Břežany",
+      "lat": 49.9654036,
+      "lng": 14.4602386,
       "category": "group",
       "activities": [
-        "Functional training",
-        "Kickboxing",
+        "Alpinning",
+        "Bodystyling/Bodyform",
+        "Fitbox/Slimbox",
+        "Hatha yoga",
         "Circuit training",
         "Gym",
-        "Sauna/Steam",
-        "Healthy back/Back pain",
-        "Cardio training",
-        "Dance",
-        "Check Up"
-      ],
-      "activity_summary": "Gym (90 min), Group lessons (Cardio&Core, Circuit training, Functional training, Healthy back&Core, Dance lessons, Fitness kickbox), Sauna (60 min) with additional payment 130 CZK, Check Up (1x per calendar half year)",
-      "image_url": null,
-      "gallery_images": [],
-      "website_url": "https://individual.fitness/",
-      "phone": "+420 739 499 687",
-      "email": "ricany@individual.fitness",
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": true,
-      "additional_payment_desc": "Sauna (60 min) with additional payment 130 CZK",
-      "active_cards": [
-        {
-          "name": "Stříbrná",
-          "id": 1,
-          "description": "Gym (90 min), Group lessons (Cardio&Core, Circuit training, Functional training, Healthy back&Core, Dance lessons, Fitness kickbox), Sauna (60 min) with additional payment 130 CZK, Check Up (1x per calendar half year)"
-        },
-        {
-          "name": "Dítě",
-          "id": 2,
-          "description": "Gym (90 min), Group lessons (Cardio&Core, Circuit training, Functional training, Healthy back&Core, Dance lessons, Fitness kickbox), Check Up (1x per calendar half year)"
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Gym (90 min), Group lessons (Cardio&Core, Circuit training, Functional training, Healthy back&Core, Dance lessons, Fitness kickbox), Check Up (1x per calendar half year)"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": null,
-      "instagram_url": null
-    },
-    {
-      "id": "4911",
-      "name": "Max Fitness Letiště Ruzyně",
-      "address": "Aviatická 1048/12, Praha",
-      "city": "Praha",
-      "lat": 50.1057028,
-      "lng": 14.2706964,
-      "category": "fitness",
-      "activities": [
-        "Gym"
-      ],
-      "activity_summary": "Gym",
-      "image_url": null,
-      "gallery_images": [],
-      "website_url": "https://www.maxfitness.cz/pobocky/detail/max-fitness-letiste-ruzyne",
-      "phone": "+420 792 301 473",
-      "email": "letisteruzyne@maxfitness.cz",
-      "description": "A smaller but modern self-service branch located in the Airport Business Centre building right next to Prague Airport. Members can work out comfortably without a reception desk - entry is fully digital via the My Max Fitness mobile app or the My MultiSport app.",
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": false,
-      "additional_payment_desc": null,
-      "active_cards": [
-        {
-          "name": "Stříbrná",
-          "id": 1,
-          "description": "Gym"
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Gym"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": true,
-      "parking": "Unknown",
-      "self_service": true,
-      "self_service_times": "5:00-0:00",
-      "unlimited_oh": false,
-      "facebook_url": null,
-      "instagram_url": "https://www.instagram.com/maxfitnessletisteruzyne/?hl=cs"
-    },
-    {
-      "id": "1746",
-      "name": "FITIMO - Cvičení pro ženy Modřany",
-      "address": "Rakovského 3136/1, Praha",
-      "city": "Praha",
-      "lat": 50.0094758,
-      "lng": 14.42377,
-      "category": "yoga",
-      "activities": [
-        "Physio training",
-        "Yogalates",
-        "Pilates",
+        "Power yoga/Energy yoga",
+        "TRX/TRX RIP TRAINER/Jungle sports",
         "Healthy back/Back pain",
         "Yoga"
       ],
-      "activity_summary": "Health lessons (Pilates, Pilates Energy, Physio circuit training, Yogalates, Yoga, Healthy back) with an additional payment of 30 CZK",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/aa/62/aa626d5ed43a09e054b7a3e05a9965a8.jpg",
+      "activity_summary": "Fitness – as part of the entrance fee, you can also use the boxing gym, Group lessons (alpinning, Fitbox, cardio bodyform, TRX, circuit training, healthy back, Alpinning), Yoga (Power yoga, Hatha yoga) with an additional fee of 40 CZK",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/57/96/579677ba2e56011bd7391f3a82b0208c.jpg",
       "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/9a/f7/9af73d41305def5c193d91c361b262a7.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/10/46/1046f73ff1ceb3b30592a087b4bc1401.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/2e/0e/2e0e1c984b22a0992d303b7baf38d6cc.jpg"
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/4e/88/4e882b812db390c488849b3cc6f29c34.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/cc/bb/ccbbaf87f7468f788da6d99915552da9.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/b0/58/b0581f2165b3560b465e277091ca5350.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/e8/19/e819de469432872b72fed6b7c1f9f05f.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/c5/9b/c59b205301889221b7cedd57438dd475.jpg"
       ],
-      "website_url": "http://fitimo.cz/",
-      "phone": "+420 777 868 222",
-      "email": "info@fitimo.cz",
-      "description": "From June 3rd to the end of August, outdoor exercises are taking place in the Ráček Elementary School Rakovského area.",
+      "website_url": "http://dbfit.cz",
+      "phone": "+420 241 414 317",
+      "email": "dbfitdolnibrezany@gmail.com",
+      "description": null,
       "is_new": false,
       "recommended": false,
       "additional_payment": true,
-      "additional_payment_desc": "Health lessons (Pilates, Pilates Energy, Physio circuit training, Yogalates, Yoga, Healthy back) with an additional payment of 30 CZK",
+      "additional_payment_desc": "Yoga (Power yoga, Hatha yoga) with an additional fee of 40 CZK",
       "active_cards": [
         {
           "name": "Stříbrná",
           "id": 1,
-          "description": "Health lessons (Pilates, Pilates Energy, Physio circuit training, Yogalates, Yoga, Healthy back) with an additional payment of 30 CZK"
+          "description": "Fitness – as part of the entrance fee, you can also use the boxing gym, Group lessons (alpinning, Fitbox, cardio bodyform, TRX, circuit training, healthy back, Alpinning), Yoga (Power yoga, Hatha yoga) with an additional fee of 40 CZK"
         },
         {
           "name": "Dítě",
           "id": 2,
-          "description": "Health lessons (Pilates, Pilates Energy, Physio circuit training, Yogalates, Yoga, Healthy back) with an additional payment of 30 CZK"
-        },
-        {
-          "name": "Student",
-          "id": 4,
-          "description": "Health lessons (Pilates, Pilates Energy, Physio circuit training, Yogalates, Yoga, Healthy back) with an additional payment of 30 CZK"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": null,
-      "instagram_url": null
-    },
-    {
-      "id": "5001",
-      "name": "Kluziště Uhříněves",
-      "address": "nám. Bratří Jandusů 2/38, Praha",
-      "city": "Praha",
-      "lat": 50.0299494,
-      "lng": 14.6040781,
-      "category": "outdoor",
-      "activities": [
-        "Public skating"
-      ],
-      "activity_summary": "Public skating",
-      "image_url": null,
-      "gallery_images": [],
-      "website_url": "https://www.jdemebruslit.cz/vypiskluzist/kluzi%C5%A1t%C4%9B-uh%C5%99%C3%ADn%C4%9Bves",
-      "phone": "+420 775 708 706",
-      "email": "info@jdemebruslit.cz",
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": false,
-      "additional_payment_desc": null,
-      "active_cards": [
-        {
-          "name": "Stříbrná",
-          "id": 1,
-          "description": "Public skating"
-        },
-        {
-          "name": "Student",
-          "id": 4,
-          "description": "Public skating"
+          "description": "Fitness – as part of the entrance fee, you can also use the boxing gym, Group lessons (alpinning, Fitbox, cardio bodyform, TRX, circuit training, healthy back, Alpinning), Yoga (Power yoga, Hatha yoga) with an additional fee of 40 CZK"
         },
         {
           "name": "FKSP",
           "id": 3,
-          "description": "Public skating"
+          "description": "Fitness – as part of the entrance fee, you can also use the boxing gym , Group lessons (Alpinning, Fitbox, cardio bodyform, TRX, circuit training, healthy back)"
         }
       ],
       "kids_activities": false,
@@ -421,27 +241,39 @@
       "instagram_url": null
     },
     {
-      "id": "4512",
-      "name": "Dětský koutek Maruška",
-      "address": "Jablonského 640/2, Praha",
+      "id": "1054",
+      "name": "Euforie Fitness & Wellness Karlín",
+      "address": "Sokolovská 131/86, Praha",
       "city": "Praha",
-      "lat": 50.1069175,
-      "lng": 14.4410436,
-      "category": "kids",
+      "lat": 50.093762,
+      "lng": 14.45077,
+      "category": "group",
       "activities": [
-        "Kids playroom"
+        "Bosu/Cardio/Rehab",
+        "Belly and buttocks",
+        "Fitbox/Slimbox",
+        "Jumping/Trampolines",
+        "Circuit training",
+        "Pilates",
+        "Gym",
+        "Problem zones",
+        "Tabata",
+        "TRX/TRX RIP TRAINER/Jungle sports",
+        "Healthy back/Back pain",
+        "Zumba",
+        "Yoga"
       ],
-      "activity_summary": "Kids playroom",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/6e/26/6e26541391038f258f5bfa51daffe400.jpg",
+      "activity_summary": "Gym, Group lessons (Yoga, Fitbox, Pilates, Jumping, TRX, Problem zones, Bosu, Circuit training, POUND®, Tabata, Zumba, Healthy back, STRONG,  Belly and buttocks)",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/f4/b5/f4b55f43e7a8c3c9d9dc3d9ff493225b.jpg",
       "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/3f/d5/3fd5328593a69528fa0a8919c0f66f96.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/c8/e9/c8e9d8763a4e909415eb2aaea782b15b.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/47/ad/47adbde8bee6fb0f3539ebaea3a63bd1.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/41/a8/41a8881e48739b1a76cb92cbb7558e60.jpg"
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/d3/24/d3247f4b03abdfc227fcbbebf2662d03.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/c6/0e/c60e4b21a160dcd5fa67b436973f9590.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/67/96/679617744787ec316be90a42bf0d6ed6.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/88/e8/88e8ae35d372e6d7ae9d5077d7e90ad8.jpg"
       ],
-      "website_url": "http://dk-maruska.cz",
-      "phone": "+420 776 528 100",
-      "email": "info@dk-maruska.cz",
+      "website_url": "http://euforie.cz",
+      "phone": "+420 739 606 090",
+      "email": "info@euforie.cz",
       "description": null,
       "is_new": false,
       "recommended": false,
@@ -449,9 +281,19 @@
       "additional_payment_desc": null,
       "active_cards": [
         {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Gym, Group lessons (Yoga, Fitbox, Pilates, Jumping, TRX, Problem zones, Bosu, Circuit training, POUND®, Tabata, Zumba, Healthy back, STRONG,  Belly and buttocks)"
+        },
+        {
           "name": "Dítě",
           "id": 2,
-          "description": "Kids playroom"
+          "description": "Please inquire directly about the possibility of use with the partner facility."
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Gym, Group lessons (Yoga, Fitbox, Pilates, Jumping, TRX, Problem zones, Bosu, Circuit training, POUND®, Tabata, Zumba, Healthy back, STRONG,  Belly and buttocks)"
         }
       ],
       "kids_activities": false,
@@ -460,49 +302,55 @@
       "self_service": false,
       "self_service_times": null,
       "unlimited_oh": false,
-      "facebook_url": "https://www.facebook.com/profile.php?id=61562823655409",
+      "facebook_url": "https://www.facebook.com/Euforie.cz/",
       "instagram_url": null
     },
     {
-      "id": "4976",
-      "name": "HUDY Boulder Karlín",
-      "address": "Křižíkova 684/91a, Praha",
+      "id": "355",
+      "name": "Studio Hvězda",
+      "address": "Křenova 11, Praha",
       "city": "Praha",
-      "lat": 50.0934222,
-      "lng": 14.45332,
-      "category": "climbing",
+      "lat": 50.0888903,
+      "lng": 14.3438,
+      "category": "yoga",
       "activities": [
-        "Bouldering"
+        "Ashtanga vinyasa yoga",
+        "Dynamic Yoga",
+        "Flowin",
+        "Hatha yoga",
+        "Pilates",
+        "Power yoga/Energy yoga",
+        "Healthy back/Back pain",
+        "Yoga"
       ],
-      "activity_summary": "Boulder - adult: Mon-Fri 180 min with a surcharge of 165 CZK, Weekends/holidays - unlimited, with a surcharge of 125 CZK. After exceeding the time allowance of 180 min, the client pays according to the Partner's valid price list. Boulder - child 4-7 years Mon-Fri 180 min with a surcharge of 75 CZK, Weekends/holidays - unlimited with a surcharge of 75 CZK. After exceeding the time allowance of 180 min, the client pays according to the Partner's valid price list. Boulder - student (Mon-Fri, 180 min with a surcharge of 125 CZK, Weekends/holidays - unlimited with a surcharge of 125 CZK) After exceeding the time allowance of 180 min, the client pays according to the Partner's valid price list.",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/c7/af/c7af88bc8dbc093500dcead2c11cf287.jpg",
+      "activity_summary": "Yoga 60 minutes (Yoga, Iyengar Yoga, Hormonal Yoga, Pilates Therapy, Yoga for a Healthy Back, SM System, Basic Yoga, Gentle Yoga for a Healthy Back, Morning Yoga, Healthy Back, Exercises by Ludmila Mojžíšová and other exercises, Yin and Yang Yoga, Yoga for Eternal Beginners, Power Yoga, Flexibility, Pilates, Dynamic Iyengar Yoga, Exercises for a Healthy Back, Vinyasa Ashtanga Yoga, Gentle Yoga, Flowin Pilates, Dynamic Types of Yoga, Calmer Types of Yoga, Core Yoga) with additional payment CZK 50",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/72/d3/72d35010f77766249243a43ac0959009.jpg",
       "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/30/b8/30b82e8d757b89f43dee17a60cc008e0.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/82/b0/82b0525036d1c3626cea6c9524d1b136.jpg"
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/1e/46/1e469c374dad6cbf6707632f47697683.jpg"
       ],
-      "website_url": "https://www.hudysteny.cz/boulderkarlin",
-      "phone": "+420 220 920 029",
-      "email": "info@hudyboulder.cz",
-      "description": "For a subsequent repeat visit, the additional payment is variable based on the balance on the credit account, which is refundable. \n\nThe minimum amount to top up the credit account is 300,- for adults, 190,- for children and 240,- for students. For a repeat visit, the credit balance from the previous visit will be taken into account.",
+      "website_url": "http://studio-hvezda.cz",
+      "phone": "+420 722 442 777",
+      "email": null,
+      "description": null,
       "is_new": false,
       "recommended": false,
       "additional_payment": true,
-      "additional_payment_desc": "The client pays a surcharge on the first visit to the facility in the amount of: adult 165 CZK, child 75 CZK, student 125 CZK. If the time allowance of 180 minutes is exceeded, the client pays a surcharge according to the Partner's valid price list.",
+      "additional_payment_desc": "Yoga 60 minutes (Yoga, Iyengar Yoga, Hormonal Yoga, Pilates Therapy, Yoga for a Healthy Back, SM System, Basic Yoga, Gentle Yoga for a Healthy Back, Morning Yoga, Healthy Back, Exercises by Ludmila Mojžíšová and other exercises, Yin and Yang Yoga, Yoga for Eternal Beginners, Power Yoga, Flexibility, Pilates, Dynamic Iyengar Yoga, Exercises for a Healthy Back, Vinyasa Ashtanga Yoga, Gentle Yoga, Flowin Pilates, Dynamic Types of Yoga, Calmer Types of Yoga, Core Yoga) with additional payment CZK 50",
       "active_cards": [
         {
           "name": "Stříbrná",
           "id": 1,
-          "description": "Boulder - adult: Mon-Fri 180 min with a surcharge of 165 CZK, Weekends/holidays - unlimited, with a surcharge of 125 CZK. After exceeding the time allowance of 180 min, the client pays according to the Partner's valid price list."
+          "description": "Yoga 60 minutes (Yoga, Iyengar Yoga, Hormonal Yoga, Pilates Therapy, Yoga for a Healthy Back, SM System, Basic Yoga, Gentle Yoga for a Healthy Back, Morning Yoga, Healthy Back, Exercises by Ludmila Mojžíšová and other exercises, Yin and Yang Yoga, Yoga for Eternal Beginners, Power Yoga, Flexibility, Pilates, Dynamic Iyengar Yoga, Exercises for a Healthy Back, Vinyasa Ashtanga Yoga, Gentle Yoga, Flowin Pilates, Dynamic Types of Yoga, Calmer Types of Yoga, Core Yoga) with additional payment CZK 50"
         },
         {
           "name": "Dítě",
           "id": 2,
-          "description": "Boulder - child 4-7 years old (Mon-Fri 180 min with a surcharge of 75 CZK, Weekends/holidays - unlimited with a surcharge of 75 CZK. After exceeding the time allowance of 180 min, the client pays according to the Partner's valid price list"
+          "description": "Yoga 60 minutes (Yoga, Iyengar Yoga, Hormonal Yoga, Pilates Therapy, Yoga for a Healthy Back, SM System, Basic Yoga, Gentle Yoga for a Healthy Back, Morning Yoga, Healthy Back, Exercises by Ludmila Mojžíšová and other exercises, Yin and Yang Yoga, Yoga for Eternal Beginners, Power Yoga, Flexibility, Pilates, Dynamic Iyengar Yoga, Exercises for a Healthy Back, Vinyasa Ashtanga Yoga, Gentle Yoga, Flowin Pilates, Dynamic Types of Yoga, Calmer Types of Yoga, Core Yoga) with additional payment CZK 50"
         },
         {
           "name": "Student",
           "id": 4,
-          "description": "Boulder - student Mon-Fri, 180 min with a surcharge of 125 CZK, Weekends/holidays - unlimited with a surcharge of 125 CZK. After exceeding the time allowance of 180 min, the client pays according to the Partner's valid price list."
+          "description": "Yoga 60 minutes (Yoga, Iyengar Yoga, Hormonal Yoga, Pilates Therapy, Yoga for a Healthy Back, SM System, Basic Yoga, Gentle Yoga for a Healthy Back, Morning Yoga, Healthy Back, Exercises by Ludmila Mojžíšová and other exercises, Yin and Yang Yoga, Yoga for Eternal Beginners, Power Yoga, Flexibility, Pilates, Dynamic Iyengar Yoga, Exercises for a Healthy Back, Vinyasa Ashtanga Yoga, Gentle Yoga, Flowin Pilates, Dynamic Types of Yoga, Calmer Types of Yoga, Core Yoga) with additional payment CZK 50"
         }
       ],
       "kids_activities": false,
@@ -511,36 +359,204 @@
       "self_service": false,
       "self_service_times": null,
       "unlimited_oh": false,
-      "facebook_url": "https://www.facebook.com/profile.php?id=100088976445014#",
+      "facebook_url": null,
       "instagram_url": null
     },
     {
-      "id": "4295",
-      "name": "Energy Studio Václav Krejčík",
-      "address": "Hellichova 1, Praha",
+      "id": "3681",
+      "name": "Peace Yoga Studio",
+      "address": "Petržílkova (budova ČSOB) 2589/19, Praha",
       "city": "Praha",
-      "lat": 50.0842025,
-      "lng": 14.4059533,
+      "lat": 50.0506025,
+      "lng": 14.3431442,
       "category": "yoga",
       "activities": [
-        "Hatha yoga",
+        "Fit & Slim",
+        "Pilates",
         "Power yoga/Energy yoga",
+        "Yoga"
+      ],
+      "activity_summary": "Group lessons - Morning yoga, Pilates, Pleasant morning yoga, Yoga (not only) for seniors, Power yoga, Fit & Slim yoga",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/c3/23/c3232c4336c2c4596e24b8b1ea1762ea.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/73/e2/73e20e4c838c6ea305f931b95ab271bc.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/7e/cb/7ecb6a1f3a24227b21a4679305901f5a.jpg"
+      ],
+      "website_url": "http://peaceyoga.cz",
+      "phone": "+420 725 239 911",
+      "email": "info@peaceyoga.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Group lessons - Morning yoga, Pilates, Pleasant morning yoga, Yoga (not only) for seniors, Power yoga, Fit & Slim yoga"
+        },
+        {
+          "name": "Student",
+          "id": 4,
+          "description": "Group lessons - Morning yoga, Pilates, Pleasant morning yoga, Yoga (not only) for seniors, Power yoga, Fit & Slim yoga"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Group lessons - Morning yoga, Pilates, Pleasant morning yoga, Yoga (not only) for seniors, Power yoga, Fit & Slim yoga"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/peaceyogastudiohurka",
+      "instagram_url": null
+    },
+    {
+      "id": "2141",
+      "name": "Saunia - Centrum Krakov",
+      "address": "Lodžská 850/6, Praha",
+      "city": "Praha",
+      "lat": 50.1277289,
+      "lng": 14.4173622,
+      "category": "wellness",
+      "activities": [
+        "Sauna/Steam"
+      ],
+      "activity_summary": "Sauna world (incl. Linen rental - towel and sheets).\n<br>\n<b> Mon-Fri (departure before 17:00) *: </b>\n<br> unlimited entry with a surcharge of CZK 329.\n<br>\n<b> Mon-Fri (departure after 17:00), weekends and holidays: </b>\n<br> 2 hours * with surcharge 329 CZK.\n<br> 3 hours and more with a surcharge of 459 CZK.\n<b> Mon-Fri, weekend, holiday coming after 20:45 surcharge 249 czk.</b>\n<br> *In case of exceeding, CZK 3,25 / minute will be charged, max. CZK 130.0.",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/c3/17/c317dfecb236b36e3c5f902f2f064492.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/4d/30/4d3011d460c840d6d0d343e55460d83d.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/e5/3a/e53a3e9077f1a0268e639c13a7e8bc65.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/84/b4/84b45ee6618847ae594a7f5fb6b11663.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/13/1e/131efd4bd3204ef158445ea80252bbf5.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/7d/b1/7db1f3357e19443f8e318c1e6f415331.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/34/31/34318f6fed0a5241cdca34bc53f08bfb.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/22/cb/22cb08f3665c5312ef5e923e46555d14.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/33/99/33999191f0e50515c560a37a725f2f09.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/7d/1d/7d1da3aa9094800382330c5d580cc7ba.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/be/35/be3523e90932bb656ea6ad71a229818e.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/e2/be/e2beb4b0030662750db533a1ece90fcc.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/f4/58/f4581ad69e4cc3a4cb594f0fe78b2361.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/b2/fc/b2fc726e40de0f214897b4a9056736b3.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/7d/c2/7dc2ac3340ed7ce306c7928eb76204d5.jpg"
+      ],
+      "website_url": "http://saunia.cz/cz/krakov/krakov-uvod",
+      "phone": "+420 771 133 414",
+      "email": "krakov@saunia.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": true,
+      "additional_payment_desc": "Sauna world (incl. Linen rental - towel and sheets).\n<br>\n<b> Mon-Fri (departure before 17:00) *: </b>\n<br> unlimited entry with a surcharge of CZK 329.\n<br>\n<b> Mon-Fri (departure after 17:00), weekends and holidays: </b>\n<br> 2 hours * with surcharge 329 CZK.\n<br> 3 hours and more with a surcharge of 459 CZK.\n<b> Mon-Fri, weekend, holiday coming after 20:45 surcharge 249 czk.</b>\n<br> * In case of exceeding, CZK 3,25 / minute will be charged, max. CZK 130.0.",
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Sauna world (incl. Linen rental - towel and sheets).\n<br>\n<b> Mon-Fri (departure before 17:00) *: </b>\n<br> unlimited entry with a surcharge of CZK 329.\n<br>\n<b> Mon-Fri (departure after 17:00), weekends and holidays: </b>\n<br> 2 hours * with surcharge 329 CZK.\n<br> 3 hours and more with a surcharge of 459 CZK.\n<b> Mon-Fri, weekend, holiday coming after 20:45 surcharge 249 czk.</b>\n<br> * In case of exceeding, CZK 3,25 / minute will be charged, max. CZK 130.0."
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Sauna world (incl. Linen rental - towel and sheets).\n<br>\n<b> Mon-Fri (departure before 17:00) *: </b>\n<br> unlimited entry with a surcharge of CZK 329.\n<br>\n<b> Mon-Fri (departure after 17:00), weekends and holidays: </b>\n<br> 2 hours * with surcharge 329 CZK.\n<br> 3 hours and more with a surcharge of 459 CZK.\n<b> Mon-Fri, weekend, holiday coming after 20:45 surcharge 249 czk.</b>\n<br> * In case of exceeding, CZK 3,25 / minute will be charged, max. CZK 130.0."
+        }
+      ],
+      "kids_activities": true,
+      "only_virtual_card": false,
+      "parking": "Free",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/saunia.centrum.krakov",
+      "instagram_url": null
+    },
+    {
+      "id": "3877",
+      "name": "Prague Yoga Collective - P7",
+      "address": "Letenské náměstí 6, Praha",
+      "city": "Praha",
+      "lat": 50.1001817,
+      "lng": 14.4244269,
+      "category": "yoga",
+      "activities": [
+        "Ashtanga vinyasa yoga",
+        "Gravid yoga",
+        "Pilates",
         "Vinyasa yoga",
-        "Healthy back/Back pain",
         "Yoga",
         "Meditation"
       ],
-      "activity_summary": "Group lessons (Power yoga, Power yoga FIT&SLIM, Morning yoga, Afternoon yoga, Yoga for a healthy back, Yoga espresso, Gentle hatha yoga, Vinyasa yoga, Yoga against stress, Yoga nidra - yogic sleep, Pranayama and yoga nidra, Yoga therapy, Yin yoga, Gentle yoga, Restorative yoga, Breathing therapy - breathe functionally, Meditation, Yoga with red light therapy)",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/ff/31/ff31f39f249dcd1e07c660a15d1bcbb1.jpg",
-      "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/6d/3a/6d3a35c0b711c216c1ce9d6cfd50fa0f.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/35/31/353127344cfbf4cf084e681a74020471.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/0e/fa/0efaad481d66a435b8b63753d514d78c.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/3c/59/3c59e0e8b024ce96f733a47fb48576d9.jpg"
+      "activity_summary": "Yoga classes (Bottle Rocket, Vinyasa Flow, Buti Yoga, Primal Flow, Mindful Flow, Yin, Yin/Yang, Morning Yoga, Fundamental Flow, Complete Beginners Class, Gentle Flow, Introduction to Rocket Yoga, Prenatal Yoga, Soul/Sweat Lunch Vinyasa, Spiritual Warrior, Yoga in Motion, Community Class, Ashtanga Mysore), Mindfulness/Meditation, Pilates - 60 min class with additional charge of 50 CZK, 75 min class with additional charge of 80 CZK, 90 min class with additional charge of 100 CZK",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/a6/7b/a67bdc86f0d4a00e49bbbaff4eea384c.jpg",
+      "gallery_images": [],
+      "website_url": "http://pragueyogacollective.com",
+      "phone": "+420 702 816 284",
+      "email": "info@pragueyogacollective.com",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": true,
+      "additional_payment_desc": "Yoga classes (Bottle Rocket, Vinyasa Flow, Buti Yoga, Primal Flow, Mindful Flow, Yin, Yin/Yang, Morning Yoga, Fundamental Flow, Complete Beginners Class, Gentle Flow, Introduction to Rocket Yoga, Prenatal Yoga, Soul/Sweat Lunch Vinyasa, Spiritual Warrior, Yoga in Motion, Community Class, Ashtanga Mysore), Mindfulness/Meditation, Pilates - 60 min class with additional charge of 50 CZK, 75 min class with additional charge of 80 CZK, 90 min class with additional charge of 100 CZK",
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Yoga classes (Bottle Rocket, Vinyasa Flow, Buti Yoga, Primal Flow, Mindful Flow, Yin, Yin/Yang, Morning Yoga, Fundamental Flow, Complete Beginners Class, Gentle Flow, Introduction to Rocket Yoga, Prenatal Yoga, Soul/Sweat Lunch Vinyasa, Spiritual Warrior, Yoga in Motion, Community Class, Ashtanga Mysore), Mindfulness/Meditation, Pilates - 60 min class with additional charge of 50 CZK, 75 min class with additional charge of 80 CZK, 90 min class with additional charge of 100 CZK"
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Yoga classes (Bottle Rocket, Vinyasa Flow, Buti Yoga, Primal Flow, Mindful Flow, Yin, Yin/Yang, Morning Yoga, Fundamental Flow, Complete Beginners Class, Gentle Flow, Introduction to Rocket Yoga, Prenatal Yoga, Soul/Sweat Lunch Vinyasa, Spiritual Warrior, Yoga in Motion, Community Class, Ashtanga Mysore), Mindfulness/Meditation, Pilates - 60 min class with additional charge of 50 CZK, 75 min class with additional charge of 80 CZK, 90 min class with additional charge of 100 CZK"
+        }
       ],
-      "website_url": "http://energystudio.cz",
-      "phone": "+420 605 309 082",
-      "email": "recepce1@energystudio.cz",
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/pragueyogacollective",
+      "instagram_url": null
+    },
+    {
+      "id": "1115",
+      "name": "Fitlady Kolovraty",
+      "address": "Pod zastávkou 505/1, Praha",
+      "city": "Praha",
+      "lat": 50.0122292,
+      "lng": 14.62523,
+      "category": "group",
+      "activities": [
+        "Alpinning",
+        "Body balance",
+        "Bodystyling/Bodyform",
+        "Dance fitness/Dance aerobics",
+        "Fitbox/Slimbox",
+        "Hot yoga",
+        "Pilates",
+        "SM System",
+        "TRX/TRX RIP TRAINER/Jungle sports",
+        "Yoga"
+      ],
+      "activity_summary": "Alpinning (60 min), Hot yoga (55 min) with additional payment CZK 100, Yoga (55 min), Yoga (70 min) with additional payment CZK 50, Group lessons (SM systém, Body balance, Bodystyling, Dance&Body, TRX, Pilates, Dynamic Pilates, Fitbox)",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/40/84/4084d18a2171604636d35b5e98dc549b.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/39/25/392551c305b9d97193d1e3836518a36a.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/de/5a/de5a221761a5cb9fd0cfd6eec3b9841c.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/82/61/8261409006f9ca3bb1dc0ebe752dfade.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/6b/82/6b82757e0c732f9026cf431c4df09ba1.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/23/2d/232df2df0529f33e840bf2325910dd11.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/d1/52/d152cf8d524f613f4402b54c707f144c.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/3e/2e/3e2e01c2b875ad8418511affed7019f3.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/d0/db/d0dbbbc297178845c4771bc3e09b3a55.jpg"
+      ],
+      "website_url": "http://fitladykolovraty.cz",
+      "phone": "+420 601 505 061",
+      "email": "fitladykolovraty@gmail.com",
       "description": null,
       "is_new": false,
       "recommended": false,
@@ -550,22 +566,17 @@
         {
           "name": "Stříbrná",
           "id": 1,
-          "description": "Group lessons (Power yoga, Power yoga FIT&SLIM, Morning yoga, Afternoon yoga, Yoga for a healthy back, Yoga espresso, Gentle hatha yoga, Vinyasa yoga, Yoga against stress, Yoga nidra - yogic sleep, Pranayama and yoga nidra, Yoga therapy, Yin yoga, Gentle yoga, Restorative yoga, Breathing therapy - breathe functionally, Meditation, Yoga with red light therapy)"
+          "description": "Alpinning (60 min), Hot yoga (55 min) with additional payment CZK 100, Yoga (55 min), Yoga (70 min) with additional payment CZK 50, Group lessons (SM systém, Body balance, Bodystyling, Dance&Body, TRX, Pilates, Dynamic Pilates, Fitbox)"
         },
         {
           "name": "Dítě",
           "id": 2,
-          "description": "Group lessons (Power yoga, Power yoga FIT&SLIM, Morning yoga, Afternoon yoga, Yoga for a healthy back, Yoga espresso, Gentle hatha yoga, Vinyasa yoga, Yoga against stress, Yoga nidra - yogic sleep, Pranayama and yoga nidra, Yoga therapy, Yin yoga, Gentle yoga, Restorative yoga, Breathing therapy - breathe functionally, Meditation, Yoga with red light therapy)"
-        },
-        {
-          "name": "Student",
-          "id": 4,
-          "description": "Group lessons (Power yoga, Power yoga FIT&SLIM, Morning yoga, Afternoon yoga, Yoga for a healthy back, Yoga espresso, Gentle hatha yoga, Vinyasa yoga, Yoga against stress, Yoga nidra - yogic sleep, Pranayama and yoga nidra, Yoga therapy, Yin yoga, Gentle yoga, Restorative yoga, Breathing therapy - breathe functionally, Meditation, Yoga with red light therapy)"
+          "description": "Alpinning (60 min), Hot yoga (55 min) with additional payment CZK 100, Yoga (55 min), Yoga (70 min) with additional payment CZK 50, Group lessons (SM systém, Body balance, Bodystyling, Dance&Body, TRX, Pilates, Dynamic Pilates, Fitbox)"
         },
         {
           "name": "FKSP",
           "id": 3,
-          "description": "Group lessons (Power yoga, Power yoga FIT&SLIM, Morning yoga, Afternoon yoga, Yoga for a healthy back, Yoga espresso, Gentle hatha yoga, Vinyasa yoga, Yoga against stress, Yoga nidra - yogic sleep, Pranayama and yoga nidra, Yoga therapy, Yin yoga, Gentle yoga, Restorative yoga, Breathing therapy - breathe functionally, Meditation, Yoga with red light therapy)"
+          "description": "Alpinning (60 min), Hot yoga (55 min) with additional payment CZK 100, Yoga (55 min), Yoga (70 min) with additional payment CZK 50, Group lessons (SM systém, Body balance, Bodystyling, Dance&Body, TRX, Pilates, Dynamic Pilates, Fitbox)"
         }
       ],
       "kids_activities": false,
@@ -574,202 +585,95 @@
       "self_service": false,
       "self_service_times": null,
       "unlimited_oh": false,
-      "facebook_url": "https://www.facebook.com/EnergyStudioVaclavKrejcik",
+      "facebook_url": null,
       "instagram_url": null
     },
     {
-      "id": "3897",
-      "name": "Sportovní Centrum Řepy",
-      "address": "Na Chobotě 1420/16, Praha",
+      "id": "3661",
+      "name": "Escolasergame",
+      "address": "Kladenská 417/7, Praha",
       "city": "Praha",
-      "lat": 50.06666,
-      "lng": 14.2959931,
-      "category": "sports",
+      "lat": 50.0979089,
+      "lng": 14.3669189,
+      "category": "outdoor",
       "activities": [
-        "Swimming pool",
-        "Beach Volleyball (summer)",
-        "Gym",
-        "Sauna/Steam",
-        "Tennis (summer)"
+        "Laser game"
       ],
-      "activity_summary": "Swimming pool (90 min), Wellness (120 min) Mon-Fri 13:00-16:00 with additional payment 190 CZK, Mon-Fri 16:00-21:00 wit additional payment 250 CZK, Beach voleyball, Tennis summer (card covers 1/2 court), Gyn",
-      "image_url": null,
-      "gallery_images": [],
-      "website_url": "http://sc-repy.cz/",
-      "phone": "+420 222 204 103",
-      "email": "info@sc-repy.cz",
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": true,
-      "additional_payment_desc": "Wellness (120 min) Mon-Fri 13:00-16:00 with additional payment 190 CZK, Mon-Fri 16:00-21:00 wit additional payment 250 CZK",
-      "active_cards": [
-        {
-          "name": "Stříbrná",
-          "id": 1,
-          "description": "Swimming pool (90 min), Wellness (120 min) Mon-Fri 13:00-16:00 with additional payment 190 CZK, Mon-Fri 16:00-21:00 wit additional payment 250 CZK, Beach voleyball, Tennis summer (card covers 1/2 court), Gym"
-        },
-        {
-          "name": "Dítě",
-          "id": 2,
-          "description": "Swimming pool (90 min), Beach voleyball, Tennis summer (card covers 1/2 court), Gym"
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Swimming pool (90 min), Beach voleyball, Tennis summer (card covers 1/2 court), Gym"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": "https://www.facebook.com/sportovnicentrumrepy",
-      "instagram_url": null
-    },
-    {
-      "id": "4030",
-      "name": "Mystery yoga",
-      "address": "Na Poříčí 25, Praha",
-      "city": "Praha",
-      "lat": 50.0900375,
-      "lng": 14.4343442,
-      "category": "yoga",
-      "activities": [
-        "Hatha yoga",
-        "Power yoga/Energy yoga",
-        "Vinyasa yoga",
-        "Healthy back/Back pain",
-        "Yoga"
-      ],
-      "activity_summary": "Yoga lessons (60 min) with an additional charge of 50 CZK or (90 min) with an additional charge of 100 CZK - Vinyasa for morning awakening, Flow'N'Deep, Vinyasa soul flow, Vinyasa yoga, Power yoga, Hatha yoga flow - a journey to yourself, Conscious Hatha yoga, Gentle yoga, Yoga for a healthy back, Women's yoga, Chakra yoga, Mindful yoga, Yin yoga",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/0d/e8/0de864fc0e3f6de21bead0be58d23053.jpg",
+      "activity_summary": "Laser game (15 min)",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/aa/6d/aa6d0cc06e4ed5255b074c3a421b2c30.jpg",
       "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/8e/f4/8ef43687204f5e490115844157a15eda.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/2f/d9/2fd96d09c1cfe0d610eadf48a212275b.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/a7/68/a768667562ff5e6102fe6749a03b3932.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/05/53/055343a5b1875467a573eb8a62d5904a.jpg"
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/09/1e/091e8760dd11ac9c66a7a1c107220981.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/cd/73/cd730e25f4b18fd019d1cdebfb3a2b11.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/a8/bf/a8bf48f9016effa33ea97e12df4db4fd.jpg"
       ],
-      "website_url": "http://mysteryyoga.cz",
-      "phone": "+420 605 351 554",
-      "email": "info@mysteryyoga.cz",
+      "website_url": "http://escolasergame.cz",
+      "phone": "+420 736 455 493",
+      "email": "info@escolasergame.cz",
       "description": null,
       "is_new": false,
       "recommended": false,
-      "additional_payment": true,
-      "additional_payment_desc": "Yoga lessons (60 min) with an additional charge of 50 CZK or (90 min) with an additional charge of 100 CZK - Vinyasa for morning awakening, Flow'N'Deep, Vinyasa soul flow, Vinyasa yoga, Power yoga, Hatha yoga flow - a journey to yourself, Conscious Hatha yoga, Gentle yoga, Yoga for a healthy back, Women's yoga, Chakra yoga, Mindful yoga, Yin yoga",
+      "additional_payment": false,
+      "additional_payment_desc": null,
       "active_cards": [
         {
           "name": "Stříbrná",
           "id": 1,
-          "description": "Yoga lessons (60 min) with an additional charge of 50 CZK or (90 min) with an additional charge of 100 CZK - Vinyasa for morning awakening, Flow'N'Deep, Vinyasa soul flow, Vinyasa yoga, Power yoga, Hatha yoga flow - a journey to yourself, Conscious Hatha yoga, Gentle yoga, Yoga for a healthy back, Women's yoga, Chakra yoga, Mindful yoga, Yin yoga"
+          "description": "Laser game (15 min)"
         },
         {
           "name": "Dítě",
           "id": 2,
-          "description": "Yoga lessons (60 min) with an additional charge of 50 CZK or (90 min) with an additional charge of 100 CZK - Vinyasa for morning awakening, Flow'N'Deep, Vinyasa soul flow, Vinyasa yoga, Power yoga, Hatha yoga flow - a journey to yourself, Conscious Hatha yoga, Gentle yoga, Yoga for a healthy back, Women's yoga, Chakra yoga, Mindful yoga, Yin yoga"
+          "description": "Laser game (15 min)"
+        },
+        {
+          "name": "Student",
+          "id": 4,
+          "description": "Laser game (15 min)"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Laser game (15 min)"
         }
       ],
-      "kids_activities": false,
+      "kids_activities": true,
       "only_virtual_card": false,
       "parking": "Unknown",
       "self_service": false,
       "self_service_times": null,
       "unlimited_oh": false,
-      "facebook_url": null,
+      "facebook_url": "https://www.facebook.com/EscoLaserGame",
       "instagram_url": null
     },
     {
-      "id": "4408",
-      "name": "XFITNESS SMICHOV",
-      "address": "Strakonická 3367, Praha",
+      "id": "3881",
+      "name": "Max Fitness Praha Lužiny",
+      "address": "Archeologická 2256/1, Praha",
       "city": "Praha",
-      "lat": 50.0615458,
-      "lng": 14.4107167,
-      "category": "group",
-      "activities": [
-        "Body balance",
-        "Circuit training",
-        "Les Mills",
-        "Gym",
-        "Pump/Body Pump",
-        "Whirlpool",
-        "Yoga",
-        "InBody"
-      ],
-      "activity_summary": "Gym, Outdoor gym (24/7), Wellness (entry) with additional payment CZK 110, Group lessons (Les Mills Power balance, Les Mills Bodypump, Circuit training, Yoga), InBody (once in calendar half a year)",
-      "image_url": null,
-      "gallery_images": [],
-      "website_url": "http://xfitness.cz",
-      "phone": "+420 603 197 315",
-      "email": "smichov@xfitness.cz",
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": true,
-      "additional_payment_desc": "Wellness (entry) with additional payment CZK 110",
-      "active_cards": [
-        {
-          "name": "Stříbrná",
-          "id": 1,
-          "description": "Gym, Outdoor gym (24/7), Wellness (entry) with additional payment CZK 110, Group lessons (Les Mills Power balance, Les Mills Bodypump, Circuit training, Yoga), InBody (once in calendar half a year)"
-        },
-        {
-          "name": "Dítě",
-          "id": 2,
-          "description": "Gym, Outdoor gym (24/7), Wellness (entry) with additional payment CZK 110, Group lessons (Les Mills Power balance, Les Mills Bodypump, Circuit training, Yoga), InBody (once in calendar half a year)"
-        },
-        {
-          "name": "Student",
-          "id": 4,
-          "description": "Gym, Outdoor gym (24/7), Group lessons (Les Mills Power balance, Les Mills Bodypump, Circuit training, Yoga)"
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Gym, Outdoor gym (24/7), Group lessons (Les Mills Power balance, Les Mills Bodypump, Circuit training, Yoga), InBody (once in calendar half a year)"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": true,
-      "self_service_times": "souběžně s recepcí",
-      "unlimited_oh": false,
-      "facebook_url": null,
-      "instagram_url": null
-    },
-    {
-      "id": "601",
-      "name": "The Gym Hradčanská",
-      "address": "Milady Horákové 116/109, Praha",
-      "city": "Praha",
-      "lat": 50.0971325,
-      "lng": 14.4057733,
+      "lat": 50.0443497,
+      "lng": 14.3321286,
       "category": "fitness",
       "activities": [
         "Gym",
+        "Sauna/Steam",
         "InBody"
       ],
-      "activity_summary": "Gym, InBody (1x per calendar half year)",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/a6/56/a65631b85a72b25cca06b1370dbb680c.jpg",
+      "activity_summary": "Gym, Sauna, InBody",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/28/53/28535634e6987dd7722bf84c4d929a98.jpg",
       "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/bc/da/bcda3dc6bfe7fdee34f9c57fc68e495e.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/41/e4/41e40586cd9a17635c1ac601a4db0fd7.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/8d/13/8d13b52f9a4f31fda840fc909db0acd1.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/74/2f/742fe504334e82fd97b3081616d4d2c0.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/ab/48/ab48095ef5deec9afd4b5d192bc02088.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/46/28/4628c41f18b3e62511c6f7cda2115199.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/22/13/22136f8b7c1aa1148f7797eea34ff0c8.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/6e/ac/6eac9d377357de5cdff1151cc7f7223a.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/10/a1/10a1a566a3fb649195e118aaa30b6cf6.jpg"
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/a5/09/a5094cf20e1a68f1dfda350fad2d37a6.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/24/0b/240b91e397bac9f20be522f394163e0c.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/95/34/953444bf4c31d8e83337cc531008d8c1.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/83/a9/83a9c175cc1887298562f12c4f491f68.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/df/17/df17b57b4f83dbb353344aa0c5acbe77.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/e3/21/e3217d9e63f5cfa0cde58d69e759aacf.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/be/be/bebe2043ac5b0e05e85b19f47c1b3827.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/42/b5/42b5d3f83f79e94999e692a070f6718d.jpg"
       ],
-      "website_url": "http://thegymff.cz/gym/hradcanska/",
-      "phone": "+420 604 211 856",
-      "email": "hradcanska@thegymff.cz",
-      "description": null,
+      "website_url": "https://www.maxfitness.cz/pobocky/detail/max-fitness-luziny",
+      "phone": "+420 737 798 917",
+      "email": "luziny@maxfitness.cz",
+      "description": "The 1,400 m² fitness center on the 3rd floor of the Lužiny shopping center offers modern Precor equipment, a free Finnish sauna and an Ergoline solarium. The branch is easily accessible due to its proximity to the Lužiny metro station. Measurements on the InBody device allow you to track your progress and optimize your training plans.",
       "is_new": false,
       "recommended": false,
       "additional_payment": false,
@@ -778,17 +682,66 @@
         {
           "name": "Stříbrná",
           "id": 1,
-          "description": "Gym, InBody (1x per calendar half year)"
+          "description": "Gym, Sauna, InBody"
         },
         {
-          "name": "Student",
-          "id": 4,
-          "description": "Gym"
+          "name": "Dítě",
+          "id": 2,
+          "description": "Gym, Sauna, InBody"
         },
         {
           "name": "FKSP",
           "id": 3,
-          "description": "Gym, InBody (1x per calendar half year)"
+          "description": "Gym, Sauna, InBody"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": null,
+      "instagram_url": "https://www.instagram.com/maxfitnessluziny/?hl=cs"
+    },
+    {
+      "id": "2153",
+      "name": "Jóga Blanka Janíčková",
+      "address": "Tejnorova 1356, Hostivice",
+      "city": "Hostivice",
+      "lat": 50.0756486,
+      "lng": 14.2493094,
+      "category": "yoga",
+      "activities": [
+        "Pilates",
+        "Yoga",
+        "Dance"
+      ],
+      "activity_summary": "Lessons (Yoga, Dance, Pilates) with an additional charge of 50 CZK",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/21/48/2148ec88dfcceb0a6a8a83a2ee2165c2.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/4c/98/4c984d7420ed083157f8c949111be894.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/2f/d3/2fd3058f79c5a9bfb5116580b0233095.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/65/2e/652e22f22e34b699765bca7dfb40ca35.jpg"
+      ],
+      "website_url": "http://yoga4yogi.cz/",
+      "phone": "+420 724 648 545",
+      "email": "blankajanickova@seznam.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": "Lessons (Yoga, Dance, Pilates) with an additional charge of 50 CZK",
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Lessons (Yoga, Dance, Pilates) with an additional charge of 50 CZK"
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Lessons (Yoga, Dance, Pilates) with an additional charge of 50 CZK"
         }
       ],
       "kids_activities": false,
@@ -801,25 +754,22 @@
       "instagram_url": null
     },
     {
-      "id": "3237",
-      "name": "EGO GYM",
-      "address": "Hrusická 2617/3a, Praha",
+      "id": "2093",
+      "name": "FITNESS-4LIFE",
+      "address": "Třinecká 650, Praha",
       "city": "Praha",
-      "lat": 50.0492586,
-      "lng": 14.4851972,
+      "lat": 50.1342494,
+      "lng": 14.5104472,
       "category": "fitness",
       "activities": [
         "Gym"
       ],
       "activity_summary": "Gym",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/92/bf/92bfbd7a27545dbd960e627ebe0a73a5.jpg",
-      "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/6d/15/6d1559faf71143dfc615b1b262edc012.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/15/57/1557f4f40f5a7b12801f52ffc6727366.jpg"
-      ],
-      "website_url": "http://egogym.cz/",
-      "phone": "+420 725 000 352",
-      "email": "egogym@seznam.cz",
+      "image_url": null,
+      "gallery_images": [],
+      "website_url": "http://fitness-4life.cz/",
+      "phone": "+420 736 263 968",
+      "email": "Fitness-4life@seznam.cz",
       "description": null,
       "is_new": false,
       "recommended": false,
@@ -843,36 +793,30 @@
       "self_service": false,
       "self_service_times": null,
       "unlimited_oh": false,
-      "facebook_url": "https://www.facebook.com/share/17iJYNrwgM/",
-      "instagram_url": "https://www.instagram.com/egogym_official?igsh=bWY4MmZmb3hvbXU3"
+      "facebook_url": "https://www.facebook.com/fitnessprozivot/",
+      "instagram_url": null
     },
     {
-      "id": "4317",
-      "name": "Mothergood",
-      "address": "Sudoměrská 1243/25, Praha",
+      "id": "4046",
+      "name": "vo2max",
+      "address": "Sokolovská 651/136a, Praha",
       "city": "Praha",
-      "lat": 50.0802056,
-      "lng": 14.4584564,
-      "category": "group",
+      "lat": 50.0963383,
+      "lng": 14.4631217,
+      "category": "yoga",
       "activities": [
-        "Exercise with children",
-        "fitMami",
-        "Fitness for women/SmartFit",
+        "Hatha yoga",
         "Pilates",
+        "Healthy back/Back pain",
         "Core training",
-        "Cardio training",
-        "Exercises for pregnant"
+        "Yoga"
       ],
-      "activity_summary": "Group lessons  (Mama Strengthen and Flow, Prenatal Flow, Postpartum Core, Mama Mat Pilates, Postpartum Cardio Fit, Mama Pelvic Floor and Core, Mama HIIT, Mama Mindful Flow, Mama Strong, Mama Mobility Flow , Restorative Pilates)",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/e0/1f/e01f94cfc3b7e7720dc982f9f366421a.jpg",
-      "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/02/65/02655bae8d28fade9fb42dd973da86d5.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/d5/10/d510c47f594b15f5201e992909e3b7ed.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/30/1b/301b3bd1024a09294ff05862de948241.jpg"
-      ],
-      "website_url": "http://mothergood.cz/",
-      "phone": "+420 737 358 251",
-      "email": "mothergood.cz@gmail.com",
+      "activity_summary": "Group lessons (core, pilates, hatha yoga, vinyasa yoga, physio - yoga, exercises for a healthy back, office yoga healthy back, comprehensive training, health yoga, yoga refresh)",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/70/4c/704ca4d631409f181e8a877aaac379a5.jpg",
+      "gallery_images": [],
+      "website_url": "http://vo2max.cz",
+      "phone": "+420 777 007 444",
+      "email": "vo2max@vo2max.cz",
       "description": null,
       "is_new": false,
       "recommended": false,
@@ -882,12 +826,12 @@
         {
           "name": "Stříbrná",
           "id": 1,
-          "description": "Group lessons  (Mama Strengthen and Flow, Prenatal Flow, Postpartum Core, Mama Mat Pilates, Postpartum Cardio Fit, Mama Pelvic Floor and Core, Mama HIIT, Mama Mindful Flow, Mama Strong, Mama Mobility Flow , Restorative Pilates)"
+          "description": "Group lessons (core, pilates, hatha yoga, vinyasa yoga, physio - yoga, exercises for a healthy back, office yoga healthy back, comprehensive training, health yoga, yoga refresh)"
         },
         {
           "name": "FKSP",
           "id": 3,
-          "description": "Group lessons  (Mama Strengthen and Flow, Prenatal Flow, Postpartum Core, Mama Mat Pilates, Postpartum Cardio Fit, Mama Pelvic Floor and Core, Mama HIIT, Mama Mindful Flow, Mama Strong, Mama Mobility Flow , Restorative Pilates)"
+          "description": "Group lessons (core, pilates, hatha yoga, vinyasa yoga, physio - yoga, exercises for a healthy back, office yoga healthy back, comprehensive training, health yoga, yoga refresh)"
         }
       ],
       "kids_activities": false,
@@ -896,7 +840,62 @@
       "self_service": false,
       "self_service_times": null,
       "unlimited_oh": false,
-      "facebook_url": null,
+      "facebook_url": "https://www.facebook.com/vo2maxsport",
+      "instagram_url": null
+    },
+    {
+      "id": "3377",
+      "name": "FitHunters Vinohrady",
+      "address": "Balbínova 32, Praha",
+      "city": "Praha",
+      "lat": 50.0795744,
+      "lng": 14.436085,
+      "category": "group",
+      "activities": [
+        "Abdomen training/Abdominal muscles strengthening",
+        "HIIT",
+        "Circuit training",
+        "Power training"
+      ],
+      "activity_summary": "Group lessons (Circuit training, Abs workout, Strength training, HIIT training)",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/cb/c9/cbc9020b9deb9897bf54f7bab8db80e3.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/dc/03/dc03555ac1c9bf30c2b77284a5d71f9e.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/45/90/4590e6d89f79fe8aab429ee2e7bcbb6f.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/e1/9f/e19f8cedabbf891372c37b01c0cdd004.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/b8/0e/b80e26abd8a37b2799f50801e58c93fb.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/b4/77/b477b1df84cabfe4e09e96b749d3d0a0.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/f2/6f/f26fc235376c756855795d9964419cf0.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/de/7d/de7d96d745a7e7d5ba4c451da550b156.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/b5/ef/b5ef86bb0d09a00b0c3b4db59f835566.jpg"
+      ],
+      "website_url": "http://fithunters.cz/",
+      "phone": "+420 606 841 086",
+      "email": "info@fithunters.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Group lessons (Circuit training, Abs workout, Strength training, HIIT training)"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Group lessons (Circuit training, Abs workout, Strength training, HIIT training)"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": true,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/fithunterscz",
       "instagram_url": null
     }
   ]
