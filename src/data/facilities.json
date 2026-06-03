@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-06-01T09:08:34.176Z",
-  "total": 2,
+  "scraped_at": "2026-06-03T08:45:52.662Z",
+  "total": 17,
   "facilities": [
     {
       "id": "3912",
@@ -127,6 +127,838 @@
           "name": "FKSP",
           "id": 3,
           "description": "Gym, Circuit training"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": null,
+      "instagram_url": null
+    },
+    {
+      "id": "240",
+      "name": "HEAT PRAHA",
+      "address": "Černokostelecká 106/64, Praha",
+      "city": "Praha",
+      "lat": 50.0774642,
+      "lng": 14.5056731,
+      "category": "group",
+      "activities": [
+        "Bodystyling/Bodyform",
+        "Abdomen training/Abdominal muscles strengthening",
+        "H.E.A.T. program",
+        "Pilates",
+        "Salt Cave",
+        "Health exercises/Corrective exercises",
+        "Yoga"
+      ],
+      "activity_summary": "H.E.A.T. program, Salt Cave (50 min), Group lessons (Yoga, Pilates, Abdomen training, Bodystyling)",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/7d/9c/7d9c921abf04d30f4f44536fd08afb42.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/5d/be/5dbe38e7fe647832e10260ce1cad1a01.jpg"
+      ],
+      "website_url": "http://heatpraha.cz/",
+      "phone": "+420 603 414 542",
+      "email": "info@heatpraha.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "H.E.A.T. program, Salt Cave (50 min), Group lessons (Yoga, Pilates, Abdomen training, Bodystyling)"
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Please inquire directly about the possibility of use with the partner facility."
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "H.E.A.T. program, Salt Cave (50 min), Group lessons (Yoga, Pilates, Abdomen training, Bodystyling)"
+        }
+      ],
+      "kids_activities": true,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": null,
+      "instagram_url": null
+    },
+    {
+      "id": "355",
+      "name": "Studio Hvězda",
+      "address": "Křenova 11, Praha",
+      "city": "Praha",
+      "lat": 50.0888903,
+      "lng": 14.3438,
+      "category": "yoga",
+      "activities": [
+        "Ashtanga vinyasa yoga",
+        "Dynamic Yoga",
+        "Flowin",
+        "Hatha yoga",
+        "Pilates",
+        "Power yoga/Energy yoga",
+        "Healthy back/Back pain",
+        "Yoga"
+      ],
+      "activity_summary": "Yoga 60 minutes (Yoga, Iyengar Yoga, Hormonal Yoga, Pilates Therapy, Yoga for a Healthy Back, SM System, Basic Yoga, Gentle Yoga for a Healthy Back, Morning Yoga, Healthy Back, Exercises by Ludmila Mojžíšová and other exercises, Yin and Yang Yoga, Yoga for Eternal Beginners, Power Yoga, Flexibility, Pilates, Dynamic Iyengar Yoga, Exercises for a Healthy Back, Vinyasa Ashtanga Yoga, Gentle Yoga, Flowin Pilates, Dynamic Types of Yoga, Calmer Types of Yoga, Core Yoga) with additional payment CZK 50",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/72/d3/72d35010f77766249243a43ac0959009.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/1e/46/1e469c374dad6cbf6707632f47697683.jpg"
+      ],
+      "website_url": "http://studio-hvezda.cz",
+      "phone": "+420 722 442 777",
+      "email": null,
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": true,
+      "additional_payment_desc": "Yoga 60 minutes (Yoga, Iyengar Yoga, Hormonal Yoga, Pilates Therapy, Yoga for a Healthy Back, SM System, Basic Yoga, Gentle Yoga for a Healthy Back, Morning Yoga, Healthy Back, Exercises by Ludmila Mojžíšová and other exercises, Yin and Yang Yoga, Yoga for Eternal Beginners, Power Yoga, Flexibility, Pilates, Dynamic Iyengar Yoga, Exercises for a Healthy Back, Vinyasa Ashtanga Yoga, Gentle Yoga, Flowin Pilates, Dynamic Types of Yoga, Calmer Types of Yoga, Core Yoga) with additional payment CZK 50",
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Yoga 60 minutes (Yoga, Iyengar Yoga, Hormonal Yoga, Pilates Therapy, Yoga for a Healthy Back, SM System, Basic Yoga, Gentle Yoga for a Healthy Back, Morning Yoga, Healthy Back, Exercises by Ludmila Mojžíšová and other exercises, Yin and Yang Yoga, Yoga for Eternal Beginners, Power Yoga, Flexibility, Pilates, Dynamic Iyengar Yoga, Exercises for a Healthy Back, Vinyasa Ashtanga Yoga, Gentle Yoga, Flowin Pilates, Dynamic Types of Yoga, Calmer Types of Yoga, Core Yoga) with additional payment CZK 50"
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Yoga 60 minutes (Yoga, Iyengar Yoga, Hormonal Yoga, Pilates Therapy, Yoga for a Healthy Back, SM System, Basic Yoga, Gentle Yoga for a Healthy Back, Morning Yoga, Healthy Back, Exercises by Ludmila Mojžíšová and other exercises, Yin and Yang Yoga, Yoga for Eternal Beginners, Power Yoga, Flexibility, Pilates, Dynamic Iyengar Yoga, Exercises for a Healthy Back, Vinyasa Ashtanga Yoga, Gentle Yoga, Flowin Pilates, Dynamic Types of Yoga, Calmer Types of Yoga, Core Yoga) with additional payment CZK 50"
+        },
+        {
+          "name": "Student",
+          "id": 4,
+          "description": "Yoga 60 minutes (Yoga, Iyengar Yoga, Hormonal Yoga, Pilates Therapy, Yoga for a Healthy Back, SM System, Basic Yoga, Gentle Yoga for a Healthy Back, Morning Yoga, Healthy Back, Exercises by Ludmila Mojžíšová and other exercises, Yin and Yang Yoga, Yoga for Eternal Beginners, Power Yoga, Flexibility, Pilates, Dynamic Iyengar Yoga, Exercises for a Healthy Back, Vinyasa Ashtanga Yoga, Gentle Yoga, Flowin Pilates, Dynamic Types of Yoga, Calmer Types of Yoga, Core Yoga) with additional payment CZK 50"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": null,
+      "instagram_url": null
+    },
+    {
+      "id": "2141",
+      "name": "Saunia - Centrum Krakov",
+      "address": "Lodžská 850/6, Praha",
+      "city": "Praha",
+      "lat": 50.1277289,
+      "lng": 14.4173622,
+      "category": "wellness",
+      "activities": [
+        "Sauna/Steam"
+      ],
+      "activity_summary": "Sauna world (incl. Linen rental - towel and sheets).\n<br>\n<b> Mon-Fri (departure before 17:00) *: </b>\n<br> unlimited entry with a surcharge of CZK 329.\n<br>\n<b> Mon-Fri (departure after 17:00), weekends and holidays: </b>\n<br> 2 hours * with surcharge 329 CZK.\n<br> 3 hours and more with a surcharge of 459 CZK.\n<b> Mon-Fri, weekend, holiday coming after 20:45 surcharge 249 czk.</b>\n<br> *In case of exceeding, CZK 3,25 / minute will be charged, max. CZK 130.0.",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/c3/17/c317dfecb236b36e3c5f902f2f064492.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/4d/30/4d3011d460c840d6d0d343e55460d83d.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/e5/3a/e53a3e9077f1a0268e639c13a7e8bc65.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/84/b4/84b45ee6618847ae594a7f5fb6b11663.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/13/1e/131efd4bd3204ef158445ea80252bbf5.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/7d/b1/7db1f3357e19443f8e318c1e6f415331.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/34/31/34318f6fed0a5241cdca34bc53f08bfb.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/22/cb/22cb08f3665c5312ef5e923e46555d14.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/33/99/33999191f0e50515c560a37a725f2f09.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/7d/1d/7d1da3aa9094800382330c5d580cc7ba.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/be/35/be3523e90932bb656ea6ad71a229818e.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/e2/be/e2beb4b0030662750db533a1ece90fcc.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/f4/58/f4581ad69e4cc3a4cb594f0fe78b2361.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/b2/fc/b2fc726e40de0f214897b4a9056736b3.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/7d/c2/7dc2ac3340ed7ce306c7928eb76204d5.jpg"
+      ],
+      "website_url": "http://saunia.cz/cz/krakov/krakov-uvod",
+      "phone": "+420 771 133 414",
+      "email": "krakov@saunia.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": true,
+      "additional_payment_desc": "Sauna world (incl. Linen rental - towel and sheets).\n<br>\n<b> Mon-Fri (departure before 17:00) *: </b>\n<br> unlimited entry with a surcharge of CZK 329.\n<br>\n<b> Mon-Fri (departure after 17:00), weekends and holidays: </b>\n<br> 2 hours * with surcharge 329 CZK.\n<br> 3 hours and more with a surcharge of 459 CZK.\n<b> Mon-Fri, weekend, holiday coming after 20:45 surcharge 249 czk.</b>\n<br> * In case of exceeding, CZK 3,25 / minute will be charged, max. CZK 130.0.",
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Sauna world (incl. Linen rental - towel and sheets).\n<br>\n<b> Mon-Fri (departure before 17:00) *: </b>\n<br> unlimited entry with a surcharge of CZK 329.\n<br>\n<b> Mon-Fri (departure after 17:00), weekends and holidays: </b>\n<br> 2 hours * with surcharge 329 CZK.\n<br> 3 hours and more with a surcharge of 459 CZK.\n<b> Mon-Fri, weekend, holiday coming after 20:45 surcharge 249 czk.</b>\n<br> * In case of exceeding, CZK 3,25 / minute will be charged, max. CZK 130.0."
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Sauna world (incl. Linen rental - towel and sheets).\n<br>\n<b> Mon-Fri (departure before 17:00) *: </b>\n<br> unlimited entry with a surcharge of CZK 329.\n<br>\n<b> Mon-Fri (departure after 17:00), weekends and holidays: </b>\n<br> 2 hours * with surcharge 329 CZK.\n<br> 3 hours and more with a surcharge of 459 CZK.\n<b> Mon-Fri, weekend, holiday coming after 20:45 surcharge 249 czk.</b>\n<br> * In case of exceeding, CZK 3,25 / minute will be charged, max. CZK 130.0."
+        }
+      ],
+      "kids_activities": true,
+      "only_virtual_card": false,
+      "parking": "Free",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/saunia.centrum.krakov",
+      "instagram_url": null
+    },
+    {
+      "id": "3721",
+      "name": "Max Fitness Bílá Labuť",
+      "address": "OD Bílá Labuť, Na Poříčí 1068, Praha",
+      "city": "Praha",
+      "lat": 50.0900019,
+      "lng": 14.4338994,
+      "category": "fitness",
+      "activities": [
+        "Gym",
+        "Sauna/Steam",
+        "InBody"
+      ],
+      "activity_summary": "Gym, Sauna, InBody",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/6c/a4/6ca45710d6e66245a2150a1272a3254c.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/6f/0d/6f0d017ac0d6de37c10616d5a089b1d4.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/f7/d1/f7d1654c3b78791c1b0b885c912df121.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/1c/11/1c11e8297f9792047ff445b2271be8a2.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/7a/c5/7ac5c4fe3c4c8b63766487520dcb3fb9.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/d5/81/d5815d884f34bb4fcd115e06e07cd987.jpg"
+      ],
+      "website_url": "https://www.maxfitness.cz/pobocky/detail/max-fitness-bila-labut",
+      "phone": "+420 736 471 266",
+      "email": "bilalabut@maxfitnesspraha.cz",
+      "description": "The fitness center is located in the prestigious location of Bílá Labuta in the center of Prague. It offers modern equipment from the Life Fitness and Booty Builder brands, a spacious cardio zone and strength training machines for strength training, a Ladies zone with Matrix equipment, including a complete line of Booty Builder machines. There is also a Finnish sauna, which is free to enter as part of a fitness visit. You will also find body diagnostics measurements using the InBody device.",
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Gym, Sauna, InBody"
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Gym, Sauna, InBody"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Gym, Sauna, InBody"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/maxfitnessbilalabut",
+      "instagram_url": "https://www.instagram.com/maxfitnessbilalabut/?hl=cs"
+    },
+    {
+      "id": "663",
+      "name": "ARENA GYM Jinonice",
+      "address": "V zářezu 902/4, Praha",
+      "city": "Praha",
+      "lat": 50.054358,
+      "lng": 14.370361,
+      "category": "group",
+      "activities": [
+        "Functional training",
+        "Kickboxing",
+        "Gym",
+        "Mobility"
+      ],
+      "activity_summary": "Open Gym, Group Lessons (Functional Training, Kickboxing, Mobility, BJJ (Brasilian Jiu Jitsu), Judo)",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/31/a1/31a162f780d5013ed87126388828c2df.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/fe/3f/fe3fef44bc6a561697380513fd7e8ec5.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/7b/b4/7bb430d18ef0c80fe6da479fb3ed5a32.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/16/d8/16d82b0c0acf454bfbb639a3affd7f04.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/3c/f7/3cf7458f1a9386363b85651ff3191111.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/b1/84/b184b4646cecdf346ee5e30da4598997.jpg"
+      ],
+      "website_url": "http://arenapk.cz/",
+      "phone": "+420 228 226 326",
+      "email": "info@arenapk.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Open Gym, Group Lessons (Functional Training, Kickboxing, Mobility, BJJ (Brasilian Jiu Jitsu), Judo)"
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Open Gym, Group Lessons (Functional Training, Kickboxing, Mobility, BJJ (Brasilian Jiu Jitsu), Judo)"
+        },
+        {
+          "name": "Student",
+          "id": 4,
+          "description": "Open Gym"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Open Gym, Group Lessons (Functional Training, Kickboxing, Mobility, BJJ (Brasilian Jiu Jitsu), Judo)"
+        }
+      ],
+      "kids_activities": true,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": true,
+      "self_service_times": "Objekt funguje bezobslužně v době od 9 - 16h.",
+      "unlimited_oh": false,
+      "facebook_url": null,
+      "instagram_url": null
+    },
+    {
+      "id": "3661",
+      "name": "Escolasergame",
+      "address": "Kladenská 417/7, Praha",
+      "city": "Praha",
+      "lat": 50.0979089,
+      "lng": 14.3669189,
+      "category": "outdoor",
+      "activities": [
+        "Laser game"
+      ],
+      "activity_summary": "Laser game (15 min)",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/aa/6d/aa6d0cc06e4ed5255b074c3a421b2c30.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/09/1e/091e8760dd11ac9c66a7a1c107220981.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/cd/73/cd730e25f4b18fd019d1cdebfb3a2b11.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/a8/bf/a8bf48f9016effa33ea97e12df4db4fd.jpg"
+      ],
+      "website_url": "http://escolasergame.cz",
+      "phone": "+420 736 455 493",
+      "email": "info@escolasergame.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Laser game (15 min)"
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Laser game (15 min)"
+        },
+        {
+          "name": "Student",
+          "id": 4,
+          "description": "Laser game (15 min)"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Laser game (15 min)"
+        }
+      ],
+      "kids_activities": true,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/EscoLaserGame",
+      "instagram_url": null
+    },
+    {
+      "id": "4901",
+      "name": "Slugger fight club",
+      "address": "Sokolovská 138/615, Praha",
+      "city": "Praha",
+      "lat": 50.0984617,
+      "lng": 14.4683161,
+      "category": "group",
+      "activities": [
+        "Boxing",
+        "Circuit training",
+        "Stretching",
+        "Thaiboxing",
+        "Body workout"
+      ],
+      "activity_summary": "Group lessons (Circuit training, Boxing, Stretching, Workout), BJJ No-Gi, BJJ for beginners, Thaibox): capacity 4 places",
+      "image_url": null,
+      "gallery_images": [],
+      "website_url": "https://n1338118.alteg.io/?utm_source=google&utm_campaign=google-maps",
+      "phone": "+420 736 488 541",
+      "email": "slugger.fightclub@gmail.com",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Group lessons (Circuit training, Boxing, Stretching, Workout), BJJ No-Gi, BJJ for beginners, Thaibox): capacity 4 places"
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Group lessons (Circuit training, Boxing, Stretching, Workout), BJJ No-Gi, BJJ for beginners, Thaibox): capacity 4 places"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Group lessons (Circuit training, Boxing, Stretching, Workout), BJJ No-Gi, BJJ for beginners, Thaibox): capacity 4 places"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/p/sluggerfightclub-61570593291900/",
+      "instagram_url": "https://www.instagram.com/slugger.fight.club/"
+    },
+    {
+      "id": "3543",
+      "name": "FORM FACTORY fitness center – Stodůlky",
+      "address": "Siemensova 2717/4, Praha",
+      "city": "Praha",
+      "lat": 50.047305,
+      "lng": 14.306149,
+      "category": "group",
+      "activities": [
+        "Circuit training",
+        "Les Mills",
+        "Gym",
+        "Pump/Body Pump",
+        "Sauna/Steam",
+        "Stretching",
+        "Tabata",
+        "Zumba",
+        "Core training",
+        "Yoga",
+        "InBody"
+      ],
+      "activity_summary": "Entrance to the club: Gym, InBody (once in calendar half a year), Sauna, Group lessons (YOGA, BODYPUMP, HEALTHY STRETCHING, BODYATTACK, CIRCUIT TRAINING, TABATA, LM CORE, ZUMBA, VIXEN)",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/57/37/57371ed3208456622bfed5596e235b98.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/75/34/753477fda66d48204d39e7746189bdfe.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/d7/e0/d7e0fabae58812a2d22dac3d9cd69984.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/0c/bc/0cbc87337462dbf7f797e48c016cc96c.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/18/ab/18abfb6cf50d3b4811b5275127d2d234.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/bc/c8/bcc8d3915ec037aaed9031f113005e24.jpg"
+      ],
+      "website_url": "http://formfactory.cz/klub-cz/fitness-stodulky/",
+      "phone": "+420 732 352 008",
+      "email": "stodulky@formfactory.cz",
+      "description": "From 30.3. 2019, it is necessary to make a reservation through the client zone in advance before visiting the studio lessons. Please request your client zone login information at the club reception or by phone.\n\n\nIt is necessary to bring your own locker (at the reception the possibility of renting for 30 CZK) and your own towel (at the reception the possibility of buying a large towel for 150 CZK)\n<b>According to the operating rules of the fitness center, children under 15 are not allowed.",
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Entrance to the club: Gym, InBody (once in calendar half a year), Sauna, Group lessons (YOGA, BODYPUMP, HEALTHY STRETCHING, BODYATTACK, CIRCUIT TRAINING, TABATA, LM CORE, ZUMBA, VIXEN)"
+        },
+        {
+          "name": "Student",
+          "id": 4,
+          "description": "Entrance to the club: Gym, Sauna, Group lessons (YOGA, BODYPUMP, HEALTHY STRETCHING, BODYATTACK, CIRCUIT TRAINING, TABATA, LM CORE, ZUMBA, VIXEN)"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Entrance to the club: Gym, InBody (once in calendar half a year), Sauna, Group lessons (YOGA, BODYPUMP, HEALTHY STRETCHING, BODYATTACK, CIRCUIT TRAINING, TABATA, LM CORE, ZUMBA, VIXEN)"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/formfactoryfitcenter/",
+      "instagram_url": null
+    },
+    {
+      "id": "4771",
+      "name": "GYM RAT FAMILY Modřany",
+      "address": "Lysinská 1861/40, Praha",
+      "city": "Praha",
+      "lat": 50.0134883,
+      "lng": 14.4099372,
+      "category": "group",
+      "activities": [
+        "Circuit training",
+        "Gym",
+        "Power training"
+      ],
+      "activity_summary": "Gym, Group lessons (Circuit training, Strength training)",
+      "image_url": null,
+      "gallery_images": [],
+      "website_url": "http://gymratfamily.cz",
+      "phone": "+420 731 296 515",
+      "email": "msworkspace2000@gmail.com",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Gym, Group lessons (Circuit training, Strength training)"
+        },
+        {
+          "name": "Student",
+          "id": 4,
+          "description": "Gym, Group lessons (Circuit training, Strength training)"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Gym, Group lessons (Circuit training, Strength training)"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": true,
+      "parking": "Unknown",
+      "self_service": true,
+      "self_service_times": "(otevírací doba 05:00 -00:00)",
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/gymratfamily/",
+      "instagram_url": null
+    },
+    {
+      "id": "665",
+      "name": "LÁZNĚ NA LODI",
+      "address": "Rašínovo nábřeží , Praha",
+      "city": "Praha",
+      "lat": 50.068505,
+      "lng": 14.414403,
+      "category": "wellness",
+      "activities": [
+        "Sauna/Steam"
+      ],
+      "activity_summary": "Sauna 60 min",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/cb/18/cb180d914984e5f78ab203ea58edadd7.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/2d/7a/2d7aae9eae1c88612b208461967b66c2.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/71/ac/71ac91308b82284dca0133284be66235.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/f2/20/f220852b2f0f4a895642a875a8177294.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/03/b8/03b8f46821af8b4fc4f3034bedb55aca.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/fc/45/fc452c89a8c3e807c1dded4807499b74.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/38/48/3848f2e9a0fdc897ff9f6912de8e3269.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/be/4e/be4e9e39f23da9bd077717a71328e6d8.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/b8/fe/b8fe6f735f251752aac9eae2ab2be153.jpg"
+      ],
+      "website_url": "http://laznenalodi.cz",
+      "phone": "+420 733 429 349",
+      "email": "info@laznenalodi.cz",
+      "description": "Open only from autumn to spring (according to the partner's website).\n\nSpa at Náplavka on the steamer Avoid Gallery on the Rašín embankment. A classic Finnish sauna with a view of Hradčany, a relaxation area, a changing room, a shower, cooling showers and a jetty into the river.\n\nMon - Sun: 18 - 23\n\nBefore visiting the sauna, it is advisable to reserve a place for a specific time and number of people, the reservation is possible online in the reservation section, by phone or by email.",
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Sauna 60 min"
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Sauna 60 min"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Sauna 60 min"
+        }
+      ],
+      "kids_activities": true,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/Laznenalodi/",
+      "instagram_url": null
+    },
+    {
+      "id": "4749",
+      "name": "Metagym Chodov",
+      "address": "Blažimská 1781, Praha",
+      "city": "Praha",
+      "lat": 50.0417286,
+      "lng": 14.4981339,
+      "category": "fitness",
+      "activities": [
+        "Gym"
+      ],
+      "activity_summary": "Gym",
+      "image_url": null,
+      "gallery_images": [],
+      "website_url": "http://metagym.cz/chodov",
+      "phone": null,
+      "email": "jarda@metagym.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Gym"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Gym"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": true,
+      "parking": "Unknown",
+      "self_service": true,
+      "self_service_times": null,
+      "unlimited_oh": true,
+      "facebook_url": "https://www.facebook.com/metagymfitness/",
+      "instagram_url": "https://www.instagram.com/metagym_radotin/"
+    },
+    {
+      "id": "4966",
+      "name": "JamJam boulder club Prague",
+      "address": "Vlastina 889/23, Praha",
+      "city": "Praha",
+      "lat": 50.0897981,
+      "lng": 14.3148697,
+      "category": "climbing",
+      "activities": [
+        "Bouldering"
+      ],
+      "activity_summary": "Boulder wall: adult - Mon-Fri 2:14 p.m.-7:18 p.m. with a surcharge of 100 CZK, 7:19 p.m.-10:33 p.m. with a surcharge of 70 CZK, Sat-Sun, Holidays 8:08 a.m.-10:33 p.m. with a surcharge of 100 CZK, student - Mon-Fri 2:14 p.m.-7:18 p.m. with a surcharge of 80 CZK, Sat-Sun, Holidays 8:08 a.m.-10:33 p.m. with a surcharge of 80 CZK, child: Mon-Fri 2:14 p.m.-7:18 p.m. with a surcharge of 50 CZK, 7:19 p.m.-10:33 p.m. with a surcharge of 20 CZK, Sat-Sun, Holidays 8:08 a.m.-10:33 p.m. with a surcharge of 50 CZK",
+      "image_url": null,
+      "gallery_images": [],
+      "website_url": "https://www.jamjam.cz/",
+      "phone": "+420 602 652 499",
+      "email": "info@jamjam.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": true,
+      "additional_payment_desc": "Boulder wall: adult - Mon-Fri 2:14 p.m.-7:18 p.m. with a surcharge of 100 CZK, 7:19 p.m.-10:33 p.m. with a surcharge of 70 CZK, Sat-Sun, Holidays 8:08 a.m.-10:33 p.m. with a surcharge of 100 CZK, student - Mon-Fri 2:14 p.m.-7:18 p.m. with a surcharge of 80 CZK, Sat-Sun, Holidays 8:08 a.m.-10:33 p.m. with a surcharge of 80 CZK, child: Mon-Fri 2:14 p.m.-7:18 p.m. with a surcharge of 50 CZK, 7:19 p.m.-10:33 p.m. with a surcharge of 20 CZK, Sat-Sun, Holidays 8:08 a.m.-10:33 p.m. with a surcharge of 50 CZK",
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Boulder wall: adult - Mon-Fri from 2:14 PM to 7:18 PM with a surcharge of 100 CZK, from 7:19 PM to 10:33 PM with a surcharge of 70 CZK, Sat-Sun, Holidays from 8:08 AM to 10:33 PM with a surcharge of 100 CZK"
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Boulder wall: child: Mon-Fri from 2:14 PM to 7:18 PM with a surcharge of 50 CZK, from 7:19 PM to 10:33 PM with a surcharge of 20 CZK, Sat-Sun, Holidays from 8:08 AM to 10:33 PM with a surcharge of 50 CZK"
+        },
+        {
+          "name": "Student",
+          "id": 4,
+          "description": "Boulder wall: student - Mon-Fri from 2:14 PM to 7:18 PM with a surcharge of 80 CZK, Sat-Sun, Holidays from 8:08 AM to 10:33 PM with a surcharge of 80 CZK"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Boulder wall: adult - Mon-Fri from 2:14 PM to 7:18 PM with a surcharge of 100 CZK, from 7:19 PM to 10:33 PM with a surcharge of 70 CZK, Sat-Sun, Holidays from 8:08 AM to 10:33 PM with a surcharge of 100 CZK"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/jamjamprague",
+      "instagram_url": null
+    },
+    {
+      "id": "5169",
+      "name": "Heavenly studio",
+      "address": "Sokolovská 115, Praha",
+      "city": "Praha",
+      "lat": 50.0984889,
+      "lng": 14.4662144,
+      "category": "yoga",
+      "activities": [
+        "Hot yoga",
+        "Pilates",
+        "Yoga"
+      ],
+      "activity_summary": "Lowcost lessons (yoga, pilates), Special lessons (yoga, pilates) with an additional charge of 150 CZK, Hot lessons (Hot yoga, Hot pilates) with an additional charge of 200 CZK",
+      "image_url": null,
+      "gallery_images": [],
+      "website_url": "http://heavenlyyoga.cz",
+      "phone": "+420 777 845 451",
+      "email": "heavenlyhotyoga@gmail.com",
+      "description": null,
+      "is_new": true,
+      "recommended": false,
+      "additional_payment": true,
+      "additional_payment_desc": "Special lessons (yoga, pilates) with an additional charge of 150 CZK, Hot lessons (Hot yoga, Hot pilates) with an additional charge of 200 CZK",
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Lowcost lessons (yoga, pilates), Special lessons (yoga, pilates) with an additional charge of 150 CZK, Hot lessons (Hot yoga, Hot pilates) with an additional charge of 200 CZK"
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Lowcost lessons (yoga, pilates), Special lessons (yoga, pilates) with an additional charge of 150 CZK, Hot lessons (Hot yoga, Hot pilates) with an additional charge of 200 CZK"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Lowcost lessons (yoga, pilates)"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": null,
+      "instagram_url": null
+    },
+    {
+      "id": "386",
+      "name": "PANTHER GYM",
+      "address": "Oderská 9, Praha",
+      "city": "Praha",
+      "lat": 50.148245,
+      "lng": 14.5313261,
+      "category": "group",
+      "activities": [
+        "Bodystyling/Bodyform",
+        "Boxing",
+        "Functional training",
+        "Circuit training",
+        "Pilates",
+        "Gym",
+        "Problem zones",
+        "Tabata",
+        "TRX/TRX RIP TRAINER/Jungle sports",
+        "Healthy back/Back pain",
+        "Yoga",
+        "OCR training"
+      ],
+      "activity_summary": "Gym, Group lessons (TRX, OCR training, Boxing, Functional training, Circuit training, Tabata, Problem areas, Body forming, Healthy back), Yoga lessons (Yoga, Pilates) with an additional charge of 40 CZK",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/1f/5b/1f5ba0267855f00b281fc08169b8550f.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/94/83/9483de8bfd207911cd626f00576ed71b.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/5e/09/5e09463f6b98149ac31bcc2d056505b2.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/c3/a2/c3a2fa802ce4cc35fb0af264e37b000b.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/2a/6d/2a6d8b01f55b59ca9d0c99efbe2d100e.jpg"
+      ],
+      "website_url": "http://panthergym.cz",
+      "phone": "+420 725 518 688",
+      "email": "info@panthergym.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": true,
+      "additional_payment_desc": "Yoga lessons (Yoga, Pilates) with an additional charge of 40 CZK",
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Gym, Group lessons (TRX, OCR training, Boxing, Functional training, Circuit training, Tabata, Problem areas, Body forming, Healthy back), Yoga lessons (Yoga, Pilates) with an additional charge of 40 CZK"
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Gym, Group lessons (TRX, OCR training, Boxing, Functional training, Circuit training, Tabata, Problem areas, Body forming, Healthy back), Yoga lessons (Yoga, Pilates) with an additional charge of 40 CZK"
+        },
+        {
+          "name": "Student",
+          "id": 4,
+          "description": "Gym, Group lessons (TRX, OCR training, Boxing, Functional training, Circuit training, Tabata, Problem parts, Body forming, Healthy back)"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Gym, Group lessons (TRX, OCR training, Boxing, Functional training, Circuit training, Tabata, Problem parts, Body forming, Healthy back)"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": null,
+      "instagram_url": null
+    },
+    {
+      "id": "4903",
+      "name": "Powernaut",
+      "address": "Říčanská 12, Všestary",
+      "city": "Všestary",
+      "lat": 49.9590106,
+      "lng": 14.6840189,
+      "category": "fitness",
+      "activities": [
+        "Gym"
+      ],
+      "activity_summary": "Gym",
+      "image_url": null,
+      "gallery_images": [],
+      "website_url": "http://www.powernaut.cz",
+      "phone": "+420 730 619 223",
+      "email": "powernaut@email.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Gym"
+        },
+        {
+          "name": "Student",
+          "id": 4,
+          "description": "Gym"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Gym"
         }
       ],
       "kids_activities": false,
