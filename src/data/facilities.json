@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-05T07:57:49.836Z",
+  "scraped_at": "2026-06-07T07:45:17.883Z",
   "total": 16,
   "facilities": [
     {
@@ -854,63 +854,59 @@
       "instagram_url": null
     },
     {
-      "id": "386",
-      "name": "PANTHER GYM",
-      "address": "Oderská 9, Praha",
+      "id": "5218",
+      "name": "UNDERGROUND GYM",
+      "address": "Jabloňová 3126/11, Praha",
       "city": "Praha",
-      "lat": 50.148245,
-      "lng": 14.5313261,
+      "lat": 50.0571208,
+      "lng": 14.4960611,
       "category": "group",
       "activities": [
-        "Bodystyling/Bodyform",
         "Boxing",
-        "Functional training",
         "Circuit training",
-        "Pilates",
         "Gym",
-        "Problem zones",
-        "Tabata",
-        "TRX/TRX RIP TRAINER/Jungle sports",
-        "Healthy back/Back pain",
+        "Sambo/MMA/K-1",
+        "Thaiboxing",
         "Yoga",
-        "OCR training"
+        "Exercise for children"
       ],
-      "activity_summary": "Gym, Group lessons (TRX, OCR training, Boxing, Functional training, Circuit training, Tabata, Problem areas, Body forming, Healthy back), Yoga lessons (Yoga, Pilates) with an additional charge of 40 CZK",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/1f/5b/1f5ba0267855f00b281fc08169b8550f.jpg",
+      "activity_summary": "Gym, Group lessons (MMA, Box, Thaibox, Yoga, Circuit training), Combat sport for children",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/f9/21/f921867e72ef7823dd736ef5f679dcad.jpg",
       "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/94/83/9483de8bfd207911cd626f00576ed71b.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/5e/09/5e09463f6b98149ac31bcc2d056505b2.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/c3/a2/c3a2fa802ce4cc35fb0af264e37b000b.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/2a/6d/2a6d8b01f55b59ca9d0c99efbe2d100e.jpg"
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/a1/94/a1948afe75025542294ba2f4e043d11f.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/3c/46/3c463cbf7a4f542a333e455e6c582c37.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/60/19/60199f353f4a4a79bdf6761880885945.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/82/8d/828d928866dd320535b3f1c98235eec3.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/dd/a0/dda0f7a2bbb3ca0b33c5e9ef3bf7b383.jpg"
       ],
-      "website_url": "http://panthergym.cz",
-      "phone": "+420 725 518 688",
-      "email": "info@panthergym.cz",
+      "website_url": "http://undergroundgym.cz/",
+      "phone": "+420 730 105 790",
+      "email": "undergroundgym@gmail.com",
       "description": null,
       "is_new": false,
       "recommended": false,
-      "additional_payment": true,
-      "additional_payment_desc": "Yoga lessons (Yoga, Pilates) with an additional charge of 40 CZK",
+      "additional_payment": false,
+      "additional_payment_desc": null,
       "active_cards": [
         {
           "name": "Stříbrná",
           "id": 1,
-          "description": "Gym, Group lessons (TRX, OCR training, Boxing, Functional training, Circuit training, Tabata, Problem areas, Body forming, Healthy back), Yoga lessons (Yoga, Pilates) with an additional charge of 40 CZK"
+          "description": "Gym, Group lessons (MMA, Box, Thaibox, Yoga, Circuit training)"
         },
         {
           "name": "Dítě",
           "id": 2,
-          "description": "Gym, Group lessons (TRX, OCR training, Boxing, Functional training, Circuit training, Tabata, Problem areas, Body forming, Healthy back), Yoga lessons (Yoga, Pilates) with an additional charge of 40 CZK"
+          "description": "Combat sport for children"
         },
         {
           "name": "Student",
           "id": 4,
-          "description": "Gym, Group lessons (TRX, OCR training, Boxing, Functional training, Circuit training, Tabata, Problem parts, Body forming, Healthy back)"
+          "description": "Gym"
         },
         {
           "name": "FKSP",
           "id": 3,
-          "description": "Gym, Group lessons (TRX, OCR training, Boxing, Functional training, Circuit training, Tabata, Problem parts, Body forming, Healthy back)"
+          "description": "Gym, Group lessons (MMA, Box, Thaibox, Yoga, Circuit training)"
         }
       ],
       "kids_activities": false,
@@ -919,8 +915,8 @@
       "self_service": false,
       "self_service_times": null,
       "unlimited_oh": false,
-      "facebook_url": null,
-      "instagram_url": null
+      "facebook_url": "https://www.facebook.com/undergroundgymcz-108913111751415",
+      "instagram_url": "https://www.instagram.com/undergroundgymcz/"
     }
   ]
 }
