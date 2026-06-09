@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 import { useSportBoxSlots, SportBoxSlot } from "@/hooks/useSportBoxSlots";
 import { useProfileStore } from "@/store/useProfileStore";
@@ -17,6 +17,11 @@ export default function BookingPage() {
   const [bookingSlot, setBookingSlot] = useState<SportBoxSlot | null>(null);
   const [bookingStatus, setBookingStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [bookingMessage, setBookingMessage] = useState("");
+
+  // Sync profile from backend on mount
+  useEffect(() => {
+    profile.syncFromBackend();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Group slots by date
   const slotsByDate: Record<string, SportBoxSlot[]> = {};

@@ -12,6 +12,7 @@ import { getAccessToken } from "./auth";
 export interface Env {
   DB: D1Database;
   SCRAPE_SECRET?: string;
+  PROFILE_TOKEN?: string;
 }
 
 interface FacilityRow {
@@ -546,6 +547,11 @@ export default {
       return handleSportBoxBook(request);
     }
 
+    // User profile (protected by PROFILE_TOKEN)
+    if (url.pathname === "/api/profile") {
+      return handleProfile(request, env);
+    }
+
     // Health & sync status
     if (url.pathname === "/health") {
       return handleHealth(env);
@@ -835,4 +841,60 @@ async function handleSportBoxBook(request: Request): Promise<Response> {
       error: err instanceof Error ? err.message : "Booking request failed",
     }, 500);
   }
+}
+
+/**
+ * GET/POST /api/profile
+ * Protected by PROFILE_TOKEN header.
+ * GET: returns stored profile from D1
+ * POST: updates profile in D1
+ */
+async function handleProfile(request: Request, env: Env): Promise<Response> {
+  // Verify token
+  const authHeader = request.headers.get("X-Profile-Token") || "";
+  if (!env.PROFILE_TOKEN || authHeader !== env.PROFILE_TOKEN) {
+    return jsonResponse({ error: "Unauthorized" }, 401);
+  }
+
+  if (request.method === "GET") {
+    const row = await env.DB.prepare(
+      "SELECT full_name, email, phone, card_number, updated_at FROM user_profile WHERE id = 1"
+    ).first<{ full_name: string; email: string; phone: string; card_number: string; updated_at: string }>();
+
+    if (!row) {
+      return jsonResponse({ fullName: "", email: "", phone: "", cardNumber: "", updated_at: null });
+    }
+
+    return jsonResponse({
+      fullName: row.full_name,
+      email: row.email,
+      phone: row.phone,
+      cardNumber: row.card_number,
+      updated_at: row.updated_at,
+    });
+  }
+
+  if (request.method === "POST") {
+    interface ProfileBody {
+      fullName: string;
+      email: string;
+      phone: string;
+      cardNumber: string;
+    }
+
+    let body: ProfileBody;
+    try {
+      body = await request.json() as ProfileBody;
+    } catch {
+      return jsonResponse({ error: "Invalid JSON" }, 400);
+    }
+
+    await env.DB.prepare(
+      "UPDATE user_profile SET full_name = ?, email = ?, phone = ?, card_number = ?, updated_at = datetime('now') WHERE id = 1"
+    ).bind(body.fullName || "", body.email || "", body.phone || "", body.cardNumber || "").run();
+
+    return jsonResponse({ success: true });
+  }
+
+  return jsonResponse({ error: "Method not allowed" }, 405);
 }
