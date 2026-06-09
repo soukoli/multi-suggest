@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/Providers";
 import { BottomNav } from "@/components/BottomNav";
+import { Sidebar } from "@/components/Sidebar";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -65,12 +66,20 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className="flex min-h-full flex-col bg-background text-foreground">
+      <body className="flex h-full bg-background text-foreground">
         <Providers>
-          <main className="flex-1 pb-20 pt-[env(safe-area-inset-top)]">
-            {children}
-          </main>
-          <BottomNav />
+          {/* Desktop sidebar */}
+          <Sidebar />
+
+          {/* Main content area */}
+          <div className="flex flex-1 flex-col min-h-full">
+            <main className="flex-1 pb-20 md:pb-0 pt-[env(safe-area-inset-top)]">
+              {children}
+            </main>
+
+            {/* Mobile bottom nav (hidden on desktop) */}
+            <BottomNav />
+          </div>
         </Providers>
       </body>
     </html>

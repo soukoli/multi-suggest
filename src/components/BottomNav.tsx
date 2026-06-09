@@ -10,13 +10,14 @@ const tabs = [
   { href: "/discover", label: "Discover", icon: ICONS.discover, activeIcon: ICONS.discoverActive },
   { href: "/nearby", label: "Nearby", icon: ICONS.nearby, activeIcon: ICONS.nearbyActive },
   { href: "/favorites", label: "Favorites", icon: ICONS.favorites, activeIcon: ICONS.favoritesActive },
+  { href: "/booking", label: "Booking", icon: ICONS.calendar, activeIcon: ICONS.calendar },
 ];
 
 export function BottomNav() {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-50 border-t border-border/40 bg-background/70 backdrop-blur-xl backdrop-saturate-150">
+    <nav className="fixed bottom-0 left-0 right-0 z-50 border-t border-border/40 bg-background/70 backdrop-blur-xl backdrop-saturate-150 md:hidden">
       <div className="mx-auto flex max-w-md items-center justify-around pb-[env(safe-area-inset-bottom)]">
         {tabs.map(({ href, label, icon, activeIcon }) => {
           const isActive = pathname === href || pathname.startsWith(href + "/");
@@ -26,14 +27,14 @@ export function BottomNav() {
               key={href}
               href={href}
               className={cn(
-                "flex flex-col items-center gap-1 px-5 py-3 transition-all",
+                "flex flex-col items-center gap-0.5 px-3 py-2.5 transition-all",
                 isActive
                   ? "text-foreground"
                   : "text-muted-foreground hover:text-foreground"
               )}
             >
               <div className={cn(
-                "flex items-center justify-center rounded-full px-4 py-1.5 transition-all",
+                "flex items-center justify-center rounded-full px-3 py-1 transition-all",
                 isActive && "bg-foreground/8"
               )}>
                 <Icon
@@ -42,7 +43,7 @@ export function BottomNav() {
                   height={20}
                 />
               </div>
-              <span className="text-[11px] font-medium">{label}</span>
+              <span className="text-[10px] font-medium">{label}</span>
             </Link>
           );
         })}
