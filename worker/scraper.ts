@@ -618,65 +618,51 @@ async function handleHealth(env: Env): Promise<Response> {
  * Query params: date (optional, default today, format YYYY-MM-DD)
  */
 async function handleSportBoxSlots(url: URL): Promise<Response> {
-  const dateParam = url.searchParams.get("date") || new Date().toISOString().split("T")[0];
-
   try {
-    const bookingUrl = `https://sport-box.cz/booking?lang=cs`;
-    const res = await fetch(bookingUrl, {
-      headers: {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
-        "Accept": "text/html",
-      },
-    });
+    const today = new Date().toISOString().split("T")[0];
+    const tomorrow = new Date(Date.now() + 86400000).toISOString().split("T")[0];
+    const dates = [today, tomorrow];
 
-    if (!res.ok) {
-      return jsonResponse({ error: "SportBox unavailable", status: res.status }, 502);
-    }
+    const allSlots: Array<{ date: string; hour: string; available: number }> = [];
 
-    const html = await res.text();
+    // Fetch slots for both today and tomorrow
+    for (const date of dates) {
+      const bookingUrl = `https://sport-box.cz/booking?lang=cs&selectedDate=${date}`;
+      const res = await fetch(bookingUrl, {
+        headers: {
+          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
+          "Accept": "text/html",
+        },
+      });
 
-    // Parse slot buttons from HTML
-    // Each button has: data-object-id, data-date, data-hour, data-available
-    // Hidden buttons (class contains "hidden") are unavailable
-    const slots: Array<{ date: string; hour: string; available: number }> = [];
+      if (!res.ok) continue;
+      const html = await res.text();
 
-    // Simple regex parser for slot buttons
-    const slotRegex = /class="slot-button[^"]*?"[^>]*data-object-id="3"[^>]*data-date="([^"]+)"[^>]*data-hour="([^"]+)"[^>]*data-available="(\d+)"/g;
-    let match;
+      // Extract slots: data-object-id="3" data-start-hour="XX:00" data-available="N"
+      const slotRegex = /slot-button([^"]*)"[^>]*data-object-id="3"[^>]*data-start-hour="(\d{2}:\d{2})"[^>]*data-available="(\d+)"/g;
+      let match;
 
-    while ((match = slotRegex.exec(html)) !== null) {
-      // Check if button has "hidden" class (unavailable)
-      const fullMatch = html.substring(match.index, match.index + 500);
-      if (fullMatch.includes('class="slot-button') && !fullMatch.includes("hidden")) {
-        slots.push({
-          date: match[1],
+      while ((match = slotRegex.exec(html)) !== null) {
+        // If the button class chunk contains "hidden", skip it
+        if (match[1].includes("hidden")) continue;
+
+        allSlots.push({
+          date,
           hour: match[2],
           available: parseInt(match[3]),
         });
       }
     }
 
-    // Also try alternate regex order (data attributes can be in different order)
-    const altRegex = /class="slot-button[^"]*?"[^>]*?data-hour="([^"]+)"[^>]*?data-available="(\d+)"[^>]*?data-date="([^"]+)"/g;
-    while ((match = altRegex.exec(html)) !== null) {
-      const fullMatch = html.substring(match.index, match.index + 500);
-      if (!fullMatch.includes("hidden")) {
-        const slot = { date: match[3], hour: match[1], available: parseInt(match[2]) };
-        // Avoid duplicates
-        if (!slots.find(s => s.date === slot.date && s.hour === slot.hour)) {
-          slots.push(slot);
-        }
-      }
-    }
-
     // Sort by date then hour
-    slots.sort((a, b) => a.date === b.date ? a.hour.localeCompare(b.hour) : a.date.localeCompare(b.date));
+    allSlots.sort((a, b) => a.date === b.date ? a.hour.localeCompare(b.hour) : a.date.localeCompare(b.date));
 
     return jsonResponse({
       objectId: 3,
       name: "SportBox Chodov",
       address: "Roztylská 2321/19, Praha 4",
-      slots,
+      dates,
+      slots: allSlots,
       fetched_at: new Date().toISOString(),
     });
   } catch (err: unknown) {
