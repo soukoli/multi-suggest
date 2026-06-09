@@ -72,7 +72,7 @@ export function CategoryPills() {
           className={cn(
             "relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-all active:scale-95",
             filtersOpen || activeFilterCount > 0
-              ? "bg-foreground text-background"
+              ? "bg-primary text-primary-foreground"
               : "bg-secondary text-muted-foreground"
           )}
         >
@@ -99,7 +99,7 @@ export function CategoryPills() {
                 className={cn(
                   "flex flex-col items-center gap-0.5 rounded-xl px-1 py-2 text-center transition-all",
                   activeCategory === null
-                    ? "bg-foreground text-background"
+                    ? "bg-primary text-primary-foreground"
                     : "bg-background text-muted-foreground hover:text-foreground"
                 )}
               >
@@ -112,7 +112,7 @@ export function CategoryPills() {
                   className={cn(
                     "flex flex-col items-center gap-0.5 rounded-xl px-1 py-2 text-center transition-all",
                     activeCategory === cat
-                      ? "bg-foreground text-background"
+                      ? "bg-primary text-primary-foreground"
                       : "bg-background text-muted-foreground hover:text-foreground"
                   )}
                 >
@@ -136,7 +136,7 @@ export function CategoryPills() {
                 className={cn(
                   "flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-all",
                   freeOnly
-                    ? "bg-foreground text-background"
+                    ? "bg-primary text-primary-foreground"
                     : "bg-background text-muted-foreground"
                 )}
               >
@@ -148,7 +148,7 @@ export function CategoryPills() {
                 className={cn(
                   "flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-all",
                   kidsOnly
-                    ? "bg-foreground text-background"
+                    ? "bg-primary text-primary-foreground"
                     : "bg-background text-muted-foreground"
                 )}
               >
@@ -160,7 +160,7 @@ export function CategoryPills() {
                 className={cn(
                   "flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-all",
                   parkingOnly
-                    ? "bg-foreground text-background"
+                    ? "bg-primary text-primary-foreground"
                     : "bg-background text-muted-foreground"
                 )}
               >

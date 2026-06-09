@@ -123,7 +123,7 @@ export const FacilityListItem = React.memo(function FacilityListItem({
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
-            className="flex h-9 w-9 items-center justify-center rounded-xl bg-foreground text-background transition-all active:scale-90 shadow-sm"
+            className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-primary-foreground transition-all active:scale-90 shadow-sm"
             aria-label="Navigovat"
           >
             <Icon icon={ICONS.navigate} width={16} height={16} />

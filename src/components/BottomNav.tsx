@@ -29,13 +29,13 @@ export function BottomNav() {
               className={cn(
                 "flex flex-col items-center gap-0.5 px-3 py-2.5 transition-all",
                 isActive
-                  ? "text-foreground"
+                  ? "text-primary"
                   : "text-muted-foreground hover:text-foreground"
               )}
             >
               <div className={cn(
                 "flex items-center justify-center rounded-full px-3 py-1 transition-all",
-                isActive && "bg-foreground/8"
+                isActive && "bg-primary/10"
               )}>
                 <Icon
                   icon={isActive ? activeIcon : icon}

@@ -27,7 +27,7 @@ export function RadiusSlider({ totalResults }: RadiusSliderProps) {
         step={1}
         value={radius}
         onChange={(e) => setRadius(parseInt(e.target.value))}
-        className="h-1 flex-1 cursor-pointer appearance-none rounded-full bg-border accent-foreground [&::-webkit-slider-thumb]:h-3.5 [&::-webkit-slider-thumb]:w-3.5 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-foreground"
+        className="h-1 flex-1 cursor-pointer appearance-none rounded-full bg-border [&::-webkit-slider-thumb]:h-3.5 [&::-webkit-slider-thumb]:w-3.5 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-primary"
       />
 
       {/* Results count */}

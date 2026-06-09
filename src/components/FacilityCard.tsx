@@ -201,7 +201,7 @@ export const FacilityCard = React.memo(function FacilityCard({ facility, classNa
             href={mapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-1 items-center justify-center gap-1.5 rounded-full bg-foreground px-4 py-2.5 text-[13px] font-semibold text-background transition-all active:scale-[0.97]"
+            className="flex flex-1 items-center justify-center gap-1.5 rounded-full bg-primary px-4 py-2.5 text-[13px] font-semibold text-primary-foreground transition-all active:scale-[0.97]"
           >
             <Icon icon={ICONS.navigate} width={14} height={14} />
             Navigovat

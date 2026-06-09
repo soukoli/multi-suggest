@@ -118,7 +118,7 @@ export function MapView({ facilities, focusedId, onMarkerClick, className }: Map
       // User position
       const userMarker = L.circleMarker([lat, lng], {
         radius: 7,
-        fillColor: "#3b82f6",
+        fillColor: "#6341f0",
         color: "#fff",
         weight: 2.5,
         fillOpacity: 1,

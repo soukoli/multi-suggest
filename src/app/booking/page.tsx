@@ -105,7 +105,7 @@ export default function BookingPage() {
             href="https://www.google.com/maps/dir/?api=1&destination=50.0311,14.5053"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex h-9 w-9 items-center justify-center rounded-xl bg-foreground text-background transition-all active:scale-95"
+            className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-primary-foreground transition-all active:scale-95"
           >
             <Icon icon={ICONS.navigate} width={16} height={16} />
           </a>
@@ -197,7 +197,7 @@ export default function BookingPage() {
             <div className="flex gap-2">
               <button
                 onClick={handleConfirmBooking}
-                className="flex-1 rounded-xl bg-foreground text-background py-2.5 text-sm font-semibold transition-all active:scale-[0.97]"
+                className="flex-1 rounded-xl bg-primary text-primary-foreground py-2.5 text-sm font-semibold transition-all active:scale-[0.97]"
               >
                 Potvrdit rezervaci
               </button>
