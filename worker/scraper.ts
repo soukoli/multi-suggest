@@ -726,11 +726,11 @@ async function handleSportBoxBook(request: Request): Promise<Response> {
     }
     const csrfToken = csrfMatch[1];
 
-    // Extract cookies from response
-    const setCookies = formRes.headers.getAll ? formRes.headers.getAll("set-cookie") : [formRes.headers.get("set-cookie") || ""];
-    const cookieString = setCookies
+    // Extract cookies - Cloudflare Workers uses headers.get (single string)
+    const rawCookies = formRes.headers.get("set-cookie") || "";
+    const cookieString = rawCookies.split(",")
+      .map((c: string) => c.trim().split(";")[0])
       .filter(Boolean)
-      .map((c: string) => c.split(";")[0])
       .join("; ");
 
     // Step 2: POST the booking confirmation
@@ -778,6 +778,25 @@ async function handleSportBoxBook(request: Request): Promise<Response> {
         success: true,
         message: `Rezervace potvrzena: ${body.hour}, ${body.date}`,
       });
+    }
+
+    if (responseStatus === 406) {
+      // Validation error - sport-box returns JSON with field errors
+      try {
+        const errors = JSON.parse(responseBody);
+        const messages = Object.values(errors).flat() as string[];
+        // Clean up error messages (remove prefix like "InvalidCardNumber:")
+        const cleanMessages = messages.map((m: string) => {
+          const parts = m.split(":");
+          return parts.length > 1 ? parts.slice(1).join(":").trim() : m;
+        });
+        return jsonResponse({
+          success: false,
+          error: cleanMessages.join(". ") || "Validační chyba formuláře",
+        }, 400);
+      } catch {
+        return jsonResponse({ success: false, error: "Validační chyba (406)" }, 400);
+      }
     }
 
     if (responseStatus === 200) {
