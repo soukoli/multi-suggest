@@ -2,6 +2,7 @@ name = "multisuggest-scraper"
 main = "scraper.ts"
 compatibility_date = "2024-12-01"
 workers_dev = true
+account_id = "95645e4779dd70351368e7d0d42b3324"
 
 # D1 Database binding
 [[d1_databases]]
