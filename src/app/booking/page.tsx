@@ -2,16 +2,21 @@
 
 import { useState } from "react";
 import { Icon } from "@iconify/react";
-import { useSportBoxSlots, buildBookingUrl, SportBoxSlot } from "@/hooks/useSportBoxSlots";
+import { useSportBoxSlots, SportBoxSlot } from "@/hooks/useSportBoxSlots";
 import { useProfileStore } from "@/store/useProfileStore";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { ICONS } from "@/lib/icons";
 import { cn } from "@/lib/utils";
 
+const WORKER_API_URL = process.env.NEXT_PUBLIC_WORKER_URL || "https://multisuggest-scraper.soukoli.workers.dev";
+
 export default function BookingPage() {
   const { data, isLoading, error, refetch } = useSportBoxSlots();
   const profile = useProfileStore();
   const [showProfile, setShowProfile] = useState(!profile.isComplete());
+  const [bookingSlot, setBookingSlot] = useState<SportBoxSlot | null>(null);
+  const [bookingStatus, setBookingStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [bookingMessage, setBookingMessage] = useState("");
 
   // Group slots by date
   const slotsByDate: Record<string, SportBoxSlot[]> = {};
@@ -28,14 +33,58 @@ export default function BookingPage() {
     today.setHours(0, 0, 0, 0);
     const tomorrow = new Date(today);
     tomorrow.setDate(tomorrow.getDate() + 1);
-
     if (d.getTime() === today.getTime()) return "Dnes";
     if (d.getTime() === tomorrow.getTime()) return "Zítra";
     return d.toLocaleDateString("cs-CZ", { weekday: "short", day: "numeric", month: "numeric" });
   };
 
   const handleSlotClick = (slot: SportBoxSlot) => {
-    window.open(buildBookingUrl(slot), "_blank");
+    if (!profile.isComplete()) {
+      setShowProfile(true);
+      return;
+    }
+    setBookingSlot(slot);
+  };
+
+  const handleConfirmBooking = async () => {
+    if (!bookingSlot) return;
+
+    setBookingStatus("loading");
+    try {
+      const res = await fetch(`${WORKER_API_URL}/api/sportbox/book`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          date: bookingSlot.date,
+          hour: bookingSlot.hour,
+          fullName: profile.fullName,
+          cardNumber: profile.cardNumber,
+          email: profile.email,
+          phone: profile.phone,
+        }),
+      });
+
+      const result = await res.json();
+
+      if (result.success) {
+        setBookingStatus("success");
+        setBookingMessage(result.message);
+        // Refresh slots after successful booking
+        setTimeout(() => refetch(), 2000);
+      } else {
+        setBookingStatus("error");
+        setBookingMessage(result.error || "Rezervace se nezdařila");
+      }
+    } catch {
+      setBookingStatus("error");
+      setBookingMessage("Chyba spojení se serverem");
+    }
+  };
+
+  const resetBooking = () => {
+    setBookingSlot(null);
+    setBookingStatus("idle");
+    setBookingMessage("");
   };
 
   return (
@@ -52,7 +101,6 @@ export default function BookingPage() {
             target="_blank"
             rel="noopener noreferrer"
             className="flex h-9 w-9 items-center justify-center rounded-xl bg-foreground text-background transition-all active:scale-95"
-            aria-label="Navigovat"
           >
             <Icon icon={ICONS.navigate} width={16} height={16} />
           </a>
@@ -62,23 +110,37 @@ export default function BookingPage() {
 
       {/* Content */}
       <div className="flex-1 overflow-y-auto p-5">
+        {/* Toast notification */}
+        {bookingStatus === "success" && (
+          <div className="mb-4 rounded-xl bg-emerald-500/15 px-4 py-3 flex items-center gap-2">
+            <span className="text-emerald-600 dark:text-emerald-400 text-sm font-medium">✓ {bookingMessage}</span>
+            <button onClick={resetBooking} className="ml-auto text-xs text-muted-foreground">×</button>
+          </div>
+        )}
+        {bookingStatus === "error" && (
+          <div className="mb-4 rounded-xl bg-red-500/15 px-4 py-3 flex items-center gap-2">
+            <span className="text-red-600 dark:text-red-400 text-sm font-medium">✗ {bookingMessage}</span>
+            <button onClick={resetBooking} className="ml-auto text-xs text-muted-foreground">×</button>
+          </div>
+        )}
+
         {/* Profile section */}
         <div className="mb-5">
           <button
             onClick={() => setShowProfile(!showProfile)}
-            className="flex w-full items-center justify-between rounded-xl bg-secondary/60 backdrop-blur-sm px-4 py-3 ring-1 ring-black/[0.04] dark:ring-white/[0.06]"
+            className={cn(
+              "flex w-full items-center justify-between rounded-xl px-4 py-3 ring-1 transition-all",
+              profile.isComplete()
+                ? "bg-secondary/60 ring-black/[0.04] dark:ring-white/[0.06]"
+                : "bg-amber-500/10 ring-amber-500/30"
+            )}
           >
-            <div className="flex items-center gap-2">
-              <span className="text-[13px] font-medium">
-                {profile.isComplete()
-                  ? `${profile.fullName} · ${profile.cardNumber.slice(0, 4)}...`
-                  : "Nastavit profil pro rychlou rezervaci"}
-              </span>
-            </div>
-            <span className={cn(
-              "text-xs text-muted-foreground transition-transform",
-              showProfile && "rotate-180"
-            )}>▼</span>
+            <span className="text-[13px] font-medium">
+              {profile.isComplete()
+                ? `${profile.fullName} · ${profile.cardNumber.slice(0, 4)}...`
+                : "⚠️ Vyplň profil pro rezervaci"}
+            </span>
+            <span className={cn("text-xs text-muted-foreground transition-transform", showProfile && "rotate-180")}>▼</span>
           </button>
 
           {showProfile && (
@@ -112,38 +174,66 @@ export default function BookingPage() {
                 className="w-full rounded-xl bg-background px-4 py-3 text-sm border border-border/50 focus:outline-none focus:ring-2 focus:ring-foreground/20"
               />
               <p className="text-[10px] text-muted-foreground/60">
-                Údaje se ukládají pouze lokálně v prohlížeči.
+                Údaje se ukládají lokálně. Používají se pro automatickou rezervaci.
               </p>
             </div>
           )}
         </div>
 
+        {/* Confirmation dialog */}
+        {bookingSlot && bookingStatus === "idle" && (
+          <div className="mb-5 rounded-xl bg-foreground/5 border border-border/50 p-4">
+            <p className="text-sm font-medium mb-3">
+              Zarezervovat <strong>{bookingSlot.hour}</strong> {formatDate(bookingSlot.date)}?
+            </p>
+            <p className="text-[11px] text-muted-foreground mb-3">
+              {profile.fullName} · {profile.cardNumber} · {profile.email}
+            </p>
+            <div className="flex gap-2">
+              <button
+                onClick={handleConfirmBooking}
+                className="flex-1 rounded-xl bg-foreground text-background py-2.5 text-sm font-semibold transition-all active:scale-[0.97]"
+              >
+                Potvrdit rezervaci
+              </button>
+              <button
+                onClick={resetBooking}
+                className="rounded-xl bg-secondary px-4 py-2.5 text-sm font-medium transition-all active:scale-[0.97]"
+              >
+                Zrušit
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Loading booking */}
+        {bookingStatus === "loading" && (
+          <div className="mb-5 rounded-xl bg-foreground/5 border border-border/50 p-6 flex items-center justify-center gap-2">
+            <Icon icon={ICONS.spinner} width={18} height={18} className="animate-spin text-muted-foreground" />
+            <span className="text-sm text-muted-foreground">Rezervuji...</span>
+          </div>
+        )}
+
         {/* Slots section */}
         <div className="flex items-center justify-between mb-3">
           <h2 className="text-[15px] font-semibold">Volné termíny</h2>
-          <button
-            onClick={() => refetch()}
-            className="text-[11px] text-muted-foreground hover:text-foreground transition-colors"
-          >
+          <button onClick={() => refetch()} className="text-[11px] text-muted-foreground hover:text-foreground transition-colors">
             Obnovit
           </button>
         </div>
 
-        {/* Loading */}
         {isLoading && (
           <div className="flex justify-center py-12">
             <Icon icon={ICONS.spinner} width={22} height={22} className="animate-spin text-muted-foreground" />
           </div>
         )}
 
-        {/* Error */}
         {error && (
           <div className="rounded-xl bg-red-500/10 px-4 py-3 text-center">
             <p className="text-sm text-red-600 dark:text-red-400">Nepodařilo se načíst termíny</p>
           </div>
         )}
 
-        {/* Slots by date */}
         {data && Object.keys(slotsByDate).length > 0 && (
           <div className="flex flex-col gap-5">
             {Object.entries(slotsByDate).map(([date, slots]) => (
@@ -154,7 +244,8 @@ export default function BookingPage() {
                     <button
                       key={`${slot.date}-${slot.hour}`}
                       onClick={() => handleSlotClick(slot)}
-                      className="flex flex-col items-center justify-center rounded-xl bg-card/80 backdrop-blur-sm px-3 py-3 ring-1 ring-black/[0.06] dark:ring-white/[0.08] transition-all active:scale-95 hover:bg-foreground/5 hover:ring-foreground/20"
+                      disabled={bookingStatus === "loading"}
+                      className="flex flex-col items-center justify-center rounded-xl bg-card/80 backdrop-blur-sm px-3 py-3 ring-1 ring-black/[0.06] dark:ring-white/[0.08] transition-all active:scale-95 hover:bg-foreground/5 hover:ring-foreground/20 disabled:opacity-50"
                     >
                       <span className="text-[15px] font-semibold">{slot.hour}</span>
                       <span className="text-[9px] text-muted-foreground mt-0.5">
@@ -174,7 +265,6 @@ export default function BookingPage() {
           </div>
         )}
 
-        {/* Footer info */}
         {data && (
           <p className="text-[9px] text-muted-foreground/40 text-center mt-6">
             Aktualizováno {new Date(data.fetched_at).toLocaleTimeString("cs-CZ")} · sport-box.cz

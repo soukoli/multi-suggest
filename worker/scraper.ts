@@ -541,6 +541,11 @@ export default {
       return handleSportBoxSlots(url);
     }
 
+    // SportBox booking (automated)
+    if (url.pathname === "/api/sportbox/book") {
+      return handleSportBoxBook(request);
+    }
+
     // Health & sync status
     if (url.pathname === "/health") {
       return handleHealth(env);
@@ -638,19 +643,15 @@ async function handleSportBoxSlots(url: URL): Promise<Response> {
       if (!res.ok) continue;
       const html = await res.text();
 
-      // Extract slots: data-object-id="3" data-start-hour="XX:00" data-available="N"
-      const slotRegex = /slot-button([^"]*)"[^>]*data-object-id="3"[^>]*data-start-hour="(\d{2}:\d{2})"[^>]*data-available="(\d+)"/g;
+      // Extract ALL slots with data-available > 0 (ignore hidden class - it's just UI toggle)
+      const slotRegex = /data-object-id="3"[^>]*data-start-hour="(\d{2}:\d{2})"[^>]*data-available="(\d+)"/g;
       let match;
 
       while ((match = slotRegex.exec(html)) !== null) {
-        // If the button class chunk contains "hidden", skip it
-        if (match[1].includes("hidden")) continue;
-
-        allSlots.push({
-          date,
-          hour: match[2],
-          available: parseInt(match[3]),
-        });
+        const available = parseInt(match[2]);
+        if (available > 0) {
+          allSlots.push({ date, hour: match[1], available });
+        }
       }
     }
 
@@ -667,5 +668,152 @@ async function handleSportBoxSlots(url: URL): Promise<Response> {
     });
   } catch (err: unknown) {
     return jsonResponse({ error: err instanceof Error ? err.message : "Unknown error" }, 500);
+  }
+}
+
+/**
+ * POST /api/sportbox/book
+ * Fully automated booking: fetches CSRF token, posts form data to sport-box.cz
+ * Body: { date, hour, fullName, cardNumber, email, phone }
+ */
+async function handleSportBoxBook(request: Request): Promise<Response> {
+  if (request.method !== "POST") {
+    return jsonResponse({ error: "Method not allowed" }, 405);
+  }
+
+  interface BookingRequest {
+    date: string;
+    hour: string;
+    fullName: string;
+    cardNumber: string;
+    email: string;
+    phone: string;
+  }
+
+  let body: BookingRequest;
+  try {
+    body = await request.json() as BookingRequest;
+  } catch {
+    return jsonResponse({ error: "Invalid JSON body" }, 400);
+  }
+
+  // Validate required fields
+  if (!body.date || !body.hour || !body.fullName || !body.cardNumber || !body.email || !body.phone) {
+    return jsonResponse({ error: "Missing required fields: date, hour, fullName, cardNumber, email, phone" }, 400);
+  }
+
+  try {
+    // Step 1: GET the booking form page to extract CSRF token + cookies
+    const formUrl = `https://sport-box.cz/Booking/BookingForm?selectedDate=${body.date}&objectId=3&displayName=${encodeURIComponent("SportBox Chodov, Roztylská 2321/19, Praha 4")}&startHour=${body.hour}&freeSlots=2&lang=cs`;
+
+    const formRes = await fetch(formUrl, {
+      headers: {
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml",
+      },
+    });
+
+    if (!formRes.ok) {
+      return jsonResponse({ error: `Failed to load booking form: ${formRes.status}` }, 502);
+    }
+
+    const formHtml = await formRes.text();
+
+    // Extract CSRF token
+    const csrfMatch = formHtml.match(/name="__RequestVerificationToken"[^>]*value="([^"]+)"/);
+    if (!csrfMatch) {
+      return jsonResponse({ error: "Could not extract CSRF token from booking form" }, 500);
+    }
+    const csrfToken = csrfMatch[1];
+
+    // Extract cookies from response
+    const setCookies = formRes.headers.getAll ? formRes.headers.getAll("set-cookie") : [formRes.headers.get("set-cookie") || ""];
+    const cookieString = setCookies
+      .filter(Boolean)
+      .map((c: string) => c.split(";")[0])
+      .join("; ");
+
+    // Step 2: POST the booking confirmation
+    const postData = new URLSearchParams({
+      locale: "cs",
+      SelectedObjectId: "3",
+      SelectedObject: "SportBox Chodov",
+      ReservationDate: body.date,
+      WorkoutTime: `${body.hour}:00`,
+      "Participants[0].Active": "True",
+      "Participants[0].FullName": body.fullName,
+      "Participants[0].CardNumber": body.cardNumber,
+      "Participants[0].Email": body.email,
+      "Participants[0].Phone": body.phone,
+      "Participants[1].Active": "False",
+      "Participants[1].FullName": "",
+      "Participants[1].CardNumber": "",
+      "Participants[1].Email": "",
+      "Participants[1].Phone": "",
+      AcceptedTerms: "true",
+      __RequestVerificationToken: csrfToken,
+    });
+
+    const confirmRes = await fetch("https://sport-box.cz/Booking/ConfirmBooking", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Cookie": cookieString,
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "Origin": "https://sport-box.cz",
+        "Referer": formUrl,
+      },
+      body: postData.toString(),
+      redirect: "manual",
+    });
+
+    // Success: sport-box.cz redirects (302) to confirmation page
+    // Or returns 200 with success content
+    const responseStatus = confirmRes.status;
+    const responseBody = await confirmRes.text();
+
+    if (responseStatus === 302 || responseStatus === 301) {
+      // Redirect = success
+      return jsonResponse({
+        success: true,
+        message: `Rezervace potvrzena: ${body.hour}, ${body.date}`,
+      });
+    }
+
+    if (responseStatus === 200) {
+      // Check if response contains error messages or success
+      if (responseBody.includes("Rezervace byla úspěšně") || responseBody.includes("confirmation") || responseBody.includes("Děkujeme")) {
+        return jsonResponse({
+          success: true,
+          message: `Rezervace potvrzena: ${body.hour}, ${body.date}`,
+        });
+      }
+
+      // Check for validation errors
+      if (responseBody.includes("field-validation-error") || responseBody.includes("alert-error")) {
+        const errorMatch = responseBody.match(/field-validation-error[^>]*>([^<]+)</);
+        return jsonResponse({
+          success: false,
+          error: errorMatch ? errorMatch[1].trim() : "Formulář obsahuje chyby",
+        }, 400);
+      }
+
+      // Ambiguous 200 - might be success (page with confirmation)
+      return jsonResponse({
+        success: true,
+        message: `Rezervace odeslána: ${body.hour}, ${body.date}. Zkontroluj email.`,
+      });
+    }
+
+    return jsonResponse({
+      success: false,
+      error: `Neočekávaná odpověď (${responseStatus})`,
+    }, 500);
+
+  } catch (err: unknown) {
+    return jsonResponse({
+      success: false,
+      error: err instanceof Error ? err.message : "Booking request failed",
+    }, 500);
   }
 }
