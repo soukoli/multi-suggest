@@ -33,6 +33,7 @@ import peopleNearbyLinear from "@iconify-icons/solar/people-nearby-linear";
 import magniferLinear from "@iconify-icons/solar/magnifer-linear";
 import tuning2Linear from "@iconify-icons/solar/tuning-2-linear";
 import closeCircleLinear from "@iconify-icons/solar/close-circle-linear";
+import calendarLinear from "@iconify-icons/solar/calendar-linear";
 
 addIcon("solar:dumbbell-linear", dumbbellLinear);
 addIcon("solar:swimming-linear", swimmingLinear);
@@ -65,6 +66,7 @@ addIcon("solar:people-nearby-linear", peopleNearbyLinear);
 addIcon("solar:magnifer-linear", magniferLinear);
 addIcon("solar:tuning-2-linear", tuning2Linear);
 addIcon("solar:close-circle-linear", closeCircleLinear);
+addIcon("solar:calendar-linear", calendarLinear);
 
 export const ICONS = {
   // Categories
@@ -104,4 +106,5 @@ export const ICONS = {
   search: "solar:magnifer-linear",
   filter: "solar:tuning-2-linear",
   close: "solar:close-circle-linear",
+  calendar: "solar:calendar-linear",
 } as const;

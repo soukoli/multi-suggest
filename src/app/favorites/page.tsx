@@ -7,12 +7,14 @@ import { useFacilities } from "@/hooks/useFacilities";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { SyncBadge } from "@/components/SyncBadge";
 import { MapListView } from "@/components/MapListView";
+import { SportBoxPanel } from "@/components/SportBoxPanel";
 import { ICONS } from "@/lib/icons";
 
 export default function FavoritesPage() {
   const { favorites, removeFavorite, isFavorite } = useFavoritesStore();
   const { data } = useFacilities();
   const [searchQuery, setSearchQuery] = useState("");
+  const [sportBoxOpen, setSportBoxOpen] = useState(false);
 
   let favoriteFacilities =
     data?.facilities?.filter((f) => favorites.includes(f.id)) || [];
@@ -34,7 +36,16 @@ export default function FavoritesPage() {
           <h1 className="text-lg font-bold tracking-tight">Favorites</h1>
           <SyncBadge lastSync={data?.meta?.last_sync} />
         </div>
-        <ThemeToggle />
+        <div className="flex items-center gap-1">
+          <button
+            onClick={() => setSportBoxOpen(true)}
+            className="flex h-10 w-10 items-center justify-center rounded-full transition-colors hover:bg-secondary active:scale-95"
+            aria-label="SportBox rezervace"
+          >
+            <Icon icon={ICONS.calendar} width={20} height={20} className="text-foreground" />
+          </button>
+          <ThemeToggle />
+        </div>
       </div>
 
       {favorites.length > 0 && (
@@ -60,6 +71,7 @@ export default function FavoritesPage() {
   );
 
   return (
+    <>
     <MapListView
       facilities={favoriteFacilities}
       headerContent={headerContent}
@@ -82,5 +94,9 @@ export default function FavoritesPage() {
         ) : null
       }
     />
+
+    {/* SportBox Panel overlay */}
+    <SportBoxPanel open={sportBoxOpen} onClose={() => setSportBoxOpen(false)} />
+    </>
   );
 }
