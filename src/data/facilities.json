@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-06-15T09:49:35.465Z",
-  "total": 15,
+  "scraped_at": "2026-06-17T08:52:06.825Z",
+  "total": 16,
   "facilities": [
     {
       "id": "3912",
@@ -867,6 +867,75 @@
       "unlimited_oh": false,
       "facebook_url": "https://www.facebook.com/undergroundgymcz-108913111751415",
       "instagram_url": "https://www.instagram.com/undergroundgymcz/"
+    },
+    {
+      "id": "386",
+      "name": "PANTHER GYM",
+      "address": "Oderská 9, Praha",
+      "city": "Praha",
+      "lat": 50.148245,
+      "lng": 14.5313261,
+      "category": "group",
+      "activities": [
+        "Bodystyling/Bodyform",
+        "Boxing",
+        "Functional training",
+        "Circuit training",
+        "Pilates",
+        "Gym",
+        "Problem zones",
+        "Tabata",
+        "TRX/TRX RIP TRAINER/Jungle sports",
+        "Healthy back/Back pain",
+        "Yoga",
+        "OCR training"
+      ],
+      "activity_summary": "Gym, Group lessons (TRX, OCR training, Boxing, Functional training, Circuit training, Tabata, Problem areas, Body forming, Healthy back), Yoga lessons (Yoga, Pilates) with an additional charge of 40 CZK",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/1f/5b/1f5ba0267855f00b281fc08169b8550f.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/94/83/9483de8bfd207911cd626f00576ed71b.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/5e/09/5e09463f6b98149ac31bcc2d056505b2.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/c3/a2/c3a2fa802ce4cc35fb0af264e37b000b.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/2a/6d/2a6d8b01f55b59ca9d0c99efbe2d100e.jpg"
+      ],
+      "website_url": "http://panthergym.cz",
+      "phone": "+420 725 518 688",
+      "email": "info@panthergym.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": true,
+      "additional_payment_desc": "Yoga lessons (Yoga, Pilates) with an additional charge of 40 CZK",
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Gym, Group lessons (TRX, OCR training, Boxing, Functional training, Circuit training, Tabata, Problem areas, Body forming, Healthy back), Yoga lessons (Yoga, Pilates) with an additional charge of 40 CZK"
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Gym, Group lessons (TRX, OCR training, Boxing, Functional training, Circuit training, Tabata, Problem areas, Body forming, Healthy back), Yoga lessons (Yoga, Pilates) with an additional charge of 40 CZK"
+        },
+        {
+          "name": "Student",
+          "id": 4,
+          "description": "Gym, Group lessons (TRX, OCR training, Boxing, Functional training, Circuit training, Tabata, Problem parts, Body forming, Healthy back)"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Gym, Group lessons (TRX, OCR training, Boxing, Functional training, Circuit training, Tabata, Problem parts, Body forming, Healthy back)"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": null,
+      "instagram_url": null
     }
   ]
 }
