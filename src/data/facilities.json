@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-24T07:30:12.825Z",
+  "scraped_at": "2026-06-26T07:40:39.300Z",
   "total": 16,
   "facilities": [
     {
@@ -240,6 +240,60 @@
           "name": "Student",
           "id": 4,
           "description": "Yoga 60 minutes (Yoga, Iyengar Yoga, Hormonal Yoga, Pilates Therapy, Yoga for a Healthy Back, SM System, Basic Yoga, Gentle Yoga for a Healthy Back, Morning Yoga, Healthy Back, Exercises by Ludmila Mojžíšová and other exercises, Yin and Yang Yoga, Yoga for Eternal Beginners, Power Yoga, Flexibility, Pilates, Dynamic Iyengar Yoga, Exercises for a Healthy Back, Vinyasa Ashtanga Yoga, Gentle Yoga, Flowin Pilates, Dynamic Types of Yoga, Calmer Types of Yoga, Core Yoga) with additional payment CZK 50"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": null,
+      "instagram_url": null
+    },
+    {
+      "id": "5020",
+      "name": "Max Fitness Dejvice",
+      "address": "Generála Píky 430/26, Praha",
+      "city": "Praha",
+      "lat": 50.0986783,
+      "lng": 14.3886697,
+      "category": "fitness",
+      "activities": [
+        "Gym",
+        "Sauna/Steam"
+      ],
+      "activity_summary": "Gym, Sauna",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/31/28/3128f38f966e98a36f55fd1b66f8707c.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/cd/c9/cdc9a09972392aecd421674285f0f3ed.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/b0/06/b006152fc01162068f6afae715d1ea7a.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/44/56/44569e42c1d526b429085ce316c89919.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/60/c2/60c25366e864138e560b9d6cb6279d53.jpg"
+      ],
+      "website_url": "https://www.maxfitness.cz/",
+      "phone": null,
+      "email": null,
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Gym, Sauna"
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Gym, Sauna"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Gym, Sauna"
         }
       ],
       "kids_activities": false,
@@ -751,6 +805,69 @@
       "instagram_url": "https://www.instagram.com/metagym_radotin/"
     },
     {
+      "id": "5029",
+      "name": "Heat4you - Galaxie",
+      "address": "Arkalycká 877/1, Praha",
+      "city": "Praha",
+      "lat": 50.0317861,
+      "lng": 14.52841,
+      "category": "group",
+      "activities": [
+        "Bosu/Cardio/Rehab",
+        "Dance fitness/Dance aerobics",
+        "H.E.A.T. program",
+        "Jumping/Trampolines",
+        "Circuit training",
+        "Pilates",
+        "Power yoga/Energy yoga",
+        "Problem zones",
+        "Power training",
+        "Tabata",
+        "TRX/TRX RIP TRAINER/Jungle sports",
+        "Zumba",
+        "Yoga"
+      ],
+      "activity_summary": "Group lessons (H.E.A.T. program, Power yoga, Zumba, Circuit training, Jumping, TRX, Tabata, Pilates Clinic, Functional strength training, Physio yoga, Bosu, Dance fusion, Problematic dance parts)",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/c8/1f/c81fb82bdea76bfb71f104303f34b23c.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/06/d5/06d5c15573ce5c258fc15a272164eb98.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/3c/ea/3cea730e23b76f154bf75461d3515a68.jpg"
+      ],
+      "website_url": "https://www.heat4you.cz/heat4you-galaxie/",
+      "phone": "+420 775 674 346",
+      "email": "info@heat4you.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Group lessons (H.E.A.T. program, Power yoga, Zumba, Circuit training, Jumping, TRX, Tabata, Pilates Clinic, Functional strength training, Physio yoga, Bosu, Dance fusion, Problematic dance parts)"
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Group lessons (H.E.A.T. program, Power yoga, Zumba, Circuit training, Jumping, TRX, Tabata, Pilates Clinic, Functional strength training, Physio yoga, Bosu, Dance fusion, Problematic dance parts)"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Group lessons (H.E.A.T. program, Power yoga, Zumba, Circuit training, Jumping, TRX, Tabata, Pilates Clinic, Functional strength training, Physio yoga, Bosu, Dance fusion, Problematic dance parts)"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": null,
+      "instagram_url": null
+    },
+    {
       "id": "4966",
       "name": "JamJam boulder club Prague",
       "address": "Vlastina 889/23, Praha",
@@ -801,140 +918,6 @@
       "self_service_times": null,
       "unlimited_oh": false,
       "facebook_url": "https://www.facebook.com/jamjamprague",
-      "instagram_url": null
-    },
-    {
-      "id": "5218",
-      "name": "UNDERGROUND GYM",
-      "address": "Jabloňová 3126/11, Praha",
-      "city": "Praha",
-      "lat": 50.0571208,
-      "lng": 14.4960611,
-      "category": "group",
-      "activities": [
-        "Boxing",
-        "Circuit training",
-        "Gym",
-        "Sambo/MMA/K-1",
-        "Thaiboxing",
-        "Yoga",
-        "Exercise for children"
-      ],
-      "activity_summary": "Gym, Group lessons (MMA, Box, Thaibox, Yoga, Circuit training), Combat sport for children",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/f9/21/f921867e72ef7823dd736ef5f679dcad.jpg",
-      "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/a1/94/a1948afe75025542294ba2f4e043d11f.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/3c/46/3c463cbf7a4f542a333e455e6c582c37.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/60/19/60199f353f4a4a79bdf6761880885945.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/82/8d/828d928866dd320535b3f1c98235eec3.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/dd/a0/dda0f7a2bbb3ca0b33c5e9ef3bf7b383.jpg"
-      ],
-      "website_url": "http://undergroundgym.cz/",
-      "phone": "+420 730 105 790",
-      "email": "undergroundgym@gmail.com",
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": false,
-      "additional_payment_desc": null,
-      "active_cards": [
-        {
-          "name": "Stříbrná",
-          "id": 1,
-          "description": "Gym, Group lessons (MMA, Box, Thaibox, Yoga, Circuit training)"
-        },
-        {
-          "name": "Dítě",
-          "id": 2,
-          "description": "Combat sport for children"
-        },
-        {
-          "name": "Student",
-          "id": 4,
-          "description": "Gym"
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Gym, Group lessons (MMA, Box, Thaibox, Yoga, Circuit training)"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": "https://www.facebook.com/undergroundgymcz-108913111751415",
-      "instagram_url": "https://www.instagram.com/undergroundgymcz/"
-    },
-    {
-      "id": "386",
-      "name": "PANTHER GYM",
-      "address": "Oderská 9, Praha",
-      "city": "Praha",
-      "lat": 50.148245,
-      "lng": 14.5313261,
-      "category": "group",
-      "activities": [
-        "Bodystyling/Bodyform",
-        "Boxing",
-        "Functional training",
-        "Circuit training",
-        "Pilates",
-        "Gym",
-        "Problem zones",
-        "Tabata",
-        "TRX/TRX RIP TRAINER/Jungle sports",
-        "Healthy back/Back pain",
-        "Yoga",
-        "OCR training"
-      ],
-      "activity_summary": "Gym, Group lessons (TRX, OCR training, Boxing, Functional training, Circuit training, Tabata, Problem areas, Body forming, Healthy back), Yoga lessons (Yoga, Pilates) with an additional charge of 40 CZK",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/1f/5b/1f5ba0267855f00b281fc08169b8550f.jpg",
-      "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/94/83/9483de8bfd207911cd626f00576ed71b.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/5e/09/5e09463f6b98149ac31bcc2d056505b2.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/c3/a2/c3a2fa802ce4cc35fb0af264e37b000b.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/2a/6d/2a6d8b01f55b59ca9d0c99efbe2d100e.jpg"
-      ],
-      "website_url": "http://panthergym.cz",
-      "phone": "+420 725 518 688",
-      "email": "info@panthergym.cz",
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": true,
-      "additional_payment_desc": "Yoga lessons (Yoga, Pilates) with an additional charge of 40 CZK",
-      "active_cards": [
-        {
-          "name": "Stříbrná",
-          "id": 1,
-          "description": "Gym, Group lessons (TRX, OCR training, Boxing, Functional training, Circuit training, Tabata, Problem areas, Body forming, Healthy back), Yoga lessons (Yoga, Pilates) with an additional charge of 40 CZK"
-        },
-        {
-          "name": "Dítě",
-          "id": 2,
-          "description": "Gym, Group lessons (TRX, OCR training, Boxing, Functional training, Circuit training, Tabata, Problem areas, Body forming, Healthy back), Yoga lessons (Yoga, Pilates) with an additional charge of 40 CZK"
-        },
-        {
-          "name": "Student",
-          "id": 4,
-          "description": "Gym, Group lessons (TRX, OCR training, Boxing, Functional training, Circuit training, Tabata, Problem parts, Body forming, Healthy back)"
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Gym, Group lessons (TRX, OCR training, Boxing, Functional training, Circuit training, Tabata, Problem parts, Body forming, Healthy back)"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": null,
       "instagram_url": null
     }
   ]
