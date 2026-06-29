@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-06-28T07:41:58.025Z",
-  "total": 15,
+  "scraped_at": "2026-06-29T08:46:49.029Z",
+  "total": 14,
   "facilities": [
     {
       "id": "3912",
@@ -803,69 +803,6 @@
       "unlimited_oh": true,
       "facebook_url": "https://www.facebook.com/metagymfitness/",
       "instagram_url": "https://www.instagram.com/metagym_radotin/"
-    },
-    {
-      "id": "5029",
-      "name": "Heat4you - Galaxie",
-      "address": "Arkalycká 877/1, Praha",
-      "city": "Praha",
-      "lat": 50.0317861,
-      "lng": 14.52841,
-      "category": "group",
-      "activities": [
-        "Bosu/Cardio/Rehab",
-        "Dance fitness/Dance aerobics",
-        "H.E.A.T. program",
-        "Jumping/Trampolines",
-        "Circuit training",
-        "Pilates",
-        "Power yoga/Energy yoga",
-        "Problem zones",
-        "Power training",
-        "Tabata",
-        "TRX/TRX RIP TRAINER/Jungle sports",
-        "Zumba",
-        "Yoga"
-      ],
-      "activity_summary": "Group lessons (H.E.A.T. program, Power yoga, Zumba, Circuit training, Jumping, TRX, Tabata, Pilates Clinic, Functional strength training, Physio yoga, Bosu, Dance fusion, Problematic dance parts)",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/c8/1f/c81fb82bdea76bfb71f104303f34b23c.jpg",
-      "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/06/d5/06d5c15573ce5c258fc15a272164eb98.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/3c/ea/3cea730e23b76f154bf75461d3515a68.jpg"
-      ],
-      "website_url": "https://www.heat4you.cz/heat4you-galaxie/",
-      "phone": "+420 775 674 346",
-      "email": "info@heat4you.cz",
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": false,
-      "additional_payment_desc": null,
-      "active_cards": [
-        {
-          "name": "Stříbrná",
-          "id": 1,
-          "description": "Group lessons (H.E.A.T. program, Power yoga, Zumba, Circuit training, Jumping, TRX, Tabata, Pilates Clinic, Functional strength training, Physio yoga, Bosu, Dance fusion, Problematic dance parts)"
-        },
-        {
-          "name": "Dítě",
-          "id": 2,
-          "description": "Group lessons (H.E.A.T. program, Power yoga, Zumba, Circuit training, Jumping, TRX, Tabata, Pilates Clinic, Functional strength training, Physio yoga, Bosu, Dance fusion, Problematic dance parts)"
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Group lessons (H.E.A.T. program, Power yoga, Zumba, Circuit training, Jumping, TRX, Tabata, Pilates Clinic, Functional strength training, Physio yoga, Bosu, Dance fusion, Problematic dance parts)"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": null,
-      "instagram_url": null
     }
   ]
 }
