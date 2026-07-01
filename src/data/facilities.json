@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-06-29T08:46:49.029Z",
-  "total": 14,
+  "scraped_at": "2026-07-01T08:00:44.837Z",
+  "total": 13,
   "facilities": [
     {
       "id": "3912",
@@ -539,58 +539,6 @@
       "instagram_url": null
     },
     {
-      "id": "4901",
-      "name": "Slugger fight club",
-      "address": "Sokolovská 138/615, Praha",
-      "city": "Praha",
-      "lat": 50.0984617,
-      "lng": 14.4683161,
-      "category": "group",
-      "activities": [
-        "Boxing",
-        "Circuit training",
-        "Stretching",
-        "Thaiboxing",
-        "Body workout"
-      ],
-      "activity_summary": "Group lessons (Circuit training, Boxing, Stretching, Workout), BJJ No-Gi, BJJ for beginners, Thaibox): capacity 4 places",
-      "image_url": null,
-      "gallery_images": [],
-      "website_url": "https://n1338118.alteg.io/?utm_source=google&utm_campaign=google-maps",
-      "phone": "+420 736 488 541",
-      "email": "slugger.fightclub@gmail.com",
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": false,
-      "additional_payment_desc": null,
-      "active_cards": [
-        {
-          "name": "Stříbrná",
-          "id": 1,
-          "description": "Group lessons (Circuit training, Boxing, Stretching, Workout), BJJ No-Gi, BJJ for beginners, Thaibox): capacity 4 places"
-        },
-        {
-          "name": "Dítě",
-          "id": 2,
-          "description": "Group lessons (Circuit training, Boxing, Stretching, Workout), BJJ No-Gi, BJJ for beginners, Thaibox): capacity 4 places"
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Group lessons (Circuit training, Boxing, Stretching, Workout), BJJ No-Gi, BJJ for beginners, Thaibox): capacity 4 places"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": "https://www.facebook.com/p/sluggerfightclub-61570593291900/",
-      "instagram_url": "https://www.instagram.com/slugger.fight.club/"
-    },
-    {
       "id": "3543",
       "name": "FORM FACTORY fitness center – Stodůlky",
       "address": "Siemensova 2717/4, Praha",
@@ -652,56 +600,6 @@
       "self_service_times": null,
       "unlimited_oh": false,
       "facebook_url": "https://www.facebook.com/formfactoryfitcenter/",
-      "instagram_url": null
-    },
-    {
-      "id": "4771",
-      "name": "GYM RAT FAMILY Modřany",
-      "address": "Lysinská 1861/40, Praha",
-      "city": "Praha",
-      "lat": 50.0134883,
-      "lng": 14.4099372,
-      "category": "group",
-      "activities": [
-        "Circuit training",
-        "Gym",
-        "Power training"
-      ],
-      "activity_summary": "Gym, Group lessons (Circuit training, Strength training)",
-      "image_url": null,
-      "gallery_images": [],
-      "website_url": "http://gymratfamily.cz",
-      "phone": "+420 731 296 515",
-      "email": "msworkspace2000@gmail.com",
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": false,
-      "additional_payment_desc": null,
-      "active_cards": [
-        {
-          "name": "Stříbrná",
-          "id": 1,
-          "description": "Gym, Group lessons (Circuit training, Strength training)"
-        },
-        {
-          "name": "Student",
-          "id": 4,
-          "description": "Gym, Group lessons (Circuit training, Strength training)"
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Gym, Group lessons (Circuit training, Strength training)"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": true,
-      "parking": "Unknown",
-      "self_service": true,
-      "self_service_times": "(otevírací doba 05:00 -00:00)",
-      "unlimited_oh": false,
-      "facebook_url": "https://www.facebook.com/gymratfamily/",
       "instagram_url": null
     },
     {
@@ -803,6 +701,69 @@
       "unlimited_oh": true,
       "facebook_url": "https://www.facebook.com/metagymfitness/",
       "instagram_url": "https://www.instagram.com/metagym_radotin/"
+    },
+    {
+      "id": "5029",
+      "name": "Heat4you - Galaxie",
+      "address": "Arkalycká 877/1, Praha",
+      "city": "Praha",
+      "lat": 50.0317861,
+      "lng": 14.52841,
+      "category": "group",
+      "activities": [
+        "Bosu/Cardio/Rehab",
+        "Dance fitness/Dance aerobics",
+        "H.E.A.T. program",
+        "Jumping/Trampolines",
+        "Circuit training",
+        "Pilates",
+        "Power yoga/Energy yoga",
+        "Problem zones",
+        "Power training",
+        "Tabata",
+        "TRX/TRX RIP TRAINER/Jungle sports",
+        "Zumba",
+        "Yoga"
+      ],
+      "activity_summary": "Group lessons (H.E.A.T. program, Power yoga, Zumba, Circuit training, Jumping, TRX, Tabata, Pilates Clinic, Functional strength training, Physio yoga, Bosu, Dance fusion, Problematic dance parts)",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/c8/1f/c81fb82bdea76bfb71f104303f34b23c.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/06/d5/06d5c15573ce5c258fc15a272164eb98.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/3c/ea/3cea730e23b76f154bf75461d3515a68.jpg"
+      ],
+      "website_url": "https://www.heat4you.cz/heat4you-galaxie/",
+      "phone": "+420 775 674 346",
+      "email": "info@heat4you.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Group lessons (H.E.A.T. program, Power yoga, Zumba, Circuit training, Jumping, TRX, Tabata, Pilates Clinic, Functional strength training, Physio yoga, Bosu, Dance fusion, Problematic dance parts)"
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Group lessons (H.E.A.T. program, Power yoga, Zumba, Circuit training, Jumping, TRX, Tabata, Pilates Clinic, Functional strength training, Physio yoga, Bosu, Dance fusion, Problematic dance parts)"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Group lessons (H.E.A.T. program, Power yoga, Zumba, Circuit training, Jumping, TRX, Tabata, Pilates Clinic, Functional strength training, Physio yoga, Bosu, Dance fusion, Problematic dance parts)"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": null,
+      "instagram_url": null
     }
   ]
 }
