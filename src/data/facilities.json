@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-07-20T06:36:25.779Z",
-  "total": 16,
+  "scraped_at": "2026-07-22T06:19:10.288Z",
+  "total": 17,
   "facilities": [
     {
       "id": "3912",
@@ -62,136 +62,6 @@
       "self_service_times": null,
       "unlimited_oh": false,
       "facebook_url": "https://www.facebook.com/gf.georgesfitness/",
-      "instagram_url": null
-    },
-    {
-      "id": "3665",
-      "name": "ARMY GYM",
-      "address": "Mazurská 484/2, Praha",
-      "city": "Praha",
-      "lat": 50.126799,
-      "lng": 14.41559,
-      "category": "group",
-      "activities": [
-        "Circuit training",
-        "Gym"
-      ],
-      "activity_summary": "Gym, Circuit training",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/ac/2b/ac2ba104f03358c00bccf6f49476c513.jpg",
-      "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/8c/de/8cde24675765d709ad679635c41a882c.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/50/9c/509c2a4fe12798a43b480aed97140318.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/e5/7e/e57e22498d008a45ec7e389aaf8fc424.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/bc/5c/bc5c6ac812007bc299f1daeb42aa385e.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/32/c2/32c2245a31299e0a4f14a2a48fe56dd2.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/53/e6/53e6bdf644742bb6293d7bd83c0c38d1.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/96/16/961659801e5faf9946c3c33b137509bd.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/ca/20/ca20757f31c809914875b2cdd2885dec.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/52/1b/521bf849420a91baaa03f3a39d87b60c.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/ca/e8/cae87ff6fa69def9760b54601f5ead43.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/39/c3/39c36f4439b92dcfb24bc57dceb080fd.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/43/e4/43e4d37627203230b7788659ae6f54dd.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/94/ab/94ab358fa25bb60feb90f9ff33147739.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/f2/c1/f2c12f6e752d3541dc277c6b3774e429.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/fb/f9/fbf9dbea570f64e909afecad3c921a9f.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/b3/06/b3062c5d40f081726bf479a368cb31c8.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/e7/5f/e75f3bdfed31803d94744eb588ba04a6.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/27/50/2750239c96d52dab57e74f103a180419.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/e4/f3/e4f383aa647874a79276582c86f98401.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/9c/50/9c507a3b252e33de50125677143a5375.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/a1/ba/a1ba74ae23d38c0b986787d018984d95.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/6b/d2/6bd2695c034eb495f077f268f4c0ef63.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/aa/80/aa8035dd2703ed898d01f3351020e1c7.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/5b/d5/5bd5a52d1484e8752c67488c90e43bb5.jpg"
-      ],
-      "website_url": "http://armygym.cz/",
-      "phone": "+420 283 024 255",
-      "email": "info@armygym.cz",
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": false,
-      "additional_payment_desc": null,
-      "active_cards": [
-        {
-          "name": "Stříbrná",
-          "id": 1,
-          "description": "Gym, Circuit training"
-        },
-        {
-          "name": "Student",
-          "id": 4,
-          "description": "Gym, Circuit training"
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Gym, Circuit training"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": null,
-      "instagram_url": null
-    },
-    {
-      "id": "240",
-      "name": "HEAT PRAHA",
-      "address": "Černokostelecká 106/64, Praha",
-      "city": "Praha",
-      "lat": 50.0774642,
-      "lng": 14.5056731,
-      "category": "group",
-      "activities": [
-        "Bodystyling/Bodyform",
-        "Abdomen training/Abdominal muscles strengthening",
-        "H.E.A.T. program",
-        "Pilates",
-        "Salt Cave",
-        "Health exercises/Corrective exercises",
-        "Yoga"
-      ],
-      "activity_summary": "H.E.A.T. program, Salt Cave (50 min), Group lessons (Yoga, Pilates, Abdomen training, Bodystyling)",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/7d/9c/7d9c921abf04d30f4f44536fd08afb42.jpg",
-      "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/5d/be/5dbe38e7fe647832e10260ce1cad1a01.jpg"
-      ],
-      "website_url": "http://heatpraha.cz/",
-      "phone": "+420 603 414 542",
-      "email": "info@heatpraha.cz",
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": false,
-      "additional_payment_desc": null,
-      "active_cards": [
-        {
-          "name": "Stříbrná",
-          "id": 1,
-          "description": "H.E.A.T. program, Salt Cave (50 min), Group lessons (Yoga, Pilates, Abdomen training, Bodystyling)"
-        },
-        {
-          "name": "Dítě",
-          "id": 2,
-          "description": "Please inquire directly about the possibility of use with the partner facility."
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "H.E.A.T. program, Salt Cave (50 min), Group lessons (Yoga, Pilates, Abdomen training, Bodystyling)"
-        }
-      ],
-      "kids_activities": true,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": null,
       "instagram_url": null
     },
     {
@@ -951,6 +821,186 @@
       "unlimited_oh": false,
       "facebook_url": "https://www.facebook.com/undergroundgymcz-108913111751415",
       "instagram_url": "https://www.instagram.com/undergroundgymcz/"
+    },
+    {
+      "id": "5219",
+      "name": "YES Funpark Jesenice",
+      "address": "U Geofyzikálního ústavu , Jesenice",
+      "city": "Jesenice",
+      "lat": 49.9876658,
+      "lng": 14.5248814,
+      "category": "outdoor",
+      "activities": [
+        "Miniature golf"
+      ],
+      "activity_summary": "Minigolf",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/f1/fc/f1fc803cffd562418c54186c91cfd45d.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/c7/ef/c7efca0240c681d40235313c24472c45.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/91/d1/91d113a0f644d528a968bfe095f8c198.jpg"
+      ],
+      "website_url": "http://www.yesfunpark.cz",
+      "phone": "+420 774 750 150",
+      "email": "info@yesfunpark.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Minigolf"
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Minigolf"
+        },
+        {
+          "name": "Student",
+          "id": 4,
+          "description": "Minigolf"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Minigolf"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/profile.php?id=61560661605006",
+      "instagram_url": null
+    },
+    {
+      "id": "375",
+      "name": "ICE ARENA FITNESS",
+      "address": "Škroupova 4, Říčany",
+      "city": "Říčany",
+      "lat": 49.988586,
+      "lng": 14.661933,
+      "category": "group",
+      "activities": [
+        "Boxing",
+        "Circuit training",
+        "Gym",
+        "TRX/TRX RIP TRAINER/Jungle sports"
+      ],
+      "activity_summary": "Gym, Group lessons (Box, TRX, Circuit training)",
+      "image_url": null,
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/83/e7/83e74658b7a19027c3c6a4a630383989.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/55/8e/558e7d8e801635b9554c53ec2ddb61fe.jpg"
+      ],
+      "website_url": null,
+      "phone": "+420 702 073 362",
+      "email": "info@icearenafitness.eu",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Gym, Group lessons (Box, TRX, Circuit training)"
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Gym, Group lessons (Box, TRX, Circuit training)"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Gym, Group lessons (Box, TRX, Circuit training)"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Free",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/icearenafitness",
+      "instagram_url": null
+    },
+    {
+      "id": "1075",
+      "name": "Pulse Fitness Solárium Horní Počernice",
+      "address": "Jívanská 1880, Praha",
+      "city": "Praha",
+      "lat": 50.115578,
+      "lng": 14.613019,
+      "category": "group",
+      "activities": [
+        "Body ball/Ball exercises/Fit-ball",
+        "Bodystyling/Bodyform",
+        "Bosu/Cardio/Rehab",
+        "Dance fitness/Dance aerobics",
+        "Functional training",
+        "Hatha yoga",
+        "Kettlebells",
+        "Circuit training",
+        "Pilates",
+        "Gym",
+        "Power yoga/Energy yoga",
+        "TRX/TRX RIP TRAINER/Jungle sports",
+        "Vinyasa yoga",
+        "Yoga"
+      ],
+      "activity_summary": "Entry for: Gym (90 min), Group lessons: TRX, Bosu, Circuit training, Pilates, Yoga, Kettlebells, Just Move, Booty Blaster, Fit Dance, Exercise with fitball, Groud Force, Bodystyling, Functional training",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/03/6a/036a4506b126df1b9dd1e5dbb149279b.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/38/1c/381c113119d6ca9456425b7b057ff1ea.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/af/3e/af3ed588ff7a533c135dad9bb2a5736d.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/df/c8/dfc8dbf7a4c6038826bf19c6970bbf8e.jpg"
+      ],
+      "website_url": "http://pulsepocernice.cz",
+      "phone": "+420 733 606 201",
+      "email": "recepce@pulsepocernice.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Entry for: Gym (90 min), Group lessons: TRX, Bosu, Circuit training, Pilates, Yoga, Kettlebells, Just Move, Booty Blaster, Fit Dance, Exercise with fitball, Groud Force, Bodystyling, Functional training"
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Please inquire directly about the possibility of use with the partner facility."
+        },
+        {
+          "name": "Student",
+          "id": 4,
+          "description": "Gym (90 min), Group lessons: TRX, Bosu, Circuit training, Pilates, Yoga, Kettlebells, Just Move, Booty Blaster, Fit Dance, Exercise with fitball, Groud Force, Bodystyling, Functional training"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Entry for: Gym (90 min), Group lessons: TRX, Bosu, Circuit training, Pilates, Yoga, Kettlebells, Just Move, Booty Blaster, Fit Dance, Exercise with fitball, Groud Force, Bodystyling, Functional training"
+        }
+      ],
+      "kids_activities": true,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/pulsepocernice.cz/",
+      "instagram_url": null
     }
   ]
 }
