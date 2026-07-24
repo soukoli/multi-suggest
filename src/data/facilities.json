@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-07-22T06:19:10.288Z",
-  "total": 17,
+  "scraped_at": "2026-07-24T06:16:31.409Z",
+  "total": 15,
   "facilities": [
     {
       "id": "3912",
@@ -876,130 +876,6 @@
       "self_service_times": null,
       "unlimited_oh": false,
       "facebook_url": "https://www.facebook.com/profile.php?id=61560661605006",
-      "instagram_url": null
-    },
-    {
-      "id": "375",
-      "name": "ICE ARENA FITNESS",
-      "address": "Škroupova 4, Říčany",
-      "city": "Říčany",
-      "lat": 49.988586,
-      "lng": 14.661933,
-      "category": "group",
-      "activities": [
-        "Boxing",
-        "Circuit training",
-        "Gym",
-        "TRX/TRX RIP TRAINER/Jungle sports"
-      ],
-      "activity_summary": "Gym, Group lessons (Box, TRX, Circuit training)",
-      "image_url": null,
-      "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/83/e7/83e74658b7a19027c3c6a4a630383989.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/55/8e/558e7d8e801635b9554c53ec2ddb61fe.jpg"
-      ],
-      "website_url": null,
-      "phone": "+420 702 073 362",
-      "email": "info@icearenafitness.eu",
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": false,
-      "additional_payment_desc": null,
-      "active_cards": [
-        {
-          "name": "Stříbrná",
-          "id": 1,
-          "description": "Gym, Group lessons (Box, TRX, Circuit training)"
-        },
-        {
-          "name": "Dítě",
-          "id": 2,
-          "description": "Gym, Group lessons (Box, TRX, Circuit training)"
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Gym, Group lessons (Box, TRX, Circuit training)"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "Free",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": "https://www.facebook.com/icearenafitness",
-      "instagram_url": null
-    },
-    {
-      "id": "1075",
-      "name": "Pulse Fitness Solárium Horní Počernice",
-      "address": "Jívanská 1880, Praha",
-      "city": "Praha",
-      "lat": 50.115578,
-      "lng": 14.613019,
-      "category": "group",
-      "activities": [
-        "Body ball/Ball exercises/Fit-ball",
-        "Bodystyling/Bodyform",
-        "Bosu/Cardio/Rehab",
-        "Dance fitness/Dance aerobics",
-        "Functional training",
-        "Hatha yoga",
-        "Kettlebells",
-        "Circuit training",
-        "Pilates",
-        "Gym",
-        "Power yoga/Energy yoga",
-        "TRX/TRX RIP TRAINER/Jungle sports",
-        "Vinyasa yoga",
-        "Yoga"
-      ],
-      "activity_summary": "Entry for: Gym (90 min), Group lessons: TRX, Bosu, Circuit training, Pilates, Yoga, Kettlebells, Just Move, Booty Blaster, Fit Dance, Exercise with fitball, Groud Force, Bodystyling, Functional training",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/03/6a/036a4506b126df1b9dd1e5dbb149279b.jpg",
-      "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/38/1c/381c113119d6ca9456425b7b057ff1ea.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/af/3e/af3ed588ff7a533c135dad9bb2a5736d.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/df/c8/dfc8dbf7a4c6038826bf19c6970bbf8e.jpg"
-      ],
-      "website_url": "http://pulsepocernice.cz",
-      "phone": "+420 733 606 201",
-      "email": "recepce@pulsepocernice.cz",
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": false,
-      "additional_payment_desc": null,
-      "active_cards": [
-        {
-          "name": "Stříbrná",
-          "id": 1,
-          "description": "Entry for: Gym (90 min), Group lessons: TRX, Bosu, Circuit training, Pilates, Yoga, Kettlebells, Just Move, Booty Blaster, Fit Dance, Exercise with fitball, Groud Force, Bodystyling, Functional training"
-        },
-        {
-          "name": "Dítě",
-          "id": 2,
-          "description": "Please inquire directly about the possibility of use with the partner facility."
-        },
-        {
-          "name": "Student",
-          "id": 4,
-          "description": "Gym (90 min), Group lessons: TRX, Bosu, Circuit training, Pilates, Yoga, Kettlebells, Just Move, Booty Blaster, Fit Dance, Exercise with fitball, Groud Force, Bodystyling, Functional training"
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Entry for: Gym (90 min), Group lessons: TRX, Bosu, Circuit training, Pilates, Yoga, Kettlebells, Just Move, Booty Blaster, Fit Dance, Exercise with fitball, Groud Force, Bodystyling, Functional training"
-        }
-      ],
-      "kids_activities": true,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": "https://www.facebook.com/pulsepocernice.cz/",
       "instagram_url": null
     }
   ]
