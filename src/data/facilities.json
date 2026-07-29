@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-07-27T06:53:14.317Z",
-  "total": 16,
+  "scraped_at": "2026-07-29T06:22:20.826Z",
+  "total": 14,
   "facilities": [
     {
       "id": "3912",
@@ -176,51 +176,6 @@
       "instagram_url": null
     },
     {
-      "id": "1466",
-      "name": "DANCE PERFECT",
-      "address": "Národní 961/25, Praha",
-      "city": "Praha",
-      "lat": 50.082443,
-      "lng": 14.418099,
-      "category": "yoga",
-      "activities": [
-        "Pilates",
-        "Zumba",
-        "Yoga",
-        "DNS",
-        "Barre"
-      ],
-      "activity_summary": "Health classes (Pilates, Total Barre, DNS & Yoga) with an additional charge of 100 CZK, Zumba with an additional charge of 100 CZK",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/c8/94/c894e400bdb189d47e03e7fec75ce080.jpg",
-      "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/27/90/27903f03ff8719166682b547f35a255d.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/33/6f/336fa9fdc9d49b5bbfce50918c4e8a9c.jpg"
-      ],
-      "website_url": "http://danceperfect.cz",
-      "phone": "+420 221 085 269",
-      "email": "info@danceperfect.cz",
-      "description": null,
-      "is_new": true,
-      "recommended": false,
-      "additional_payment": true,
-      "additional_payment_desc": "Health classes (Pilates, Total Barre, DNS & Yoga) with an additional charge of 100 CZK, Zumba with an additional charge of 100 CZK",
-      "active_cards": [
-        {
-          "name": "Stříbrná",
-          "id": 1,
-          "description": "Health classes (Pilates, Total Barre, DNS & Yoga) with an additional charge of 100 CZK, Zumba with an additional charge of 100 CZK"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": "https://www.facebook.com/DancePerfectPraha",
-      "instagram_url": null
-    },
-    {
       "id": "2141",
       "name": "Saunia - Centrum Krakov",
       "address": "Lodžská 850/6, Praha",
@@ -276,6 +231,58 @@
       "self_service_times": null,
       "unlimited_oh": false,
       "facebook_url": "https://www.facebook.com/saunia.centrum.krakov",
+      "instagram_url": null
+    },
+    {
+      "id": "4722",
+      "name": "Stromeček Zbraslav",
+      "address": "Elišky Přemyslovny 433, Praha",
+      "city": "Praha",
+      "lat": 49.9734439,
+      "lng": 14.3929811,
+      "category": "sports",
+      "activities": [
+        "Tennis (summer)",
+        "Kids playroom"
+      ],
+      "activity_summary": "Entrance to the playroom (child + companion) (90 min), Tennis summer (card covers 1/2 court)",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/ea/8b/ea8b52e516fbc1df2552e09a717d18e9.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/4e/86/4e8603760798362bd1f1b620dcfe2892.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/17/ac/17acfe0bfd19e2730c360f6ff76b99df.jpg"
+      ],
+      "website_url": "http://stromecek.fun",
+      "phone": "+420 792 534 374",
+      "email": "ahoj@stromecek.fun",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Entrance to the playroom (child + companion) (90 min), Tennis summer (card covers 1/2 court)"
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Entrance to the playroom (child + companion) (90 min), Tennis summer (card covers 1/2 court)"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Entrance to the playroom (child + companion) (90 min), Tennis summer (card covers 1/2 court)"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/stromecekzbraslav",
       "instagram_url": null
     },
     {
@@ -454,54 +461,6 @@
       "instagram_url": null
     },
     {
-      "id": "5243",
-      "name": "Future Fitness",
-      "address": "V Hůrce 371, Praha",
-      "city": "Praha",
-      "lat": 49.974585,
-      "lng": 14.5887019,
-      "category": "fitness",
-      "activities": [
-        "Gym"
-      ],
-      "activity_summary": "Gym",
-      "image_url": null,
-      "gallery_images": [],
-      "website_url": "http://www.futurefitness.cz",
-      "phone": null,
-      "email": "info@futurefitness.cz",
-      "description": null,
-      "is_new": true,
-      "recommended": false,
-      "additional_payment": false,
-      "additional_payment_desc": null,
-      "active_cards": [
-        {
-          "name": "Stříbrná",
-          "id": 1,
-          "description": "Gym"
-        },
-        {
-          "name": "Dítě",
-          "id": 2,
-          "description": "Gym"
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Gym"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": null,
-      "instagram_url": null
-    },
-    {
       "id": "3543",
       "name": "FORM FACTORY fitness center – Stodůlky",
       "address": "Siemensova 2717/4, Praha",
@@ -566,32 +525,29 @@
       "instagram_url": null
     },
     {
-      "id": "665",
-      "name": "LÁZNĚ NA LODI",
-      "address": "Rašínovo nábřeží , Praha",
+      "id": "4761",
+      "name": "Prema Jóga studio",
+      "address": "Dvorecká 1165/1, Praha",
       "city": "Praha",
-      "lat": 50.068505,
-      "lng": 14.414403,
-      "category": "wellness",
+      "lat": 50.0456469,
+      "lng": 14.4199744,
+      "category": "yoga",
       "activities": [
-        "Sauna/Steam"
+        "Yoga"
       ],
-      "activity_summary": "Sauna 60 min",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/cb/18/cb180d914984e5f78ab203ea58edadd7.jpg",
+      "activity_summary": "Yoga",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/07/e6/07e6aa5bfe5a76c2c129967cd8cfe1a8.jpg",
       "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/2d/7a/2d7aae9eae1c88612b208461967b66c2.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/71/ac/71ac91308b82284dca0133284be66235.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/f2/20/f220852b2f0f4a895642a875a8177294.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/03/b8/03b8f46821af8b4fc4f3034bedb55aca.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/fc/45/fc452c89a8c3e807c1dded4807499b74.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/38/48/3848f2e9a0fdc897ff9f6912de8e3269.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/be/4e/be4e9e39f23da9bd077717a71328e6d8.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/b8/fe/b8fe6f735f251752aac9eae2ab2be153.jpg"
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/8f/6f/8f6f993693900f527653639e6788a445.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/00/f9/00f9c492dc2c66b1006280ec44f345f6.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/84/df/84dfb0fd2ecf2c776f189f4dc7b9fb9d.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/df/8f/df8f4aae376af5b4a9953618bf9c1970.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/40/59/40599ea0507285e395596880e3808ec4.jpg"
       ],
-      "website_url": "http://laznenalodi.cz",
-      "phone": "+420 733 429 349",
-      "email": "info@laznenalodi.cz",
-      "description": "Open only from autumn to spring (according to the partner's website).\n\nSpa at Náplavka on the steamer Avoid Gallery on the Rašín embankment. A classic Finnish sauna with a view of Hradčany, a relaxation area, a changing room, a shower, cooling showers and a jetty into the river.\n\nMon - Sun: 18 - 23\n\nBefore visiting the sauna, it is advisable to reserve a place for a specific time and number of people, the reservation is possible online in the reservation section, by phone or by email.",
+      "website_url": "http://premajoga.cz",
+      "phone": "+420 608 329 614",
+      "email": "studio@premajoga.cz",
+      "description": null,
       "is_new": false,
       "recommended": false,
       "additional_payment": false,
@@ -600,26 +556,31 @@
         {
           "name": "Stříbrná",
           "id": 1,
-          "description": "Sauna 60 min"
+          "description": "Yoga"
         },
         {
           "name": "Dítě",
           "id": 2,
-          "description": "Sauna 60 min"
+          "description": "Yoga"
+        },
+        {
+          "name": "Student",
+          "id": 4,
+          "description": "Yoga"
         },
         {
           "name": "FKSP",
           "id": 3,
-          "description": "Sauna 60 min"
+          "description": "Yoga"
         }
       ],
-      "kids_activities": true,
+      "kids_activities": false,
       "only_virtual_card": false,
       "parking": "Unknown",
       "self_service": false,
       "self_service_times": null,
       "unlimited_oh": false,
-      "facebook_url": "https://www.facebook.com/Laznenalodi/",
+      "facebook_url": null,
       "instagram_url": null
     },
     {
@@ -666,37 +627,24 @@
       "instagram_url": "https://www.instagram.com/metagym_radotin/"
     },
     {
-      "id": "5029",
-      "name": "Heat4you - Galaxie",
-      "address": "Arkalycká 877/1, Praha",
+      "id": "4953",
+      "name": "Sportovní areál Na Korunce",
+      "address": "Na Korunce 580, Praha",
       "city": "Praha",
-      "lat": 50.0317861,
-      "lng": 14.52841,
-      "category": "group",
+      "lat": 50.0756786,
+      "lng": 14.5986742,
+      "category": "sports",
       "activities": [
-        "Bosu/Cardio/Rehab",
-        "Dance fitness/Dance aerobics",
-        "H.E.A.T. program",
-        "Jumping/Trampolines",
-        "Circuit training",
-        "Pilates",
-        "Power yoga/Energy yoga",
-        "Problem zones",
-        "Power training",
-        "Tabata",
-        "TRX/TRX RIP TRAINER/Jungle sports",
-        "Zumba",
-        "Yoga"
+        "Table tennis",
+        "Tennis (summer)",
+        "Tennis (winter)"
       ],
-      "activity_summary": "Group lessons (H.E.A.T. program, Power yoga, Zumba, Circuit training, Jumping, TRX, Tabata, Pilates Clinic, Functional strength training, Physio yoga, Bosu, Dance fusion, Problematic dance parts)",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/c8/1f/c81fb82bdea76bfb71f104303f34b23c.jpg",
-      "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/06/d5/06d5c15573ce5c258fc15a272164eb98.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/3c/ea/3cea730e23b76f154bf75461d3515a68.jpg"
-      ],
-      "website_url": "https://www.heat4you.cz/heat4you-galaxie/",
-      "phone": "+420 775 674 346",
-      "email": "info@heat4you.cz",
+      "activity_summary": "Tennis winter (card covers 1/4 court), Table tenis, Tennis summer (card covers 1/2 court)",
+      "image_url": null,
+      "gallery_images": [],
+      "website_url": "http://sokolbechovice.cz",
+      "phone": "+420 728 160 138",
+      "email": "info@sokolbechovice.cz",
       "description": null,
       "is_new": false,
       "recommended": false,
@@ -706,17 +654,22 @@
         {
           "name": "Stříbrná",
           "id": 1,
-          "description": "Group lessons (H.E.A.T. program, Power yoga, Zumba, Circuit training, Jumping, TRX, Tabata, Pilates Clinic, Functional strength training, Physio yoga, Bosu, Dance fusion, Problematic dance parts)"
+          "description": "Tennis winter (card covers 1/4 court), Table tenis, Tennis summer (card covers 1/2 court)"
         },
         {
           "name": "Dítě",
           "id": 2,
-          "description": "Group lessons (H.E.A.T. program, Power yoga, Zumba, Circuit training, Jumping, TRX, Tabata, Pilates Clinic, Functional strength training, Physio yoga, Bosu, Dance fusion, Problematic dance parts)"
+          "description": "Tennis winter (card covers 1/4 court), Table tenis, Tennis summer (card covers 1/2 court)"
+        },
+        {
+          "name": "Student",
+          "id": 4,
+          "description": "Tennis summer (card covers 1/2 court)"
         },
         {
           "name": "FKSP",
           "id": 3,
-          "description": "Group lessons (H.E.A.T. program, Power yoga, Zumba, Circuit training, Jumping, TRX, Tabata, Pilates Clinic, Functional strength training, Physio yoga, Bosu, Dance fusion, Problematic dance parts)"
+          "description": "Tennis winter (card covers 1/4 court), Table tenis, Tennis summer (card covers 1/2 court)"
         }
       ],
       "kids_activities": false,
@@ -849,71 +802,6 @@
       "unlimited_oh": false,
       "facebook_url": "https://www.facebook.com/jamjamprague",
       "instagram_url": null
-    },
-    {
-      "id": "5218",
-      "name": "UNDERGROUND GYM",
-      "address": "Jabloňová 3126/11, Praha",
-      "city": "Praha",
-      "lat": 50.0571208,
-      "lng": 14.4960611,
-      "category": "group",
-      "activities": [
-        "Boxing",
-        "Circuit training",
-        "Gym",
-        "Sambo/MMA/K-1",
-        "Thaiboxing",
-        "Yoga",
-        "Exercise for children"
-      ],
-      "activity_summary": "Gym, Group lessons (MMA, Box, Thaibox, Yoga, Circuit training), Combat sport for children",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/f9/21/f921867e72ef7823dd736ef5f679dcad.jpg",
-      "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/a1/94/a1948afe75025542294ba2f4e043d11f.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/3c/46/3c463cbf7a4f542a333e455e6c582c37.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/60/19/60199f353f4a4a79bdf6761880885945.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/82/8d/828d928866dd320535b3f1c98235eec3.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/dd/a0/dda0f7a2bbb3ca0b33c5e9ef3bf7b383.jpg"
-      ],
-      "website_url": "http://undergroundgym.cz/",
-      "phone": "+420 730 105 790",
-      "email": "undergroundgym@gmail.com",
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": false,
-      "additional_payment_desc": null,
-      "active_cards": [
-        {
-          "name": "Stříbrná",
-          "id": 1,
-          "description": "Gym, Group lessons (MMA, Box, Thaibox, Yoga, Circuit training)"
-        },
-        {
-          "name": "Dítě",
-          "id": 2,
-          "description": "Combat sport for children"
-        },
-        {
-          "name": "Student",
-          "id": 4,
-          "description": "Gym"
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Gym, Group lessons (MMA, Box, Thaibox, Yoga, Circuit training)"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": "https://www.facebook.com/undergroundgymcz-108913111751415",
-      "instagram_url": "https://www.instagram.com/undergroundgymcz/"
     }
   ]
 }
