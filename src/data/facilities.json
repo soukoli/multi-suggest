@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-31T06:35:04.364Z",
+  "scraped_at": "2026-08-02T06:24:35.507Z",
   "total": 15,
   "facilities": [
     {
@@ -708,59 +708,6 @@
       "instagram_url": null
     },
     {
-      "id": "4966",
-      "name": "JamJam boulder club Prague",
-      "address": "Vlastina 889/23, Praha",
-      "city": "Praha",
-      "lat": 50.0897981,
-      "lng": 14.3148697,
-      "category": "climbing",
-      "activities": [
-        "Bouldering"
-      ],
-      "activity_summary": "Boulder wall: adult - Mon-Fri 2:14 p.m.-7:18 p.m. with a surcharge of 100 CZK, 7:19 p.m.-10:33 p.m. with a surcharge of 70 CZK, Sat-Sun, Holidays 8:08 a.m.-10:33 p.m. with a surcharge of 100 CZK, student - Mon-Fri 2:14 p.m.-7:18 p.m. with a surcharge of 80 CZK, Sat-Sun, Holidays 8:08 a.m.-10:33 p.m. with a surcharge of 80 CZK, child: Mon-Fri 2:14 p.m.-7:18 p.m. with a surcharge of 50 CZK, 7:19 p.m.-10:33 p.m. with a surcharge of 20 CZK, Sat-Sun, Holidays 8:08 a.m.-10:33 p.m. with a surcharge of 50 CZK",
-      "image_url": null,
-      "gallery_images": [],
-      "website_url": "https://www.jamjam.cz/",
-      "phone": "+420 602 652 499",
-      "email": "info@jamjam.cz",
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": true,
-      "additional_payment_desc": "Boulder wall: adult - Mon-Fri 2:14 p.m.-7:18 p.m. with a surcharge of 100 CZK, 7:19 p.m.-10:33 p.m. with a surcharge of 70 CZK, Sat-Sun, Holidays 8:08 a.m.-10:33 p.m. with a surcharge of 100 CZK, student - Mon-Fri 2:14 p.m.-7:18 p.m. with a surcharge of 80 CZK, Sat-Sun, Holidays 8:08 a.m.-10:33 p.m. with a surcharge of 80 CZK, child: Mon-Fri 2:14 p.m.-7:18 p.m. with a surcharge of 50 CZK, 7:19 p.m.-10:33 p.m. with a surcharge of 20 CZK, Sat-Sun, Holidays 8:08 a.m.-10:33 p.m. with a surcharge of 50 CZK",
-      "active_cards": [
-        {
-          "name": "Stříbrná",
-          "id": 1,
-          "description": "Boulder wall: adult - Mon-Fri from 2:14 PM to 7:18 PM with a surcharge of 100 CZK, from 7:19 PM to 10:33 PM with a surcharge of 70 CZK, Sat-Sun, Holidays from 8:08 AM to 10:33 PM with a surcharge of 100 CZK"
-        },
-        {
-          "name": "Dítě",
-          "id": 2,
-          "description": "Boulder wall: child: Mon-Fri from 2:14 PM to 7:18 PM with a surcharge of 50 CZK, from 7:19 PM to 10:33 PM with a surcharge of 20 CZK, Sat-Sun, Holidays from 8:08 AM to 10:33 PM with a surcharge of 50 CZK"
-        },
-        {
-          "name": "Student",
-          "id": 4,
-          "description": "Boulder wall: student - Mon-Fri from 2:14 PM to 7:18 PM with a surcharge of 80 CZK, Sat-Sun, Holidays from 8:08 AM to 10:33 PM with a surcharge of 80 CZK"
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Boulder wall: adult - Mon-Fri from 2:14 PM to 7:18 PM with a surcharge of 100 CZK, from 7:19 PM to 10:33 PM with a surcharge of 70 CZK, Sat-Sun, Holidays from 8:08 AM to 10:33 PM with a surcharge of 100 CZK"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": "https://www.facebook.com/jamjamprague",
-      "instagram_url": null
-    },
-    {
       "id": "375",
       "name": "ICE ARENA FITNESS",
       "address": "Škroupova 4, Říčany",
@@ -882,6 +829,58 @@
       "self_service_times": null,
       "unlimited_oh": false,
       "facebook_url": "https://www.facebook.com/pulsepocernice.cz/",
+      "instagram_url": null
+    },
+    {
+      "id": "1731",
+      "name": "Fitladyclub - Háje",
+      "address": "Hviezdoslavova 1600/6, Praha",
+      "city": "Praha",
+      "lat": 50.0320294,
+      "lng": 14.5193158,
+      "category": "group",
+      "activities": [
+        "Circuit training"
+      ],
+      "activity_summary": "Circuit training",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/a0/1e/a01e15175a46b9e3e1a4fae9bebc2541.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/f5/3c/f53cabe597cd6457759fafa548039114.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/6e/15/6e15ff0d61b93ec6c8356cfeb2e1f73f.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/88/6f/886f75980b59445847afcc581b71044f.jpg"
+      ],
+      "website_url": "http://fitladyclub.cz/",
+      "phone": null,
+      "email": "haje@fitladyclub.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Circuit training"
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Circuit training"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Circuit training"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": null,
       "instagram_url": null
     }
   ]
