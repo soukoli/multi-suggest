@@ -1,7 +1,61 @@
 {
-  "scraped_at": "2026-08-03T06:49:37.541Z",
-  "total": 15,
+  "scraped_at": "2026-08-05T06:16:21.637Z",
+  "total": 16,
   "facilities": [
+    {
+      "id": "4193",
+      "name": "Adámek Fighting Academy",
+      "address": "Lodžská 598/3, Praha",
+      "city": "Praha",
+      "lat": 50.1284972,
+      "lng": 14.4167797,
+      "category": "group",
+      "activities": [
+        "Boxing",
+        "Kickboxing",
+        "Self Defence",
+        "Yoga"
+      ],
+      "activity_summary": "Group lessons (Boxing, Kickboxing, Self-defense for children, Yoga)",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/11/a0/11a0a7f99a7ad7ea5f7bf680ff1d7001.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/37/6e/376ec96dc45134057237b1363a3eb5d6.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/a4/60/a460d9a0bebb536c789b303d9b1a1d90.jpg"
+      ],
+      "website_url": "http://afac.cz/",
+      "phone": null,
+      "email": null,
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Group lessons (Boxing, Kickboxing, Self-defense for children, Yoga)"
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Group lessons (Boxing, Kickboxing, Self-defense for children, Yoga)"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Group lessons (Boxing, Kickboxing, Self-defense for children, Yoga)"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": null,
+      "instagram_url": null
+    },
     {
       "id": "3912",
       "name": "George's fitness",
@@ -65,6 +119,185 @@
       "instagram_url": null
     },
     {
+      "id": "4177",
+      "name": "SKY Gym Říčany",
+      "address": "Duhová ul. 2762/26, Říčany",
+      "city": "Říčany",
+      "lat": 49.9873539,
+      "lng": 14.6410478,
+      "category": "group",
+      "activities": [
+        "Body balance",
+        "Bodystyling/Bodyform",
+        "Bosu/Cardio/Rehab",
+        "Functional training",
+        "HIIT",
+        "Circuit training",
+        "Pilates",
+        "Gym",
+        "Power yoga/Energy yoga",
+        "Power training",
+        "Healthy back/Back pain",
+        "Core training",
+        "Yoga"
+      ],
+      "activity_summary": "Gym, Group lessons (Power yoga, Hard yoga, Strength circuit training, Mobility, Endurance circuit training, Sore back, Body training, Body attack, Body balance, Bosu, Core stretch, Core, functional training, HIIT, Pilates)",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/07/e5/07e59803a82922aa717e6bbcf0532d8a.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/4d/2d/4d2d31668e7a5a3d72e92a19c91a6a99.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/7c/09/7c09157c2409a8c535254d72d4d7128e.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/38/ce/38ce500241ad9ff2b2a385fb8dfd3d6d.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/b3/82/b3823f708a9018554ddeb9cfacbe0fa2.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/7f/d5/7fd5a272e375e7ea027849b7ec0a982e.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/d1/02/d1021e798ca2c5a5aaad33b0f8dae81f.jpg"
+      ],
+      "website_url": "http://skygymricany.cz",
+      "phone": "+420 777 489 544",
+      "email": "info@skygymricany.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Gym, Group lessons (Power yoga, Hard yoga, Strength circuit training, Mobility, Endurance circuit training, Sore back, Body training, Body attack, Body balance, Bosu, Core stretch, Core, functional training, HIIT, Pilates)"
+        },
+        {
+          "name": "Student",
+          "id": 4,
+          "description": "Gym, Group lessons (Power yoga, Hard yoga, Strength circuit training, Mobility, Endurance circuit training, Sore back, Body training, Body attack, Body balance, Bosu, Core stretch, Core, functional training, HIIT, Pilates)"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Gym, Group lessons (Power yoga, Hard yoga, Strength circuit training, Mobility, Endurance circuit training, Sore back, Body training, Body attack, Body balance, Bosu, Core stretch, Core, functional training, HIIT, Pilates)"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Free",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/skygymricany",
+      "instagram_url": null
+    },
+    {
+      "id": "5326",
+      "name": "Cvičení se Zůzou",
+      "address": "Na Chobotě 1420/16, Praha",
+      "city": "Praha",
+      "lat": 50.06666,
+      "lng": 14.2959919,
+      "category": "group",
+      "activities": [
+        "Circuit training"
+      ],
+      "activity_summary": "Group lessons (Circuit training)",
+      "image_url": null,
+      "gallery_images": [],
+      "website_url": null,
+      "phone": "+420 721 275 024",
+      "email": "zuzana.melicharova@icloud.com",
+      "description": null,
+      "is_new": true,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Group lessons (Circuit training)"
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Group lessons (Circuit training)"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Group lessons (Circuit training)"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/groups/1532197438303410",
+      "instagram_url": null
+    },
+    {
+      "id": "4178",
+      "name": "FORM FACTORY fitness center - SO-HO",
+      "address": "V Háji 1564/10, Praha",
+      "city": "Praha",
+      "lat": 50.1026103,
+      "lng": 14.4544303,
+      "category": "group",
+      "activities": [
+        "Body balance",
+        "Dance fitness/Dance aerobics",
+        "Circuit training",
+        "Pilates",
+        "Gym",
+        "Pump/Body Pump",
+        "Sauna/Steam",
+        "Core training",
+        "BODYCOMBAT®",
+        "GRIT®",
+        "Yoga",
+        "InBody"
+      ],
+      "activity_summary": "Club entrance with the possibility of using: Gym, Sauna, Group lessons( Bodypump, Bodycombat, Lm core, Lm grit, Circuit training, Bodyattack, Lm dance, Bodybalance, Yoga, Pilates), InBody (once in calendar half a year)",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/14/05/14051258f2d31eaa12543bfbcb9d7511.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/48/e2/48e2857ee34392cd4dfa5d2efa8330e0.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/ef/29/ef29123a8815541bd4fab6b4c5fe0c22.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/54/a8/54a82c81330d1659a39f04d818021d06.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/50/05/5005477664d87903f0972bc6350305bc.jpg"
+      ],
+      "website_url": "http://formfactory.cz/soho/",
+      "phone": "+420 778 702 793",
+      "email": "soho@formfactory.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Club entrance with the possibility of using: Gym, Sauna, Group lessons( Bodypump, Bodycombat, Lm core, Lm grit, Circuit training, Bodyattack, Lm dance, Bodybalance, Yoga, Pilates), InBody (once in calendar half a year)"
+        },
+        {
+          "name": "Student",
+          "id": 4,
+          "description": "Club entrance with the possibility of using: Gym, Sauna, Group lessons( Bodypump, Bodycombat, Lm core, Lm grit, Circuit training, Bodyattack, Lm dance, Bodybalance, Yoga, Pilates), InBody (once in calendar half a year)"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Club entrance with the possibility of using: Gym, Sauna, Group lessons( Bodypump, Bodycombat, Lm core, Lm grit, Circuit training, Bodyattack, Lm dance, Bodybalance, Yoga, Pilates), InBody (once in calendar half a year)"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": null,
+      "instagram_url": null
+    },
+    {
       "id": "355",
       "name": "Studio Hvězda",
       "address": "Křenova 11, Praha",
@@ -122,28 +355,42 @@
       "instagram_url": null
     },
     {
-      "id": "5020",
-      "name": "Max Fitness Dejvice",
-      "address": "Generála Píky 430/26, Praha",
+      "id": "4175",
+      "name": "FORM FACTORY fitness center - Letňany",
+      "address": "Veselská 663, Praha",
       "city": "Praha",
-      "lat": 50.0986783,
-      "lng": 14.3886697,
-      "category": "fitness",
+      "lat": 50.1353111,
+      "lng": 14.5002175,
+      "category": "group",
       "activities": [
+        "Body balance",
+        "Dance fitness/Dance aerobics",
+        "Circuit training",
+        "Pilates",
         "Gym",
-        "Sauna/Steam"
+        "Pump/Body Pump",
+        "Sauna/Steam",
+        "Core training",
+        "Indoor Cycling",
+        "BODYCOMBAT®",
+        "GRIT®",
+        "Yoga",
+        "InBody"
       ],
-      "activity_summary": "Gym, Sauna",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/31/28/3128f38f966e98a36f55fd1b66f8707c.jpg",
+      "activity_summary": "Club entrance with the possibility of using: Gym, Sauna, Group lessons (Cycling, Sprint, Bodypump, Bodycombat, Lm core, Lm grit, Circuit training, Bodyattack, Lm dance, Bodybalance, Yoga, Pilates), InBody (1x per calendar half year)",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/ae/40/ae4034bbe2295eaf8efe3ea930aa1b25.jpg",
       "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/cd/c9/cdc9a09972392aecd421674285f0f3ed.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/b0/06/b006152fc01162068f6afae715d1ea7a.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/44/56/44569e42c1d526b429085ce316c89919.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/60/c2/60c25366e864138e560b9d6cb6279d53.jpg"
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/79/e4/79e4f65fae02bec6cf16a85ec783fbc2.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/51/64/5164a70c0f2471751b61741ad483dcaa.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/19/89/1989899da5a43bb6778aef5283df93c6.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/72/1c/721c59cbc7582e74a020116514d9bb13.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/85/11/8511304c9ba8bcbb5bd0526dbb98d82a.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/31/66/3166d7fc0296cd2ebc6220d6d5e203df.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/d4/7b/d47b0d2d5d46ca45a84f0a1f8f3ec556.jpg"
       ],
-      "website_url": "https://www.maxfitness.cz/",
-      "phone": null,
-      "email": null,
+      "website_url": "http://formfactory.cz/letnany/",
+      "phone": "+420 778 711 127",
+      "email": "letnany@formfactory.cz",
       "description": null,
       "is_new": false,
       "recommended": false,
@@ -153,17 +400,17 @@
         {
           "name": "Stříbrná",
           "id": 1,
-          "description": "Gym, Sauna"
+          "description": "Club entrance with the possibility of using: Gym, Sauna, Group lessons (Cycling, Sprint, Bodypump, Bodycombat, Lm core, Lm grit, Circuit training, Bodyattack, Lm dance, Bodybalance, Yoga, Pilates), InBody (1x per calendar half year)"
         },
         {
-          "name": "Dítě",
-          "id": 2,
-          "description": "Gym, Sauna"
+          "name": "Student",
+          "id": 4,
+          "description": "Club entrance with the possibility of using: Gym, Sauna, Group lessons (Cycling, Sprint, Bodypump, Bodycombat, Lm core, Lm grit, Circuit training, Bodyattack, Lm dance, Bodybalance, Yoga, Pilates), InBody (1x per calendar half year)"
         },
         {
           "name": "FKSP",
           "id": 3,
-          "description": "Gym, Sauna"
+          "description": "Club entrance with the possibility of using: Gym, Sauna, Group lessons (Cycling, Sprint, Bodypump, Bodycombat, Lm core, Lm grit, Circuit training, Bodyattack, Lm dance, Bodybalance, Yoga, Pilates), InBody (1x per calendar half year)"
         }
       ],
       "kids_activities": false,
@@ -174,6 +421,67 @@
       "unlimited_oh": false,
       "facebook_url": null,
       "instagram_url": null
+    },
+    {
+      "id": "4167",
+      "name": "Max Fitness Flora",
+      "address": "Vinohradská 2828/151, Praha",
+      "city": "Praha",
+      "lat": 50.0782947,
+      "lng": 14.4612972,
+      "category": "fitness",
+      "activities": [
+        "Gym",
+        "Sauna/Steam",
+        "InBody"
+      ],
+      "activity_summary": "Gym, Sauna, InBody",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/62/a1/62a1331b21b4804bb7d3d01e08fad6ae.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/16/fa/16fad7ee8afd8adc5668d9f1b3a0bca6.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/b1/04/b104f41358faf0127f2dfc0515bd5ee6.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/fa/a9/faa9cd3edb8ea5ba9c3b47e3c85eb429.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/9d/ea/9deaa5c2e662e404916977033c0e0213.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/af/46/af46c630e3e15ab9f1c1dde459f2e989.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/c7/da/c7dad38051172965084a931fdd123919.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/4f/55/4f55a63013b7a1578c455d7648760200.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/d5/65/d565fc6efc03e3aa8770ee0cc89fe1f5.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/0c/57/0c57518070026078f539316b6c390f74.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/77/28/7728a5bbef7bae48e8521fb0343d1c6b.jpg"
+      ],
+      "website_url": "https://www.maxfitness.cz/pobocky/detail/max-fitness-flora",
+      "phone": "+420 733 565 455",
+      "email": "flora@maxfitness.cz",
+      "description": "The top-equipped fitness center, covering an area of ​​2,500 m², is located in the Atrium Flora shopping center. It offers Matrix and Booty Builder machines, an extensive cardio zone, a free Finnish sauna and an Ergoline solarium. Parking + 3 hours free upon presentation of a parking ticket at the reception. Measurements on the InBody device will provide you with an accurate analysis of your results and help you set appropriate goals.",
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Gym, Sauna, InBody"
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Gym, Sauna, InBody"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Gym, Sauna, InBody"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": null,
+      "instagram_url": "https://www.instagram.com/maxfitnessflora/?hl=cs"
     },
     {
       "id": "2141",
@@ -234,6 +542,66 @@
       "instagram_url": null
     },
     {
+      "id": "3281",
+      "name": "SK TEMPO PRAHA minigolf klub",
+      "address": "Nad lesním divadlem , Praha",
+      "city": "Praha",
+      "lat": 50.0269128,
+      "lng": 14.4357833,
+      "category": "outdoor",
+      "activities": [
+        "Miniature golf"
+      ],
+      "activity_summary": "Minigolf",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/9d/e8/9de893242125fbef2af5948ebe4f659f.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/ed/bb/edbb931c8adec5127accfe6789602000.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/ff/38/ff3848f3d49324ebb0f6cf9c14e22b08.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/15/fb/15fbdba940a061e3ccffef0a2f49b76b.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/df/5b/df5bca58f9c36d886a6ac3faa9aef443.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/33/4e/334efbf7e890ea5cf1611b95d7bbd789.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/3d/09/3d09e627da831084312fa1012ff79c65.jpg"
+      ],
+      "website_url": "http://minigolftempo.cz/sluzby/minigolf-pro-verejnost/",
+      "phone": "+420 606 068 069",
+      "email": "rezervace@a-minigolf.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Minigolf"
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Minigolf"
+        },
+        {
+          "name": "Student",
+          "id": 4,
+          "description": "Minigolf"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Minigolf"
+        }
+      ],
+      "kids_activities": true,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/sktempopraha/",
+      "instagram_url": null
+    },
+    {
       "id": "4722",
       "name": "Stromeček Zbraslav",
       "address": "Elišky Přemyslovny 433, Praha",
@@ -283,124 +651,6 @@
       "self_service_times": null,
       "unlimited_oh": false,
       "facebook_url": "https://www.facebook.com/stromecekzbraslav",
-      "instagram_url": null
-    },
-    {
-      "id": "3721",
-      "name": "Max Fitness Bílá Labuť",
-      "address": "OD Bílá Labuť, Na Poříčí 1068, Praha",
-      "city": "Praha",
-      "lat": 50.0900019,
-      "lng": 14.4338994,
-      "category": "fitness",
-      "activities": [
-        "Gym",
-        "Sauna/Steam",
-        "InBody"
-      ],
-      "activity_summary": "Gym, Sauna, InBody",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/6c/a4/6ca45710d6e66245a2150a1272a3254c.jpg",
-      "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/6f/0d/6f0d017ac0d6de37c10616d5a089b1d4.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/f7/d1/f7d1654c3b78791c1b0b885c912df121.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/1c/11/1c11e8297f9792047ff445b2271be8a2.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/7a/c5/7ac5c4fe3c4c8b63766487520dcb3fb9.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/d5/81/d5815d884f34bb4fcd115e06e07cd987.jpg"
-      ],
-      "website_url": "https://www.maxfitness.cz/pobocky/detail/max-fitness-bila-labut",
-      "phone": "+420 736 471 266",
-      "email": "bilalabut@maxfitnesspraha.cz",
-      "description": "The fitness center is located in the prestigious location of Bílá Labuta in the center of Prague. It offers modern equipment from the Life Fitness and Booty Builder brands, a spacious cardio zone and strength training machines for strength training, a Ladies zone with Matrix equipment, including a complete line of Booty Builder machines. There is also a Finnish sauna, which is free to enter as part of a fitness visit. You will also find body diagnostics measurements using the InBody device.",
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": false,
-      "additional_payment_desc": null,
-      "active_cards": [
-        {
-          "name": "Stříbrná",
-          "id": 1,
-          "description": "Gym, Sauna, InBody"
-        },
-        {
-          "name": "Dítě",
-          "id": 2,
-          "description": "Gym, Sauna, InBody"
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Gym, Sauna, InBody"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": "https://www.facebook.com/maxfitnessbilalabut",
-      "instagram_url": "https://www.instagram.com/maxfitnessbilalabut/?hl=cs"
-    },
-    {
-      "id": "663",
-      "name": "ARENA GYM Jinonice",
-      "address": "V zářezu 902/4, Praha",
-      "city": "Praha",
-      "lat": 50.054358,
-      "lng": 14.370361,
-      "category": "group",
-      "activities": [
-        "Functional training",
-        "Kickboxing",
-        "Gym",
-        "Mobility"
-      ],
-      "activity_summary": "Open Gym, Group Lessons (Functional Training, Kickboxing, Mobility, BJJ (Brasilian Jiu Jitsu), Judo)",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/31/a1/31a162f780d5013ed87126388828c2df.jpg",
-      "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/fe/3f/fe3fef44bc6a561697380513fd7e8ec5.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/7b/b4/7bb430d18ef0c80fe6da479fb3ed5a32.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/16/d8/16d82b0c0acf454bfbb639a3affd7f04.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/3c/f7/3cf7458f1a9386363b85651ff3191111.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/b1/84/b184b4646cecdf346ee5e30da4598997.jpg"
-      ],
-      "website_url": "http://arenapk.cz/",
-      "phone": "+420 228 226 326",
-      "email": "info@arenapk.cz",
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": false,
-      "additional_payment_desc": null,
-      "active_cards": [
-        {
-          "name": "Stříbrná",
-          "id": 1,
-          "description": "Open Gym, Group Lessons (Functional Training, Kickboxing, Mobility, BJJ (Brasilian Jiu Jitsu), Judo)"
-        },
-        {
-          "name": "Dítě",
-          "id": 2,
-          "description": "Open Gym, Group Lessons (Functional Training, Kickboxing, Mobility, BJJ (Brasilian Jiu Jitsu), Judo)"
-        },
-        {
-          "name": "Student",
-          "id": 4,
-          "description": "Open Gym"
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Open Gym, Group Lessons (Functional Training, Kickboxing, Mobility, BJJ (Brasilian Jiu Jitsu), Judo)"
-        }
-      ],
-      "kids_activities": true,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": true,
-      "self_service_times": "Objekt funguje bezobslužně v době od 9 - 16h.",
-      "unlimited_oh": false,
-      "facebook_url": null,
       "instagram_url": null
     },
     {
@@ -461,39 +711,29 @@
       "instagram_url": null
     },
     {
-      "id": "3543",
-      "name": "FORM FACTORY fitness center – Stodůlky",
-      "address": "Siemensova 2717/4, Praha",
+      "id": "3980",
+      "name": "Max Fitness Chodov",
+      "address": "Pod Chodovem 1267/7, Praha",
       "city": "Praha",
-      "lat": 50.047305,
-      "lng": 14.306149,
-      "category": "group",
+      "lat": 50.0361164,
+      "lng": 14.4939233,
+      "category": "fitness",
       "activities": [
-        "Circuit training",
-        "Les Mills",
         "Gym",
-        "Pump/Body Pump",
-        "Sauna/Steam",
-        "Stretching",
-        "Tabata",
-        "Zumba",
-        "Core training",
-        "Yoga",
-        "InBody"
+        "Sauna/Steam"
       ],
-      "activity_summary": "Entrance to the club: Gym, InBody (once in calendar half a year), Sauna, Group lessons (YOGA, BODYPUMP, HEALTHY STRETCHING, BODYATTACK, CIRCUIT TRAINING, TABATA, LM CORE, ZUMBA, VIXEN)",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/57/37/57371ed3208456622bfed5596e235b98.jpg",
+      "activity_summary": "Gym, Sauna",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/d6/0b/d60bb8e090bbebedb7883967c061f25e.jpg",
       "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/75/34/753477fda66d48204d39e7746189bdfe.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/d7/e0/d7e0fabae58812a2d22dac3d9cd69984.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/0c/bc/0cbc87337462dbf7f797e48c016cc96c.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/18/ab/18abfb6cf50d3b4811b5275127d2d234.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/bc/c8/bcc8d3915ec037aaed9031f113005e24.jpg"
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/46/bb/46bb3206890dd593e0697e5798fe4d26.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/9a/90/9a9058b576e723788bb68c9101371180.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/d5/cc/d5cc805d46bd57b9b59cb27067d76192.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/ee/f7/eef78528008d537bd729f97c1c7df3f1.jpg"
       ],
-      "website_url": "http://formfactory.cz/klub-cz/fitness-stodulky/",
-      "phone": "+420 732 352 008",
-      "email": "stodulky@formfactory.cz",
-      "description": "From 30.3. 2019, it is necessary to make a reservation through the client zone in advance before visiting the studio lessons. Please request your client zone login information at the club reception or by phone.\n\n\nIt is necessary to bring your own locker (at the reception the possibility of renting for 30 CZK) and your own towel (at the reception the possibility of buying a large towel for 150 CZK)\n<b>According to the operating rules of the fitness center, children under 15 are not allowed.",
+      "website_url": "https://www.maxfitness.cz/pobocky/detail/max-fitness-chodov",
+      "phone": "+420 604 942 706",
+      "email": "chodov@maxfitness.cz",
+      "description": "The fitness center on the 2nd floor above the car center near Decathlon and MOL offers a wide range of Precor weight machines, a fully equipped cardio zone, a shared Finnish sauna with a relaxation zone, which is free of charge as part of a fitness visit, and a solarium. Free parking for 3 hours.",
       "is_new": false,
       "recommended": false,
       "additional_payment": false,
@@ -502,17 +742,17 @@
         {
           "name": "Stříbrná",
           "id": 1,
-          "description": "Entrance to the club: Gym, InBody (once in calendar half a year), Sauna, Group lessons (YOGA, BODYPUMP, HEALTHY STRETCHING, BODYATTACK, CIRCUIT TRAINING, TABATA, LM CORE, ZUMBA, VIXEN)"
+          "description": "Gym, Sauna"
         },
         {
-          "name": "Student",
-          "id": 4,
-          "description": "Entrance to the club: Gym, Sauna, Group lessons (YOGA, BODYPUMP, HEALTHY STRETCHING, BODYATTACK, CIRCUIT TRAINING, TABATA, LM CORE, ZUMBA, VIXEN)"
+          "name": "Dítě",
+          "id": 2,
+          "description": "Gym, Sauna"
         },
         {
           "name": "FKSP",
           "id": 3,
-          "description": "Entrance to the club: Gym, InBody (once in calendar half a year), Sauna, Group lessons (YOGA, BODYPUMP, HEALTHY STRETCHING, BODYATTACK, CIRCUIT TRAINING, TABATA, LM CORE, ZUMBA, VIXEN)"
+          "description": "Gym, Sauna"
         }
       ],
       "kids_activities": false,
@@ -521,8 +761,8 @@
       "self_service": false,
       "self_service_times": null,
       "unlimited_oh": false,
-      "facebook_url": "https://www.facebook.com/formfactoryfitcenter/",
-      "instagram_url": null
+      "facebook_url": null,
+      "instagram_url": "https://www.instagram.com/maxfitnesschodov/?hl=cs"
     },
     {
       "id": "4761",
@@ -639,38 +879,26 @@
       "instagram_url": null
     },
     {
-      "id": "1381",
-      "name": "BudeToFitko",
-      "address": "Chrudimská 2526/2a, Praha",
+      "id": "4089",
+      "name": "Tenisový areál Cihelna",
+      "address": "Do Hlinek 754/7, Praha",
       "city": "Praha",
-      "lat": 50.077079,
-      "lng": 14.462621,
-      "category": "group",
+      "lat": 50.0089883,
+      "lng": 14.6238292,
+      "category": "sports",
       "activities": [
-        "Aerobics",
-        "Bosu/Cardio/Rehab",
-        "Fitbox/Slimbox",
-        "Indoor walking",
-        "K2 Hiking",
-        "Circuit training",
-        "Pilates",
-        "Gym",
-        "Spinning/Cycling/Speeding",
-        "Squash",
-        "Weights",
-        "Taebo",
-        "Yoga"
+        "Tennis (summer)",
+        "Padel",
+        "Tennis (winter)"
       ],
-      "activity_summary": "Gym, Group lessons (Aerobics, Circuit Training, Spin Gym, Tae-bo, Pilates BOSU, Fitbox, Weights, Yoga, Walking-K2 Hiking, Spinning), Squash",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/b6/23/b6234ba30bb9a7d48ac8fbf255dbfe4b.jpg",
+      "activity_summary": "Tennis summer (card covers 1/2 court), Tennis winter (card covers 1/4 court), Padel (winter)",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/6b/92/6b925cbe0e216f2d32e93e67e829ac8c.jpg",
       "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/6a/5b/6a5b9ff54191fcb0533c59a7b6cfc108.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/a5/d5/a5d59138e07702cee3fb2b8ba7bb4eb5.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/48/36/4836538baa1ed9050beefb7c18246bf1.jpg"
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/47/d2/47d290ab1d543a0b231e709257b29aaa.jpg"
       ],
-      "website_url": "https://budetofitko.cz/",
-      "phone": "+420 601 001 620",
-      "email": "flora@tofitko.cz",
+      "website_url": "http://tksportkolovraty.cz",
+      "phone": "+420 721 680 957",
+      "email": "rousarpetr@gmail.com",
       "description": null,
       "is_new": false,
       "recommended": false,
@@ -680,198 +908,17 @@
         {
           "name": "Stříbrná",
           "id": 1,
-          "description": "Gym, Group lessons (Aerobics, Circuit Training, Spin Gym, Tae-bo, Pilates BOSU, Fitbox, Weights, Yoga, Walking-K2 Hiking, Spinning), Squash"
+          "description": "Tennis summer (card covers 1/2 court), Tennis winter (card covers 1/4 court), Padel (winter)"
         },
         {
           "name": "Dítě",
           "id": 2,
-          "description": "Gym, Group lessons (Aerobics, Circuit Training, Spin Gym, Tae-bo, Pilates BOSU, Fitbox, Weights, Yoga, Walking-K2 Hiking, Spinning), Squash"
-        },
-        {
-          "name": "Student",
-          "id": 4,
-          "description": "Gym 9-16 hod, Group lessons 9-16 hod(Aerobics, Circuit Training, Spin Gym, Tae-bo, Pilates BOSU, Fitbox, Weights, Yoga, Walking-K2 Hiking, Spinning), Squash (9-16 hod)"
+          "description": "Tennis summer (card covers 1/2 court), Tennis winter (card covers 1/4 court), Padel (winter)"
         },
         {
           "name": "FKSP",
           "id": 3,
-          "description": "Gym, Group lessons (Aerobics, Circuit Training, Spin Gym, Tae-bo, Pilates BOSU, Fitbox, Weights, Yoga, Walking-K2 Hiking, Spinning), Squash"
-        }
-      ],
-      "kids_activities": true,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": null,
-      "instagram_url": null
-    },
-    {
-      "id": "375",
-      "name": "ICE ARENA FITNESS",
-      "address": "Škroupova 4, Říčany",
-      "city": "Říčany",
-      "lat": 49.988586,
-      "lng": 14.661933,
-      "category": "group",
-      "activities": [
-        "Boxing",
-        "Circuit training",
-        "Gym",
-        "TRX/TRX RIP TRAINER/Jungle sports"
-      ],
-      "activity_summary": "Gym, Group lessons (Box, TRX, Circuit training)",
-      "image_url": null,
-      "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/83/e7/83e74658b7a19027c3c6a4a630383989.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/55/8e/558e7d8e801635b9554c53ec2ddb61fe.jpg"
-      ],
-      "website_url": null,
-      "phone": "+420 702 073 362",
-      "email": "info@icearenafitness.eu",
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": false,
-      "additional_payment_desc": null,
-      "active_cards": [
-        {
-          "name": "Stříbrná",
-          "id": 1,
-          "description": "Gym, Group lessons (Box, TRX, Circuit training)"
-        },
-        {
-          "name": "Dítě",
-          "id": 2,
-          "description": "Gym, Group lessons (Box, TRX, Circuit training)"
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Gym, Group lessons (Box, TRX, Circuit training)"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "Free",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": "https://www.facebook.com/icearenafitness",
-      "instagram_url": null
-    },
-    {
-      "id": "1075",
-      "name": "Pulse Fitness Solárium Horní Počernice",
-      "address": "Jívanská 1880, Praha",
-      "city": "Praha",
-      "lat": 50.115578,
-      "lng": 14.613019,
-      "category": "group",
-      "activities": [
-        "Body ball/Ball exercises/Fit-ball",
-        "Bodystyling/Bodyform",
-        "Bosu/Cardio/Rehab",
-        "Dance fitness/Dance aerobics",
-        "Functional training",
-        "Hatha yoga",
-        "Kettlebells",
-        "Circuit training",
-        "Pilates",
-        "Gym",
-        "Power yoga/Energy yoga",
-        "TRX/TRX RIP TRAINER/Jungle sports",
-        "Vinyasa yoga",
-        "Yoga"
-      ],
-      "activity_summary": "Entry for: Gym (90 min), Group lessons: TRX, Bosu, Circuit training, Pilates, Yoga, Kettlebells, Just Move, Booty Blaster, Fit Dance, Exercise with fitball, Groud Force, Bodystyling, Functional training",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/03/6a/036a4506b126df1b9dd1e5dbb149279b.jpg",
-      "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/38/1c/381c113119d6ca9456425b7b057ff1ea.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/af/3e/af3ed588ff7a533c135dad9bb2a5736d.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/df/c8/dfc8dbf7a4c6038826bf19c6970bbf8e.jpg"
-      ],
-      "website_url": "http://pulsepocernice.cz",
-      "phone": "+420 733 606 201",
-      "email": "recepce@pulsepocernice.cz",
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": false,
-      "additional_payment_desc": null,
-      "active_cards": [
-        {
-          "name": "Stříbrná",
-          "id": 1,
-          "description": "Entry for: Gym (90 min), Group lessons: TRX, Bosu, Circuit training, Pilates, Yoga, Kettlebells, Just Move, Booty Blaster, Fit Dance, Exercise with fitball, Groud Force, Bodystyling, Functional training"
-        },
-        {
-          "name": "Dítě",
-          "id": 2,
-          "description": "Please inquire directly about the possibility of use with the partner facility."
-        },
-        {
-          "name": "Student",
-          "id": 4,
-          "description": "Gym (90 min), Group lessons: TRX, Bosu, Circuit training, Pilates, Yoga, Kettlebells, Just Move, Booty Blaster, Fit Dance, Exercise with fitball, Groud Force, Bodystyling, Functional training"
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Entry for: Gym (90 min), Group lessons: TRX, Bosu, Circuit training, Pilates, Yoga, Kettlebells, Just Move, Booty Blaster, Fit Dance, Exercise with fitball, Groud Force, Bodystyling, Functional training"
-        }
-      ],
-      "kids_activities": true,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": "https://www.facebook.com/pulsepocernice.cz/",
-      "instagram_url": null
-    },
-    {
-      "id": "1731",
-      "name": "Fitladyclub - Háje",
-      "address": "Hviezdoslavova 1600/6, Praha",
-      "city": "Praha",
-      "lat": 50.0320294,
-      "lng": 14.5193158,
-      "category": "group",
-      "activities": [
-        "Circuit training"
-      ],
-      "activity_summary": "Circuit training",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/a0/1e/a01e15175a46b9e3e1a4fae9bebc2541.jpg",
-      "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/f5/3c/f53cabe597cd6457759fafa548039114.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/6e/15/6e15ff0d61b93ec6c8356cfeb2e1f73f.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/88/6f/886f75980b59445847afcc581b71044f.jpg"
-      ],
-      "website_url": "http://fitladyclub.cz/",
-      "phone": null,
-      "email": "haje@fitladyclub.cz",
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": false,
-      "additional_payment_desc": null,
-      "active_cards": [
-        {
-          "name": "Stříbrná",
-          "id": 1,
-          "description": "Circuit training"
-        },
-        {
-          "name": "Dítě",
-          "id": 2,
-          "description": "Circuit training"
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Circuit training"
+          "description": "Tennis summer (card covers 1/2 court), Tennis winter (card covers 1/4 court), Padel (winter)"
         }
       ],
       "kids_activities": false,
