@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-05T06:16:21.637Z",
+  "scraped_at": "2026-08-07T05:26:17.093Z",
   "total": 16,
   "facilities": [
     {
@@ -183,54 +183,6 @@
       "self_service_times": null,
       "unlimited_oh": false,
       "facebook_url": "https://www.facebook.com/skygymricany",
-      "instagram_url": null
-    },
-    {
-      "id": "5326",
-      "name": "Cvičení se Zůzou",
-      "address": "Na Chobotě 1420/16, Praha",
-      "city": "Praha",
-      "lat": 50.06666,
-      "lng": 14.2959919,
-      "category": "group",
-      "activities": [
-        "Circuit training"
-      ],
-      "activity_summary": "Group lessons (Circuit training)",
-      "image_url": null,
-      "gallery_images": [],
-      "website_url": null,
-      "phone": "+420 721 275 024",
-      "email": "zuzana.melicharova@icloud.com",
-      "description": null,
-      "is_new": true,
-      "recommended": false,
-      "additional_payment": false,
-      "additional_payment_desc": null,
-      "active_cards": [
-        {
-          "name": "Stříbrná",
-          "id": 1,
-          "description": "Group lessons (Circuit training)"
-        },
-        {
-          "name": "Dítě",
-          "id": 2,
-          "description": "Group lessons (Circuit training)"
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Group lessons (Circuit training)"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": "https://www.facebook.com/groups/1532197438303410",
       "instagram_url": null
     },
     {
@@ -837,8 +789,11 @@
         "Tennis (winter)"
       ],
       "activity_summary": "Tennis winter (card covers 1/4 court), Table tenis, Tennis summer (card covers 1/2 court)",
-      "image_url": null,
-      "gallery_images": [],
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/1a/f4/1af4df49400e72b591d918e83ee205df.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/e0/82/e08273b2bce29bc5aaf23012416b6cd2.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/d3/63/d363291cebfb39f0f792d22e4199713a.jpg"
+      ],
       "website_url": "http://sokolbechovice.cz",
       "phone": "+420 728 160 138",
       "email": "info@sokolbechovice.cz",
@@ -928,6 +883,60 @@
       "self_service_times": null,
       "unlimited_oh": false,
       "facebook_url": null,
+      "instagram_url": null
+    },
+    {
+      "id": "375",
+      "name": "ICE ARENA FITNESS",
+      "address": "Škroupova 4, Říčany",
+      "city": "Říčany",
+      "lat": 49.988586,
+      "lng": 14.661933,
+      "category": "group",
+      "activities": [
+        "Boxing",
+        "Circuit training",
+        "Gym",
+        "TRX/TRX RIP TRAINER/Jungle sports"
+      ],
+      "activity_summary": "Gym, Group lessons (Box, TRX, Circuit training)",
+      "image_url": null,
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/83/e7/83e74658b7a19027c3c6a4a630383989.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/55/8e/558e7d8e801635b9554c53ec2ddb61fe.jpg"
+      ],
+      "website_url": null,
+      "phone": "+420 702 073 362",
+      "email": "info@icearenafitness.eu",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Gym, Group lessons (Box, TRX, Circuit training)"
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Gym, Group lessons (Box, TRX, Circuit training)"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Gym, Group lessons (Box, TRX, Circuit training)"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Free",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/icearenafitness",
       "instagram_url": null
     }
   ]
