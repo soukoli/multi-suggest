@@ -1,61 +1,7 @@
 {
-  "scraped_at": "2026-08-10T05:13:05.532Z",
-  "total": 15,
+  "scraped_at": "2026-08-12T05:21:26.836Z",
+  "total": 17,
   "facilities": [
-    {
-      "id": "4193",
-      "name": "Adámek Fighting Academy",
-      "address": "Lodžská 598/3, Praha",
-      "city": "Praha",
-      "lat": 50.1284972,
-      "lng": 14.4167797,
-      "category": "group",
-      "activities": [
-        "Boxing",
-        "Kickboxing",
-        "Self Defence",
-        "Yoga"
-      ],
-      "activity_summary": "Group lessons (Boxing, Kickboxing, Self-defense for children, Yoga)",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/11/a0/11a0a7f99a7ad7ea5f7bf680ff1d7001.jpg",
-      "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/37/6e/376ec96dc45134057237b1363a3eb5d6.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/a4/60/a460d9a0bebb536c789b303d9b1a1d90.jpg"
-      ],
-      "website_url": "http://afac.cz/",
-      "phone": null,
-      "email": null,
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": false,
-      "additional_payment_desc": null,
-      "active_cards": [
-        {
-          "name": "Stříbrná",
-          "id": 1,
-          "description": "Group lessons (Boxing, Kickboxing, Self-defense for children, Yoga)"
-        },
-        {
-          "name": "Dítě",
-          "id": 2,
-          "description": "Group lessons (Boxing, Kickboxing, Self-defense for children, Yoga)"
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Group lessons (Boxing, Kickboxing, Self-defense for children, Yoga)"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": null,
-      "instagram_url": null
-    },
     {
       "id": "3912",
       "name": "George's fitness",
@@ -186,6 +132,60 @@
       "instagram_url": null
     },
     {
+      "id": "4193",
+      "name": "Adámek Fighting Academy",
+      "address": "Lodžská 598/3, Praha",
+      "city": "Praha",
+      "lat": 50.1284972,
+      "lng": 14.4167797,
+      "category": "group",
+      "activities": [
+        "Boxing",
+        "Kickboxing",
+        "Self Defence",
+        "Yoga"
+      ],
+      "activity_summary": "Group lessons (Boxing, Kickboxing, Self-defense for children, Yoga)",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/11/a0/11a0a7f99a7ad7ea5f7bf680ff1d7001.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/37/6e/376ec96dc45134057237b1363a3eb5d6.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/a4/60/a460d9a0bebb536c789b303d9b1a1d90.jpg"
+      ],
+      "website_url": "http://afac.cz/",
+      "phone": null,
+      "email": null,
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Group lessons (Boxing, Kickboxing, Self-defense for children, Yoga)"
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Group lessons (Boxing, Kickboxing, Self-defense for children, Yoga)"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Group lessons (Boxing, Kickboxing, Self-defense for children, Yoga)"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": null,
+      "instagram_url": null
+    },
+    {
       "id": "4178",
       "name": "FORM FACTORY fitness center - SO-HO",
       "address": "V Háji 1564/10, Praha",
@@ -238,63 +238,6 @@
           "name": "FKSP",
           "id": 3,
           "description": "Club entrance with the possibility of using: Gym, Sauna, Group lessons( Bodypump, Bodycombat, Lm core, Lm grit, Circuit training, Bodyattack, Lm dance, Bodybalance, Yoga, Pilates), InBody (once in calendar half a year)"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": null,
-      "instagram_url": null
-    },
-    {
-      "id": "355",
-      "name": "Studio Hvězda",
-      "address": "Křenova 11, Praha",
-      "city": "Praha",
-      "lat": 50.0888903,
-      "lng": 14.3438,
-      "category": "yoga",
-      "activities": [
-        "Ashtanga vinyasa yoga",
-        "Dynamic Yoga",
-        "Flowin",
-        "Hatha yoga",
-        "Pilates",
-        "Power yoga/Energy yoga",
-        "Healthy back/Back pain",
-        "Yoga"
-      ],
-      "activity_summary": "Yoga 60 minutes (Yoga, Iyengar Yoga, Hormonal Yoga, Pilates Therapy, Yoga for a Healthy Back, SM System, Basic Yoga, Gentle Yoga for a Healthy Back, Morning Yoga, Healthy Back, Exercises by Ludmila Mojžíšová and other exercises, Yin and Yang Yoga, Yoga for Eternal Beginners, Power Yoga, Flexibility, Pilates, Dynamic Iyengar Yoga, Exercises for a Healthy Back, Vinyasa Ashtanga Yoga, Gentle Yoga, Flowin Pilates, Dynamic Types of Yoga, Calmer Types of Yoga, Core Yoga) with additional payment CZK 50",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/72/d3/72d35010f77766249243a43ac0959009.jpg",
-      "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/1e/46/1e469c374dad6cbf6707632f47697683.jpg"
-      ],
-      "website_url": "http://studio-hvezda.cz",
-      "phone": "+420 722 442 777",
-      "email": null,
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": true,
-      "additional_payment_desc": "Yoga 60 minutes (Yoga, Iyengar Yoga, Hormonal Yoga, Pilates Therapy, Yoga for a Healthy Back, SM System, Basic Yoga, Gentle Yoga for a Healthy Back, Morning Yoga, Healthy Back, Exercises by Ludmila Mojžíšová and other exercises, Yin and Yang Yoga, Yoga for Eternal Beginners, Power Yoga, Flexibility, Pilates, Dynamic Iyengar Yoga, Exercises for a Healthy Back, Vinyasa Ashtanga Yoga, Gentle Yoga, Flowin Pilates, Dynamic Types of Yoga, Calmer Types of Yoga, Core Yoga) with additional payment CZK 50",
-      "active_cards": [
-        {
-          "name": "Stříbrná",
-          "id": 1,
-          "description": "Yoga 60 minutes (Yoga, Iyengar Yoga, Hormonal Yoga, Pilates Therapy, Yoga for a Healthy Back, SM System, Basic Yoga, Gentle Yoga for a Healthy Back, Morning Yoga, Healthy Back, Exercises by Ludmila Mojžíšová and other exercises, Yin and Yang Yoga, Yoga for Eternal Beginners, Power Yoga, Flexibility, Pilates, Dynamic Iyengar Yoga, Exercises for a Healthy Back, Vinyasa Ashtanga Yoga, Gentle Yoga, Flowin Pilates, Dynamic Types of Yoga, Calmer Types of Yoga, Core Yoga) with additional payment CZK 50"
-        },
-        {
-          "name": "Dítě",
-          "id": 2,
-          "description": "Yoga 60 minutes (Yoga, Iyengar Yoga, Hormonal Yoga, Pilates Therapy, Yoga for a Healthy Back, SM System, Basic Yoga, Gentle Yoga for a Healthy Back, Morning Yoga, Healthy Back, Exercises by Ludmila Mojžíšová and other exercises, Yin and Yang Yoga, Yoga for Eternal Beginners, Power Yoga, Flexibility, Pilates, Dynamic Iyengar Yoga, Exercises for a Healthy Back, Vinyasa Ashtanga Yoga, Gentle Yoga, Flowin Pilates, Dynamic Types of Yoga, Calmer Types of Yoga, Core Yoga) with additional payment CZK 50"
-        },
-        {
-          "name": "Student",
-          "id": 4,
-          "description": "Yoga 60 minutes (Yoga, Iyengar Yoga, Hormonal Yoga, Pilates Therapy, Yoga for a Healthy Back, SM System, Basic Yoga, Gentle Yoga for a Healthy Back, Morning Yoga, Healthy Back, Exercises by Ludmila Mojžíšová and other exercises, Yin and Yang Yoga, Yoga for Eternal Beginners, Power Yoga, Flexibility, Pilates, Dynamic Iyengar Yoga, Exercises for a Healthy Back, Vinyasa Ashtanga Yoga, Gentle Yoga, Flowin Pilates, Dynamic Types of Yoga, Calmer Types of Yoga, Core Yoga) with additional payment CZK 50"
         }
       ],
       "kids_activities": false,
@@ -494,66 +437,6 @@
       "instagram_url": null
     },
     {
-      "id": "3281",
-      "name": "SK TEMPO PRAHA minigolf klub",
-      "address": "Nad lesním divadlem , Praha",
-      "city": "Praha",
-      "lat": 50.0269128,
-      "lng": 14.4357833,
-      "category": "outdoor",
-      "activities": [
-        "Miniature golf"
-      ],
-      "activity_summary": "Minigolf",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/9d/e8/9de893242125fbef2af5948ebe4f659f.jpg",
-      "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/ed/bb/edbb931c8adec5127accfe6789602000.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/ff/38/ff3848f3d49324ebb0f6cf9c14e22b08.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/15/fb/15fbdba940a061e3ccffef0a2f49b76b.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/df/5b/df5bca58f9c36d886a6ac3faa9aef443.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/33/4e/334efbf7e890ea5cf1611b95d7bbd789.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/3d/09/3d09e627da831084312fa1012ff79c65.jpg"
-      ],
-      "website_url": "http://minigolftempo.cz/sluzby/minigolf-pro-verejnost/",
-      "phone": "+420 606 068 069",
-      "email": "rezervace@a-minigolf.cz",
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": false,
-      "additional_payment_desc": null,
-      "active_cards": [
-        {
-          "name": "Stříbrná",
-          "id": 1,
-          "description": "Minigolf"
-        },
-        {
-          "name": "Dítě",
-          "id": 2,
-          "description": "Minigolf"
-        },
-        {
-          "name": "Student",
-          "id": 4,
-          "description": "Minigolf"
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Minigolf"
-        }
-      ],
-      "kids_activities": true,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": "https://www.facebook.com/sktempopraha/",
-      "instagram_url": null
-    },
-    {
       "id": "4722",
       "name": "Stromeček Zbraslav",
       "address": "Elišky Přemyslovny 433, Praha",
@@ -717,6 +600,58 @@
       "instagram_url": "https://www.instagram.com/maxfitnesschodov/?hl=cs"
     },
     {
+      "id": "4089",
+      "name": "Tenisový areál Cihelna",
+      "address": "Do Hlinek 754/7, Praha",
+      "city": "Praha",
+      "lat": 50.0089883,
+      "lng": 14.6238292,
+      "category": "sports",
+      "activities": [
+        "Tennis (summer)",
+        "Padel",
+        "Tennis (winter)"
+      ],
+      "activity_summary": "Tennis summer (card covers 1/2 court), Tennis winter (card covers 1/4 court), Padel (winter)",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/6b/92/6b925cbe0e216f2d32e93e67e829ac8c.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/47/d2/47d290ab1d543a0b231e709257b29aaa.jpg"
+      ],
+      "website_url": "http://tksportkolovraty.cz",
+      "phone": "+420 721 680 957",
+      "email": "rousarpetr@gmail.com",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Tennis summer (card covers 1/2 court), Tennis winter (card covers 1/4 court), Padel (winter)"
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Tennis summer (card covers 1/2 court), Tennis winter (card covers 1/4 court), Padel (winter)"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Tennis summer (card covers 1/2 court), Tennis winter (card covers 1/4 court), Padel (winter)"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": null,
+      "instagram_url": null
+    },
+    {
       "id": "4761",
       "name": "Prema Jóga studio",
       "address": "Dvorecká 1165/1, Praha",
@@ -773,6 +708,64 @@
       "self_service_times": null,
       "unlimited_oh": false,
       "facebook_url": null,
+      "instagram_url": null
+    },
+    {
+      "id": "4109",
+      "name": "Ice Arena Kateřinky",
+      "address": "Ke Kateřinkám 2423, Praha",
+      "city": "Praha",
+      "lat": 50.0230386,
+      "lng": 14.5159564,
+      "category": "group",
+      "activities": [
+        "Circuit training",
+        "Tabata",
+        "Public skating",
+        "Zumba"
+      ],
+      "activity_summary": "Public skating, Group lessons (Tabata, Circuit traning, Zumba)",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/d6/d1/d6d1881490c75bb1098ad94357734b9c.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/ed/d3/edd3d23c4eadf417c35c269f700bdc5e.jpg"
+      ],
+      "website_url": "http://icearena.cz/katerinky/",
+      "phone": "+420 606 688 092",
+      "email": "katerinky@icearena.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Public skating, Group lessons (Tabata, Circuit traning, Zumba)"
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Public skating, Group lessons (Tabata, Circuit traning, Zumba)"
+        },
+        {
+          "name": "Student",
+          "id": 4,
+          "description": "Public skating, Group lessons (Tabata, Circuit traning, Zumba)"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Public skating, Group lessons (Tabata, Circuit traning, Zumba)"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/icearenakaterinky",
       "instagram_url": null
     },
     {
@@ -834,26 +827,27 @@
       "instagram_url": null
     },
     {
-      "id": "4089",
-      "name": "Tenisový areál Cihelna",
-      "address": "Do Hlinek 754/7, Praha",
+      "id": "4013",
+      "name": "Gymstars",
+      "address": "Bohnická 16/38, Praha",
       "city": "Praha",
-      "lat": 50.0089883,
-      "lng": 14.6238292,
-      "category": "sports",
+      "lat": 50.1334639,
+      "lng": 14.4156503,
+      "category": "fitness",
       "activities": [
-        "Tennis (summer)",
-        "Padel",
-        "Tennis (winter)"
+        "Gym"
       ],
-      "activity_summary": "Tennis summer (card covers 1/2 court), Tennis winter (card covers 1/4 court), Padel (winter)",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/6b/92/6b925cbe0e216f2d32e93e67e829ac8c.jpg",
+      "activity_summary": "Gym",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/b0/4f/b04f7b5588e6cde035d2b889b26621bc.jpg",
       "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/47/d2/47d290ab1d543a0b231e709257b29aaa.jpg"
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/98/ab/98ab601f1840eee3eb8fa08790a8db62.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/f9/b8/f9b8a944062c94e8104daaba0e3bbaac.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/d1/c0/d1c016d33a3b30972eb9f4f228ec6589.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/a8/c7/a8c7bfe521cfcba687f05d13097a4789.jpg"
       ],
-      "website_url": "http://tksportkolovraty.cz",
-      "phone": "+420 721 680 957",
-      "email": "rousarpetr@gmail.com",
+      "website_url": "http://gymstars.cz/",
+      "phone": "+420 737 575 380",
+      "email": "info@gymstars.cz",
       "description": null,
       "is_new": false,
       "recommended": false,
@@ -863,26 +857,137 @@
         {
           "name": "Stříbrná",
           "id": 1,
-          "description": "Tennis summer (card covers 1/2 court), Tennis winter (card covers 1/4 court), Padel (winter)"
+          "description": "Gym"
         },
         {
-          "name": "Dítě",
-          "id": 2,
-          "description": "Tennis summer (card covers 1/2 court), Tennis winter (card covers 1/4 court), Padel (winter)"
+          "name": "Student",
+          "id": 4,
+          "description": "Gym"
         },
         {
           "name": "FKSP",
           "id": 3,
-          "description": "Tennis summer (card covers 1/2 court), Tennis winter (card covers 1/4 court), Padel (winter)"
+          "description": "Gym"
         }
       ],
       "kids_activities": false,
-      "only_virtual_card": false,
+      "only_virtual_card": true,
       "parking": "Unknown",
       "self_service": false,
       "self_service_times": null,
       "unlimited_oh": false,
       "facebook_url": null,
+      "instagram_url": null
+    },
+    {
+      "id": "375",
+      "name": "ICE ARENA FITNESS",
+      "address": "Škroupova 4, Říčany",
+      "city": "Říčany",
+      "lat": 49.988586,
+      "lng": 14.661933,
+      "category": "group",
+      "activities": [
+        "Boxing",
+        "Circuit training",
+        "Gym",
+        "TRX/TRX RIP TRAINER/Jungle sports"
+      ],
+      "activity_summary": "Gym, Group lessons (Box, TRX, Circuit training)",
+      "image_url": null,
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/83/e7/83e74658b7a19027c3c6a4a630383989.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/55/8e/558e7d8e801635b9554c53ec2ddb61fe.jpg"
+      ],
+      "website_url": null,
+      "phone": "+420 702 073 362",
+      "email": "info@icearenafitness.eu",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Gym, Group lessons (Box, TRX, Circuit training)"
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Gym, Group lessons (Box, TRX, Circuit training)"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Gym, Group lessons (Box, TRX, Circuit training)"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Free",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/icearenafitness",
+      "instagram_url": null
+    },
+    {
+      "id": "3453",
+      "name": "Bublina Arena",
+      "address": "Lomnického 1071/1, Praha",
+      "city": "Praha",
+      "lat": 50.0570617,
+      "lng": 14.4316583,
+      "category": "sports",
+      "activities": [
+        "Badminton"
+      ],
+      "activity_summary": "Badminton",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/75/a1/75a106bdb43a62fadb7f31b94b0dead8.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/52/62/5262e68b8b3694b84423b74f0724c524.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/49/26/49266e56cf0d533afdda7ecabccdfb9c.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/6d/45/6d454222a834aa36c260e285924822b1.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/ea/77/ea779f0344e8bc1edc8d2088f5ac1b16.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/1b/fe/1bfe146dfb176cc706dc12df8efd0bb9.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/0a/e7/0ae728ce01926aca21ff94632dbe0a08.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/72/e9/72e9fd37649a4141260cfe42366f2cb3.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/b3/78/b3783c747cab60968661912aa68efd65.jpg"
+      ],
+      "website_url": "http://fbsbohemians.isportsystem.cz/",
+      "phone": "+420 774 168 745",
+      "email": "rezervace@fbsbohemians.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Badminton"
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Badminton"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Badminton"
+        }
+      ],
+      "kids_activities": true,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/bublinaarena",
       "instagram_url": null
     }
   ]
