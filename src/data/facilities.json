@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-17T04:29:14.839Z",
+  "scraped_at": "2026-08-19T04:24:10.272Z",
   "total": 16,
   "facilities": [
     {
@@ -129,90 +129,6 @@
       "self_service_times": null,
       "unlimited_oh": false,
       "facebook_url": "https://www.facebook.com/skygymricany",
-      "instagram_url": null
-    },
-    {
-      "id": "3541",
-      "name": "FORM FACTORY fitness center – Anděl",
-      "address": "Plzeňská 8, Praha",
-      "city": "Praha",
-      "lat": 50.0729022,
-      "lng": 14.402055,
-      "category": "group",
-      "activities": [
-        "Circuit training",
-        "Les Mills",
-        "Bosu/Cardio/Rehab",
-        "Functional training",
-        "Jogging",
-        "Body balance",
-        "Body Step/Step aerobics/Step deck/Bakka board",
-        "Pilates",
-        "Gym",
-        "Problem zones",
-        "TRX/TRX RIP TRAINER/Jungle sports",
-        "Health exercises/Corrective exercises",
-        "Zumba",
-        "Core training",
-        "BODYCOMBAT®",
-        "Yoga",
-        "InBody",
-        "Sauna/Steam"
-      ],
-      "activity_summary": "Entrance to the club: Gym, Sauna, InBody (once in calendar half a year), Group lessons (BODYBALANCE, LM GRIT CARDIO, LM CORE, WALK AND RUN, LM BARRE, YOGA, ZUMBA, BODYATTACK, TRX, BODYJAM, PROBLEM ZONES, CLINIC PILATS, LM GRIT STRENGTH, BODYCOMBAT, LM GRIT ATHLETIC, FUNCTINAL TRAINING, BODYSTEP, OUTDOOR RUN, HEALTH EXERCISES, CIRCUIT TRAINING)",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/42/1e/421ef7e3388a2105a21bd73ad35db066.jpg",
-      "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/3c/18/3c18d2cae9362aec7d1a098ad9b87ace.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/1e/30/1e30a1ecdf8a21be9498ae1f47385772.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/6b/79/6b7956a7442b87ae25367980b31e7389.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/80/d1/80d19b6a1286eb4bf924babea7173d8e.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/5c/8a/5c8a9853585f1318a313938a62cd1079.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/7d/68/7d684565b0776cfcfc1141c8cee66b79.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/4b/fd/4bfdb91e9aca93f018ef10fd2db9b1fb.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/76/66/7666f99deb67d000a461cd004ee0ded8.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/6f/79/6f79736a6d5b7edc545335be85bb38d7.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/cd/d1/cdd1589d3cdd6105cb03b1bc08aba7a4.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/0d/43/0d43ca6b2b353602118f300492b272a5.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/6f/28/6f28a13732061b3650b07879f9353d50.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/5a/5d/5a5d04df463ef39378eea4e4585e10b9.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/e6/49/e649c9cd6d10d43711d65c0053ed06dc.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/36/c9/36c9e709863761c93416fc7626b20f13.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/d5/2e/d52ef6eb261053cf06ef66e2f2d216fa.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/27/47/2747a5798adf0179f7e1af9b20255034.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/f9/f6/f9f67a247911ad28f9e1d507d6aac0ee.jpg"
-      ],
-      "website_url": "http://formfactory.cz/klub-cz/fitness-andel/",
-      "phone": "+420 731 416 315",
-      "email": "andel@formfactory.cz",
-      "description": "From 30.3. 2019, it is necessary to make a reservation through the client zone in advance before visiting the studio lessons. Please request your client zone login information at the club reception.<br><br>\nLock lending is not included in the entrance fee and is subject to a surcharge. You can rent a personal lock for 30 CZK at the reception. The MultiSport card holder is entitled to use his own towel and personal lock on the locker.\n<b>According to the operating rules of the fitness center, children under 15 are not allowed, children between 15 and 16 are allowed only with a parent or a guardian.\n<b>Parking permit can be extended by two hours at the reception.",
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": false,
-      "additional_payment_desc": null,
-      "active_cards": [
-        {
-          "name": "Stříbrná",
-          "id": 1,
-          "description": "Entrance to the club: Gym, Sauna, InBody (once in calendar half a year), Group lessons (BODYBALANCE, LM GRIT CARDIO, LM CORE, WALK AND RUN, LM BARRE, YOGA, ZUMBA, BODYATTACK, TRX, BODYJAM, PROBLEM ZONES, CLINIC PILATS, LM GRIT STRENGTH, BODYCOMBAT, LM GRIT ATHLETIC, FUNCTINAL TRAINING, BODYSTEP, OUTDOOR RUN, HEALTH EXERCISES, CIRCUIT TRAINING)"
-        },
-        {
-          "name": "Student",
-          "id": 4,
-          "description": "Entrance to the club: Gym, Sauna, Group lessons (BODYBALANCE, LM GRIT CARDIO, LM CORE, WALK AND RUN, LM BARRE, YOGA, ZUMBA, BODYATTACK, TRX, BODYJAM, PROBLEM ZONES, CLINIC PILATS, LM GRIT STRENGTH, BODYCOMBAT, LM GRIT ATHLETIC, FUNCTINAL TRAINING, BODYSTEP, OUTDOOR RUN, HEALTH EXERCISES, CIRCUIT TRAINING)"
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Entrance to the club: Gym, Sauna, InBody (once in calendar half a year), Group lessons (BODYBALANCE, LM GRIT CARDIO, LM CORE, WALK AND RUN, LM BARRE, YOGA, ZUMBA, BODYATTACK, TRX, BODYJAM, PROBLEM ZONES, CLINIC PILATS, LM GRIT STRENGTH, BODYCOMBAT, LM GRIT ATHLETIC, FUNCTINAL TRAINING, BODYSTEP, OUTDOOR RUN, HEALTH EXERCISES, CIRCUIT TRAINING)"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "Free",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": "https://www.facebook.com/formfactoryfitcenter/",
       "instagram_url": null
     },
     {
@@ -921,6 +837,61 @@
       "self_service_times": null,
       "unlimited_oh": false,
       "facebook_url": "https://www.facebook.com/peaceyogastudiohurka",
+      "instagram_url": null
+    },
+    {
+      "id": "2071",
+      "name": "Sauna Central",
+      "address": "Ve Smečkách 19, Praha",
+      "city": "Praha",
+      "lat": 50.07916,
+      "lng": 14.427323,
+      "category": "wellness",
+      "activities": [
+        "Sauna/Steam"
+      ],
+      "activity_summary": "Sauna/Steam 90 + 15 min with additional payment 269 CZK/non-member 369 CZK.\nSauna/Steam unlimited with additional payment 369 CZK/non-member 469 CZK.",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/33/bc/33bc7a18bdc3779bda5bf7cbecdac5bf.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/f3/3b/f33bf953590e9c3b51b7b11dc9125b0b.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/4d/38/4d384072272718b333de787e8116d46e.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/53/62/536225bcd6a60c877bf9490a89614b03.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/9c/47/9c47dff48876963f098214ec1c15dd9c.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/df/6f/df6f39f653d5d39361608acc6bb1f1e4.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/e2/64/e264acf7109a358f6b5c8efa944dfccd.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/57/45/57457f16486b7103b052bb4067975374.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/9f/69/9f69de79e29e68aa02e718be6938017e.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/99/07/9907471f41052183c68b54579a709e5a.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/9d/54/9d5498e0aaed3468c495bb5b72ff0f09.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/ba/e2/bae2921d9d8f2165ce773035a6b81bca.jpg"
+      ],
+      "website_url": "http://saunacentral.cz/",
+      "phone": "+420 773 274 649",
+      "email": "info@saunacentral.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": true,
+      "additional_payment_desc": "Sauna/Steam 90 + 15 min with additional payment 269 CZK/non-member 369 CZK.\nSauna/Steam unlimited with additional payment 369 CZK/non-member 469 CZK.",
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Sauna/Steam 90 + 15 min with additional payment 269 CZK/non-member 369 CZK.\nSauna/Steam unlimited with additional payment 369 CZK/non-member 469 CZK."
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Sauna/Steam 90 + 15 min with additional payment 269 CZK/non-member 369 CZK.\nSauna/Steam unlimited with additional payment 369 CZK/non-member 469 CZK."
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "No",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": null,
       "instagram_url": null
     }
   ]
