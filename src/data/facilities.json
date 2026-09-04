@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-09-02T08:10:36.851Z",
-  "total": 11,
+  "scraped_at": "2026-09-04T08:17:58.250Z",
+  "total": 16,
   "facilities": [
     {
       "id": "3912",
@@ -615,6 +615,279 @@
       "kids_activities": false,
       "only_virtual_card": false,
       "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": null,
+      "instagram_url": null
+    },
+    {
+      "id": "355",
+      "name": "Studio Hvězda",
+      "address": "Křenova 11, Praha",
+      "city": "Praha",
+      "lat": 50.0888903,
+      "lng": 14.3438,
+      "category": "yoga",
+      "activities": [
+        "Ashtanga vinyasa yoga",
+        "Dynamic Yoga",
+        "Flowin",
+        "Hatha yoga",
+        "Pilates",
+        "Power yoga/Energy yoga",
+        "Healthy back/Back pain",
+        "Yoga"
+      ],
+      "activity_summary": "Yoga 60 minutes (Yoga, Iyengar Yoga, Hormonal Yoga, Pilates Therapy, Yoga for a Healthy Back, SM System, Basic Yoga, Gentle Yoga for a Healthy Back, Morning Yoga, Healthy Back, Exercises by Ludmila Mojžíšová and other exercises, Yin and Yang Yoga, Yoga for Eternal Beginners, Power Yoga, Flexibility, Pilates, Dynamic Iyengar Yoga, Exercises for a Healthy Back, Vinyasa Ashtanga Yoga, Gentle Yoga, Flowin Pilates, Dynamic Types of Yoga, Calmer Types of Yoga, Core Yoga) with additional payment CZK 50",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/72/d3/72d35010f77766249243a43ac0959009.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/1e/46/1e469c374dad6cbf6707632f47697683.jpg"
+      ],
+      "website_url": "http://studio-hvezda.cz",
+      "phone": "+420 722 442 777",
+      "email": null,
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": true,
+      "additional_payment_desc": "Yoga 60 minutes (Yoga, Iyengar Yoga, Hormonal Yoga, Pilates Therapy, Yoga for a Healthy Back, SM System, Basic Yoga, Gentle Yoga for a Healthy Back, Morning Yoga, Healthy Back, Exercises by Ludmila Mojžíšová and other exercises, Yin and Yang Yoga, Yoga for Eternal Beginners, Power Yoga, Flexibility, Pilates, Dynamic Iyengar Yoga, Exercises for a Healthy Back, Vinyasa Ashtanga Yoga, Gentle Yoga, Flowin Pilates, Dynamic Types of Yoga, Calmer Types of Yoga, Core Yoga) with additional payment CZK 50",
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Yoga 60 minutes (Yoga, Iyengar Yoga, Hormonal Yoga, Pilates Therapy, Yoga for a Healthy Back, SM System, Basic Yoga, Gentle Yoga for a Healthy Back, Morning Yoga, Healthy Back, Exercises by Ludmila Mojžíšová and other exercises, Yin and Yang Yoga, Yoga for Eternal Beginners, Power Yoga, Flexibility, Pilates, Dynamic Iyengar Yoga, Exercises for a Healthy Back, Vinyasa Ashtanga Yoga, Gentle Yoga, Flowin Pilates, Dynamic Types of Yoga, Calmer Types of Yoga, Core Yoga) with additional payment CZK 50"
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Yoga 60 minutes (Yoga, Iyengar Yoga, Hormonal Yoga, Pilates Therapy, Yoga for a Healthy Back, SM System, Basic Yoga, Gentle Yoga for a Healthy Back, Morning Yoga, Healthy Back, Exercises by Ludmila Mojžíšová and other exercises, Yin and Yang Yoga, Yoga for Eternal Beginners, Power Yoga, Flexibility, Pilates, Dynamic Iyengar Yoga, Exercises for a Healthy Back, Vinyasa Ashtanga Yoga, Gentle Yoga, Flowin Pilates, Dynamic Types of Yoga, Calmer Types of Yoga, Core Yoga) with additional payment CZK 50"
+        },
+        {
+          "name": "Student",
+          "id": 4,
+          "description": "Yoga 60 minutes (Yoga, Iyengar Yoga, Hormonal Yoga, Pilates Therapy, Yoga for a Healthy Back, SM System, Basic Yoga, Gentle Yoga for a Healthy Back, Morning Yoga, Healthy Back, Exercises by Ludmila Mojžíšová and other exercises, Yin and Yang Yoga, Yoga for Eternal Beginners, Power Yoga, Flexibility, Pilates, Dynamic Iyengar Yoga, Exercises for a Healthy Back, Vinyasa Ashtanga Yoga, Gentle Yoga, Flowin Pilates, Dynamic Types of Yoga, Calmer Types of Yoga, Core Yoga) with additional payment CZK 50"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": null,
+      "instagram_url": null
+    },
+    {
+      "id": "67",
+      "name": "Fit s Věrou 2",
+      "address": "Na Korunce 580, Praha",
+      "city": "Praha",
+      "lat": 50.0757196,
+      "lng": 14.5986756,
+      "category": "group",
+      "activities": [
+        "Circuit training",
+        "Pilates"
+      ],
+      "activity_summary": "Pilates, Circuit training",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/bc/5d/bc5de4b973211a75bb90912dae39a28d.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/78/22/782219e2c20accfcabf80354b3d61edc.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/ff/66/ff662488ee053d1e291cb31adb8177e4.jpg"
+      ],
+      "website_url": "http://fitsverou.cz/",
+      "phone": "+420 606 081 782",
+      "email": "fitsverou@seznam.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Pilates, Circuit training"
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Pilates, Circuit training"
+        },
+        {
+          "name": "Student",
+          "id": 4,
+          "description": "Pilates, Circuit training"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Pilates, Circuit training"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/fitsverou.cz/?ref=embed_page",
+      "instagram_url": null
+    },
+    {
+      "id": "5143",
+      "name": "Fitko Braník",
+      "address": "Branická 63/62, Praha",
+      "city": "Praha",
+      "lat": 50.0352678,
+      "lng": 14.4144239,
+      "category": "group",
+      "activities": [
+        "Bosu/Cardio/Rehab",
+        "Fitball",
+        "Jumping/Trampolines",
+        "Healthy back/Back pain",
+        "Yoga"
+      ],
+      "activity_summary": "Group lessons (Healthy back, Bosu core, Yoga, Jumping, Fitballs)",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/a5/35/a53556de6a97c7237324e53edabe6328.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/84/eb/84ebbd8158c6727065dbaa8bce694175.jpg"
+      ],
+      "website_url": "http://www.fitkobranik.cz",
+      "phone": "+420 602 953 380",
+      "email": "javurkovarenata@seznam.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Group lessons (Healthy back, Bosu core, Yoga, Jumping, Fitballs)"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Group lessons (Healthy back, Bosu core, Yoga, Jumping, Fitballs)"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/p/FITKO-Bran%C3%ADk-100063527708613/",
+      "instagram_url": null
+    },
+    {
+      "id": "3681",
+      "name": "Peace Yoga Studio",
+      "address": "Petržílkova (budova ČSOB) 2589/19, Praha",
+      "city": "Praha",
+      "lat": 50.0506025,
+      "lng": 14.3431442,
+      "category": "yoga",
+      "activities": [
+        "Hatha yoga",
+        "Pilates",
+        "Power yoga/Energy yoga",
+        "Healthy back/Back pain",
+        "Yoga"
+      ],
+      "activity_summary": "Morning/mid-morning classes: Morning Yoga, Pilates, Pilates Clinic, Gentle Morning Yoga, Yoga (Not Just) for Seniors, Saturday Restart; Evening/afternoon classes: Yoga for a Toned Body, Gentle Physio Yoga, Dynamic Yoga, Gentle Yoga, Sculpt Yoga, Hatha Flow Yoga, Friday Reset, Yoga for a Healthy Back (surcharge of 90 CZK)",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/c3/23/c3232c4336c2c4596e24b8b1ea1762ea.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/73/e2/73e20e4c838c6ea305f931b95ab271bc.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/7e/cb/7ecb6a1f3a24227b21a4679305901f5a.jpg"
+      ],
+      "website_url": "http://peaceyoga.cz",
+      "phone": "+420 725 239 911",
+      "email": "info@peaceyoga.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": true,
+      "additional_payment_desc": "Evening/afternoon classes: Yoga for a Toned Body, Gentle Physio Yoga, Dynamic Yoga, Gentle Yoga, Sculpt Yoga, Hatha Flow Yoga, Friday Reset, Yoga for a Healthy Back (surcharge of 90 CZK)",
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Morning/mid-morning classes: Morning Yoga, Pilates, Pilates Clinic, Gentle Morning Yoga, Yoga (Not Just) for Seniors, Saturday Restart; Evening/afternoon classes: Yoga for a Toned Body, Gentle Physio Yoga, Dynamic Yoga, Gentle Yoga, Sculpt Yoga, Hatha Flow Yoga, Friday Reset, Yoga for a Healthy Back (surcharge of 90 CZK)"
+        },
+        {
+          "name": "Student",
+          "id": 4,
+          "description": "Morning/mid-morning classes: Morning Yoga, Pilates, Pilates Clinic, Gentle Morning Yoga, Yoga (Not Just) for Seniors, Saturday Restart; Evening/afternoon classes: Yoga for a Toned Body, Gentle Physio Yoga, Dynamic Yoga, Gentle Yoga, Sculpt Yoga, Hatha Flow Yoga, Friday Reset, Yoga for a Healthy Back (surcharge of 90 CZK)"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Morning/mid-morning classes: Morning Yoga, Pilates, Pilates Clinic, Gentle Morning Yoga, Yoga (Not Just) for Seniors, Saturday Restart"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/peaceyogastudiohurka",
+      "instagram_url": null
+    },
+    {
+      "id": "2071",
+      "name": "Sauna Central",
+      "address": "Ve Smečkách 19, Praha",
+      "city": "Praha",
+      "lat": 50.07916,
+      "lng": 14.427323,
+      "category": "wellness",
+      "activities": [
+        "Sauna/Steam"
+      ],
+      "activity_summary": "Sauna/Steam 90 + 15 min with additional payment 269 CZK/non-member 369 CZK.\nSauna/Steam unlimited with additional payment 369 CZK/non-member 469 CZK.",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/33/bc/33bc7a18bdc3779bda5bf7cbecdac5bf.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/f3/3b/f33bf953590e9c3b51b7b11dc9125b0b.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/4d/38/4d384072272718b333de787e8116d46e.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/53/62/536225bcd6a60c877bf9490a89614b03.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/9c/47/9c47dff48876963f098214ec1c15dd9c.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/df/6f/df6f39f653d5d39361608acc6bb1f1e4.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/e2/64/e264acf7109a358f6b5c8efa944dfccd.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/57/45/57457f16486b7103b052bb4067975374.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/9f/69/9f69de79e29e68aa02e718be6938017e.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/99/07/9907471f41052183c68b54579a709e5a.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/9d/54/9d5498e0aaed3468c495bb5b72ff0f09.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/ba/e2/bae2921d9d8f2165ce773035a6b81bca.jpg"
+      ],
+      "website_url": "http://saunacentral.cz/",
+      "phone": "+420 773 274 649",
+      "email": "info@saunacentral.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": true,
+      "additional_payment_desc": "Sauna/Steam 90 + 15 min with additional payment 269 CZK/non-member 369 CZK.\nSauna/Steam unlimited with additional payment 369 CZK/non-member 469 CZK.",
+      "active_cards": [
+        {
+          "name": "Stříbrná",
+          "id": 1,
+          "description": "Sauna/Steam 90 + 15 min with additional payment 269 CZK/non-member 369 CZK.\nSauna/Steam unlimited with additional payment 369 CZK/non-member 469 CZK."
+        },
+        {
+          "name": "Dítě",
+          "id": 2,
+          "description": "Sauna/Steam 90 + 15 min with additional payment 269 CZK/non-member 369 CZK.\nSauna/Steam unlimited with additional payment 369 CZK/non-member 469 CZK."
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "No",
       "self_service": false,
       "self_service_times": null,
       "unlimited_oh": false,
