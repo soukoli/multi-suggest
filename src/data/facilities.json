@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-09-23T08:52:28.564Z",
+  "scraped_at": "2026-09-25T09:08:21.804Z",
   "total": 16,
   "facilities": [
     {
@@ -42,12 +42,12 @@
       "additional_payment_desc": null,
       "active_cards": [
         {
-          "name": "Stříbrná",
+          "name": "Silver",
           "id": 1,
           "description": "Gym"
         },
         {
-          "name": "Dítě",
+          "name": "Child",
           "id": 2,
           "description": "Please inquire directly about the possibility of use with the partner facility."
         },
@@ -96,7 +96,7 @@
       "additional_payment_desc": "Yoga 60 min (Yoga, Pilates) with an additional charge of 40 CZK",
       "active_cards": [
         {
-          "name": "Stříbrná",
+          "name": "Silver",
           "id": 1,
           "description": "Yoga 60 min (Yoga, Pilates) with an additional charge of 40 CZK"
         }
@@ -141,12 +141,12 @@
       "additional_payment_desc": "Yoga from 1:00 p.m. (lessons 60/90 min) with surcharge of 50 CZK",
       "active_cards": [
         {
-          "name": "Stříbrná",
+          "name": "Silver",
           "id": 1,
           "description": "Yoga until 12:00 (also valid for the beginning of the lesson at 12:00) - (Hatha yoga, Gentle yoga, Yoga for seniors, Pregnancy Yoga, Vinyasa yoga, Yin yoga, Fit yoga, Dance yoga) without surcharge; Yoga from 1:00 p.m. (lessons 60/90 min) with surcharge of 50 CZK"
         },
         {
-          "name": "Dítě",
+          "name": "Child",
           "id": 2,
           "description": "Yoga for children"
         },
@@ -163,6 +163,112 @@
       "self_service_times": null,
       "unlimited_oh": false,
       "facebook_url": "https://www.facebook.com/jogaCentrum/",
+      "instagram_url": null
+    },
+    {
+      "id": "5174",
+      "name": "Studio DanceDifferent",
+      "address": "Fügnerovo náměstí 5, Praha",
+      "city": "Praha",
+      "lat": 50.0715561,
+      "lng": 14.4299983,
+      "category": "group",
+      "activities": [
+        "Salsa",
+        "Dance"
+      ],
+      "activity_summary": "Dance lessons (Salsa, Bachata)",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/06/ba/06ba0923c6309e4a8ec22516f53027ab.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/4b/13/4b13ae180c784514fd1e9213726988cc.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/20/26/202642ece4fa004cef1a3eaff989dda1.jpg"
+      ],
+      "website_url": "http://dancedifferent.cz/",
+      "phone": "+420 728 856 364",
+      "email": "dance@dancedifferent.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": true,
+      "additional_payment_desc": "Student - Dance lessons (Salsa, Bachata) with additional payment CZK 45",
+      "active_cards": [
+        {
+          "name": "Silver",
+          "id": 1,
+          "description": "Dance lessons (Salsa, Bachata)"
+        },
+        {
+          "name": "Student",
+          "id": 4,
+          "description": "Dance lessons (Salsa, Bachata) with additional payment CZK 45"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Dance lessons (Salsa, Bachata)"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/dancedifferent.cz",
+      "instagram_url": "https://www.instagram.com/dancedifferent.cz/"
+    },
+    {
+      "id": "964",
+      "name": "SK OAZA PRAHA",
+      "address": "Jeremenkova 1835/106, Praha",
+      "city": "Praha",
+      "lat": 50.043808,
+      "lng": 14.435144,
+      "category": "sports",
+      "activities": [
+        "Tennis (summer)",
+        "Tennis (winter)"
+      ],
+      "activity_summary": "Tennis summer (card covers 1/2 court), Tennis winter (card covers 1/4 court)",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/6d/c8/6dc80a7875296f3f4de1bf97651c81bf.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/38/b4/38b4a67bf0c94c4fdc58338f29e3d1d1.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/45/e8/45e85d6a5a7cee678e3e4e1c3ae039ad.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/b3/1f/b31f9de90ae0cc452b2f700f5a5dbe49.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/60/46/60461b2d352dd2d828a1139b6e713260.jpg"
+      ],
+      "website_url": "http://hittenis.cz",
+      "phone": "+420 775 070 150",
+      "email": "hittenis@gmail.com",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Silver",
+          "id": 1,
+          "description": "Tennis summer (card covers 1/2 court), Tennis winter (card covers 1/4 court)"
+        },
+        {
+          "name": "Child",
+          "id": 2,
+          "description": "Tennis summer (card covers 1/2 court), Tennis winter (card covers 1/4 court)"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Tennis summer (card covers 1/2 court), Tennis winter (card covers 1/4 court)"
+        }
+      ],
+      "kids_activities": true,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": null,
       "instagram_url": null
     },
     {
@@ -195,12 +301,12 @@
       "additional_payment_desc": "Special lessons (yoga, pilates) with an additional charge of 150 CZK, Hot lessons (Hot yoga, Hot pilates) with an additional charge of 200 CZK",
       "active_cards": [
         {
-          "name": "Stříbrná",
+          "name": "Silver",
           "id": 1,
           "description": "Lowcost lessons (yoga, pilates), Special lessons (yoga, pilates) with an additional charge of 150 CZK, Hot lessons (Hot yoga, Hot pilates) with an additional charge of 200 CZK"
         },
         {
-          "name": "Dítě",
+          "name": "Child",
           "id": 2,
           "description": "Lowcost lessons (yoga, pilates), Special lessons (yoga, pilates) with an additional charge of 150 CZK, Hot lessons (Hot yoga, Hot pilates) with an additional charge of 200 CZK"
         },
@@ -244,12 +350,71 @@
       "additional_payment_desc": "Pilates reformer with additional charge of 475 CZK, Barre with additional charge of 100 CZK",
       "active_cards": [
         {
-          "name": "Stříbrná",
+          "name": "Silver",
           "id": 1,
           "description": "Pilates reformer with additional charge of 475 CZK, Barre with additional charge of 100 CZK"
         }
       ],
       "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": null,
+      "instagram_url": null
+    },
+    {
+      "id": "1362",
+      "name": "K&K Family Fitness",
+      "address": "Vratislavova 34, Praha",
+      "city": "Praha",
+      "lat": 50.065805,
+      "lng": 14.419822,
+      "category": "fitness",
+      "activities": [
+        "Gym",
+        "Table tennis"
+      ],
+      "activity_summary": "Gym, Table tennis",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/43/fd/43fdfd4d0d2b2938313e04635d1e274b.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/c2/fd/c2fdb32bc06e19699f40d8b8f9fb54b0.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/23/e8/23e84535bf6fbe12d2c395dd4b4692e8.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/fc/aa/fcaa34d06913bf0560d0972236798286.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/0b/2c/0b2c60071acc83eed686af767d771bf4.jpg"
+      ],
+      "website_url": "http://familyfitness.cz/",
+      "phone": "+420 604 374 315",
+      "email": "kvacavaclav@seznam.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Silver",
+          "id": 1,
+          "description": "Gym, Table tennis"
+        },
+        {
+          "name": "Child",
+          "id": 2,
+          "description": "Gym, Table tennis"
+        },
+        {
+          "name": "Student",
+          "id": 4,
+          "description": "Gym"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Gym, Table tennis"
+        }
+      ],
+      "kids_activities": true,
       "only_virtual_card": false,
       "parking": "Unknown",
       "self_service": false,
@@ -288,12 +453,12 @@
       "additional_payment_desc": null,
       "active_cards": [
         {
-          "name": "Stříbrná",
+          "name": "Silver",
           "id": 1,
           "description": "Gym, Sauna"
         },
         {
-          "name": "Dítě",
+          "name": "Child",
           "id": 2,
           "description": "Gym, Sauna"
         },
@@ -362,12 +527,12 @@
       "additional_payment_desc": "Barre with additional charge of 75 CZK, Pilates Reformer with additional charge of 105 CZK",
       "active_cards": [
         {
-          "name": "Stříbrná",
+          "name": "Silver",
           "id": 1,
           "description": "Gym, Group lessons (Yoga, Fitbox, Pilates, Trampolines, TRX, Problem areas, BOSU, Circuit training, POUND®, Tabata, Zumba, Healthy back, STRONG, Abdominals - buttocks), Barre with additional charge of 75 CZK, Pilates Reformer with additional charge of 105 CZK"
         },
         {
-          "name": "Dítě",
+          "name": "Child",
           "id": 2,
           "description": "Gym, Group lessons (Yoga, Fitbox, Pilates, Trampolines, TRX, Problem areas, BOSU, Circuit training, POUND®, Tabata, Zumba, Healthy back, STRONG, Abdominals - buttocks), Barre with additional charge of 75 CZK, Pilates Reformer with additional charge of 105 CZK"
         },
@@ -415,12 +580,12 @@
       "additional_payment_desc": null,
       "active_cards": [
         {
-          "name": "Stříbrná",
+          "name": "Silver",
           "id": 1,
           "description": "Gym"
         },
         {
-          "name": "Dítě",
+          "name": "Child",
           "id": 2,
           "description": "Please inquire directly about the possibility of use with the partner facility."
         },
@@ -470,12 +635,12 @@
       "additional_payment_desc": null,
       "active_cards": [
         {
-          "name": "Stříbrná",
+          "name": "Silver",
           "id": 1,
           "description": "Gym"
         },
         {
-          "name": "Dítě",
+          "name": "Child",
           "id": 2,
           "description": "Gym"
         },
@@ -536,12 +701,12 @@
       "additional_payment_desc": null,
       "active_cards": [
         {
-          "name": "Stříbrná",
+          "name": "Silver",
           "id": 1,
           "description": "Group lessons (Multitrainer, TRX, Circuit training, Yoga, H.E.A.T., Flowin, Jumpig, Full body, Pilates, Healhty back)"
         },
         {
-          "name": "Dítě",
+          "name": "Child",
           "id": 2,
           "description": "Exercise for children"
         },
@@ -594,12 +759,12 @@
       "additional_payment_desc": null,
       "active_cards": [
         {
-          "name": "Stříbrná",
+          "name": "Silver",
           "id": 1,
           "description": "Tennis winter (card covers 1/4 court), Table tenis, Tennis summer (card covers 1/2 court)"
         },
         {
-          "name": "Dítě",
+          "name": "Child",
           "id": 2,
           "description": "Tennis winter (card covers 1/4 court), Table tenis, Tennis summer (card covers 1/2 court)"
         },
@@ -656,12 +821,12 @@
       "additional_payment_desc": "Yoga 60 minutes (Yoga, Iyengar Yoga, Hormonal Yoga, Pilates Therapy, Yoga for a Healthy Back, SM System, Basic Yoga, Gentle Yoga for a Healthy Back, Morning Yoga, Healthy Back, Exercises by Ludmila Mojžíšová and other exercises, Yin and Yang Yoga, Yoga for Eternal Beginners, Power Yoga, Flexibility, Pilates, Dynamic Iyengar Yoga, Exercises for a Healthy Back, Vinyasa Ashtanga Yoga, Gentle Yoga, Flowin Pilates, Dynamic Types of Yoga, Calmer Types of Yoga, Core Yoga) with additional payment CZK 50",
       "active_cards": [
         {
-          "name": "Stříbrná",
+          "name": "Silver",
           "id": 1,
           "description": "Yoga 60 minutes (Yoga, Iyengar Yoga, Hormonal Yoga, Pilates Therapy, Yoga for a Healthy Back, SM System, Basic Yoga, Gentle Yoga for a Healthy Back, Morning Yoga, Healthy Back, Exercises by Ludmila Mojžíšová and other exercises, Yin and Yang Yoga, Yoga for Eternal Beginners, Power Yoga, Flexibility, Pilates, Dynamic Iyengar Yoga, Exercises for a Healthy Back, Vinyasa Ashtanga Yoga, Gentle Yoga, Flowin Pilates, Dynamic Types of Yoga, Calmer Types of Yoga, Core Yoga) with additional payment CZK 50"
         },
         {
-          "name": "Dítě",
+          "name": "Child",
           "id": 2,
           "description": "Yoga 60 minutes (Yoga, Iyengar Yoga, Hormonal Yoga, Pilates Therapy, Yoga for a Healthy Back, SM System, Basic Yoga, Gentle Yoga for a Healthy Back, Morning Yoga, Healthy Back, Exercises by Ludmila Mojžíšová and other exercises, Yin and Yang Yoga, Yoga for Eternal Beginners, Power Yoga, Flexibility, Pilates, Dynamic Iyengar Yoga, Exercises for a Healthy Back, Vinyasa Ashtanga Yoga, Gentle Yoga, Flowin Pilates, Dynamic Types of Yoga, Calmer Types of Yoga, Core Yoga) with additional payment CZK 50"
         },
@@ -708,12 +873,12 @@
       "additional_payment_desc": null,
       "active_cards": [
         {
-          "name": "Stříbrná",
+          "name": "Silver",
           "id": 1,
           "description": "Pilates, Circuit training"
         },
         {
-          "name": "Dítě",
+          "name": "Child",
           "id": 2,
           "description": "Pilates, Circuit training"
         },
@@ -735,172 +900,6 @@
       "self_service_times": null,
       "unlimited_oh": false,
       "facebook_url": "https://www.facebook.com/fitsverou.cz/?ref=embed_page",
-      "instagram_url": null
-    },
-    {
-      "id": "3681",
-      "name": "Peace Yoga Studio",
-      "address": "Petržílkova (budova ČSOB) 2589/19, Praha",
-      "city": "Praha",
-      "lat": 50.0506025,
-      "lng": 14.3431442,
-      "category": "yoga",
-      "activities": [
-        "Hatha yoga",
-        "Pilates",
-        "Power yoga/Energy yoga",
-        "Healthy back/Back pain",
-        "Yoga"
-      ],
-      "activity_summary": "Morning/mid-morning classes: Morning Yoga, Pilates, Pilates Clinic, Gentle Morning Yoga, Yoga (Not Just) for Seniors, Saturday Restart; Evening/afternoon classes: Yoga for a Toned Body, Gentle Physio Yoga, Dynamic Yoga, Gentle Yoga, Sculpt Yoga, Hatha Flow Yoga, Friday Reset, Yoga for a Healthy Back (surcharge of 90 CZK)",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/c3/23/c3232c4336c2c4596e24b8b1ea1762ea.jpg",
-      "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/73/e2/73e20e4c838c6ea305f931b95ab271bc.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/7e/cb/7ecb6a1f3a24227b21a4679305901f5a.jpg"
-      ],
-      "website_url": "http://peaceyoga.cz",
-      "phone": "+420 725 239 911",
-      "email": "info@peaceyoga.cz",
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": true,
-      "additional_payment_desc": "Evening/afternoon classes: Yoga for a Toned Body, Gentle Physio Yoga, Dynamic Yoga, Gentle Yoga, Sculpt Yoga, Hatha Flow Yoga, Friday Reset, Yoga for a Healthy Back (surcharge of 90 CZK)",
-      "active_cards": [
-        {
-          "name": "Stříbrná",
-          "id": 1,
-          "description": "Morning/mid-morning classes: Morning Yoga, Pilates, Pilates Clinic, Gentle Morning Yoga, Yoga (Not Just) for Seniors, Saturday Restart; Evening/afternoon classes: Yoga for a Toned Body, Gentle Physio Yoga, Dynamic Yoga, Gentle Yoga, Sculpt Yoga, Hatha Flow Yoga, Friday Reset, Yoga for a Healthy Back (surcharge of 90 CZK)"
-        },
-        {
-          "name": "Student",
-          "id": 4,
-          "description": "Morning/mid-morning classes: Morning Yoga, Pilates, Pilates Clinic, Gentle Morning Yoga, Yoga (Not Just) for Seniors, Saturday Restart; Evening/afternoon classes: Yoga for a Toned Body, Gentle Physio Yoga, Dynamic Yoga, Gentle Yoga, Sculpt Yoga, Hatha Flow Yoga, Friday Reset, Yoga for a Healthy Back (surcharge of 90 CZK)"
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Morning/mid-morning classes: Morning Yoga, Pilates, Pilates Clinic, Gentle Morning Yoga, Yoga (Not Just) for Seniors, Saturday Restart"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": "https://www.facebook.com/peaceyogastudiohurka",
-      "instagram_url": null
-    },
-    {
-      "id": "2071",
-      "name": "Sauna Central",
-      "address": "Ve Smečkách 19, Praha",
-      "city": "Praha",
-      "lat": 50.07916,
-      "lng": 14.427323,
-      "category": "wellness",
-      "activities": [
-        "Sauna/Steam"
-      ],
-      "activity_summary": "Sauna/Steam 90 + 15 min with additional payment 269 CZK/non-member 369 CZK.\nSauna/Steam unlimited with additional payment 369 CZK/non-member 469 CZK.",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/33/bc/33bc7a18bdc3779bda5bf7cbecdac5bf.jpg",
-      "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/f3/3b/f33bf953590e9c3b51b7b11dc9125b0b.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/4d/38/4d384072272718b333de787e8116d46e.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/53/62/536225bcd6a60c877bf9490a89614b03.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/9c/47/9c47dff48876963f098214ec1c15dd9c.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/df/6f/df6f39f653d5d39361608acc6bb1f1e4.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/e2/64/e264acf7109a358f6b5c8efa944dfccd.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/57/45/57457f16486b7103b052bb4067975374.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/9f/69/9f69de79e29e68aa02e718be6938017e.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/99/07/9907471f41052183c68b54579a709e5a.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/9d/54/9d5498e0aaed3468c495bb5b72ff0f09.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/ba/e2/bae2921d9d8f2165ce773035a6b81bca.jpg"
-      ],
-      "website_url": "http://saunacentral.cz/",
-      "phone": "+420 773 274 649",
-      "email": "info@saunacentral.cz",
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": true,
-      "additional_payment_desc": "Sauna/Steam 90 + 15 min with additional payment 269 CZK/non-member 369 CZK.\nSauna/Steam unlimited with additional payment 369 CZK/non-member 469 CZK.",
-      "active_cards": [
-        {
-          "name": "Stříbrná",
-          "id": 1,
-          "description": "Sauna/Steam 90 + 15 min with additional payment 269 CZK/non-member 369 CZK.\nSauna/Steam unlimited with additional payment 369 CZK/non-member 469 CZK."
-        },
-        {
-          "name": "Dítě",
-          "id": 2,
-          "description": "Sauna/Steam 90 + 15 min with additional payment 269 CZK/non-member 369 CZK.\nSauna/Steam unlimited with additional payment 369 CZK/non-member 469 CZK."
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "No",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": null,
-      "instagram_url": null
-    },
-    {
-      "id": "3794",
-      "name": "LTC Radotín",
-      "address": "Šárovo kolo 932/1, Praha",
-      "city": "Praha",
-      "lat": 49.9857736,
-      "lng": 14.3721719,
-      "category": "sports",
-      "activities": [
-        "Tennis (summer)",
-        "Tennis (winter)"
-      ],
-      "activity_summary": "Tennis summer (card covers 1/2 court), Tennis winter (card covers 1/4 court)",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/1a/21/1a21b9c72731dd6dfce73872cd210b07.jpg",
-      "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/94/de/94dec889b4461ed8a153eac11010634b.jpg"
-      ],
-      "website_url": "http://ltcradotin.cz",
-      "phone": "+420 257 810 906",
-      "email": "tenis@ltcradotin.cz",
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": false,
-      "additional_payment_desc": null,
-      "active_cards": [
-        {
-          "name": "Stříbrná",
-          "id": 1,
-          "description": "Tennis summer (card covers 1/2 court), Tennis winter (card covers 1/4 court)"
-        },
-        {
-          "name": "Dítě",
-          "id": 2,
-          "description": "Tennis summer (card covers 1/2 court), Tennis winter (card covers 1/4 court)"
-        },
-        {
-          "name": "Student",
-          "id": 4,
-          "description": "Tennis summer (card covers 1/2 court)"
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Tennis summer (card covers 1/2 court), Tennis winter (card covers 1/4 court)"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": "https://www.facebook.com/ltcradotin",
       "instagram_url": null
     }
   ]
