@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-09-28T10:13:24.163Z",
+  "scraped_at": "2026-09-30T10:02:38.619Z",
   "total": 16,
   "facilities": [
     {
@@ -164,58 +164,6 @@
       "unlimited_oh": false,
       "facebook_url": "https://www.facebook.com/jogaCentrum/",
       "instagram_url": null
-    },
-    {
-      "id": "5174",
-      "name": "Studio DanceDifferent",
-      "address": "Fügnerovo náměstí 5, Praha",
-      "city": "Praha",
-      "lat": 50.0715561,
-      "lng": 14.4299983,
-      "category": "group",
-      "activities": [
-        "Salsa",
-        "Dance"
-      ],
-      "activity_summary": "Dance lessons (Salsa, Bachata)",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/06/ba/06ba0923c6309e4a8ec22516f53027ab.jpg",
-      "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/4b/13/4b13ae180c784514fd1e9213726988cc.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/20/26/202642ece4fa004cef1a3eaff989dda1.jpg"
-      ],
-      "website_url": "http://dancedifferent.cz/",
-      "phone": "+420 728 856 364",
-      "email": "dance@dancedifferent.cz",
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": true,
-      "additional_payment_desc": "Student - Dance lessons (Salsa, Bachata) with additional payment CZK 45",
-      "active_cards": [
-        {
-          "name": "Silver",
-          "id": 1,
-          "description": "Dance lessons (Salsa, Bachata)"
-        },
-        {
-          "name": "Student",
-          "id": 4,
-          "description": "Dance lessons (Salsa, Bachata) with additional payment CZK 45"
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Dance lessons (Salsa, Bachata)"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": "https://www.facebook.com/dancedifferent.cz",
-      "instagram_url": "https://www.instagram.com/dancedifferent.cz/"
     },
     {
       "id": "964",
@@ -900,6 +848,61 @@
       "self_service_times": null,
       "unlimited_oh": false,
       "facebook_url": "https://www.facebook.com/fitsverou.cz/?ref=embed_page",
+      "instagram_url": null
+    },
+    {
+      "id": "3681",
+      "name": "Peace Yoga Studio",
+      "address": "Petržílkova (budova ČSOB) 2589/19, Praha",
+      "city": "Praha",
+      "lat": 50.0506025,
+      "lng": 14.3431442,
+      "category": "yoga",
+      "activities": [
+        "Hatha yoga",
+        "Pilates",
+        "Power yoga/Energy yoga",
+        "Healthy back/Back pain",
+        "Yoga"
+      ],
+      "activity_summary": "Morning/mid-morning classes: Morning Yoga, Pilates, Pilates Clinic, Gentle Morning Yoga, Yoga (Not Just) for Seniors, Saturday Restart; Evening/afternoon classes: Yoga for a Toned Body, Gentle Physio Yoga, Dynamic Yoga, Gentle Yoga, Sculpt Yoga, Hatha Flow Yoga, Friday Reset, Yoga for a Healthy Back (surcharge of 90 CZK)",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/c3/23/c3232c4336c2c4596e24b8b1ea1762ea.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/73/e2/73e20e4c838c6ea305f931b95ab271bc.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/7e/cb/7ecb6a1f3a24227b21a4679305901f5a.jpg"
+      ],
+      "website_url": "http://peaceyoga.cz",
+      "phone": "+420 725 239 911",
+      "email": "info@peaceyoga.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": true,
+      "additional_payment_desc": "Evening/afternoon classes: Yoga for a Toned Body, Gentle Physio Yoga, Dynamic Yoga, Gentle Yoga, Sculpt Yoga, Hatha Flow Yoga, Friday Reset, Yoga for a Healthy Back (surcharge of 90 CZK)",
+      "active_cards": [
+        {
+          "name": "Silver",
+          "id": 1,
+          "description": "Morning/mid-morning classes: Morning Yoga, Pilates, Pilates Clinic, Gentle Morning Yoga, Yoga (Not Just) for Seniors, Saturday Restart; Evening/afternoon classes: Yoga for a Toned Body, Gentle Physio Yoga, Dynamic Yoga, Gentle Yoga, Sculpt Yoga, Hatha Flow Yoga, Friday Reset, Yoga for a Healthy Back (surcharge of 90 CZK)"
+        },
+        {
+          "name": "Student",
+          "id": 4,
+          "description": "Morning/mid-morning classes: Morning Yoga, Pilates, Pilates Clinic, Gentle Morning Yoga, Yoga (Not Just) for Seniors, Saturday Restart; Evening/afternoon classes: Yoga for a Toned Body, Gentle Physio Yoga, Dynamic Yoga, Gentle Yoga, Sculpt Yoga, Hatha Flow Yoga, Friday Reset, Yoga for a Healthy Back (surcharge of 90 CZK)"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Morning/mid-morning classes: Morning Yoga, Pilates, Pilates Clinic, Gentle Morning Yoga, Yoga (Not Just) for Seniors, Saturday Restart"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/peaceyogastudiohurka",
       "instagram_url": null
     }
   ]
