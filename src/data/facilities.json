@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-09-30T10:02:38.619Z",
-  "total": 16,
+  "scraped_at": "2026-10-02T10:05:45.651Z",
+  "total": 15,
   "facilities": [
     {
       "id": "1616",
@@ -274,45 +274,6 @@
       "instagram_url": null
     },
     {
-      "id": "5247",
-      "name": "OTELO Studio",
-      "address": "Grafická 3365/5A, Praha",
-      "city": "Praha",
-      "lat": 50.0732803,
-      "lng": 14.3965392,
-      "category": "group",
-      "activities": [
-        "Barre",
-        "Pilates Reformer"
-      ],
-      "activity_summary": "Pilates reformer with additional charge of 475 CZK, Barre with additional charge of 100 CZK",
-      "image_url": null,
-      "gallery_images": [],
-      "website_url": "https://otelostudio.cz/",
-      "phone": null,
-      "email": "info@otelostudio.cz",
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": true,
-      "additional_payment_desc": "Pilates reformer with additional charge of 475 CZK, Barre with additional charge of 100 CZK",
-      "active_cards": [
-        {
-          "name": "Silver",
-          "id": 1,
-          "description": "Pilates reformer with additional charge of 475 CZK, Barre with additional charge of 100 CZK"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": null,
-      "instagram_url": null
-    },
-    {
       "id": "1362",
       "name": "K&K Family Fitness",
       "address": "Vratislavova 34, Praha",
@@ -497,6 +458,54 @@
       "self_service_times": null,
       "unlimited_oh": false,
       "facebook_url": "https://www.facebook.com/Euforie.cz/",
+      "instagram_url": null
+    },
+    {
+      "id": "5459",
+      "name": "Taneční studio Hanser Estenoz",
+      "address": "Londýnská 32, Praha",
+      "city": "Praha",
+      "lat": 50.0733136,
+      "lng": 14.4346208,
+      "category": "group",
+      "activities": [
+        "Dance"
+      ],
+      "activity_summary": "Dance lessons before 12:00 PM at no extra charge; after 12:00 PM, a surcharge of 265 CZK applies.",
+      "image_url": null,
+      "gallery_images": [],
+      "website_url": "http://hanser.cz",
+      "phone": "+420 725 000 785",
+      "email": "info@hanser.cz",
+      "description": null,
+      "is_new": true,
+      "recommended": false,
+      "additional_payment": true,
+      "additional_payment_desc": "Dancing lessons after 12:00 PM, a surcharge of 265 CZK applies.",
+      "active_cards": [
+        {
+          "name": "Silver",
+          "id": 1,
+          "description": "Dance lessons before 12:00 PM at no extra charge; after 12:00 PM, a surcharge of 265 CZK applies."
+        },
+        {
+          "name": "Child",
+          "id": 2,
+          "description": "Dance lessons before 12:00 PM at no extra charge; after 12:00 PM, a surcharge of 265 CZK applies."
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Dance lessons before 12:00 PM"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/tanecnistudiohanserestenoz/",
       "instagram_url": null
     },
     {
@@ -848,61 +857,6 @@
       "self_service_times": null,
       "unlimited_oh": false,
       "facebook_url": "https://www.facebook.com/fitsverou.cz/?ref=embed_page",
-      "instagram_url": null
-    },
-    {
-      "id": "3681",
-      "name": "Peace Yoga Studio",
-      "address": "Petržílkova (budova ČSOB) 2589/19, Praha",
-      "city": "Praha",
-      "lat": 50.0506025,
-      "lng": 14.3431442,
-      "category": "yoga",
-      "activities": [
-        "Hatha yoga",
-        "Pilates",
-        "Power yoga/Energy yoga",
-        "Healthy back/Back pain",
-        "Yoga"
-      ],
-      "activity_summary": "Morning/mid-morning classes: Morning Yoga, Pilates, Pilates Clinic, Gentle Morning Yoga, Yoga (Not Just) for Seniors, Saturday Restart; Evening/afternoon classes: Yoga for a Toned Body, Gentle Physio Yoga, Dynamic Yoga, Gentle Yoga, Sculpt Yoga, Hatha Flow Yoga, Friday Reset, Yoga for a Healthy Back (surcharge of 90 CZK)",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/c3/23/c3232c4336c2c4596e24b8b1ea1762ea.jpg",
-      "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/73/e2/73e20e4c838c6ea305f931b95ab271bc.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/7e/cb/7ecb6a1f3a24227b21a4679305901f5a.jpg"
-      ],
-      "website_url": "http://peaceyoga.cz",
-      "phone": "+420 725 239 911",
-      "email": "info@peaceyoga.cz",
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": true,
-      "additional_payment_desc": "Evening/afternoon classes: Yoga for a Toned Body, Gentle Physio Yoga, Dynamic Yoga, Gentle Yoga, Sculpt Yoga, Hatha Flow Yoga, Friday Reset, Yoga for a Healthy Back (surcharge of 90 CZK)",
-      "active_cards": [
-        {
-          "name": "Silver",
-          "id": 1,
-          "description": "Morning/mid-morning classes: Morning Yoga, Pilates, Pilates Clinic, Gentle Morning Yoga, Yoga (Not Just) for Seniors, Saturday Restart; Evening/afternoon classes: Yoga for a Toned Body, Gentle Physio Yoga, Dynamic Yoga, Gentle Yoga, Sculpt Yoga, Hatha Flow Yoga, Friday Reset, Yoga for a Healthy Back (surcharge of 90 CZK)"
-        },
-        {
-          "name": "Student",
-          "id": 4,
-          "description": "Morning/mid-morning classes: Morning Yoga, Pilates, Pilates Clinic, Gentle Morning Yoga, Yoga (Not Just) for Seniors, Saturday Restart; Evening/afternoon classes: Yoga for a Toned Body, Gentle Physio Yoga, Dynamic Yoga, Gentle Yoga, Sculpt Yoga, Hatha Flow Yoga, Friday Reset, Yoga for a Healthy Back (surcharge of 90 CZK)"
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Morning/mid-morning classes: Morning Yoga, Pilates, Pilates Clinic, Gentle Morning Yoga, Yoga (Not Just) for Seniors, Saturday Restart"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": "https://www.facebook.com/peaceyogastudiohurka",
       "instagram_url": null
     }
   ]
