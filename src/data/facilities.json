@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-10-02T10:05:45.651Z",
-  "total": 15,
+  "scraped_at": "2026-10-04T10:15:44.519Z",
+  "total": 16,
   "facilities": [
     {
       "id": "1616",
@@ -70,45 +70,6 @@
       "unlimited_oh": false,
       "facebook_url": "https://www.facebook.com/HSFSPARTA/",
       "instagram_url": null
-    },
-    {
-      "id": "5320",
-      "name": "Studio Samádhi Řepy",
-      "address": "Makovského (OC Řepy) 1392, Praha",
-      "city": "Praha",
-      "lat": 50.0652428,
-      "lng": 14.3088514,
-      "category": "yoga",
-      "activities": [
-        "Pilates",
-        "Yoga"
-      ],
-      "activity_summary": "Yoga 60 min (Yoga, Pilates) with an additional charge of 40 CZK",
-      "image_url": null,
-      "gallery_images": [],
-      "website_url": "https://www.studio-samadhi.cz/repy/",
-      "phone": "+420 603 337 144",
-      "email": "repy@studio-samadhi.cz",
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": true,
-      "additional_payment_desc": "Yoga 60 min (Yoga, Pilates) with an additional charge of 40 CZK",
-      "active_cards": [
-        {
-          "name": "Silver",
-          "id": 1,
-          "description": "Yoga 60 min (Yoga, Pilates) with an additional charge of 40 CZK"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": "https://www.facebook.com/jogastudioSamadhi",
-      "instagram_url": "https://www.instagram.com/studio_samadhi_/"
     },
     {
       "id": "4505",
@@ -461,54 +422,6 @@
       "instagram_url": null
     },
     {
-      "id": "5459",
-      "name": "Taneční studio Hanser Estenoz",
-      "address": "Londýnská 32, Praha",
-      "city": "Praha",
-      "lat": 50.0733136,
-      "lng": 14.4346208,
-      "category": "group",
-      "activities": [
-        "Dance"
-      ],
-      "activity_summary": "Dance lessons before 12:00 PM at no extra charge; after 12:00 PM, a surcharge of 265 CZK applies.",
-      "image_url": null,
-      "gallery_images": [],
-      "website_url": "http://hanser.cz",
-      "phone": "+420 725 000 785",
-      "email": "info@hanser.cz",
-      "description": null,
-      "is_new": true,
-      "recommended": false,
-      "additional_payment": true,
-      "additional_payment_desc": "Dancing lessons after 12:00 PM, a surcharge of 265 CZK applies.",
-      "active_cards": [
-        {
-          "name": "Silver",
-          "id": 1,
-          "description": "Dance lessons before 12:00 PM at no extra charge; after 12:00 PM, a surcharge of 265 CZK applies."
-        },
-        {
-          "name": "Child",
-          "id": 2,
-          "description": "Dance lessons before 12:00 PM at no extra charge; after 12:00 PM, a surcharge of 265 CZK applies."
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Dance lessons before 12:00 PM"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": "https://www.facebook.com/tanecnistudiohanserestenoz/",
-      "instagram_url": null
-    },
-    {
       "id": "490",
       "name": "Delta Fitness",
       "address": "Vybíralova 964/8, Praha",
@@ -857,6 +770,172 @@
       "self_service_times": null,
       "unlimited_oh": false,
       "facebook_url": "https://www.facebook.com/fitsverou.cz/?ref=embed_page",
+      "instagram_url": null
+    },
+    {
+      "id": "3681",
+      "name": "Peace Yoga Studio",
+      "address": "Petržílkova (budova ČSOB) 2589/19, Praha",
+      "city": "Praha",
+      "lat": 50.0506025,
+      "lng": 14.3431442,
+      "category": "yoga",
+      "activities": [
+        "Hatha yoga",
+        "Pilates",
+        "Power yoga/Energy yoga",
+        "Healthy back/Back pain",
+        "Yoga"
+      ],
+      "activity_summary": "Morning/mid-morning classes: Morning Yoga, Pilates, Pilates Clinic, Gentle Morning Yoga, Yoga (Not Just) for Seniors, Saturday Restart; Evening/afternoon classes: Yoga for a Toned Body, Gentle Physio Yoga, Dynamic Yoga, Gentle Yoga, Sculpt Yoga, Hatha Flow Yoga, Friday Reset, Yoga for a Healthy Back (surcharge of 90 CZK)",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/c3/23/c3232c4336c2c4596e24b8b1ea1762ea.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/73/e2/73e20e4c838c6ea305f931b95ab271bc.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/7e/cb/7ecb6a1f3a24227b21a4679305901f5a.jpg"
+      ],
+      "website_url": "http://peaceyoga.cz",
+      "phone": "+420 725 239 911",
+      "email": "info@peaceyoga.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": true,
+      "additional_payment_desc": "Evening/afternoon classes: Yoga for a Toned Body, Gentle Physio Yoga, Dynamic Yoga, Gentle Yoga, Sculpt Yoga, Hatha Flow Yoga, Friday Reset, Yoga for a Healthy Back (surcharge of 90 CZK)",
+      "active_cards": [
+        {
+          "name": "Silver",
+          "id": 1,
+          "description": "Morning/mid-morning classes: Morning Yoga, Pilates, Pilates Clinic, Gentle Morning Yoga, Yoga (Not Just) for Seniors, Saturday Restart; Evening/afternoon classes: Yoga for a Toned Body, Gentle Physio Yoga, Dynamic Yoga, Gentle Yoga, Sculpt Yoga, Hatha Flow Yoga, Friday Reset, Yoga for a Healthy Back (surcharge of 90 CZK)"
+        },
+        {
+          "name": "Student",
+          "id": 4,
+          "description": "Morning/mid-morning classes: Morning Yoga, Pilates, Pilates Clinic, Gentle Morning Yoga, Yoga (Not Just) for Seniors, Saturday Restart; Evening/afternoon classes: Yoga for a Toned Body, Gentle Physio Yoga, Dynamic Yoga, Gentle Yoga, Sculpt Yoga, Hatha Flow Yoga, Friday Reset, Yoga for a Healthy Back (surcharge of 90 CZK)"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Morning/mid-morning classes: Morning Yoga, Pilates, Pilates Clinic, Gentle Morning Yoga, Yoga (Not Just) for Seniors, Saturday Restart"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/peaceyogastudiohurka",
+      "instagram_url": null
+    },
+    {
+      "id": "2071",
+      "name": "Sauna Central",
+      "address": "Ve Smečkách 19, Praha",
+      "city": "Praha",
+      "lat": 50.07916,
+      "lng": 14.427323,
+      "category": "wellness",
+      "activities": [
+        "Sauna/Steam"
+      ],
+      "activity_summary": "Sauna/Steam 90 + 15 min with additional payment 269 CZK/non-member 369 CZK.\nSauna/Steam unlimited with additional payment 369 CZK/non-member 469 CZK.",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/33/bc/33bc7a18bdc3779bda5bf7cbecdac5bf.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/f3/3b/f33bf953590e9c3b51b7b11dc9125b0b.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/4d/38/4d384072272718b333de787e8116d46e.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/53/62/536225bcd6a60c877bf9490a89614b03.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/9c/47/9c47dff48876963f098214ec1c15dd9c.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/df/6f/df6f39f653d5d39361608acc6bb1f1e4.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/e2/64/e264acf7109a358f6b5c8efa944dfccd.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/57/45/57457f16486b7103b052bb4067975374.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/9f/69/9f69de79e29e68aa02e718be6938017e.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/99/07/9907471f41052183c68b54579a709e5a.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/9d/54/9d5498e0aaed3468c495bb5b72ff0f09.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/ba/e2/bae2921d9d8f2165ce773035a6b81bca.jpg"
+      ],
+      "website_url": "http://saunacentral.cz/",
+      "phone": "+420 773 274 649",
+      "email": "info@saunacentral.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": true,
+      "additional_payment_desc": "Sauna/Steam 90 + 15 min with additional payment 269 CZK/non-member 369 CZK.\nSauna/Steam unlimited with additional payment 369 CZK/non-member 469 CZK.",
+      "active_cards": [
+        {
+          "name": "Silver",
+          "id": 1,
+          "description": "Sauna/Steam 90 + 15 min with additional payment 269 CZK/non-member 369 CZK.\nSauna/Steam unlimited with additional payment 369 CZK/non-member 469 CZK."
+        },
+        {
+          "name": "Child",
+          "id": 2,
+          "description": "Sauna/Steam 90 + 15 min with additional payment 269 CZK/non-member 369 CZK.\nSauna/Steam unlimited with additional payment 369 CZK/non-member 469 CZK."
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "No",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": null,
+      "instagram_url": null
+    },
+    {
+      "id": "3794",
+      "name": "LTC Radotín",
+      "address": "Šárovo kolo 932/1, Praha",
+      "city": "Praha",
+      "lat": 49.9857736,
+      "lng": 14.3721719,
+      "category": "sports",
+      "activities": [
+        "Tennis (summer)",
+        "Tennis (winter)"
+      ],
+      "activity_summary": "Tennis summer (card covers 1/2 court), Tennis winter (card covers 1/4 court)",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/1a/21/1a21b9c72731dd6dfce73872cd210b07.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/94/de/94dec889b4461ed8a153eac11010634b.jpg"
+      ],
+      "website_url": "http://ltcradotin.cz",
+      "phone": "+420 257 810 906",
+      "email": "tenis@ltcradotin.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Silver",
+          "id": 1,
+          "description": "Tennis summer (card covers 1/2 court), Tennis winter (card covers 1/4 court)"
+        },
+        {
+          "name": "Child",
+          "id": 2,
+          "description": "Tennis summer (card covers 1/2 court), Tennis winter (card covers 1/4 court)"
+        },
+        {
+          "name": "Student",
+          "id": 4,
+          "description": "Tennis summer (card covers 1/2 court)"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Tennis summer (card covers 1/2 court), Tennis winter (card covers 1/4 court)"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/ltcradotin",
       "instagram_url": null
     }
   ]
