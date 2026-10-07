@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-10-04T10:15:44.519Z",
+  "scraped_at": "2026-10-07T10:37:40.667Z",
   "total": 16,
   "facilities": [
     {
@@ -69,6 +69,58 @@
       "self_service_times": null,
       "unlimited_oh": false,
       "facebook_url": "https://www.facebook.com/HSFSPARTA/",
+      "instagram_url": null
+    },
+    {
+      "id": "3655",
+      "name": "Fitness Ronnie.cz",
+      "address": "Stará Spojovací 2263/9, Praha",
+      "city": "Praha",
+      "lat": 50.1028406,
+      "lng": 14.4857383,
+      "category": "fitness",
+      "activities": [
+        "Gym"
+      ],
+      "activity_summary": "Gym",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/e8/7c/e87c56efe2dcc388dcad9272e4eadd82.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/d8/5d/d85df4934b69552d73e0780a520137b3.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/14/e5/14e56bfa566054065c92af261fe03bba.jpg",
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/00/f8/00f8dbc955021e67806b9411305bb4fb.jpg"
+      ],
+      "website_url": "http://fitnessronnie.cz",
+      "phone": "+420 608 227 284",
+      "email": "info@fitnessronnie.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Silver",
+          "id": 1,
+          "description": "Gym"
+        },
+        {
+          "name": "Child",
+          "id": 2,
+          "description": "Gym"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Gym"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/Fitness-Ronniecz-Libe%C5%88-109423664814981/",
       "instagram_url": null
     },
     {
@@ -422,59 +474,6 @@
       "instagram_url": null
     },
     {
-      "id": "490",
-      "name": "Delta Fitness",
-      "address": "Vybíralova 964/8, Praha",
-      "city": "Praha",
-      "lat": 50.10444,
-      "lng": 14.5831119,
-      "category": "fitness",
-      "activities": [
-        "Gym"
-      ],
-      "activity_summary": "Gym",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/8a/5c/8a5cb8fd16d0c1a42ce819484c32283a.jpg",
-      "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/82/c4/82c4e44e17d16390c386825a0d7ef648.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/32/66/32664a057d08990a88cb0f148e3df827.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/79/38/7938316d61d3db44fa66803675ec9ff5.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/77/1c/771c75b5cb9a4c44160544a7a14d68e8.jpg"
-      ],
-      "website_url": "http://fiton.cz/delta-fitness",
-      "phone": "+420 281 090 578",
-      "email": null,
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": false,
-      "additional_payment_desc": null,
-      "active_cards": [
-        {
-          "name": "Silver",
-          "id": 1,
-          "description": "Gym"
-        },
-        {
-          "name": "Child",
-          "id": 2,
-          "description": "Please inquire directly about the possibility of use with the partner facility."
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Gym"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": "https://www.facebook.com/Delta-Fitness-186861804359/",
-      "instagram_url": null
-    },
-    {
       "id": "492",
       "name": "Colt Gym - Vysočany",
       "address": "Jandova 216/10, Praha",
@@ -716,6 +715,62 @@
       "instagram_url": null
     },
     {
+      "id": "3794",
+      "name": "LTC Radotín",
+      "address": "Šárovo kolo 932/1, Praha",
+      "city": "Praha",
+      "lat": 49.9857736,
+      "lng": 14.3721719,
+      "category": "sports",
+      "activities": [
+        "Tennis (summer)",
+        "Tennis (winter)"
+      ],
+      "activity_summary": "Tennis summer (card covers 1/2 court), Tennis winter (card covers 1/4 court)",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/1a/21/1a21b9c72731dd6dfce73872cd210b07.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/94/de/94dec889b4461ed8a153eac11010634b.jpg"
+      ],
+      "website_url": "http://ltcradotin.cz",
+      "phone": "+420 257 810 906",
+      "email": "tenis@ltcradotin.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": false,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Silver",
+          "id": 1,
+          "description": "Tennis summer (card covers 1/2 court), Tennis winter (card covers 1/4 court)"
+        },
+        {
+          "name": "Child",
+          "id": 2,
+          "description": "Tennis summer (card covers 1/2 court), Tennis winter (card covers 1/4 court)"
+        },
+        {
+          "name": "Student",
+          "id": 4,
+          "description": "Tennis summer (card covers 1/2 court)"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Tennis summer (card covers 1/2 court), Tennis winter (card covers 1/4 court)"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/ltcradotin",
+      "instagram_url": null
+    },
+    {
       "id": "67",
       "name": "Fit s Věrou 2",
       "address": "Na Korunce 580, Praha",
@@ -773,6 +828,53 @@
       "instagram_url": null
     },
     {
+      "id": "3324",
+      "name": "PoStu – pohybové studio",
+      "address": "Náměstí Chuchelských bojovníků 4/4, Praha",
+      "city": "Praha",
+      "lat": 50.0111325,
+      "lng": 14.3844417,
+      "category": "yoga",
+      "activities": [
+        "Pilates",
+        "Yoga",
+        "Pilates Reformer"
+      ],
+      "activity_summary": "Group Lessons (Yoga, Pilates), Pilates reformer with additional payment CZK 160",
+      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/d9/d5/d9d53626d01013781430f20d3eded85a.jpg",
+      "gallery_images": [
+        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/8b/3c/8b3c7a29ceb8e3b2a4cf19457e123e9a.jpg"
+      ],
+      "website_url": "http://postu.cz/",
+      "phone": "+420 777 116 139",
+      "email": "recepce@postu.cz",
+      "description": null,
+      "is_new": false,
+      "recommended": false,
+      "additional_payment": true,
+      "additional_payment_desc": "Pilates reformer with additional payment CZK 160",
+      "active_cards": [
+        {
+          "name": "Silver",
+          "id": 1,
+          "description": "Group Lessons (Yoga, Pilates), Pilates reformer with additional payment CZK 160"
+        },
+        {
+          "name": "FKSP",
+          "id": 3,
+          "description": "Group Lessons (Yoga, Pilates)"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/postu",
+      "instagram_url": null
+    },
+    {
       "id": "3681",
       "name": "Peace Yoga Studio",
       "address": "Petržílkova (budova ČSOB) 2589/19, Praha",
@@ -825,117 +927,6 @@
       "self_service_times": null,
       "unlimited_oh": false,
       "facebook_url": "https://www.facebook.com/peaceyogastudiohurka",
-      "instagram_url": null
-    },
-    {
-      "id": "2071",
-      "name": "Sauna Central",
-      "address": "Ve Smečkách 19, Praha",
-      "city": "Praha",
-      "lat": 50.07916,
-      "lng": 14.427323,
-      "category": "wellness",
-      "activities": [
-        "Sauna/Steam"
-      ],
-      "activity_summary": "Sauna/Steam 90 + 15 min with additional payment 269 CZK/non-member 369 CZK.\nSauna/Steam unlimited with additional payment 369 CZK/non-member 469 CZK.",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/33/bc/33bc7a18bdc3779bda5bf7cbecdac5bf.jpg",
-      "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/f3/3b/f33bf953590e9c3b51b7b11dc9125b0b.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/4d/38/4d384072272718b333de787e8116d46e.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/53/62/536225bcd6a60c877bf9490a89614b03.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/9c/47/9c47dff48876963f098214ec1c15dd9c.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/df/6f/df6f39f653d5d39361608acc6bb1f1e4.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/e2/64/e264acf7109a358f6b5c8efa944dfccd.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/57/45/57457f16486b7103b052bb4067975374.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/9f/69/9f69de79e29e68aa02e718be6938017e.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/99/07/9907471f41052183c68b54579a709e5a.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/9d/54/9d5498e0aaed3468c495bb5b72ff0f09.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/ba/e2/bae2921d9d8f2165ce773035a6b81bca.jpg"
-      ],
-      "website_url": "http://saunacentral.cz/",
-      "phone": "+420 773 274 649",
-      "email": "info@saunacentral.cz",
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": true,
-      "additional_payment_desc": "Sauna/Steam 90 + 15 min with additional payment 269 CZK/non-member 369 CZK.\nSauna/Steam unlimited with additional payment 369 CZK/non-member 469 CZK.",
-      "active_cards": [
-        {
-          "name": "Silver",
-          "id": 1,
-          "description": "Sauna/Steam 90 + 15 min with additional payment 269 CZK/non-member 369 CZK.\nSauna/Steam unlimited with additional payment 369 CZK/non-member 469 CZK."
-        },
-        {
-          "name": "Child",
-          "id": 2,
-          "description": "Sauna/Steam 90 + 15 min with additional payment 269 CZK/non-member 369 CZK.\nSauna/Steam unlimited with additional payment 369 CZK/non-member 469 CZK."
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "No",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": null,
-      "instagram_url": null
-    },
-    {
-      "id": "3794",
-      "name": "LTC Radotín",
-      "address": "Šárovo kolo 932/1, Praha",
-      "city": "Praha",
-      "lat": 49.9857736,
-      "lng": 14.3721719,
-      "category": "sports",
-      "activities": [
-        "Tennis (summer)",
-        "Tennis (winter)"
-      ],
-      "activity_summary": "Tennis summer (card covers 1/2 court), Tennis winter (card covers 1/4 court)",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/1a/21/1a21b9c72731dd6dfce73872cd210b07.jpg",
-      "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/94/de/94dec889b4461ed8a153eac11010634b.jpg"
-      ],
-      "website_url": "http://ltcradotin.cz",
-      "phone": "+420 257 810 906",
-      "email": "tenis@ltcradotin.cz",
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": false,
-      "additional_payment_desc": null,
-      "active_cards": [
-        {
-          "name": "Silver",
-          "id": 1,
-          "description": "Tennis summer (card covers 1/2 court), Tennis winter (card covers 1/4 court)"
-        },
-        {
-          "name": "Child",
-          "id": 2,
-          "description": "Tennis summer (card covers 1/2 court), Tennis winter (card covers 1/4 court)"
-        },
-        {
-          "name": "Student",
-          "id": 4,
-          "description": "Tennis summer (card covers 1/2 court)"
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Tennis summer (card covers 1/2 court), Tennis winter (card covers 1/4 court)"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": "https://www.facebook.com/ltcradotin",
       "instagram_url": null
     }
   ]
