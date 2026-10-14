@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-10-12T11:23:34.583Z",
-  "total": 16,
+  "scraped_at": "2026-10-14T09:05:04.705Z",
+  "total": 15,
   "facilities": [
     {
       "id": "1616",
@@ -872,60 +872,6 @@
       "self_service_times": null,
       "unlimited_oh": false,
       "facebook_url": "https://www.facebook.com/postu",
-      "instagram_url": null
-    },
-    {
-      "id": "2018",
-      "name": "ToFitko | Fox Gym",
-      "address": "Novákových 16, Praha",
-      "city": "Praha",
-      "lat": 50.1034756,
-      "lng": 14.4758789,
-      "category": "fitness",
-      "activities": [
-        "Gym"
-      ],
-      "activity_summary": "Gym",
-      "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/7c/a0/7ca03760666e74fa23637616f5f27e0c.jpg",
-      "gallery_images": [
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/71/71/7171026cb97b5d792279a4b8e0308d62.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/19/36/19365def87aa31daf26e5193bd8a46fb.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/1f/05/1f052ff24d8318b13858cfc27414aa51.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/c2/ed/c2ed69ed325c02cfaccbde63c7818caa.jpg",
-        "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/a8/63/a863dd81e297991a24160592bd86548b.jpg"
-      ],
-      "website_url": "http://tofitko.cz/foxgym/",
-      "phone": "+420 773 131 300",
-      "email": "foxgym@tofitko.cz",
-      "description": null,
-      "is_new": false,
-      "recommended": false,
-      "additional_payment": false,
-      "additional_payment_desc": null,
-      "active_cards": [
-        {
-          "name": "Silver",
-          "id": 1,
-          "description": "Gym"
-        },
-        {
-          "name": "Student",
-          "id": 4,
-          "description": "Gym"
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Gym"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": true,
-      "self_service_times": "Po-Ne 5:00-23:00",
-      "unlimited_oh": false,
-      "facebook_url": "https://www.facebook.com/foxgympalmovka/",
       "instagram_url": null
     }
   ]
