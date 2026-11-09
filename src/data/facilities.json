@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-11-08T10:49:23.015Z",
-  "total": 17,
+  "scraped_at": "2026-11-09T12:15:18.463Z",
+  "total": 16,
   "facilities": [
     {
       "id": "1616",
@@ -132,10 +132,10 @@
       "lng": 14.4521728,
       "category": "yoga",
       "activities": [
+        "Yoga",
         "Hatha yoga",
-        "Gravid yoga",
         "Vinyasa yoga",
-        "Yoga"
+        "Gravid yoga"
       ],
       "activity_summary": "Yoga until 12:00 (also valid for the beginning of the lesson at 12:00) - (Hatha yoga, Gentle yoga, Yoga for seniors, Pregnancy Yoga, Vinyasa yoga, Yin yoga, Fit yoga, Dance yoga) without surcharge; Yoga from 1:00 p.m. (lessons 60/90 min) with surcharge of 50 CZK",
       "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/29/56/29563c1687c82678cfee34484ecb588f.jpg",
@@ -177,46 +177,6 @@
       "unlimited_oh": false,
       "facebook_url": "https://www.facebook.com/jogaCentrum/",
       "instagram_url": null
-    },
-    {
-      "id": "5517",
-      "name": "Fusion Yoga Studio",
-      "address": "Náměstí Na Sádkách 701, Dolní Břežany",
-      "city": "Dolní Břežany",
-      "lat": 49.9643544,
-      "lng": 14.4587408,
-      "category": "yoga",
-      "activities": [
-        "Pilates",
-        "Yoga",
-        "Barre"
-      ],
-      "activity_summary": "Yoga - morning and afternoon lessons (60 min with additional charge of 60 CZK, 75 min with additional charge of 80 CZK, 90 min with additional charge of 100 CZK), Yoga - afternoon, evening and weekend lessons (60 min with additional charge of 80 CZK, 75 min with additional charge of 90 CZK, 90 min with additional charge of 100 CZK), Barre with additional charge of 230 CZK, Pilates with additional charge of 150 CZK",
-      "image_url": null,
-      "gallery_images": [],
-      "website_url": "http://fusionyogastudio.cz/",
-      "phone": "+420 722 900 604",
-      "email": "klara.klapova@gmail.com",
-      "description": null,
-      "is_new": true,
-      "recommended": false,
-      "additional_payment": true,
-      "additional_payment_desc": null,
-      "active_cards": [
-        {
-          "name": "Silver",
-          "id": 1,
-          "description": "Yoga - morning and afternoon lessons (60 min with additional charge of 60 CZK, 75 min with additional charge of 80 CZK, 90 min with additional charge of 100 CZK), Yoga - afternoon, evening and weekend lessons (60 min with additional charge of 80 CZK, 75 min with additional charge of 90 CZK, 90 min with additional charge of 100 CZK), Barre with additional charge of 230 CZK, Pilates with additional charge of 150 CZK"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": "https://www.facebook.com/people/Fusion-Yoga-Studio/100076750952078/#",
-      "instagram_url": "https://www.instagram.com/fusion.yogastudio/"
     },
     {
       "id": "964",
@@ -279,10 +239,10 @@
       "city": "Praha",
       "lat": 50.065805,
       "lng": 14.419822,
-      "category": "fitness",
+      "category": "sports",
       "activities": [
-        "Gym",
-        "Table tennis"
+        "Table tennis",
+        "Gym"
       ],
       "activity_summary": "Gym, Table tennis",
       "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/43/fd/43fdfd4d0d2b2938313e04635d1e274b.jpg",
@@ -324,49 +284,6 @@
       ],
       "kids_activities": true,
       "only_virtual_card": false,
-      "parking": "Unknown",
-      "self_service": false,
-      "self_service_times": null,
-      "unlimited_oh": false,
-      "facebook_url": null,
-      "instagram_url": null
-    },
-    {
-      "id": "5518",
-      "name": "Real Fight Club",
-      "address": "nám. Na Balabence 800/7, Praha",
-      "city": "Praha",
-      "lat": 50.1059228,
-      "lng": 14.4834492,
-      "category": "group",
-      "activities": [
-        "Boxing"
-      ],
-      "activity_summary": "Group Classes (Fundamentals and Technique, Advanced, Sparring)",
-      "image_url": null,
-      "gallery_images": [],
-      "website_url": "http://realfightclub.cz",
-      "phone": null,
-      "email": null,
-      "description": null,
-      "is_new": true,
-      "recommended": false,
-      "additional_payment": false,
-      "additional_payment_desc": null,
-      "active_cards": [
-        {
-          "name": "Silver",
-          "id": 1,
-          "description": "Group Classes (Fundamentals and Technique, Advanced, Sparring)"
-        },
-        {
-          "name": "FKSP",
-          "id": 3,
-          "description": "Group Classes (Fundamentals and Technique, Advanced, Sparring)"
-        }
-      ],
-      "kids_activities": false,
-      "only_virtual_card": true,
       "parking": "Unknown",
       "self_service": false,
       "self_service_times": null,
@@ -437,21 +354,21 @@
       "lng": 14.45077,
       "category": "group",
       "activities": [
+        "Circuit training",
+        "Jumping/Trampolines",
         "Bosu/Cardio/Rehab",
         "Belly and buttocks",
         "Fitbox/Slimbox",
-        "Jumping/Trampolines",
-        "Circuit training",
+        "Pilates Reformer",
         "Pilates",
         "Gym",
         "Problem zones",
-        "Tabata",
         "TRX/TRX RIP TRAINER/Jungle sports",
+        "Tabata",
+        "Barre",
         "Healthy back/Back pain",
         "Zumba",
-        "Yoga",
-        "Barre",
-        "Pilates Reformer"
+        "Yoga"
       ],
       "activity_summary": "Gym, Group lessons (Yoga, Fitbox, Pilates, Trampolines, TRX, Problem areas, BOSU, Circuit training, POUND®, Tabata, Zumba, Healthy back, STRONG, Abdominals - buttocks), Barre with additional charge of 75 CZK, Pilates Reformer with additional charge of 105 CZK",
       "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/f4/b5/f4b55f43e7a8c3c9d9dc3d9ff493225b.jpg",
@@ -571,16 +488,16 @@
       "lng": 14.2202642,
       "category": "group",
       "activities": [
-        "Flowin",
-        "H.E.A.T. program",
-        "Jumping/Trampolines",
-        "Circuit training",
+        "Exercise for children",
         "Pilates",
-        "Tabata",
-        "TRX/TRX RIP TRAINER/Jungle sports",
-        "Healthy back/Back pain",
+        "H.E.A.T. program",
+        "Circuit training",
+        "Flowin",
         "Yoga",
-        "Exercise for children"
+        "TRX/TRX RIP TRAINER/Jungle sports",
+        "Tabata",
+        "Jumping/Trampolines",
+        "Healthy back/Back pain"
       ],
       "activity_summary": "Group lessons (Multitrainer, TRX, Circuit training, Yoga, H.E.A.T., Flowin, Jumpig, Full body, Pilates, Healhty back),  Exercise for children",
       "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/4e/ec/4eec1665be5ffb065c1867dd7f30e249.jpg",
@@ -637,8 +554,8 @@
       "lng": 14.5986742,
       "category": "sports",
       "activities": [
-        "Table tennis",
         "Tennis (summer)",
+        "Table tennis",
         "Tennis (winter)"
       ],
       "activity_summary": "Tennis winter (card covers 1/4 court), Table tenis, Tennis summer (card covers 1/2 court)",
@@ -695,14 +612,14 @@
       "lng": 14.3438,
       "category": "yoga",
       "activities": [
-        "Ashtanga vinyasa yoga",
-        "Dynamic Yoga",
-        "Flowin",
-        "Hatha yoga",
-        "Pilates",
         "Power yoga/Energy yoga",
+        "Hatha yoga",
+        "Ashtanga vinyasa yoga",
         "Healthy back/Back pain",
-        "Yoga"
+        "Pilates",
+        "Flowin",
+        "Yoga",
+        "Dynamic Yoga"
       ],
       "activity_summary": "Yoga 60 minutes (Yoga, Iyengar Yoga, Hormonal Yoga, Pilates Therapy, Yoga for a Healthy Back, SM System, Basic Yoga, Gentle Yoga for a Healthy Back, Morning Yoga, Healthy Back, Exercises by Ludmila Mojžíšová and other exercises, Yin and Yang Yoga, Yoga for Eternal Beginners, Power Yoga, Flexibility, Pilates, Dynamic Iyengar Yoga, Exercises for a Healthy Back, Vinyasa Ashtanga Yoga, Gentle Yoga, Flowin Pilates, Dynamic Types of Yoga, Calmer Types of Yoga, Core Yoga) with additional payment CZK 50",
       "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/72/d3/72d35010f77766249243a43ac0959009.jpg",
@@ -806,10 +723,10 @@
       "city": "Praha",
       "lat": 50.0757196,
       "lng": 14.5986756,
-      "category": "group",
+      "category": "yoga",
       "activities": [
-        "Circuit training",
-        "Pilates"
+        "Pilates",
+        "Circuit training"
       ],
       "activity_summary": "Pilates, Circuit training",
       "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/bc/5d/bc5de4b973211a75bb90912dae39a28d.jpg",
@@ -857,6 +774,46 @@
       "instagram_url": null
     },
     {
+      "id": "5517",
+      "name": "Fusion Yoga Studio",
+      "address": "Náměstí Na Sádkách 701, Dolní Břežany",
+      "city": "Dolní Břežany",
+      "lat": 49.9643544,
+      "lng": 14.4587408,
+      "category": "yoga",
+      "activities": [
+        "Yoga",
+        "Pilates",
+        "Barre"
+      ],
+      "activity_summary": "Yoga - morning and afternoon lessons (60 min with additional charge of 60 CZK, 75 min with additional charge of 80 CZK, 90 min with additional charge of 100 CZK), Yoga - afternoon, evening and weekend lessons (60 min with additional charge of 80 CZK, 75 min with additional charge of 90 CZK, 90 min with additional charge of 100 CZK), Barre with additional charge of 230 CZK, Pilates with additional charge of 150 CZK",
+      "image_url": null,
+      "gallery_images": [],
+      "website_url": "http://fusionyogastudio.cz/",
+      "phone": "+420 722 900 604",
+      "email": "klara.klapova@gmail.com",
+      "description": null,
+      "is_new": true,
+      "recommended": false,
+      "additional_payment": true,
+      "additional_payment_desc": null,
+      "active_cards": [
+        {
+          "name": "Silver",
+          "id": 1,
+          "description": "Yoga - morning and afternoon lessons (60 min with additional charge of 60 CZK, 75 min with additional charge of 80 CZK, 90 min with additional charge of 100 CZK), Yoga - afternoon, evening and weekend lessons (60 min with additional charge of 80 CZK, 75 min with additional charge of 90 CZK, 90 min with additional charge of 100 CZK), Barre with additional charge of 230 CZK, Pilates with additional charge of 150 CZK"
+        }
+      ],
+      "kids_activities": false,
+      "only_virtual_card": false,
+      "parking": "Unknown",
+      "self_service": false,
+      "self_service_times": null,
+      "unlimited_oh": false,
+      "facebook_url": "https://www.facebook.com/people/Fusion-Yoga-Studio/100076750952078/#",
+      "instagram_url": "https://www.instagram.com/fusion.yogastudio/"
+    },
+    {
       "id": "3324",
       "name": "PoStu – pohybové studio",
       "address": "Náměstí Chuchelských bojovníků 4/4, Praha",
@@ -865,8 +822,8 @@
       "lng": 14.3844417,
       "category": "yoga",
       "activities": [
-        "Pilates",
         "Yoga",
+        "Pilates",
         "Pilates Reformer"
       ],
       "activity_summary": "Group Lessons (Yoga, Pilates), Pilates reformer with additional payment CZK 160",
@@ -913,10 +870,10 @@
       "category": "yoga",
       "activities": [
         "Hatha yoga",
-        "Pilates",
-        "Power yoga/Energy yoga",
         "Healthy back/Back pain",
-        "Yoga"
+        "Yoga",
+        "Power yoga/Energy yoga",
+        "Pilates"
       ],
       "activity_summary": "Morning/mid-morning classes: Morning Yoga, Pilates, Pilates Clinic, Gentle Morning Yoga, Yoga (Not Just) for Seniors, Saturday Restart; Evening/afternoon classes: Yoga for a Toned Body, Gentle Physio Yoga, Dynamic Yoga, Gentle Yoga, Sculpt Yoga, Hatha Flow Yoga, Friday Reset, Yoga for a Healthy Back (surcharge of 90 CZK)",
       "image_url": "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/c3/23/c3232c4336c2c4596e24b8b1ea1762ea.jpg",
