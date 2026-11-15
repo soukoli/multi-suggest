@@ -226,6 +226,9 @@ export default function App() {
       {shown.length > 300 && <p className="px-5 py-3 text-[13px] text-muted">Zobrazeno 300 nejbližších z {shown.length}. Zmenši okruh nebo vyber kategorii.</p>}
       {data && (
         <p className="px-5 pt-4 text-[12px] text-muted">
+          {Date.now() - new Date(data.updatedAt.replace(" ", "T")).getTime() > 3 * 864e5 && (
+            <span className="mb-1 block font-semibold text-ink">Data nejsou aktuální, poslední obnova proběhla před víc než 3 dny.</span>
+          )}
           Data partnerů MultiSport z {new Date(data.updatedAt.replace(" ", "T")).toLocaleDateString("cs-CZ")}
           {data.source === "legacy" ? " · zatím jen Praha" : ""}
           {data.hoursSource ? " · otevírací doba © OpenStreetMap" : ""} ·{" "}

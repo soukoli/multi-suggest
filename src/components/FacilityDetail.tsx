@@ -33,6 +33,7 @@ const CARD_LABEL: Record<string, string> = {
   Student: "Student",
   FKSP: "FKSP",
   Senior: "Senior",
+  LITE: "Lite",
 };
 
 function fmtDate(ts: number) {

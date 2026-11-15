@@ -18,7 +18,7 @@
  *   data/details-cache.json      – raw normalized details keyed by id (for incremental runs)
  */
 
-import { createHash, randomUUID } from "node:crypto";
+import vm from "node:vm";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { categorize, categoriesFor } from "./lib/categorize.mjs";
@@ -35,32 +35,66 @@ const UA =
 const args = process.argv.slice(2);
 const LIMIT = args.includes("--limit") ? Number(args[args.indexOf("--limit") + 1]) : Infinity;
 const FRESH = args.includes("--fresh");
-const CONCURRENCY = 3;
-const DELAY_MS = 350; // per worker, between requests
-const CACHE_MAX_AGE_DAYS = 6; // details older than this are refetched
+const CONCURRENCY = 2;
+const DELAY_MS = 600; // per worker, between requests
+const CACHE_MAX_AGE_DAYS = 1; // details older than this are refetched
 const TOKEN_TTL_MS = 40_000; // refresh well before the ~60 s expiry
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // ---------------------------------------------------------------- auth
-async function fetchPageConfig() {
-  const res = await fetch(`${BASE}/cs/`, { headers: { "User-Agent": UA } });
-  const html = await res.text();
+// mapa.multisport.cz signs token requests with an obfuscated auth.js that changes over time
+// (a hand-ported version of the algorithm stopped working). Same approach as the original
+// multi-suggest CI, approved by the owner: evaluate their script with stubbed browser globals
+// and capture the payload it would POST to /api/v1/token/. It runs in a separate vm context
+// that has no require/process/fetch.
+let authJsSource = null;
+
+async function buildTokenPayload() {
+  const html = await (await fetch(`${BASE}/cs/`, { headers: { "User-Agent": UA } })).text();
   const salt = html.match(/window\.salt\s*=\s*"([^"]+)"/)?.[1];
   const n1 = html.match(/var\s+n1\s*=\s*new\s+Date\((\d+)\)/)?.[1];
-  if (!salt || !n1) throw new Error("Could not extract auth config from mapa.multisport.cz");
-  return { salt, offset: Number(n1) - Date.now() };
-}
+  const src = html.match(/src="([^"]*\/auth\.js[^"]*)"/)?.[1];
+  if (!salt || !n1 || !src) throw new Error("Could not extract auth config from mapa.multisport.cz");
+  authJsSource ??= await (await fetch(new URL(src, BASE).href, { headers: { "User-Agent": UA } })).text();
 
-function generateApiAuthToken(salt, uuid, offset) {
-  let t = (salt + uuid).replace(/(.)./g, "$1");
-  t = t.split("").reverse().join("");
-  t = t.replace(/\d+/g, (m) => String(parseInt(m) << 2));
-  const interval = 60_001;
-  const now = Date.now() + offset;
-  const timeValue = new Date(now + interval - (now % interval)).getTime();
-  const hash = createHash("md5").update(String(timeValue)).digest("hex");
-  return `${t}:${hash}`;
+  let captured = null;
+  const store = {};
+  const chain = { fail: () => chain, done: () => chain, always: () => chain };
+  const $ = () => ({ ready: (cb) => cb() });
+  $.post = (_url, payload) => ((captured = payload), chain);
+  $.ajax = (o) => ((captured = typeof o?.data === "string" ? JSON.parse(o.data) : o?.data), chain);
+  const localStorage = {
+    getItem: (k) => store[k] ?? null,
+    setItem: (k, v) => (store[k] = String(v)),
+    removeItem: (k) => delete store[k],
+  };
+  const sandbox = {
+    window: {
+      salt,
+      offset: Number(n1) - Date.now(),
+      localStorage,
+      jwt_token_url: "/api/v1/token/",
+      jwt_refresh_token_url: "/api/v1/token/refresh/",
+      refreshTokenTimeout: 51000,
+      isSecure: true,
+      location: { href: `${BASE}/cs/` },
+    },
+    document: { dispatchEvent() {}, addEventListener() {} },
+    localStorage,
+    $,
+    jQuery: $,
+    setInterval() {},
+    setTimeout() {},
+    clearInterval() {},
+    clearTimeout() {},
+    CustomEvent: function (name, opts) { return { name, opts }; },
+    userAuthenticatedEvent: {},
+    console: { log() {}, warn() {}, error() {} },
+  };
+  vm.runInNewContext(authJsSource, vm.createContext(sandbox), { timeout: 3000 });
+  if (!captured) throw new Error("auth.js did not produce a token payload");
+  return typeof captured === "string" ? JSON.parse(captured) : captured;
 }
 
 let token = null;
@@ -68,8 +102,6 @@ let tokenAt = 0;
 let tokenPromise = null;
 
 async function refreshToken() {
-  const { salt, offset } = await fetchPageConfig();
-  const uuid = randomUUID();
   const res = await fetch(`${BASE}/api/v1/token/`, {
     method: "POST",
     headers: {
@@ -79,7 +111,7 @@ async function refreshToken() {
       Referer: `${BASE}/cs/`,
       "User-Agent": UA,
     },
-    body: JSON.stringify({ api_auth_token: generateApiAuthToken(salt, uuid, offset), uuid }),
+    body: JSON.stringify(await buildTokenPayload()),
   });
   if (!res.ok) throw new Error(`Token request failed: ${res.status} ${await res.text()}`);
   token = (await res.json()).access;

@@ -37,14 +37,19 @@ Push do `main` → Vercel (git integrace) postaví a nasadí. Nastavení je ve `
 
 `public/data/facilities.json` je jediný zdroj dat pro aplikaci.
 
-| Krok | Skript | Stav |
+| Krok | Skript | Kdy |
 |---|---|---|
-| Partneři MultiSport (seznam + detail) | `scripts/scrape.mjs` | ⚠️ podpis tokenu neodpovídá aktuálnímu `auth.js` (401) – zatím vypnuto |
-| Otevírací doba z OpenStreetMap | `scripts/enrich-osm.mjs` | ✅ běží v CI (Po + Čt) |
-| Převod dat ze staré D1 (594 míst, Praha) | `scripts/import-legacy.mjs` | jednorázově |
+| Partneři MultiSport, celá ČR (seznam + detail, ~2 900 míst) | `scripts/scrape.mjs` | denně 02:15 UTC |
+| Otevírací doba z OpenStreetMap | `scripts/enrich-osm.mjs` | denně, po scrapu |
+| Převod dat ze staré D1 (594 míst, Praha) | `scripts/import-legacy.mjs` | jednorázově, historické |
 
 GitHub Action `.github/workflows/data.yml` data obnoví a commitne, Vercel pak automaticky nasadí.
-Scraper lze spustit ručně (Actions → Update facility data → scrape = true), až bude opravené přihlášení.
+Když běh selže, Action založí (nebo doplní) issue „Data update failed“. Aplikace sama ukáže varování,
+když jsou data starší než 3 dny. Scraper nezveřejní data, pokud má detail méně než 90 % míst
+nebo počet míst klesne o víc než 20 %.
+
+Přihlášení k API mapa.multisport.cz: token podepisuje jejich obfuskovaný `auth.js`, který scraper
+(se souhlasem vlastníka) vyhodnotí v izolovaném `vm` kontextu a token každých 40 s obnovuje.
 
 Proč původní data nefungovala: starý scraper bral JWT z mapa.multisport.cz, který platí ~60 s,
 a neobnovoval ho, takže z ~625 pražských míst aktualizoval jen prvních 16.
