@@ -1,52 +1,28 @@
 #!/usr/bin/env node
 /**
- * Enrich public/data/facilities.json with opening hours (and missing web/phone)
- * from OpenStreetMap via the free Overpass API.
+ * Add opening hours (and missing web/phone) to public/data/facilities.json
+ * from the cached OpenStreetMap extract data/osm-pois.json (see scripts/osm-refresh.sh).
+ * Works offline; if the cache is missing, it skips without failing.
  *
- * Matching: an OSM sport/leisure POI within 150 m whose name shares a meaningful
- * token with the facility name, or any such POI within 20 m.
+ * Matching: an OSM POI within 150 m whose name shares a meaningful token with the
+ * facility name, or any POI within 20 m. Shops without a sport/leisure tag are ignored.
  * Data © OpenStreetMap contributors (ODbL) – attributed in the app.
  */
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 
 const FILE = "public/data/facilities.json";
-const MIRRORS = [
-  "https://overpass-api.de/api/interpreter",
-  "https://overpass.private.coffee/api/interpreter",
-  "https://overpass.kumi.systems/api/interpreter",
-];
-const UA = "sportmapa-enrich/1.0 (personal, non-commercial)";
+const CACHE = "data/osm-pois.json";
 
-const data = JSON.parse(readFileSync(FILE, "utf8"));
-const fac = data.facilities;
-
-// Whole Czech Republic as 1° tiles (lat 48–50, lng 12–18).
-const tiles = new Set();
-for (let la = 48; la <= 50; la++) for (let ln = 12; ln <= 18; ln++) tiles.add(`${la}:${ln}`);
-
-async function overpass(bbox, attempts = 4) {
-  const q = `[out:json][timeout:110][bbox:${bbox}];(nwr["leisure"]["name"]["opening_hours"];nwr["sport"]["name"]["opening_hours"];nwr["amenity"~"^(dojo|spa|sauna|public_bath)$"]["name"]["opening_hours"];nwr["shop"="massage"]["name"]["opening_hours"];);out tags center;`;
-  for (let attempt = 0; attempt < attempts; attempt++) {
-    const url = MIRRORS[attempt % MIRRORS.length];
-    try {
-      const res = await fetch(url, {
-        method: "POST",
-        headers: { "User-Agent": UA, "Content-Type": "application/x-www-form-urlencoded" },
-        body: "data=" + encodeURIComponent(q),
-        signal: AbortSignal.timeout(120_000),
-      });
-      if (res.ok) {
-        const j = await res.json();
-        if (!j.remark) return j.elements;
-      }
-    } catch {}
-    await new Promise((r) => setTimeout(r, 5000 * (attempt + 1)));
-  }
-  throw new Error(`Overpass failed for ${bbox}`);
+if (!existsSync(CACHE)) {
+  console.warn(`[osm] ${CACHE} missing (run scripts/osm-refresh.sh); skipping opening hours`);
+  process.exit(0);
 }
 
+const data = JSON.parse(readFileSync(FILE, "utf8"));
+const { pois, fetchedAt } = JSON.parse(readFileSync(CACHE, "utf8"));
+
 const fold = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
-const STOP = new Set(["fitness", "studio", "centrum", "center", "centre", "club", "klub", "sport", "sportovni", "praha", "gym", "the", "and", "a", "s", "yoga", "joga", "wellness", "areal", "tj", "sk", "z.s.", "zs", "s.r.o.", "sro", "cz"]);
+const STOP = new Set(["fitness", "studio", "centrum", "center", "centre", "club", "klub", "sport", "sportovni", "praha", "brno", "ostrava", "gym", "the", "and", "yoga", "joga", "wellness", "areal", "s.r.o.", "sro"]);
 const tokens = (s) => new Set(fold(s).split(/[^a-z0-9]+/).filter((t) => t.length > 2 && !STOP.has(t)));
 
 function dist(a, b) {
@@ -55,90 +31,43 @@ function dist(a, b) {
   return Math.hypot(dLat, dLng);
 }
 
-// POIs are cached in the repo (data/osm-pois.json) and refreshed weekly with --refresh.
-// The public Overpass API is shared and often at capacity, so a failed refresh keeps the
-// previous cache instead of failing the data pipeline.
-const CACHE = "data/osm-pois.json";
-const KEEP = ["name", "opening_hours", "website", "contact:website", "phone", "contact:phone", "leisure", "sport", "shop", "amenity"];
-const cached = existsSync(CACHE) ? JSON.parse(readFileSync(CACHE, "utf8")) : null;
-let pois = cached?.pois ?? [];
-
-if (!cached && !process.argv.includes("--refresh")) {
-  console.warn("[osm] no cached POIs yet (run with --refresh); skipping opening hours");
-  process.exit(0);
+// Spatial grid (~0.01° cells) so matching 3k facilities × 10k POIs stays fast.
+const grid = new Map();
+const cell = (lat, lng) => `${Math.floor(lat * 100)}:${Math.floor(lng * 100)}`;
+for (const p of pois) {
+  p.tok = tokens(p.t.name);
+  const k = cell(p.lat, p.lng);
+  if (!grid.has(k)) grid.set(k, []);
+  grid.get(k).push(p);
 }
-if (process.argv.includes("--refresh")) {
-  const inBox = (p, [s, w, n, e]) => p.lat >= s && p.lat < n && p.lng >= w && p.lng < e;
-  const fresh = [];
-  let failedBoxes = 0;
-  // Time budget: after it, remaining areas keep their previously cached POIs (filled next week).
-  const budgetArg = process.argv.indexOf("--budget-min");
-  const deadline = Date.now() + (budgetArg > 0 ? Number(process.argv[budgetArg + 1]) : 30) * 60_000;
-  const keepOld = (box) => fresh.push(...(cached?.pois ?? []).filter((p) => inBox(p, box)));
-
-  // Fetch a box; dense boxes (Prague) can time out, so split into quarters down to 0.25°.
-  // If the smallest box still fails, keep the previously cached POIs for that area.
-  async function fetchBox(box) {
-    const [s, w, n, e] = box;
-    if (Date.now() > deadline) {
-      failedBoxes++;
-      return keepOld(box);
-    }
-    try {
-      // large boxes get fewer attempts before being split
-      for (const el of await overpass(`${s},${w},${n},${e}`, n - s > 0.25 ? 2 : 4)) {
-        const lat = el.lat ?? el.center?.lat;
-        const lng = el.lon ?? el.center?.lon;
-        if (lat == null) continue;
-        const t = Object.fromEntries(KEEP.filter((key) => el.tags[key]).map((key) => [key, el.tags[key]]));
-        fresh.push({ lat: Math.round(lat * 1e6) / 1e6, lng: Math.round(lng * 1e6) / 1e6, t });
-      }
-    } catch {
-      if (n - s > 0.25) {
-        const ms = (s + n) / 2, mw = (w + e) / 2;
-        for (const b of [[s, w, ms, mw], [s, mw, ms, e], [ms, w, n, mw], [ms, mw, n, e]]) await fetchBox(b);
-      } else {
-        failedBoxes++;
-        keepOld(box);
-      }
-    }
-    await new Promise((r) => setTimeout(r, 3000)); // be polite to the shared API
-  }
-
-  let i = 0;
-  for (const k of tiles) {
-    const [la, ln] = k.split(":").map(Number);
-    await fetchBox([la, ln, la + 1, ln + 1]);
-    process.stdout.write(`\r[osm] tile ${++i}/${tiles.size}  pois ${fresh.length}   `);
-  }
-  process.stdout.write("\n");
-  pois = fresh;
-  mkdirSync("data", { recursive: true });
-  writeFileSync(CACHE, JSON.stringify({ fetchedAt: new Date().toISOString(), pois }));
-  console.log(`[osm] cache refreshed: ${pois.length} POIs${failedBoxes ? `, ${failedBoxes} areas kept from previous cache` : ""}`);
+function near(f) {
+  const out = [];
+  const la = Math.floor(f.lat * 100), ln = Math.floor(f.lng * 100);
+  for (let i = -1; i <= 1; i++) for (let j = -1; j <= 1; j++) out.push(...(grid.get(`${la + i}:${ln + j}`) ?? []));
+  return out;
 }
-for (const p of pois) p.tok = tokens(p.t.name);
 
 let matched = 0;
-for (const f of fac) {
+for (const f of data.facilities) {
+  delete f.hours;
   const ft = tokens(f.name);
   let best = null;
-  for (const p of pois) {
+  for (const p of near(f)) {
+    if (p.t.shop && !p.t.leisure && !p.t.sport) continue;
     const d = dist(f, p);
     if (d > 150) continue;
     const shared = [...ft].some((t) => p.tok.has(t));
     const score = (shared ? 0 : 1000) + d;
     if ((shared || d <= 20) && (!best || score < best.score)) best = { p, score };
   }
-  delete f.hours;
   if (!best) continue;
   const t = best.p.t;
-  if (t.shop && !t.leisure && !t.sport) continue;
   f.hours = t.opening_hours;
   f.web ??= t.website || t["contact:website"] || null;
   f.phone ??= t.phone || t["contact:phone"] || null;
   matched++;
 }
 data.hoursSource = "OpenStreetMap";
+data.hoursUpdatedAt = fetchedAt;
 writeFileSync(FILE, JSON.stringify(data));
-console.log(`[osm] opening hours for ${matched}/${fac.length} facilities`);
+console.log(`[osm] opening hours for ${matched}/${data.facilities.length} facilities (OSM extract ${fetchedAt})`);
