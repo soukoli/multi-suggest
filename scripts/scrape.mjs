@@ -132,7 +132,7 @@ async function api(path, retries = 4) {
     let res;
     try {
       res = await fetch(`${BASE}${path}`, {
-        headers: { Authorization: `Bearer ${t}`, Accept: "application/json", "User-Agent": UA },
+        headers: { Authorization: `Bearer ${t}`, Accept: "application/json", "Accept-Language": "cs", "User-Agent": UA },
       });
     } catch {
       await sleep(1500 * (attempt + 1));
@@ -161,6 +161,10 @@ const url = (s) => {
   return /^https?:\/\//i.test(v) ? v : `https://${v}`;
 };
 
+// Image URLs share a long CDN prefix; store only the path (the app re-adds it, src/lib/images.ts).
+const IMG_PREFIX = "https://cz0appsearchengine0prod.blob.core.windows.net/prod/media/cache/";
+const shortImg = (u) => (u ? (u.startsWith(IMG_PREFIX) ? u.slice(IMG_PREFIX.length) : u) : null);
+
 function normalize(feature, raw) {
   const d = raw?.properties || raw || {};
   const [lng, lat] = feature.geometry.coordinates;
@@ -177,11 +181,11 @@ function normalize(feature, raw) {
     category: categorize(feature.properties.icon_name, acts, name),
     categories: categoriesFor(acts),
     activities: [...new Set(acts.map((a) => clean(a.name)).filter(Boolean))],
-    image: d.main_image?.thumbnail_800_600 || null,
+    image: shortImg(d.main_image?.thumbnail_800_600),
     gallery: (d.galery_images || d.gallery_images || [])
-      .map((i) => i?.thumbnail_800_600)
+      .map((i) => shortImg(i?.thumbnail_800_600))
       .filter(Boolean)
-      .slice(0, 8),
+      .slice(0, 6),
     web: url(d.website_url),
     facebook: url(d.facebook_url),
     instagram: url(d.instagram_url),

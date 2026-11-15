@@ -3,6 +3,7 @@ import { CAT } from "../lib/categories";
 import { formatDistance } from "../lib/geo";
 import { GlyphPath, Icon } from "./Icon";
 import { NowLine } from "./Insights";
+import { img } from "../lib/images";
 import { useStore } from "../store";
 
 export function Distance({ km, big }: { km: number; big?: boolean }) {
@@ -47,7 +48,7 @@ export function FacilityRow({
     <li className="group relative">
       <button onClick={onOpen} onMouseEnter={() => hover(f.id)} onMouseLeave={() => hover(null)} onFocus={() => hover(f.id)} onBlur={() => hover(null)} className="flex w-full items-center gap-3 px-5 py-3 text-left active:bg-surface-2 md:hover:bg-surface-2">
         {f.image ? (
-          <img src={f.image} alt="" loading="lazy" className="h-14 w-14 shrink-0 rounded-[14px] object-cover" />
+          <img src={img(f.image)} alt="" loading="lazy" className="h-14 w-14 shrink-0 rounded-[14px] object-cover" />
         ) : (
           <CategoryBadge id={f.category} size={56} />
         )}

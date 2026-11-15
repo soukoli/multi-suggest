@@ -6,6 +6,7 @@ import { useStore } from "../store";
 import { CategoryBadge, Distance } from "./FacilityRow";
 import { Icon, type IconName } from "./Icon";
 import { CrowdChart, HoursTable, useInsights } from "./Insights";
+import { img } from "../lib/images";
 
 function Action({ href, icon, label, primary }: { href: string; icon: IconName; label: string; primary?: boolean }) {
   return (
@@ -47,7 +48,7 @@ export function FacilityDetail({ f, onBack }: { f: Located; onBack: () => void }
   const { status } = useInsights(f, reports);
   const [asked, setAsked] = useState<null | "ask" | "thanks">(null);
   const [justLogged, setJustLogged] = useState(false);
-  const photos = [f.image, ...f.gallery].filter((x, i, a): x is string => !!x && a.indexOf(x) === i);
+  const photos = [f.image, ...f.gallery].filter((x, i, a): x is string => !!x && a.indexOf(x) === i).map(img);
   const today = new Date().toDateString();
   const visitedToday = !!fav?.visits.some((v) => new Date(v).toDateString() === today);
 
