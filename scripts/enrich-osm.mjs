@@ -10,7 +10,11 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 
 const FILE = "public/data/facilities.json";
-const MIRRORS = ["https://overpass-api.de/api/interpreter", "https://overpass.kumi.systems/api/interpreter"];
+const MIRRORS = [
+  "https://overpass-api.de/api/interpreter",
+  "https://overpass.private.coffee/api/interpreter",
+  "https://overpass.kumi.systems/api/interpreter",
+];
 const UA = "sportmapa-enrich/1.0 (personal, non-commercial)";
 
 const data = JSON.parse(readFileSync(FILE, "utf8"));
@@ -20,15 +24,16 @@ const fac = data.facilities;
 const tiles = new Set();
 for (let la = 48; la <= 50; la++) for (let ln = 12; ln <= 18; ln++) tiles.add(`${la}:${ln}`);
 
-async function overpass(bbox) {
-  const q = `[out:json][timeout:180][bbox:${bbox}];(nwr["leisure"]["name"]["opening_hours"];nwr["sport"]["name"]["opening_hours"];nwr["amenity"~"^(dojo|spa|sauna|public_bath)$"]["name"]["opening_hours"];nwr["shop"="massage"]["name"]["opening_hours"];);out tags center;`;
-  for (let attempt = 0; attempt < 4; attempt++) {
+async function overpass(bbox, attempts = 4) {
+  const q = `[out:json][timeout:110][bbox:${bbox}];(nwr["leisure"]["name"]["opening_hours"];nwr["sport"]["name"]["opening_hours"];nwr["amenity"~"^(dojo|spa|sauna|public_bath)$"]["name"]["opening_hours"];nwr["shop"="massage"]["name"]["opening_hours"];);out tags center;`;
+  for (let attempt = 0; attempt < attempts; attempt++) {
     const url = MIRRORS[attempt % MIRRORS.length];
     try {
       const res = await fetch(url, {
         method: "POST",
         headers: { "User-Agent": UA, "Content-Type": "application/x-www-form-urlencoded" },
         body: "data=" + encodeURIComponent(q),
+        signal: AbortSignal.timeout(120_000),
       });
       if (res.ok) {
         const j = await res.json();
@@ -63,30 +68,54 @@ if (!cached && !process.argv.includes("--refresh")) {
   process.exit(0);
 }
 if (process.argv.includes("--refresh")) {
-  try {
-    const fresh = [];
-    let i = 0;
-    for (const k of tiles) {
-      const [la, ln] = k.split(":").map(Number);
-      for (const e of await overpass(`${la},${ln},${la + 1},${ln + 1}`)) {
-        const lat = e.lat ?? e.center?.lat;
-        const lng = e.lon ?? e.center?.lon;
+  const inBox = (p, [s, w, n, e]) => p.lat >= s && p.lat < n && p.lng >= w && p.lng < e;
+  const fresh = [];
+  let failedBoxes = 0;
+  // Time budget: after it, remaining areas keep their previously cached POIs (filled next week).
+  const budgetArg = process.argv.indexOf("--budget-min");
+  const deadline = Date.now() + (budgetArg > 0 ? Number(process.argv[budgetArg + 1]) : 30) * 60_000;
+  const keepOld = (box) => fresh.push(...(cached?.pois ?? []).filter((p) => inBox(p, box)));
+
+  // Fetch a box; dense boxes (Prague) can time out, so split into quarters down to 0.25°.
+  // If the smallest box still fails, keep the previously cached POIs for that area.
+  async function fetchBox(box) {
+    const [s, w, n, e] = box;
+    if (Date.now() > deadline) {
+      failedBoxes++;
+      return keepOld(box);
+    }
+    try {
+      // large boxes get fewer attempts before being split
+      for (const el of await overpass(`${s},${w},${n},${e}`, n - s > 0.25 ? 2 : 4)) {
+        const lat = el.lat ?? el.center?.lat;
+        const lng = el.lon ?? el.center?.lon;
         if (lat == null) continue;
-        const t = Object.fromEntries(KEEP.filter((key) => e.tags[key]).map((key) => [key, e.tags[key]]));
+        const t = Object.fromEntries(KEEP.filter((key) => el.tags[key]).map((key) => [key, el.tags[key]]));
         fresh.push({ lat: Math.round(lat * 1e6) / 1e6, lng: Math.round(lng * 1e6) / 1e6, t });
       }
-      process.stdout.write(`\r[osm] tile ${++i}/${tiles.size}  pois ${fresh.length}   `);
-      await new Promise((r) => setTimeout(r, 3000)); // be polite to the shared API
+    } catch {
+      if (n - s > 0.25) {
+        const ms = (s + n) / 2, mw = (w + e) / 2;
+        for (const b of [[s, w, ms, mw], [s, mw, ms, e], [ms, w, n, mw], [ms, mw, n, e]]) await fetchBox(b);
+      } else {
+        failedBoxes++;
+        keepOld(box);
+      }
     }
-    process.stdout.write("\n");
-    pois = fresh;
-    mkdirSync("data", { recursive: true });
-    writeFileSync(CACHE, JSON.stringify({ fetchedAt: new Date().toISOString(), pois }));
-    console.log(`[osm] cache refreshed: ${pois.length} POIs`);
-  } catch (e) {
-    console.warn(`\n[osm] refresh failed (${e.message}); using cached POIs from ${cached?.fetchedAt ?? "nowhere"}`);
-    if (!cached) process.exit(0); // no hours this time, but don't break the pipeline
+    await new Promise((r) => setTimeout(r, 3000)); // be polite to the shared API
   }
+
+  let i = 0;
+  for (const k of tiles) {
+    const [la, ln] = k.split(":").map(Number);
+    await fetchBox([la, ln, la + 1, ln + 1]);
+    process.stdout.write(`\r[osm] tile ${++i}/${tiles.size}  pois ${fresh.length}   `);
+  }
+  process.stdout.write("\n");
+  pois = fresh;
+  mkdirSync("data", { recursive: true });
+  writeFileSync(CACHE, JSON.stringify({ fetchedAt: new Date().toISOString(), pois }));
+  console.log(`[osm] cache refreshed: ${pois.length} POIs${failedBoxes ? `, ${failedBoxes} areas kept from previous cache` : ""}`);
 }
 for (const p of pois) p.tok = tokens(p.t.name);
 

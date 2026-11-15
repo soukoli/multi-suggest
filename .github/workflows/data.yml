@@ -23,7 +23,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -37,8 +37,14 @@ jobs:
       # Opening hours: matched daily from the cached OSM extract (data/osm-pois.json);
       # the cache itself is refreshed from the shared Overpass API only on Sundays.
       - name: Opening hours from OpenStreetMap
+        timeout-minutes: 40
+        continue-on-error: true # hours are optional; never lose a fresh scrape
         run: |
-          if [ "$(date -u +%u)" = "7" ]; then node scripts/enrich-osm.mjs --refresh; else node scripts/enrich-osm.mjs; fi
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$(date -u +%u)" = "7" ]; then
+            node scripts/enrich-osm.mjs --refresh --budget-min 30
+          else
+            node scripts/enrich-osm.mjs
+          fi
 
       - name: Commit data
         run: |
@@ -51,7 +57,7 @@ jobs:
           git push
 
       - name: Report failure
-        if: failure()
+        if: failure() || cancelled()
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
