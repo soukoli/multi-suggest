@@ -2,7 +2,6 @@ node_modules
 dist
 .playwright-mcp
 data/details-cache.json
-data/osm-pois.json
 *.local
 .DS_Store
 .vercel

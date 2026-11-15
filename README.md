@@ -40,7 +40,7 @@ Push do `main` → Vercel (git integrace) postaví a nasadí. Nastavení je ve `
 | Krok | Skript | Kdy |
 |---|---|---|
 | Partneři MultiSport, celá ČR (seznam + detail, ~2 900 míst) | `scripts/scrape.mjs` | denně 02:15 UTC |
-| Otevírací doba z OpenStreetMap | `scripts/enrich-osm.mjs` | denně, po scrapu |
+| Otevírací doba z OpenStreetMap | `scripts/enrich-osm.mjs` | párování denně z cache `data/osm-pois.json`, cache se obnovuje v neděli |
 | Převod dat ze staré D1 (594 míst, Praha) | `scripts/import-legacy.mjs` | jednorázově, historické |
 
 GitHub Action `.github/workflows/data.yml` data obnoví a commitne, Vercel pak automaticky nasadí.

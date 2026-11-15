@@ -23,7 +23,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -34,14 +34,17 @@ jobs:
         if: ${{ github.event_name == 'schedule' || inputs.scrape }}
         run: node scripts/scrape.mjs
 
+      # Opening hours: matched daily from the cached OSM extract (data/osm-pois.json);
+      # the cache itself is refreshed from the shared Overpass API only on Sundays.
       - name: Opening hours from OpenStreetMap
-        run: node scripts/enrich-osm.mjs
+        run: |
+          if [ "$(date -u +%u)" = "7" ]; then node scripts/enrich-osm.mjs --refresh; else node scripts/enrich-osm.mjs; fi
 
       - name: Commit data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/data/facilities.json
+          git add public/data/facilities.json data/osm-pois.json
           git diff --staged --quiet && { echo "No changes"; exit 0; }
           git commit -m "data: refresh facilities ($(date -u +%F))"
           git pull --rebase

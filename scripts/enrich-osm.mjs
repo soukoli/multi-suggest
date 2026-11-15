@@ -16,15 +16,12 @@ const UA = "sportmapa-enrich/1.0 (personal, non-commercial)";
 const data = JSON.parse(readFileSync(FILE, "utf8"));
 const fac = data.facilities;
 
-// Group facilities into ~0.25° tiles and only query tiles that contain facilities.
-const tiles = new Map();
-for (const f of fac) {
-  const k = `${Math.floor(f.lat * 4)}:${Math.floor(f.lng * 4)}`;
-  tiles.set(k, true);
-}
+// Whole Czech Republic as 1° tiles (lat 48–50, lng 12–18).
+const tiles = new Set();
+for (let la = 48; la <= 50; la++) for (let ln = 12; ln <= 18; ln++) tiles.add(`${la}:${ln}`);
 
 async function overpass(bbox) {
-  const q = `[out:json][timeout:90][bbox:${bbox}];(nwr["leisure"]["name"]["opening_hours"];nwr["sport"]["name"]["opening_hours"];nwr["amenity"~"^(dojo|spa|sauna|public_bath)$"]["name"]["opening_hours"];nwr["shop"="massage"]["name"]["opening_hours"];);out tags center;`;
+  const q = `[out:json][timeout:180][bbox:${bbox}];(nwr["leisure"]["name"]["opening_hours"];nwr["sport"]["name"]["opening_hours"];nwr["amenity"~"^(dojo|spa|sauna|public_bath)$"]["name"]["opening_hours"];nwr["shop"="massage"]["name"]["opening_hours"];);out tags center;`;
   for (let attempt = 0; attempt < 4; attempt++) {
     const url = MIRRORS[attempt % MIRRORS.length];
     try {
@@ -53,27 +50,43 @@ function dist(a, b) {
   return Math.hypot(dLat, dLng);
 }
 
+// POIs are cached in the repo (data/osm-pois.json) and refreshed weekly with --refresh.
+// The public Overpass API is shared and often at capacity, so a failed refresh keeps the
+// previous cache instead of failing the data pipeline.
 const CACHE = "data/osm-pois.json";
-const useCache = process.argv.includes("--cached") && existsSync(CACHE);
-const pois = useCache ? JSON.parse(readFileSync(CACHE, "utf8")) : [];
-let i = 0;
-for (const k of useCache ? [] : tiles.keys()) {
-  const [la, ln] = k.split(":").map(Number);
-  const bbox = `${la / 4},${ln / 4},${(la + 1) / 4},${(ln + 1) / 4}`;
-  const els = await overpass(bbox);
-  for (const e of els) {
-    const lat = e.lat ?? e.center?.lat;
-    const lng = e.lon ?? e.center?.lon;
-    if (lat == null) continue;
-    pois.push({ lat, lng, t: e.tags });
-  }
-  process.stdout.write(`\r[osm] tile ${++i}/${tiles.size}  pois ${pois.length}   `);
-  await new Promise((r) => setTimeout(r, 1500)); // be polite to the free API
+const KEEP = ["name", "opening_hours", "website", "contact:website", "phone", "contact:phone", "leisure", "sport", "shop", "amenity"];
+const cached = existsSync(CACHE) ? JSON.parse(readFileSync(CACHE, "utf8")) : null;
+let pois = cached?.pois ?? [];
+
+if (!cached && !process.argv.includes("--refresh")) {
+  console.warn("[osm] no cached POIs yet (run with --refresh); skipping opening hours");
+  process.exit(0);
 }
-process.stdout.write("\n");
-if (!useCache) {
-  mkdirSync("data", { recursive: true });
-  writeFileSync(CACHE, JSON.stringify(pois));
+if (process.argv.includes("--refresh")) {
+  try {
+    const fresh = [];
+    let i = 0;
+    for (const k of tiles) {
+      const [la, ln] = k.split(":").map(Number);
+      for (const e of await overpass(`${la},${ln},${la + 1},${ln + 1}`)) {
+        const lat = e.lat ?? e.center?.lat;
+        const lng = e.lon ?? e.center?.lon;
+        if (lat == null) continue;
+        const t = Object.fromEntries(KEEP.filter((key) => e.tags[key]).map((key) => [key, e.tags[key]]));
+        fresh.push({ lat: Math.round(lat * 1e6) / 1e6, lng: Math.round(lng * 1e6) / 1e6, t });
+      }
+      process.stdout.write(`\r[osm] tile ${++i}/${tiles.size}  pois ${fresh.length}   `);
+      await new Promise((r) => setTimeout(r, 3000)); // be polite to the shared API
+    }
+    process.stdout.write("\n");
+    pois = fresh;
+    mkdirSync("data", { recursive: true });
+    writeFileSync(CACHE, JSON.stringify({ fetchedAt: new Date().toISOString(), pois }));
+    console.log(`[osm] cache refreshed: ${pois.length} POIs`);
+  } catch (e) {
+    console.warn(`\n[osm] refresh failed (${e.message}); using cached POIs from ${cached?.fetchedAt ?? "nowhere"}`);
+    if (!cached) process.exit(0); // no hours this time, but don't break the pipeline
+  }
 }
 for (const p of pois) p.tok = tokens(p.t.name);
 
