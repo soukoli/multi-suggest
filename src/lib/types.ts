@@ -13,6 +13,7 @@ export interface Facility {
   categories: Category[];
   activities: string[];
   image: string | null;
+  thumb?: string | null; // 400×300 variant for list avatars
   gallery: string[];
   web: string | null;
   facebook: string | null;
@@ -36,6 +37,8 @@ export interface Facility {
 
 export interface Dataset {
   updatedAt: string;
+  checkedAt?: string; // last successful pipeline run (updatedAt changes only with the data)
+  hoursUpdatedAt?: string;
   source?: string;
   hoursSource?: string;
   count: number;

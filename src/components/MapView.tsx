@@ -1,7 +1,8 @@
 import { useEffect, useRef } from "react";
 import * as maplibregl from "maplibre-gl";
 import type { GeoJSONSource, Map as MLMap } from "maplibre-gl";
-import type { Facility, LngLat } from "../lib/types";
+import type { Category, Facility, LngLat } from "../lib/types";
+import { useStore } from "../store";
 import { CATEGORIES } from "../lib/categories";
 import { circlePolygon } from "../lib/geo";
 import workerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?url";
@@ -17,7 +18,8 @@ interface Props {
   facilities: Facility[];
   favoriteIds: Set<string>;
   selectedId: string | null;
-  hoverId: string | null;
+  /** active category filter: a pin is painted in the matched category's color */
+  activeCategories: Category[];
   center: LngLat;
   radiusKm: number;
   showRadius: boolean;
@@ -37,17 +39,23 @@ const colorMatch = [
   "#8A9BA8",
 ] as unknown as maplibregl.ExpressionSpecification;
 
-function toGeoJSON(list: Facility[], favs: Set<string>, selected: string | null, hover: string | null) {
+function toGeoJSON(list: Facility[], favs: Set<string>, selected: string | null, active: Category[]) {
   return {
     type: "FeatureCollection" as const,
-    features: list.map((f) => ({
-      type: "Feature" as const,
-      id: Number(f.id),
-      geometry: { type: "Point" as const, coordinates: [f.lng, f.lat] },
-      properties: { id: f.id, name: f.name, c: f.category, fav: favs.has(f.id) ? 1 : 0, sel: f.id === selected || f.id === hover ? 1 : 0 },
-    })),
+    features: list.map((f) => {
+      const c = active.length && !active.includes(f.category) ? (f.categories.find((x) => active.includes(x)) ?? f.category) : f.category;
+      return {
+        type: "Feature" as const,
+        id: Number(f.id),
+        geometry: { type: "Point" as const, coordinates: [f.lng, f.lat] },
+        properties: { id: f.id, name: f.name, c, fav: favs.has(f.id) ? 1 : 0, sel: f.id === selected ? 1 : 0 },
+      };
+    }),
   };
 }
+
+// selected (property) or hovered in the list (feature-state, no setData needed)
+const HIGHLIGHT = ["any", ["==", ["get", "sel"], 1], ["boolean", ["feature-state", "hov"], false]] as unknown as maplibregl.ExpressionSpecification;
 
 function ringGeoJSON(center: LngLat, km: number) {
   return {
@@ -127,7 +135,7 @@ export function MapView(p: Props) {
       paint: { "line-color": accent, "line-width": 2.5, "line-dasharray": [3, 2] },
     });
 
-    m.addSource("fac", { type: "geojson", data: toGeoJSON(s.facilities, s.favoriteIds, s.selectedId, s.hoverId) });
+    m.addSource("fac", { type: "geojson", data: toGeoJSON(s.facilities, s.favoriteIds, s.selectedId, s.activeCategories) });
     m.addLayer({
       id: "fac-fav",
       type: "circle",
@@ -147,13 +155,13 @@ export function MapView(p: Props) {
       paint: {
         "circle-radius": [
           "interpolate", ["linear"], ["zoom"],
-          9, ["case", ["==", ["get", "sel"], 1], 9, 3.5],
-          13, ["case", ["==", ["get", "sel"], 1], 11, 6],
-          16, ["case", ["==", ["get", "sel"], 1], 13, 9],
+          9, ["case", HIGHLIGHT, 9, 3.5],
+          13, ["case", HIGHLIGHT, 11, 6],
+          16, ["case", HIGHLIGHT, 13, 9],
         ],
         "circle-color": colorMatch,
         "circle-stroke-color": halo,
-        "circle-stroke-width": ["case", ["==", ["get", "sel"], 1], 3.5, 1.5],
+        "circle-stroke-width": ["case", HIGHLIGHT, 3.5, 1.5],
       },
     });
     m.addLayer({
@@ -180,7 +188,7 @@ export function MapView(p: Props) {
     const m = map.current;
     const src = m?.getSource("fac") as GeoJSONSource | undefined;
     const s = latest.current;
-    src?.setData(toGeoJSON(s.facilities, s.favoriteIds, s.selectedId, s.hoverId));
+    src?.setData(toGeoJSON(s.facilities, s.favoriteIds, s.selectedId, s.activeCategories));
   }
 
   function syncRing() {
@@ -202,7 +210,18 @@ export function MapView(p: Props) {
   }
 
   // ---- reactive updates
-  useEffect(syncFacilities, [p.facilities, p.favoriteIds, p.selectedId, p.hoverId]);
+  useEffect(syncFacilities, [p.facilities, p.favoriteIds, p.selectedId, p.activeCategories]);
+
+  // list hover → feature-state on the map (cheap; no re-render of the app)
+  const hoverId = useStore((s) => s.hoverId);
+  const prevHover = useRef<string | null>(null);
+  useEffect(() => {
+    const m = map.current;
+    if (!m?.getSource("fac")) return;
+    if (prevHover.current) m.setFeatureState({ source: "fac", id: Number(prevHover.current) }, { hov: false });
+    if (hoverId) m.setFeatureState({ source: "fac", id: Number(hoverId) }, { hov: true });
+    prevHover.current = hoverId;
+  }, [hoverId]);
   useEffect(syncRing, [p.center, p.radiusKm, p.showRadius]);
 
   useEffect(() => {
@@ -217,7 +236,13 @@ export function MapView(p: Props) {
   }, [p.dark]);
 
   useEffect(() => {
-    map.current?.easeTo({ padding: p.padding, duration: 250 });
+    const m = map.current;
+    if (!m) return;
+    // Don't cancel a running camera move (e.g. flying to the tapped place while the sheet opens);
+    // apply the new padding once it ends.
+    const apply = () => m.easeTo({ padding: latest.current.padding, duration: 250 });
+    if (m.isMoving()) m.once("moveend", apply);
+    else apply();
   }, [p.padding.bottom, p.padding.left, p.padding.top]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // fly to the selected place
@@ -238,7 +263,8 @@ export function MapView(p: Props) {
     if (!p.fitKey || !map.current) return;
     const b = new maplibregl.LngLatBounds();
     if (p.showRadius) circlePolygon(p.center, p.radiusKm, 16).forEach((c) => b.extend(c));
-    else if (p.facilities.length) p.facilities.forEach((f) => b.extend([f.lng, f.lat]));
+    // search results come relevance-sorted; fit the top ones so one far match doesn't zoom out to the whole country
+    else if (p.facilities.length) p.facilities.slice(0, 40).forEach((f) => b.extend([f.lng, f.lat]));
     else return;
     if (!p.showRadius && p.facilities.length === 1) {
       map.current.easeTo({ center: [p.facilities[0].lng, p.facilities[0].lat], zoom: 14.5, padding: p.padding, duration: 700 });

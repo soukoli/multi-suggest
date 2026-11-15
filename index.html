@@ -19,6 +19,16 @@
       href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <!-- start the data download in parallel with the JS bundle -->
+    <link rel="preload" href="/data/facilities.json" as="fetch" type="application/json" crossorigin />
+    <!-- apply the saved theme before first paint (no flash) -->
+    <script>
+      try {
+        var t = (JSON.parse(localStorage.getItem("sportmapa") || "{}").state || {}).theme;
+        var dark = t === "dark" || ((!t || t === "system") && matchMedia("(prefers-color-scheme: dark)").matches);
+        document.documentElement.dataset.theme = dark ? "dark" : "light";
+      } catch (e) {}
+    </script>
     <title>Sportmapa</title>
   </head>
   <body>

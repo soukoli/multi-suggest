@@ -50,7 +50,9 @@ export function FacilityDetail({ f, onBack }: { f: Located; onBack: () => void }
   const [justLogged, setJustLogged] = useState(false);
   const photos = [f.image, ...f.gallery].filter((x, i, a): x is string => !!x && a.indexOf(x) === i).map(img);
   const today = new Date().toDateString();
-  const visitedToday = !!fav?.visits.some((v) => new Date(v).toDateString() === today);
+  const visits = useStore((s) => s.visits[f.id]) ?? [];
+  const note = useStore((s) => s.notes[f.id]) ?? "";
+  const visitedToday = visits.some((v) => new Date(v).toDateString() === today);
 
   return (
     <article className="pb-6">
@@ -103,15 +105,15 @@ export function FacilityDetail({ f, onBack }: { f: Located; onBack: () => void }
         )}
       </div>
 
-      {/* personal log: visible once the place is saved */}
+      {/* personal log: visits + note, kept even if the place is not saved */}
       <section className="mx-4 mt-4 rounded-[20px] border border-line p-4">
         <div className="flex items-center justify-between gap-3">
           <div>
             <p className="text-[15px] font-semibold">
-              {fav?.visits.length ? `Byl/a jsi tu ${fav.visits.length}×` : "Zatím žádná návštěva"}
+              {visits.length ? `Byl/a jsi tu ${visits.length}×` : "Zatím žádná návštěva"}
             </p>
             <p className="text-[13px] text-muted">
-              {fav?.visits.length ? `Naposledy ${fmtDate(fav.visits[fav.visits.length - 1])}` : "Zapiš si návštěvu, ať víš, kam chodíš nejčastěji."}
+              {visits.length ? `Naposledy ${fmtDate(visits[visits.length - 1])}` : "Zapiš si návštěvu, ať víš, kam chodíš nejčastěji."}
             </p>
           </div>
           {visitedToday && justLogged ? (
@@ -146,9 +148,9 @@ export function FacilityDetail({ f, onBack }: { f: Located; onBack: () => void }
           </div>
         )}
         {asked === "thanks" && <p className="mt-3 text-[13px] text-muted">Díky, odhad vytíženosti tady si to zapamatuje.</p>}
-        {fav && (
+        {(fav || note || visits.length > 0) && (
           <textarea
-            value={fav.note}
+            value={note}
             onChange={(e) => setNote(f.id, e.target.value)}
             placeholder="Poznámka, třeba: nejlíp ráno, skříňky 2 Kč"
             rows={2}
@@ -194,7 +196,7 @@ export function FacilityDetail({ f, onBack }: { f: Located; onBack: () => void }
       {f.description && (
         <section className="mt-4 px-5">
           <h3 className="text-[13px] font-semibold text-muted">O místě</h3>
-          <p className="mt-1 max-w-[65ch] text-[15px] leading-relaxed whitespace-pre-line">{f.description}</p>
+          <p className="mt-1 max-w-[65ch] text-[15px] leading-relaxed whitespace-pre-line">{f.description.replace(/<[^>]+>/g, "")}</p>
         </section>
       )}
       {f.email && (

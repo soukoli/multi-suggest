@@ -70,7 +70,7 @@ export function CrowdChart({ f, reports }: { f: Facility; reports?: CrowdReport[
         </h3>
         <span className="text-[12px] text-muted">{calibrated ? "odhad + tvá hlášení" : "odhad"}</span>
       </div>
-      <div className="mt-3 flex h-20 items-end gap-[3px]" role="img" aria-label="Odhad vytíženosti podle hodin">
+      <div className="mt-3 flex h-20 items-end gap-[3px]" role="img" aria-label={`Odhad vytíženosti podle hodin: ${hours.filter((h) => profile[h] > 0).map((h) => `${h}:00 ${LEVEL_LABEL[levelOf(profile[h])].toLowerCase()}`).join(", ")}`}>
         {hours.map((h) => {
           const v = profile[h];
           const isNow = h === h0;

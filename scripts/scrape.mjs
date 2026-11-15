@@ -102,6 +102,19 @@ let tokenAt = 0;
 let tokenPromise = null;
 
 async function refreshToken() {
+  // A single network blip during one of ~50 refreshes must not kill a 35-minute run.
+  for (let attempt = 1; ; attempt++) {
+    try {
+      return await requestToken();
+    } catch (e) {
+      if (attempt >= 4) throw e;
+      authJsSource = null; // auth.js may have rotated
+      await sleep(3000 * attempt);
+    }
+  }
+}
+
+async function requestToken() {
   const res = await fetch(`${BASE}/api/v1/token/`, {
     method: "POST",
     headers: {
@@ -140,7 +153,7 @@ async function api(path, retries = 4) {
     }
     if (res.ok) return res.json();
     if (res.status === 401 || res.status === 403) {
-      await getToken(true);
+      if (t === token) await getToken(true); // others may already have refreshed it
       continue;
     }
     if (res.status === 429 || res.status >= 500) {
@@ -155,6 +168,23 @@ async function api(path, retries = 4) {
 
 // ---------------------------------------------------------------- normalize
 const clean = (s) => (typeof s === "string" ? s.trim() || null : null);
+// Descriptions come as HTML fragments; keep plain text with paragraph breaks.
+const stripHtml = (s) =>
+  clean(
+    typeof s === "string"
+      ? s
+          .replace(/<\s*(br|\/p|\/div|\/li)\s*\/?>/gi, "\n")
+          .replace(/<[^>]+>/g, "")
+          .replace(/&nbsp;/g, " ")
+          .replace(/&amp;/g, "&")
+          .replace(/&lt;/g, "<")
+          .replace(/&gt;/g, ">")
+          .replace(/&quot;/g, '"')
+          .replace(/&#39;/g, "'")
+          .replace(/[ \t]+/g, " ")
+          .replace(/\n\s*\n\s*/g, "\n\n")
+      : null,
+  );
 const url = (s) => {
   const v = clean(s);
   if (!v) return null;
@@ -182,6 +212,7 @@ function normalize(feature, raw) {
     categories: categoriesFor(acts),
     activities: [...new Set(acts.map((a) => clean(a.name)).filter(Boolean))],
     image: shortImg(d.main_image?.thumbnail_800_600),
+    thumb: shortImg(d.main_image?.thumbnail_400_300), // list avatars (56 px) – 800 px is ~6× heavier
     gallery: (d.galery_images || d.gallery_images || [])
       .map((i) => shortImg(i?.thumbnail_800_600))
       .filter(Boolean)
@@ -191,7 +222,7 @@ function normalize(feature, raw) {
     instagram: url(d.instagram_url),
     phone: clean(d.phone),
     email: clean(d.email),
-    description: clean(d.description),
+    description: stripHtml(d.description),
     surcharge: !!d.additional_payment,
     surchargeNote: clean(d.additional_payment_desc),
     kids: !!d.kids_activities,
@@ -256,10 +287,17 @@ async function main() {
   process.stdout.write("\n");
   writeJson(CACHE, cache);
 
-  // Build index from list order; facilities without detail fall back to list props
-  const facilities = features.map(
-    (f) => cache[f.id]?.data ?? normalize(f, { properties: { name: f.properties.name } }),
-  );
+  const prev = existsSync(OUT_INDEX) ? JSON.parse(readFileSync(OUT_INDEX, "utf8")) : null;
+  const prevById = new Map((prev?.facilities ?? []).map((f) => [f.id, f]));
+
+  // Build index from list order. A facility whose detail failed today keeps yesterday's record;
+  // only brand-new ones fall back to the bare list entry. Opening hours are carried over so a
+  // failed enrich step never wipes them (enrich-osm.mjs recomputes them anyway).
+  const facilities = features.map((f) => {
+    const rec = cache[f.id]?.data ?? prevById.get(String(f.id)) ?? normalize(f, { properties: { name: f.properties.name } });
+    const old = prevById.get(String(f.id));
+    return old?.hours && !rec.hours ? { ...rec, hours: old.hours } : rec;
+  });
   const withDetail = features.filter((f) => cache[f.id]).length;
   const coverage = withDetail / features.length;
   console.log(`[result] ${facilities.length} facilities, ${(coverage * 100).toFixed(1)}% with detail`);
@@ -268,15 +306,44 @@ async function main() {
   if (LIMIT === Infinity && coverage < 0.9) {
     throw new Error(`Detail coverage ${(coverage * 100).toFixed(1)}% < 90% – not publishing`);
   }
-  if (LIMIT === Infinity && existsSync(OUT_INDEX)) {
-    const prev = JSON.parse(readFileSync(OUT_INDEX, "utf8"));
-    if (prev.facilities?.length && facilities.length < prev.facilities.length * 0.8) {
+  if (LIMIT === Infinity && prev?.facilities?.length) {
+    if (facilities.length < prev.facilities.length * 0.8) {
       throw new Error(`Facility count dropped ${prev.facilities.length} → ${facilities.length} – not publishing`);
+    }
+    // Content gates: an API shape change would otherwise publish empty records at "100% coverage".
+    const share = (list, pred) => list.filter(pred).length / Math.max(1, list.length);
+    const gates = [
+      ["activities", (f) => f.activities.length > 0],
+      ["image", (f) => !!f.image],
+      ["city", (f) => !!f.city],
+      ["cards", (f) => f.cards.length > 0],
+    ];
+    for (const [label, pred] of gates) {
+      const now = share(facilities, pred);
+      const before = share(prev.facilities, pred);
+      if (now < before * 0.8) {
+        throw new Error(`Share with ${label} dropped ${(before * 100).toFixed(0)}% → ${(now * 100).toFixed(0)}% – not publishing`);
+      }
     }
   }
 
-  writeJson(OUT_INDEX, { updatedAt: new Date().toISOString(), count: facilities.length, facilities }, false);
+  // updatedAt changes only when the data really changed (avoids pointless commits/deploys);
+  // checkedAt records every successful run.
+  const now = new Date().toISOString();
+  const same = prev && JSON.stringify(stripVolatile(prev.facilities)) === JSON.stringify(stripVolatile(facilities));
+  writeJson(OUT_INDEX, {
+    updatedAt: same ? prev.updatedAt : now,
+    checkedAt: now,
+    count: facilities.length,
+    facilities,
+  });
+  if (same) console.log("[result] no data changes since the last run");
   console.log(`[done] ${OUT_INDEX} in ${((Date.now() - started) / 60000).toFixed(1)} min`);
+}
+
+// Opening hours are owned by enrich-osm.mjs; compare scraped content only.
+function stripVolatile(list) {
+  return list.map(({ hours, ...rest }) => rest);
 }
 
 function writeJson(path, data, pretty = false) {

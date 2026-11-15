@@ -74,7 +74,7 @@ export function Sheet({
     >
       <div className="touch-none select-none" onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={up}>
         <button
-          className="mx-auto mt-2 mb-1 block h-5 w-16"
+          className="mx-auto mt-1 block h-8 w-20"
           aria-label={snap === "full" ? "Zmenšit seznam" : "Zvětšit seznam"}
           onClick={() => onSnap(snap === "peek" ? "half" : snap === "half" ? "full" : "peek")}
         >

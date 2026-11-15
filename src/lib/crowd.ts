@@ -31,11 +31,12 @@ export const LEVEL_LABEL: Record<CrowdLevel, string> = {
   busy: "Rušněji",
   packed: "Nejspíš plno",
 };
+// Theme-aware (index.css): darker shades in light mode keep text ≥ 4.5:1 contrast.
 export const LEVEL_COLOR: Record<CrowdLevel, string> = {
-  quiet: "#3CC48E",
-  ok: "#9BC53D",
-  busy: "#F2A93B",
-  packed: "#F25C3B",
+  quiet: "var(--crowd-quiet)",
+  ok: "var(--crowd-ok)",
+  busy: "var(--crowd-busy)",
+  packed: "var(--crowd-packed)",
 };
 
 const isWeekend = (d: Date) => d.getDay() === 0 || d.getDay() === 6;

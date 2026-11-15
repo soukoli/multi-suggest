@@ -12,6 +12,10 @@
   --accent-ink: #ffffff;
   --fav: #e8a400;
   --shadow: 0 10px 40px -12px rgb(16 33 43 / 0.28);
+  --crowd-quiet: #187a4f;
+  --crowd-ok: #5a7612;
+  --crowd-busy: #9e5a00;
+  --crowd-packed: #c4371a;
   color-scheme: light;
 }
 :root[data-theme="dark"] {
@@ -25,6 +29,10 @@
   --accent-ink: #062a28;
   --fav: #ffc23d;
   --shadow: 0 10px 40px -10px rgb(0 0 0 / 0.6);
+  --crowd-quiet: #3cc48e;
+  --crowd-ok: #9bc53d;
+  --crowd-busy: #f2a93b;
+  --crowd-packed: #f25c3b;
   color-scheme: dark;
 }
 
@@ -78,4 +86,8 @@ body {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
   }
+}
+/* the search pill shows its own focus ring (focus-within) */
+label:focus-within > input:focus-visible {
+  outline: none;
 }

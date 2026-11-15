@@ -7,8 +7,6 @@ export const PRAGUE: LngLat = { lat: 50.0815, lng: 14.428 };
 
 export interface FavoriteEntry {
   addedAt: number;
-  visits: number[]; // timestamps
-  note: string;
 }
 
 type Theme = "system" | "light" | "dark";
@@ -30,6 +28,9 @@ interface State {
   theme: Theme;
   // personal
   favorites: Record<string, FavoriteEntry>;
+  // Kept independently of favorites, so un-saving a place never loses its history.
+  visits: Record<string, number[]>; // timestamps
+  notes: Record<string, string>;
   reports: Record<string, CrowdReport[]>;
   introSeen: boolean;
   hoverId: string | null;
@@ -68,6 +69,8 @@ export const useStore = create<State>()(
       tab: "explore",
       theme: "system",
       favorites: {},
+      visits: {},
+      notes: {},
       reports: {},
       introSeen: false,
       hoverId: null,
@@ -88,26 +91,12 @@ export const useStore = create<State>()(
         set((s) => {
           const favorites = { ...s.favorites };
           if (favorites[id]) delete favorites[id];
-          else favorites[id] = { addedAt: Date.now(), visits: [], note: "" };
+          else favorites[id] = { addedAt: Date.now() };
           return { favorites };
         }),
-      logVisit: (id) =>
-        set((s) => {
-          const f = s.favorites[id] ?? { addedAt: Date.now(), visits: [], note: "" };
-          return { favorites: { ...s.favorites, [id]: { ...f, visits: [...f.visits, Date.now()] } } };
-        }),
-      undoVisit: (id) =>
-        set((s) => {
-          const f = s.favorites[id];
-          if (!f) return {};
-          return { favorites: { ...s.favorites, [id]: { ...f, visits: f.visits.slice(0, -1) } } };
-        }),
-      setNote: (id, note) =>
-        set((s) => {
-          const f = s.favorites[id];
-          if (!f) return {};
-          return { favorites: { ...s.favorites, [id]: { ...f, note } } };
-        }),
+      logVisit: (id) => set((s) => ({ visits: { ...s.visits, [id]: [...(s.visits[id] ?? []), Date.now()] } })),
+      undoVisit: (id) => set((s) => ({ visits: { ...s.visits, [id]: (s.visits[id] ?? []).slice(0, -1) } })),
+      setNote: (id, note) => set((s) => ({ notes: { ...s.notes, [id]: note } })),
       report: (id, level) =>
         set((s) => ({ reports: { ...s.reports, [id]: [...(s.reports[id] ?? []), { ts: Date.now(), level }].slice(-40) } })),
       dismissIntro: () => set({ introSeen: true }),
@@ -115,7 +104,24 @@ export const useStore = create<State>()(
     }),
     {
       name: "sportmapa",
-      version: 1,
+      version: 2,
+      // v1 kept visits + note inside each favorite
+      migrate: (persisted, version) => {
+        const st = (persisted ?? {}) as Record<string, unknown>;
+        if (version < 2 && st.favorites) {
+          const old = st.favorites as Record<string, { addedAt: number; visits?: number[]; note?: string }>;
+          const favorites: Record<string, FavoriteEntry> = {};
+          const visits: Record<string, number[]> = {};
+          const notes: Record<string, string> = {};
+          for (const [id, f] of Object.entries(old)) {
+            favorites[id] = { addedAt: f.addedAt };
+            if (f.visits?.length) visits[id] = f.visits;
+            if (f.note) notes[id] = f.note;
+          }
+          Object.assign(st, { favorites, visits, notes });
+        }
+        return st as unknown as State;
+      },
       partialize: (s) => ({
         radiusKm: s.radiusKm,
         categories: s.categories,
@@ -125,6 +131,8 @@ export const useStore = create<State>()(
         parking: s.parking,
         theme: s.theme,
         favorites: s.favorites,
+        visits: s.visits,
+        notes: s.notes,
         reports: s.reports,
         introSeen: s.introSeen,
       }),

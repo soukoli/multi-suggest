@@ -3,7 +3,14 @@
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 
 const [src, fetchedAt = new Date().toISOString()] = process.argv.slice(2);
-const KEEP = ["name", "opening_hours", "website", "contact:website", "phone", "contact:phone", "leisure", "sport", "shop", "amenity"];
+const KEEP = [
+  "name", "brand", "operator", "opening_hours", "check_date:opening_hours",
+  "website", "contact:website", "phone", "contact:phone",
+  "addr:street", "addr:housenumber", "addr:city",
+  "leisure", "sport", "shop", "amenity",
+];
+// shop=sports etc. carry a sport tag but are stores, not venues
+const SKIP_SHOPS = (t) => t.shop && t.shop !== "massage";
 const round = (x) => Math.round(x * 1e6) / 1e6;
 
 function centroid(geom) {
@@ -22,7 +29,7 @@ for (const line of readFileSync(src, "utf8").split("\n")) {
   if (!s) continue;
   const f = JSON.parse(s);
   const tags = f.properties ?? {};
-  if (!tags.name || !tags.opening_hours || !f.geometry) continue;
+  if (!tags.name || !tags.opening_hours || !f.geometry || SKIP_SHOPS(tags)) continue;
   const { lat, lng } = centroid(f.geometry);
   const key = `${tags.name}|${lat.toFixed(4)}|${lng.toFixed(4)}`; // area + node duplicates
   if (seen.has(key)) continue;

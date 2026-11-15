@@ -4,7 +4,9 @@ name: Update facility data
 #   1. MultiSport partners for the whole CZ (daily)
 #   2. OSM extract from Geofabrik → data/osm-pois.json (Sundays, or on demand)
 #   3. Opening hours matched from that cache (daily, offline)
-# A failed or timed-out run opens / comments on a "Data update failed" issue.
+# Security: the scrape evaluates MultiSport's third-party auth.js, so it runs in a job with a
+# read-only token and no persisted git credentials. Only the publish job can push.
+# Problems open or comment on a "Data update failed" / "Data update warning" issue.
 on:
   schedule:
     - cron: "15 2 * * *" # daily 02:15 UTC
@@ -20,20 +22,26 @@ on:
         default: false
 
 permissions:
-  contents: write
-  issues: write
+  contents: read
 
 concurrency:
   group: data
   cancel-in-progress: false
 
 jobs:
-  update:
+  build:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 100
+    permissions:
+      contents: read
+    outputs:
+      osm: ${{ steps.osm.outcome }}
+      enrich: ${{ steps.enrich.outcome }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v5
         with:
           node-version: 24
 
@@ -53,6 +61,7 @@ jobs:
         run: node scripts/scrape.mjs
 
       - name: Rebuild OpenStreetMap extract
+        id: osm
         if: steps.plan.outputs.osm == 'true'
         continue-on-error: true # opening hours are optional; never lose a fresh scrape
         timeout-minutes: 30
@@ -61,26 +70,61 @@ jobs:
           ./scripts/osm-refresh.sh
 
       - name: Match opening hours
+        id: enrich
         continue-on-error: true
         run: node scripts/enrich-osm.mjs
 
+      - uses: actions/upload-artifact@v4
+        with:
+          name: data
+          path: |
+            public/data/facilities.json
+            data/osm-pois.json
+          retention-days: 3
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/download-artifact@v4
+        with:
+          name: data
+          path: .
       - name: Commit data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add public/data/facilities.json
-          [ -f data/osm-pois.json ] && git add data/osm-pois.json
-          git diff --staged --quiet && { echo "No changes"; exit 0; }
+          if [ -f data/osm-pois.json ]; then git add data/osm-pois.json; fi
+          if git diff --staged --quiet; then echo "No changes"; exit 0; fi
           git commit -m "data: refresh facilities ($(date -u +%F))"
-          git pull --rebase
           git push
 
-      - name: Report failure
-        if: failure() || cancelled()
+  report:
+    needs: [build, publish]
+    if: always()
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Open or update an issue on problems
         env:
           GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RUN: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
-          title="Data update failed"
-          body="Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          existing=$(gh issue list --state open --search "$title in:title" --json number --jq '.[0].number')
+          build="${{ needs.build.result }}"; publish="${{ needs.publish.result }}"
+          osm="${{ needs.build.outputs.osm }}"; enrich="${{ needs.build.outputs.enrich }}"
+          if [ "$build" != "success" ] || [ "$publish" != "success" ]; then
+            title="Data update failed"; body="build: $build, publish: $publish — $RUN"
+          elif [ "$osm" = "failure" ] || [ "$enrich" = "failure" ]; then
+            title="Data update warning"; body="Data published, but opening hours step failed (osm: $osm, enrich: $enrich) — $RUN"
+          else
+            echo "All good"; exit 0
+          fi
+          existing=$(gh issue list --state open --search "\"$title\" in:title" --json number --jq '.[0].number')
           if [ -n "$existing" ]; then gh issue comment "$existing" --body "$body"; else gh issue create --title "$title" --body "$body"; fi

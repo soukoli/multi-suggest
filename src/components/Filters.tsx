@@ -11,7 +11,7 @@ export function CategoryRail({ counts }: { counts: Record<string, number> }) {
       <button
         onClick={clearCategories}
         aria-pressed={categories.length === 0}
-        className={`h-9 shrink-0 rounded-full px-4 text-[14px] font-semibold ${categories.length === 0 ? "bg-ink text-bg" : "bg-surface-2"}`}
+        className={`h-11 shrink-0 rounded-full px-4 md:h-9 text-[14px] font-semibold ${categories.length === 0 ? "bg-ink text-bg" : "bg-surface-2"}`}
       >
         Vše
       </button>
@@ -22,7 +22,7 @@ export function CategoryRail({ counts }: { counts: Record<string, number> }) {
             key={c.id}
             onClick={() => toggleCategory(c.id)}
             aria-pressed={on}
-            className="flex h-9 shrink-0 items-center gap-1.5 rounded-full pr-3.5 pl-2.5 text-[14px] font-medium transition-colors"
+            className="flex h-11 shrink-0 items-center gap-1.5 rounded-full pr-3.5 pl-2.5 md:h-9 text-[14px] font-medium transition-colors"
             style={on ? { background: c.color, color: "#0b1a22" } : { background: "var(--surface-2)" }}
           >
             <span style={{ color: on ? "#0b1a22" : c.color }}>
@@ -47,7 +47,7 @@ export function RadiusControl() {
           role="radio"
           aria-checked={radiusKm === r}
           onClick={() => setRadius(r)}
-          className={`h-8 min-w-9 rounded-full px-2 font-display text-[16px] font-bold tabular-nums ${radiusKm === r ? "bg-accent text-accent-ink" : "text-muted"}`}
+          className={`h-11 min-w-11 rounded-full px-2 font-display md:h-8 md:min-w-9 text-[16px] font-bold tabular-nums ${radiusKm === r ? "bg-accent text-accent-ink" : "text-muted"}`}
         >
           {r}
         </button>
@@ -72,7 +72,7 @@ export function FlagToggles() {
           key={k}
           onClick={() => s.toggleFlag(k)}
           aria-pressed={s[k]}
-          className={`h-8 shrink-0 rounded-full border px-3 text-[13px] font-medium ${s[k] ? "border-ink bg-ink text-bg" : "border-line text-muted"}`}
+          className={`h-11 shrink-0 rounded-full border px-3.5 md:h-8 text-[13px] font-medium ${s[k] ? "border-ink bg-ink text-bg" : "border-line text-muted"}`}
         >
           {label}
         </button>

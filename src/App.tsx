@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { useDataset, useResults, withDistance } from "./data";
+import { useShallow } from "zustand/react/shallow";
 import { useStore } from "./store";
 import type { Category, LngLat, Located } from "./lib/types";
 import { distanceKm } from "./lib/geo";
@@ -45,7 +46,8 @@ export default function App() {
   const dark = useDark();
   const desktop = useIsDesktop();
   const { data, error } = useDataset();
-  const s = useStore();
+  // Everything except the list-hover id (that one goes straight to the map, see MapView).
+  const s = useStore(useShallow(({ hoverId: _hover, ...rest }) => rest)); // eslint-disable-line @typescript-eslint/no-unused-vars
   const results = useResults(data?.facilities);
 
   const [me, setMe] = useState<LngLat | null>(null);
@@ -57,7 +59,29 @@ export default function App() {
   const [fitKey, setFitKey] = useState(0);
   const [favSort, setFavSort] = useState<"near" | "often">("near");
   const [showInfo, setShowInfo] = useState(false);
-  const [splash, setSplash] = useState(true);
+  // Splash once per browser session, not on every load.
+  const [splash, setSplash] = useState(() => {
+    try {
+      return !sessionStorage.getItem("splash");
+    } catch {
+      return true;
+    }
+  });
+  const endSplash = () => {
+    setSplash(false);
+    try {
+      sessionStorage.setItem("splash", "1");
+    } catch {
+      /* private mode */
+    }
+  };
+
+  // Re-render once a minute so "Otevřeno do…" and the crowd estimate stay current.
+  const [, setTick] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setTick((x) => x + 1), 60_000);
+    return () => clearInterval(t);
+  }, []);
 
   // --- location
   function locate(fit = true) {
@@ -84,6 +108,12 @@ export default function App() {
     locate(true);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => setFitKey((k) => k + 1), [s.radiusKm, s.tab]);
+  // Text search: move the map to the results once typing pauses.
+  useEffect(() => {
+    if (!s.query.trim()) return;
+    const t = setTimeout(() => setFitKey((k) => k + 1), 450);
+    return () => clearTimeout(t);
+  }, [s.query]);
 
   // --- derived
   const byId = useMemo(() => new Map((data?.facilities ?? []).map((f) => [f.id, f])), [data]);
@@ -92,9 +122,9 @@ export default function App() {
       Object.keys(s.favorites).map((id) => byId.get(id)).filter((f): f is NonNullable<typeof f> => !!f),
       me ?? s.center,
     );
-    if (favSort === "often") list.sort((a, b) => (s.favorites[b.id]?.visits.length ?? 0) - (s.favorites[a.id]?.visits.length ?? 0));
+    if (favSort === "often") list.sort((a, b) => (s.visits[b.id]?.length ?? 0) - (s.visits[a.id]?.length ?? 0));
     return list;
-  }, [s.favorites, byId, me, s.center, favSort]);
+  }, [s.favorites, s.visits, byId, me, s.center, favSort]);
 
   const favIds = useMemo(() => new Set(Object.keys(s.favorites)), [s.favorites]);
   const explore = s.tab === "explore";
@@ -103,8 +133,39 @@ export default function App() {
   const selected = useMemo(() => {
     if (!s.selectedId) return null;
     const f = byId.get(s.selectedId);
-    return f ? { ...f, distance: distanceKm(me ?? s.center, f) } : null;
-  }, [s.selectedId, byId, me, s.center]);
+    return f ? { ...f, distance: distanceKm(s.center, f) } : null; // same reference point as the list
+  }, [s.selectedId, byId, s.center]);
+
+  // --- URL ↔ selected place: ?misto=<id>. Gives shareable links and lets Android "back" close the detail.
+  useEffect(() => {
+    if (!data) return;
+    const id = new URLSearchParams(location.search).get("misto");
+    if (id && byId.has(id)) useStore.getState().select(id);
+    const onPop = () => useStore.getState().select(new URLSearchParams(location.search).get("misto"));
+    addEventListener("popstate", onPop);
+    return () => removeEventListener("popstate", onPop);
+  }, [data, byId]);
+  useEffect(() => {
+    const cur = new URLSearchParams(location.search).get("misto");
+    if (s.selectedId && cur !== s.selectedId) {
+      history[cur ? "replaceState" : "pushState"]({ misto: s.selectedId }, "", `?misto=${s.selectedId}`);
+    } else if (!s.selectedId && cur) {
+      // closed in the UI: drop the entry we pushed, so "back" doesn't reopen it
+      if (history.state?.misto) history.back();
+      else history.replaceState(null, "", location.pathname);
+    }
+  }, [s.selectedId]);
+
+  // Escape closes the dialog, then the detail.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== "Escape") return;
+      if (showInfo) setShowInfo(false);
+      else if (useStore.getState().selectedId) useStore.getState().select(null);
+    };
+    addEventListener("keydown", onKey);
+    return () => removeEventListener("keydown", onKey);
+  }, [showInfo]);
 
   // category counts within the radius (ignoring the category filter itself)
   const counts = useMemo(() => {
@@ -217,7 +278,7 @@ export default function App() {
             key={f.id}
             f={f}
             fav={favIds.has(f.id)}
-            visits={s.favorites[f.id]?.visits.length}
+            visits={s.visits[f.id]?.length}
             onOpen={() => open(f.id)}
             onToggleFav={() => s.toggleFavorite(f.id)}
           />
@@ -226,7 +287,7 @@ export default function App() {
       {shown.length > 300 && <p className="px-5 py-3 text-[13px] text-muted">Zobrazeno 300 nejbližších z {shown.length}. Zmenši okruh nebo vyber kategorii.</p>}
       {data && (
         <p className="px-5 pt-4 text-[12px] text-muted">
-          {Date.now() - new Date(data.updatedAt.replace(" ", "T")).getTime() > 3 * 864e5 && (
+          {Date.now() - new Date((data.checkedAt ?? data.updatedAt).replace(" ", "T")).getTime() > 3 * 864e5 && (
             <span className="mb-1 block font-semibold text-ink">Data nejsou aktuální, poslední obnova proběhla před víc než 3 dny.</span>
           )}
           Data partnerů MultiSport z {new Date(data.updatedAt.replace(" ", "T")).toLocaleDateString("cs-CZ")}
@@ -263,7 +324,7 @@ export default function App() {
           facilities={shown}
           favoriteIds={favIds}
           selectedId={s.selectedId}
-          hoverId={s.hoverId}
+          activeCategories={s.categories}
           center={s.center}
           radiusKm={s.radiusKm}
           showRadius={explore && !s.query}
@@ -345,7 +406,7 @@ export default function App() {
       </nav>
 
       {showInfo && <CardInfo onClose={() => setShowInfo(false)} />}
-      {splash && <Splash onDone={() => setSplash(false)} />}
+      {splash && <Splash onDone={endSplash} />}
     </div>
   );
 }
@@ -390,7 +451,7 @@ function Intro({ onClose }: { onClose: () => void }) {
     <section className="mx-4 mb-2 rounded-[20px] border border-line p-4">
       <div className="flex items-start justify-between gap-3">
         <h2 className="font-display text-[22px] leading-tight font-bold">Víc než mapa partnerů</h2>
-        <button onClick={onClose} aria-label="Skrýt" className="-mt-1 -mr-1 grid h-8 w-8 place-items-center rounded-full text-muted">
+        <button onClick={onClose} aria-label="Skrýt" className="-mt-2 -mr-2 grid h-11 w-11 place-items-center rounded-full text-muted">
           <Icon name="close" size={18} />
         </button>
       </div>

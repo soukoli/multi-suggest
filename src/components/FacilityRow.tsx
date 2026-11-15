@@ -46,9 +46,9 @@ export function FacilityRow({
   const subtitle = f.activities.length ? f.activities.slice(0, 3).join(", ") : CAT[f.category].label;
   return (
     <li className="group relative">
-      <button onClick={onOpen} onMouseEnter={() => hover(f.id)} onMouseLeave={() => hover(null)} onFocus={() => hover(f.id)} onBlur={() => hover(null)} className="flex w-full items-center gap-3 px-5 py-3 text-left active:bg-surface-2 md:hover:bg-surface-2">
+      <button onClick={() => { hover(null); onOpen(); }} onMouseEnter={() => hover(f.id)} onMouseLeave={() => hover(null)} onFocus={() => hover(f.id)} onBlur={() => hover(null)} className="flex w-full items-center gap-3 px-5 py-3 text-left active:bg-surface-2 md:hover:bg-surface-2">
         {f.image ? (
-          <img src={img(f.image)} alt="" loading="lazy" className="h-14 w-14 shrink-0 rounded-[14px] object-cover" />
+          <img src={img(f.thumb ?? f.image)} alt="" loading="lazy" className="h-14 w-14 shrink-0 rounded-[14px] object-cover" />
         ) : (
           <CategoryBadge id={f.category} size={56} />
         )}
