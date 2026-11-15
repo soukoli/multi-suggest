@@ -16,6 +16,10 @@ on:
         description: "Refetch MultiSport partner data"
         type: boolean
         default: true
+      full:
+        description: "Refetch ALL details (~35 min) instead of new + 1/7 rotation (~5 min)"
+        type: boolean
+        default: false
       osm:
         description: "Rebuild the OpenStreetMap extract (opening hours)"
         type: boolean
@@ -31,7 +35,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 100
+    timeout-minutes: 90
     permissions:
       contents: read
     outputs:
@@ -58,7 +62,7 @@ jobs:
 
       - name: Scrape MultiSport partners (whole CZ)
         if: steps.plan.outputs.scrape == 'true'
-        run: node scripts/scrape.mjs
+        run: node scripts/scrape.mjs ${{ inputs.full && '--full' || '' }}
 
       - name: Rebuild OpenStreetMap extract
         id: osm

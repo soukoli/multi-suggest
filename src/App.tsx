@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { useDataset, useResults, withDistance } from "./data";
 import { useShallow } from "zustand/react/shallow";
 import { useStore } from "./store";
@@ -59,6 +59,21 @@ export default function App() {
   const [fitKey, setFitKey] = useState(0);
   const [favSort, setFavSort] = useState<"near" | "often">("near");
   const [showInfo, setShowInfo] = useState(false);
+
+  // Measure the real app area and the dock (incl. iOS safe area) instead of trusting innerHeight.
+  const rootRef = useRef<HTMLDivElement>(null);
+  const dockRef = useRef<HTMLElement>(null);
+  const [areaH, setAreaH] = useState(() => window.innerHeight);
+  const [dockH, setDockH] = useState(76);
+  useEffect(() => {
+    const ro = new ResizeObserver(() => {
+      if (rootRef.current) setAreaH(rootRef.current.clientHeight);
+      if (dockRef.current) setDockH(dockRef.current.offsetHeight);
+    });
+    if (rootRef.current) ro.observe(rootRef.current);
+    if (dockRef.current) ro.observe(dockRef.current);
+    return () => ro.disconnect();
+  }, [desktop]);
   // Splash once per browser session, not on every load.
   const [splash, setSplash] = useState(() => {
     try {
@@ -318,7 +333,9 @@ export default function App() {
   );
 
   return (
-    <div className="relative h-full overflow-hidden">
+    // Pinned to the screen edges: on iOS home-screen apps a 100%-height layout can end
+    // above the real bottom edge (white strip); a fixed inset-0 root always fills it.
+    <div ref={rootRef} className="fixed inset-0 overflow-hidden bg-bg">
       <div className="absolute inset-0 md:left-[440px]">
         <MapView
           facilities={shown}
@@ -394,13 +411,21 @@ export default function App() {
 
       {/* mobile sheet */}
       {!desktop && (
-        <Sheet snap={snap} onSnap={setSnap} onHeight={setSheetH} header={selected ? null : listHeader} contentKey={selected?.id ?? s.tab}>
+        <Sheet
+          snap={snap}
+          onSnap={setSnap}
+          onHeight={setSheetH}
+          header={selected ? null : listHeader}
+          contentKey={selected?.id ?? s.tab}
+          areaHeight={areaH}
+          bottomInset={dockH}
+        >
           {panelBody}
         </Sheet>
       )}
 
       {/* mobile dock */}
-      <nav className="fixed inset-x-0 bottom-0 z-30 flex gap-2 px-3 pt-2 pb-[calc(env(safe-area-inset-bottom)+10px)] md:hidden" style={{ background: "linear-gradient(to top, var(--surface) 65%, transparent)" }}>
+      <nav ref={dockRef} className="absolute inset-x-0 bottom-0 z-30 flex gap-2 bg-surface px-3 pt-2 pb-[max(10px,env(safe-area-inset-bottom))] md:hidden">
         <div className="flex-1">{tabs}</div>
         <CardButton />
       </nav>

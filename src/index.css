@@ -56,6 +56,9 @@ body,
 #root {
   height: 100%;
 }
+html {
+  background: var(--bg);
+}
 body {
   margin: 0;
   background: var(--bg);

@@ -2,9 +2,14 @@
 /**
  * MultiSport CZ facility scraper.
  *
- *   node scripts/scrape.mjs            # full CZ scrape (incremental: reuses cached details)
- *   node scripts/scrape.mjs --limit 50 # quick test
- *   node scripts/scrape.mjs --fresh    # ignore cache, refetch every detail
+ *   node scripts/scrape.mjs            # daily: full list + details for new places and 1/7 of the rest
+ *   node scripts/scrape.mjs --full     # refetch every detail (~35 min)
+ *   node scripts/scrape.mjs --limit 50 # quick test (first 50 places, all details)
+ *
+ * Incremental strategy: the list endpoint (one request) gives every place daily, so new and
+ * removed places show up the same day. Details (photos, cards, activities) are refetched for
+ * new places plus a rotating seventh of the others (id % 7 == weekday), so every place is
+ * refreshed weekly at ~7× less load on MultiSport than a daily full crawl.
  *
  * Fixes vs. the old multi-suggest scraper:
  *  - The JWT from mapa.multisport.cz lives ~60 s. The old scraper never refreshed it,
@@ -15,7 +20,6 @@
  *
  * Output:
  *   public/data/facilities.json  – compact index the app loads (all facilities)
- *   data/details-cache.json      – raw normalized details keyed by id (for incremental runs)
  */
 
 import vm from "node:vm";
@@ -26,7 +30,6 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const OUT_INDEX = resolve(ROOT, "public/data/facilities.json");
-const CACHE = resolve(ROOT, "data/details-cache.json");
 
 const BASE = "https://mapa.multisport.cz";
 const UA =
@@ -34,10 +37,10 @@ const UA =
 
 const args = process.argv.slice(2);
 const LIMIT = args.includes("--limit") ? Number(args[args.indexOf("--limit") + 1]) : Infinity;
-const FRESH = args.includes("--fresh");
+const FULL = args.includes("--full") || args.includes("--fresh") || LIMIT !== Infinity;
 const CONCURRENCY = 2;
 const DELAY_MS = 600; // per worker, between requests
-const CACHE_MAX_AGE_DAYS = 1; // details older than this are refetched
+const ROTATION_DAYS = 7; // every detail refreshed at least once per this many days
 const TOKEN_TTL_MS = 40_000; // refresh well before the ~60 s expiry
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -254,13 +257,14 @@ async function main() {
     .slice(0, LIMIT);
   console.log(`[list] ${list.features.length} total, ${features.length} in CZ`);
 
-  const cache = !FRESH && existsSync(CACHE) ? JSON.parse(readFileSync(CACHE, "utf8")) : {};
-  const maxAge = CACHE_MAX_AGE_DAYS * 864e5;
-  const todo = features.filter((f) => {
-    const c = cache[f.id];
-    return !c || Date.now() - c.fetchedAt > maxAge;
-  });
-  console.log(`[detail] ${features.length - todo.length} cached, ${todo.length} to fetch`);
+  const prev = existsSync(OUT_INDEX) ? JSON.parse(readFileSync(OUT_INDEX, "utf8")) : null;
+  const prevById = new Map((prev?.facilities ?? []).map((f) => [f.id, f]));
+  const bucket = Math.floor(Date.now() / 864e5) % ROTATION_DAYS;
+  const todo = features.filter(
+    (f) => FULL || !prevById.has(String(f.id)) || Number(f.id) % ROTATION_DAYS === bucket,
+  );
+  console.log(`[detail] ${todo.length} to fetch (${FULL ? "full" : `new + rotation ${bucket + 1}/${ROTATION_DAYS}`})`);
+  const fresh = {};
 
   let done = 0;
   let failed = 0;
@@ -270,41 +274,48 @@ async function main() {
       const f = todo[cursor++];
       const raw = await api(`/api/v1/facility/${f.id}/`);
       if (raw === undefined) failed++;
-      else if (raw) cache[f.id] = { fetchedAt: Date.now(), data: normalize(f, raw) };
+      else if (raw) fresh[f.id] = normalize(f, raw);
       done++;
       if (done % 50 === 0 || done === todo.length) {
         const rate = done / ((Date.now() - started) / 1000);
         process.stdout.write(
           `\r[detail] ${done}/${todo.length}  failed ${failed}  ~${rate.toFixed(1)}/s   `,
         );
-        // checkpoint so an interrupted run can resume
-        writeJson(CACHE, cache);
       }
       await sleep(DELAY_MS);
     }
   }
   await Promise.all(Array.from({ length: CONCURRENCY }, worker));
   process.stdout.write("\n");
-  writeJson(CACHE, cache);
-
-  const prev = existsSync(OUT_INDEX) ? JSON.parse(readFileSync(OUT_INDEX, "utf8")) : null;
-  const prevById = new Map((prev?.facilities ?? []).map((f) => [f.id, f]));
 
   // Build index from list order. A facility whose detail failed today keeps yesterday's record;
   // only brand-new ones fall back to the bare list entry. Opening hours are carried over so a
   // failed enrich step never wipes them (enrich-osm.mjs recomputes them anyway).
   const facilities = features.map((f) => {
-    const rec = cache[f.id]?.data ?? prevById.get(String(f.id)) ?? normalize(f, { properties: { name: f.properties.name } });
     const old = prevById.get(String(f.id));
+    let rec = fresh[f.id];
+    if (!rec && old) {
+      // not refreshed today: keep the last detail, but take position/name from today's list
+      const [lng, lat] = f.geometry.coordinates;
+      rec = { ...old, lat: Math.round(lat * 1e6) / 1e6, lng: Math.round(lng * 1e6) / 1e6 };
+    }
+    rec ??= normalize(f, { properties: { name: f.properties.name } });
     return old?.hours && !rec.hours ? { ...rec, hours: old.hours } : rec;
   });
-  const withDetail = features.filter((f) => cache[f.id]).length;
+  const withDetail = features.filter((f) => fresh[f.id] || prevById.has(String(f.id))).length;
   const coverage = withDetail / features.length;
-  console.log(`[result] ${facilities.length} facilities, ${(coverage * 100).toFixed(1)}% with detail`);
+  const failRate = todo.length ? failed / todo.length : 0;
+  console.log(
+    `[result] ${facilities.length} facilities, ${(coverage * 100).toFixed(1)}% with detail, ` +
+      `${Object.keys(fresh).length} refreshed, ${failed} failed`,
+  );
 
   // Safety: don't publish a broken dataset
   if (LIMIT === Infinity && coverage < 0.9) {
     throw new Error(`Detail coverage ${(coverage * 100).toFixed(1)}% < 90% – not publishing`);
+  }
+  if (LIMIT === Infinity && todo.length >= 50 && failRate > 0.1) {
+    throw new Error(`${failed}/${todo.length} detail requests failed – not publishing`);
   }
   if (LIMIT === Infinity && prev?.facilities?.length) {
     if (facilities.length < prev.facilities.length * 0.8) {

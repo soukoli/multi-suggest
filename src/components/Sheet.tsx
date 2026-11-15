@@ -6,6 +6,10 @@ export type Snap = "peek" | "half" | "full";
  * Mobile bottom sheet with three snap points (map stays visible behind it).
  * Drag the header area; tap the handle to cycle. Reports its visible height
  * so the map can pad its camera.
+ *
+ * Sizes come from the measured app area (not window.innerHeight, which iOS reports
+ * inconsistently for home-screen web apps) and include the bottom dock + safe area,
+ * so the header is never hidden behind the dock.
  */
 export function Sheet({
   snap,
@@ -14,31 +18,37 @@ export function Sheet({
   children,
   onHeight,
   contentKey,
+  areaHeight,
+  bottomInset,
 }: {
   contentKey?: string;
+  /** height of the app area (px), measured by the parent */
+  areaHeight: number;
+  /** height covered by the bottom dock incl. safe area (px) */
+  bottomInset: number;
   snap: Snap;
   onSnap: (s: Snap) => void;
   header: ReactNode;
   children: ReactNode;
   onHeight: (px: number) => void;
 }) {
-  const [vh, setVh] = useState(() => window.innerHeight);
+  const vh = areaHeight;
   const [drag, setDrag] = useState<number | null>(null);
   const start = useRef<{ y: number; h: number } | null>(null);
   const moved = useRef(false);
 
-  useEffect(() => {
-    const r = () => setVh(window.innerHeight);
-    window.addEventListener("resize", r);
-    return () => window.removeEventListener("resize", r);
-  }, []);
-
-  const heights: Record<Snap, number> = { peek: 200, half: Math.round(vh * 0.5), full: vh - 64 };
+  // peek = handle + title + radius control, above the dock
+  const peek = bottomInset + 150;
+  const heights: Record<Snap, number> = {
+    peek,
+    half: Math.max(peek + 90, Math.round(vh * 0.5)),
+    full: vh - 64,
+  };
   const h = drag ?? heights[snap];
 
   useEffect(() => {
     if (drag === null) onHeight(Math.min(heights[snap], heights.half));
-  }, [snap, vh, drag]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [snap, vh, bottomInset, drag]); // eslint-disable-line react-hooks/exhaustive-deps
 
   function down(e: React.PointerEvent) {
     if ((e.target as HTMLElement).closest("input,button,a,label")) return;
@@ -50,7 +60,7 @@ export function Sheet({
     if (!start.current) return;
     const dy = start.current.y - e.clientY;
     if (Math.abs(dy) > 4) moved.current = true;
-    setDrag(Math.max(110, Math.min(heights.full, start.current.h + dy)));
+    setDrag(Math.max(peek - 40, Math.min(heights.full, start.current.h + dy)));
   }
   function up() {
     if (!start.current) return;
@@ -68,7 +78,7 @@ export function Sheet({
 
   return (
     <section
-      className="fixed inset-x-0 bottom-0 z-20 flex flex-col rounded-t-[28px] bg-surface shadow-float md:hidden"
+      className="absolute inset-x-0 bottom-0 z-20 flex flex-col rounded-t-[28px] bg-surface shadow-float md:hidden"
       style={{ height: h, transition: drag === null ? "height 320ms cubic-bezier(.2,.9,.25,1)" : "none" }}
       aria-label="Seznam míst"
     >
@@ -82,7 +92,7 @@ export function Sheet({
         </button>
         {header}
       </div>
-      <div key={contentKey} className="no-scrollbar min-h-0 flex-1 overflow-y-auto overscroll-contain pb-[calc(env(safe-area-inset-bottom)+96px)]">
+      <div key={contentKey} className="no-scrollbar min-h-0 flex-1 overflow-y-auto overscroll-contain" style={{ paddingBottom: bottomInset + 16 }}>
         {children}
       </div>
     </section>
