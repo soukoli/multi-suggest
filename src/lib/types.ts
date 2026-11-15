@@ -1,88 +1,49 @@
-export type CrowdLevel = "empty" | "ok" | "busy" | "full";
-
 export type Category =
-  | "fitness"
-  | "swimming"
-  | "wellness"
-  | "yoga"
-  | "group"
-  | "sports"
-  | "climbing"
-  | "kids"
-  | "outdoor"
-  | "other";
-
-export interface ActiveCard {
-  name: string;
-  id: number;
-  description: string;
-}
+  | "fitness" | "swimming" | "wellness" | "yoga" | "group"
+  | "racket" | "climbing" | "outdoor" | "kids" | "other";
 
 export interface Facility {
   id: string;
   name: string;
-  address: string;
-  city: string;
+  street: string;
+  city: string | null;
   lat: number;
   lng: number;
   category: Category;
+  categories: Category[];
   activities: string[];
-  activity_summary: string | null;
-  image_url: string | null;
-  gallery_images: string[];
-  website_url: string | null;
+  image: string | null;
+  gallery: string[];
+  web: string | null;
+  facebook: string | null;
+  instagram: string | null;
   phone: string | null;
   email: string | null;
   description: string | null;
-  is_new: boolean;
+  surcharge: boolean;
+  surchargeNote: string | null;
+  kids: boolean;
+  virtualOnly: boolean;
+  parking: boolean | null;
+  selfService: boolean;
+  selfServiceTimes: string | null;
+  nonstop: boolean;
+  isNew: boolean;
   recommended: boolean;
-  additional_payment: boolean;
-  additional_payment_desc: string | null;
-  active_cards: ActiveCard[];
-  kids_activities: boolean;
-  only_virtual_card: boolean;
-  parking: string;
-  self_service: boolean;
-  self_service_times: string | null;
-  unlimited_oh: boolean;
-  facebook_url: string | null;
-  instagram_url: string | null;
-  updated_at?: string;
+  cards: string[];
+  hours?: string; // OSM opening_hours syntax
 }
 
-export interface FacilityWithMeta extends Facility {
-  distance: number; // km
-  crowdLevel: CrowdLevel;
-  crowdLabel: string;
-  goodTimes: string;
+export interface Dataset {
+  updatedAt: string;
+  source?: string;
+  hoursSource?: string;
+  count: number;
+  facilities: Facility[];
 }
 
-export interface FacilitiesResponse {
-  facilities: FacilityWithMeta[];
-  meta: {
-    total: number;
-    last_sync: string | null;
-    radius_km: number;
-  };
+export interface Located extends Facility {
+  distance: number; // km from search center
 }
 
-export const CATEGORY_LABELS: Record<Category, string> = {
-  fitness: "Fitness",
-  swimming: "Plavání",
-  wellness: "Wellness",
-  yoga: "Jóga",
-  group: "Lekce",
-  sports: "Sporty",
-  climbing: "Lezení",
-  kids: "Děti",
-  outdoor: "Outdoor",
-  other: "Ostatní",
-};
-
-/** Card type display names */
-export const CARD_LABELS: Record<number, string> = {
-  1: "Stříbrná",
-  2: "Dítě",
-  3: "FKSP",
-  4: "Student",
-};
+export type LngLat = { lat: number; lng: number };

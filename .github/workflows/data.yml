@@ -1,0 +1,48 @@
+name: Update facility data
+
+# Free pipeline: GitHub Actions refreshes public/data/facilities.json and commits it;
+# Vercel redeploys automatically on the push.
+on:
+  schedule:
+    - cron: "30 3 * * 1,4" # Mon + Thu 03:30 UTC
+  workflow_dispatch:
+    inputs:
+      scrape:
+        description: "Refetch MultiSport partner data (scripts/scrape.mjs)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      # MultiSport partner list + details. Disabled on schedule until the token
+      # signing in scripts/scrape.mjs is fixed (see README → Data).
+      - name: Scrape MultiSport partners
+        if: ${{ inputs.scrape }}
+        run: node scripts/scrape.mjs
+
+      - name: Opening hours from OpenStreetMap
+        run: node scripts/enrich-osm.mjs
+
+      - name: Commit data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/facilities.json
+          git diff --staged --quiet && { echo "No changes"; exit 0; }
+          git commit -m "data: refresh facilities ($(date -u +%F))"
+          git push

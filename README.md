@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sportmapa
 
-## Getting Started
+Osobní mapa partnerů MultiSport: najdi místa podle kategorie v okruhu kolem sebe, podívej se,
+jestli je otevřeno a kdy tam bývá plno, ulož si oblíbená s poznámkou a počtem návštěv
+a jedním klepnutím otevři kartu v oficiální aplikaci My MultiSport.
 
-First, run the development server:
+Nástupce původního MultiSuggest (stejný repozitář, kompletně přepsáno).
+
+## Co aplikace umí
+
+- Mapa vždy viditelná, na mobilu bottom sheet (3 polohy), na desktopu levý panel
+- Kategorie (vícenásobný výběr, počty v okruhu), okruh 1–50 km, filtry doplatek / parkování / nonstop / děti
+- Fulltext přes název, aktivitu a ulici (hledá v celé databázi)
+- Detail: fotky, navigace, web / Instagram / Facebook / telefon, platné karty, aktivity, otevírací doba
+- **Vytíženost**: odhad po hodinách podle typu místa a dne; po check-inu můžeš nahlásit „prázdno / akorát / narváno“ a odhad se pro to místo zpřesní
+- **Oblíbené**: poznámky, počet návštěv, datum poslední, řazení podle vzdálenosti nebo četnosti
+- **Karta**: odkaz `https://my.multisport.cz/mobile/` – universal/app link, který otevře nainstalovanou
+  aplikaci My MultiSport (doména publikuje apple-app-site-association a assetlinks.json)
+- Světlý / tmavý režim, PWA (přidat na plochu)
+
+## Vývoj
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # statický web do dist/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Stack: Vite + React 19 + TypeScript + Tailwind v4, MapLibre GL + OpenFreeMap (bez API klíče), Zustand.
+Oblíbené, návštěvy a hlášení se ukládají v prohlížeči (localStorage).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Nasazení
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Push do `main` → Vercel (git integrace) postaví a nasadí. Nastavení je ve `vercel.json`.
 
-## Learn More
+## Data
 
-To learn more about Next.js, take a look at the following resources:
+`public/data/facilities.json` je jediný zdroj dat pro aplikaci.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Krok | Skript | Stav |
+|---|---|---|
+| Partneři MultiSport (seznam + detail) | `scripts/scrape.mjs` | ⚠️ podpis tokenu neodpovídá aktuálnímu `auth.js` (401) – zatím vypnuto |
+| Otevírací doba z OpenStreetMap | `scripts/enrich-osm.mjs` | ✅ běží v CI (Po + Čt) |
+| Převod dat ze staré D1 (594 míst, Praha) | `scripts/import-legacy.mjs` | jednorázově |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+GitHub Action `.github/workflows/data.yml` data obnoví a commitne, Vercel pak automaticky nasadí.
+Scraper lze spustit ručně (Actions → Update facility data → scrape = true), až bude opravené přihlášení.
 
-## Deploy on Vercel
+Proč původní data nefungovala: starý scraper bral JWT z mapa.multisport.cz, který platí ~60 s,
+a neobnovoval ho, takže z ~625 pražských míst aktualizoval jen prvních 16.
+Nový scraper token obnovuje, pokrývá celou ČR a nezveřejní data s pokrytím detailů pod 90 %.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Otevírací doba: © přispěvatelé OpenStreetMap (ODbL).

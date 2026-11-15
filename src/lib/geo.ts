@@ -1,46 +1,35 @@
-/**
- * Calculate distance between two GPS coordinates using Haversine formula
- * @returns distance in kilometers
- */
-export function haversineDistance(
-  lat1: number,
-  lng1: number,
-  lat2: number,
-  lng2: number
-): number {
-  const R = 6371; // Earth's radius in km
-  const dLat = toRad(lat2 - lat1);
-  const dLng = toRad(lng2 - lng1);
+import type { LngLat } from "./types";
 
-  const a =
-    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-    Math.cos(toRad(lat1)) *
-      Math.cos(toRad(lat2)) *
-      Math.sin(dLng / 2) *
-      Math.sin(dLng / 2);
-
-  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  return R * c;
+export function distanceKm(a: LngLat, b: LngLat): number {
+  const R = 6371;
+  const dLat = ((b.lat - a.lat) * Math.PI) / 180;
+  const dLng = ((b.lng - a.lng) * Math.PI) / 180;
+  const s =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos((a.lat * Math.PI) / 180) * Math.cos((b.lat * Math.PI) / 180) * Math.sin(dLng / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(s));
 }
 
-function toRad(deg: number): number {
-  return deg * (Math.PI / 180);
-}
-
-/**
- * Format distance for display
- */
-export function formatDistance(km: number): string {
-  if (km < 1) {
-    return `${Math.round(km * 1000)} m`;
+export function circlePolygon(center: LngLat, radiusKm: number, steps = 96): [number, number][] {
+  const coords: [number, number][] = [];
+  const latR = radiusKm / 110.574;
+  const lngR = radiusKm / (111.32 * Math.cos((center.lat * Math.PI) / 180));
+  for (let i = 0; i <= steps; i++) {
+    const t = (i / steps) * 2 * Math.PI;
+    coords.push([center.lng + lngR * Math.cos(t), center.lat + latR * Math.sin(t)]);
   }
-  return `${km.toFixed(1)} km`;
+  return coords;
 }
 
-/**
- * Default Prague center coordinates
- */
-export const PRAGUE_CENTER = {
-  lat: 50.0755,
-  lng: 14.4378,
-};
+export function formatDistance(km: number): { value: string; unit: string } {
+  if (km < 1) return { value: String(Math.max(10, Math.round((km * 1000) / 10) * 10)), unit: "m" };
+  return { value: km < 10 ? km.toFixed(1).replace(".", ",") : String(Math.round(km)), unit: "km" };
+}
+
+const isApple = () => /iPhone|iPad|Macintosh/.test(navigator.userAgent);
+
+export function directionsUrl(p: LngLat, name: string): string {
+  return isApple()
+    ? `https://maps.apple.com/?daddr=${p.lat},${p.lng}&q=${encodeURIComponent(name)}`
+    : `https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lng}`;
+}
