@@ -1,0 +1,33 @@
+# Weekly, grouped dependency updates (one PR per ecosystem) – each PR is built by ci.yml
+# and gets a Vercel preview. Security fixes come immediately via Dependabot security updates.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:00"
+      timezone: Europe/Prague
+    open-pull-requests-limit: 5
+    groups:
+      minor-and-patch:
+        update-types: [minor, patch]
+    ignore:
+      # @types/node follows the Node runtime used in CI (24)
+      - dependency-name: "@types/node"
+        update-types: [version-update:semver-major]
+    commit-message:
+      prefix: deps
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:00"
+      timezone: Europe/Prague
+    groups:
+      actions:
+        patterns: ["*"]
+    commit-message:
+      prefix: ci

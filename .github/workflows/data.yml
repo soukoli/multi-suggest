@@ -8,8 +8,13 @@ name: Update facility data
 # read-only token and no persisted git credentials. Only the publish job can push.
 # Problems open or comment on a "Data update failed" / "Data update warning" issue.
 on:
+  # GitHub delays and sometimes drops scheduled runs under load, so there are backup
+  # slots; a slot is skipped when today's data was already checked (see "plan").
   schedule:
-    - cron: "15 2 * * *" # daily 02:15 UTC
+    - cron: "17 2 * * *"
+    - cron: "43 6 * * *"
+    - cron: "29 12 * * *"
+    - cron: "11 18 * * *"
   workflow_dispatch:
     inputs:
       scrape:
@@ -39,6 +44,7 @@ jobs:
     permissions:
       contents: read
     outputs:
+      skip: ${{ steps.plan.outputs.skip }}
       osm: ${{ steps.osm.outcome }}
       enrich: ${{ steps.enrich.outcome }}
     steps:
@@ -53,6 +59,12 @@ jobs:
         id: plan
         run: |
           if [ "${{ github.event_name }}" = "schedule" ]; then
+            checked=$(node -p 'const j=require("./public/data/facilities.json"); (j.checkedAt||j.updatedAt||"").slice(0,10)')
+            if [ "$checked" = "$(date -u +%F)" ]; then
+              echo "Data already checked today ($checked) – backup slot skipped"
+              echo "skip=true" >> "$GITHUB_OUTPUT"; echo "scrape=false" >> "$GITHUB_OUTPUT"; echo "osm=false" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
             echo "scrape=true" >> "$GITHUB_OUTPUT"
             [ "$(date -u +%u)" = "7" ] && echo "osm=true" >> "$GITHUB_OUTPUT" || echo "osm=false" >> "$GITHUB_OUTPUT"
           else
@@ -75,10 +87,12 @@ jobs:
 
       - name: Match opening hours
         id: enrich
+        if: steps.plan.outputs.skip != 'true'
         continue-on-error: true
         run: node scripts/enrich-osm.mjs
 
       - uses: actions/upload-artifact@v4
+        if: steps.plan.outputs.skip != 'true'
         with:
           name: data
           path: |
@@ -88,6 +102,7 @@ jobs:
 
   publish:
     needs: build
+    if: needs.build.outputs.skip != 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
@@ -122,6 +137,7 @@ jobs:
           RUN: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           build="${{ needs.build.result }}"; publish="${{ needs.publish.result }}"
+          if [ "${{ needs.build.outputs.skip }}" = "true" ] && [ "$build" = "success" ]; then echo "Skipped slot"; exit 0; fi
           osm="${{ needs.build.outputs.osm }}"; enrich="${{ needs.build.outputs.enrich }}"
           if [ "$build" != "success" ] || [ "$publish" != "success" ]; then
             title="Data update failed"; body="build: $build, publish: $publish — $RUN"
